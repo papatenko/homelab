@@ -1996,3 +1996,63 @@
 [2025-08-25T12:42:50.411Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.209:11000/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
 [2025-08-25T12:43:21.616Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.209:11000/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
 [2025-08-25T12:43:44.988Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.209:11000/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2025-10-04T16:30:43.385Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:30:43.386Z] error: YAMLException: tab characters must not be used in indentation (54:1)
+
+ 51 |         widget:
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 | →  key: "m06Z2fJHC7vbBEvt0HE7uP ...
+------^
+ 55 | →  version: 2
+ 56 |         
+[2025-10-04T16:30:43.680Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:30:43.681Z] error: YAMLException: tab characters must not be used in indentation (54:1)
+
+ 51 |         widget:
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 | →  key: "m06Z2fJHC7vbBEvt0HE7uP ...
+------^
+ 55 | →  version: 2
+ 56 |         
+[2025-10-04T16:30:44.116Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:30:44.116Z] error: YAMLException: tab characters must not be used in indentation (54:1)
+
+ 51 |         widget:
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 | →  key: "m06Z2fJHC7vbBEvt0HE7uP ...
+------^
+ 55 | →  version: 2
+ 56 |         
+[2025-10-04T16:30:56.580Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:30:56.580Z] error: YAMLException: tab characters must not be used in indentation (54:1)
+
+ 51 |         widget:
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 | →  key: "m06Z2fJHC7vbBEvt0HE7uP ...
+------^
+ 55 | →  version: 2
+ 56 |         
+[2025-10-04T16:31:03.464Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:31:03.465Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 |           key: "m06Z2fJHC7vbBEv ...
+ 55 | →  version: 2
+------^
+ 56 |         
+ 57 | - Websites:
+[2025-10-04T16:31:03.728Z] error: Failed to load services.yaml, please check for errors
+[2025-10-04T16:31:03.728Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           type: immich
+ 53 |           url: http://192.168.0 ...
+ 54 |           key: "m06Z2fJHC7vbBEv ...
+ 55 | →  version: 2
+------^
+ 56 |         
+ 57 | - Websites:

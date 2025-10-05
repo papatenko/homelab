@@ -45,7 +45,15 @@
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:11000
           username: "{{HOMEPAGE_VAR_NC_USERNAME}}"
           password: "{{HOMEPAGE_VAR_NC_PASSWORD}}"
-
+    - Immich:
+        icon: immich
+        href: "{{HOMEPAGE_VAR_IM_URL}}" 
+        widget:
+          type: immich
+          url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:2283
+          key: "{{HOMEPAGE_VAR_IM_API_KEY}}" 
+          version: 2
+        
 - Websites:
     - Portfolio:
         icon: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:4000/favicon.ico
