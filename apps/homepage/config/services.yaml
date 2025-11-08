@@ -52,18 +52,28 @@
           version: 2
 
 - Media:
+    - qBittorrent:
+        icon: qbittorrent
+        href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
+        widget:
+          type: qbittorrent
+          url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
+          username: "{{HOMEPAGE_VAR_QB_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_QB_PASSWORD}}"
+          enableLeechProgress: true # optional, defaults to false
+          enableLeechSize: true # optional, defaults to false
     - Jellyfin:
-      icon: jellyfin
-      href: "{{HOMEPAGE_VAR_JF_URL}}"
-      widget:
-        type: jellyfin
-        url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
-        key: "{{HOMEPAGE_VAR_JF_API_KEY}}"
-        enableBlocks: true # optional, defaults to false
-        enableNowPlaying: true # optional, defaults to true
-        enableUser: true # optional, defaults to false enableMediaControl: false # optional, defaults to true
-        showEpisodeNumber: true # optional, defaults to false
-        expandOneStreamToTwoRows: false # optional, defaults to true
+        icon: jellyfin
+        href: "{{HOMEPAGE_VAR_JF_URL}}"
+        widget:
+          type: jellyfin
+          url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
+          key: "{{HOMEPAGE_VAR_JF_API_KEY}}"
+          enableBlocks: true # optional, defaults to false
+          enableNowPlaying: true # optional, defaults to true
+          enableUser: true # optional, defaults to false enableMediaControl: false # optional, defaults to true
+          showEpisodeNumber: true # optional, defaults to false
+          expandOneStreamToTwoRows: false # optional, defaults to true
 
 - Websites:
     - Portfolio:

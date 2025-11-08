@@ -3025,3 +3025,319 @@
 ------^
  59 | →→→→→type: jellyfin
  60 | →→→→→url: http://192.168.0.133:8096
+[2025-11-08T15:24:34.474Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:34.633Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.081Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.085Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.113Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.114Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.212Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.213Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.214Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.217Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.219Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.222Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.245Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.246Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:24:35.616Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.686Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.687Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.697Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.699Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.701Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.705Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.707Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.708Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.712Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.714Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.716Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.723Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:28:18.758Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.264Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.264Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.265Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.266Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.270Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.271Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.273Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.274Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.369Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.371Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.392Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.405Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.446Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.452Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.735Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.736Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.737Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.744Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.746Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.748Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.778Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.779Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.782Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.785Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.788Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.790Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:22.874Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.820Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.824Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.828Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.829Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.834Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.845Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.851Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.858Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.860Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.866Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.871Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.883Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:31.892Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:33.991Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:33.992Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:33.996Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.002Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.004Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.006Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.010Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.011Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.013Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.015Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.018Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.026Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:29:34.102Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.760Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.761Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.772Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.773Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.774Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.777Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.780Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.781Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.783Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.785Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.788Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.798Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:30:15.822Z] warn: <service-helpers> Error parsing service "Jellyfin" from config. Ensure required fields are present.
+[2025-11-08T15:39:24.731Z] error: <servicesProxy> YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1273:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1277:9)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2272:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2098:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2530:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+[2025-11-08T15:39:29.854Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:39:29.854Z] error: YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+[2025-11-08T15:39:30.013Z] error: <servicesProxy> YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1273:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1277:9)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2272:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2098:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2530:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+[2025-11-08T15:39:30.276Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:39:30.276Z] error: YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+[2025-11-08T15:39:32.897Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:39:32.897Z] error: YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+[2025-11-08T15:39:35.035Z] error: <servicesProxy> YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1273:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1277:9)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2272:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2098:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2530:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+[2025-11-08T15:39:40.056Z] error: <servicesProxy> YAMLException: bad indentation of a mapping entry (58:17)
+
+ 55 |     - qBittorrent:
+ 56 |         icon: qbittorrent
+ 57 |         href: https://192.168.0.133:8080
+ 58 |           widget:
+----------------------^
+ 59 |             type: qbittorrent
+ 60 |             url: https://192.168.0.133:8080
+    at generateError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1273:10)
+    at throwError (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:1277:9)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2272:7)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+    at readBlockSequence (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2098:5)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2530:12)
+    at readBlockMapping (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2254:11)
+    at composeNode (file:///app/node_modules/.pnpm/js-yaml@4.1.0/node_modules/js-yaml/dist/js-yaml.mjs:2531:12)
+[2025-11-08T15:39:52.535Z] error: <httpProxy> Error calling https://192.168.0.133:8080/api/v2/torrents/info...
+[2025-11-08T15:39:52.548Z] error: <httpProxy> [
+  500,
+  [Error: Client network socket disconnected before secure TLS connection was established] {
+    code: 'ECONNRESET',
+    path: null,
+    host: '192.168.0.133',
+    port: 8080,
+    localAddress: undefined
+  }
+]
+[2025-11-08T15:39:52.550Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-08T15:43:52.090Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-08T15:43:53.027Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-08T15:44:03.229Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.249Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.261Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.269Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.280Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.290Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:03.351Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:06.286Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:06.307Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:06.399Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:06.404Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:08.379Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:09.313Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:09.344Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:09.425Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:09.430Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:12.343Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:12.374Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:12.454Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:12.458Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:13.403Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:15.373Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:15.404Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:15.484Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:15.488Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:17.926Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:17.930Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:18.415Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:18.421Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:18.435Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:18.514Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:18.518Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.033Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.205Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.210Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.215Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.219Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.223Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.233Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.238Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.242Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.248Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.253Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.281Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:19.383Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.007Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.140Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.144Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.149Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.152Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.156Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.161Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.173Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.179Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.184Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.189Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.196Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.287Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.457Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.464Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.544Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:21.547Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:23.445Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:24.474Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:24.490Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:24.570Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:24.573Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:25.341Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:27.506Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:27.520Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:27.600Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:27.604Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:28.472Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:28.870Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:28.875Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:30.535Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:30.551Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:30.634Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:30.639Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:33.490Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:33.596Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:33.599Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:33.702Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:33.705Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:36.738Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:36.741Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:36.804Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:36.808Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:37.391Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:37.395Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:39.783Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:39.786Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:39.836Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:39.839Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.212Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.216Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.220Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.224Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.230Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.235Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.245Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
+[2025-11-08T15:44:40.249Z] error: Host validation failed for: 192.168.0.133:3000. Hint: Set the HOMEPAGE_ALLOWED_HOSTS environment variable to allow requests from this host / port.
