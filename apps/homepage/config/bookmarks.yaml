@@ -1,3 +1,12 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
+
+- Networking:
+  - Router:
+    - abbr: TP
+      href: "http://{{HOMEPAGE_VAR_ROUTER_ADDRESS}}"
+  - Modem:
+    - abbr: AT
+      href: "http://{{HOMEPAGE_VAR_MODEM_ADDRESS}}"
+  
