@@ -9,4 +9,15 @@
   - Modem:
     - abbr: AT
       href: "http://{{HOMEPAGE_VAR_MODEM_ADDRESS}}"
+
+- Source Code: 
+  - Portfolio:
+    - abbr: GH
+      href: https://github.com/papatenko/portfolio
+  - Odin Projects:
+    - abbr: GH
+      href: https://github.com/papatenko/my-odin-projects
+  - Homelab:
+    - abbr: GH
+      href: https://github.com/papatenko/homelab
   
