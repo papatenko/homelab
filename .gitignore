@@ -15,6 +15,9 @@ apps/jellyfin/cache/
 # Immich
 apps/immich/postgres
 
+# qBittorrent
+apps/qbittorrent/qbittorent/
+apps/qbittorrent/config/
 
 # General
 .env

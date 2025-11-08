@@ -44,27 +44,27 @@
           password: "{{HOMEPAGE_VAR_NC_PASSWORD}}"
     - Immich:
         icon: immich
-        href: "{{HOMEPAGE_VAR_IM_URL}}" 
+        href: "{{HOMEPAGE_VAR_IM_URL}}"
         widget:
           type: immich
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:2283
-          key: "{{HOMEPAGE_VAR_IM_API_KEY}}" 
+          key: "{{HOMEPAGE_VAR_IM_API_KEY}}"
           version: 2
-        
+
 - Media:
     - Jellyfin:
       icon: jellyfin
       href: "{{HOMEPAGE_VAR_JF_URL}}"
-				widget:
-					type: jellyfin
-					url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
-          key: "{{HOMEPAGE_VAR_JF_API_KEY}}" 
-					enableBlocks: true # optional, defaults to false
-					enableNowPlaying: true # optional, defaults to true
-					enableUser: true # optional, defaults to false
-					enableMediaControl: false # optional, defaults to true
-					showEpisodeNumber: true # optional, defaults to false
-					expandOneStreamToTwoRows: false # optional, defaults to true
+      widget:
+        type: jellyfin
+        url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
+        key: "{{HOMEPAGE_VAR_JF_API_KEY}}"
+        enableBlocks: true # optional, defaults to false
+        enableNowPlaying: true # optional, defaults to true
+        enableUser: true # optional, defaults to false enableMediaControl: false # optional, defaults to true
+        showEpisodeNumber: true # optional, defaults to false
+        expandOneStreamToTwoRows: false # optional, defaults to true
+
 - Websites:
     - Portfolio:
         icon: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000/favicon.ico
