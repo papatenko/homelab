@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    user: "${USER_ID}:${GROUP_ID}"
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - ${MEDIA_LIBRARY}:/media
+      - ${BACKUP_MEDIA}:/media2:ro
+      - ${CUSTOM_FONTS}:/usr/local/share/fonts/custom:ro
+    restart: unless-stopped
+    environment:
+      - JELLYFIN_PublishedServerUrl=${PUBLISHED_URL}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

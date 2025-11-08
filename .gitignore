@@ -1,2 +1,21 @@
+# Docker Apps Gitignore
+
+# Pi-hole
+apps/pihole/etc-pihole/
+apps/pihole/etc-dnsmasq.d/
+
+# Nginx Proxy Manager
+apps/nginxproxymanager/data/
+apps/nginxproxymanager/letsencrypt/
+
+# Jellyfin
+apps/jellyfin/config/
+apps/jellyfin/cache/
+
+# Immich
+apps/immich/postgres
+
+
+# General
 .env
-postgres
+*.log

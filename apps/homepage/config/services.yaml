@@ -31,9 +31,6 @@
           threshold: 2 # optional
 
 - Files:
-    - Syncthing:
-        icon: syncthing
-        href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8384
     - Nextcloud Admin:
         icon: nextcloud
         href: https://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:8080
@@ -54,7 +51,21 @@
           key: "{{HOMEPAGE_VAR_IM_API_KEY}}" 
           version: 2
         
+- Media:
+    - Jellyfin:
+      icon: jellyfin
+      href: "{{HOMEPAGE_VAR_JF_URL}}"
+				widget:
+					type: jellyfin
+					url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
+          key: "{{HOMEPAGE_VAR_JF_API_KEY}}" 
+					enableBlocks: true # optional, defaults to false
+					enableNowPlaying: true # optional, defaults to true
+					enableUser: true # optional, defaults to false
+					enableMediaControl: false # optional, defaults to true
+					showEpisodeNumber: true # optional, defaults to false
+					expandOneStreamToTwoRows: false # optional, defaults to true
 - Websites:
     - Portfolio:
-        icon: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:4000/favicon.ico
-        href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:4000
+        icon: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000/favicon.ico
+        href: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000

@@ -2056,3 +2056,972 @@
 ------^
  56 |         
  57 | - Websites:
+[2025-10-12T23:05:37.695Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:05:37.705Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:05:37.706Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:05:37.721Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:05:37.724Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:05:37.724Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:06:25.863Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:06:25.865Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:06:25.867Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:06:25.870Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:06:25.872Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:06:25.873Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:08.048Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:08.051Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:08.051Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:08.068Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:08.071Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:08.072Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:08.851Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:08.852Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:08.852Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:08.862Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:08.863Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:08.867Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:10.673Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:10.674Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:10.675Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:10.677Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:10.678Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:10.679Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:15.507Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:15.509Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:15.510Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:15.531Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:15.533Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:15.534Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:28.795Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:28.796Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:28.797Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:28.809Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:28.810Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:28.811Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:08:45.722Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:08:45.723Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:45.724Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:08:45.734Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:08:45.735Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:08:45.736Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:10:14.175Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:10:14.177Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:14.177Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:10:14.183Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:10:14.184Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:14.185Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:10:15.183Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:10:15.186Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:15.187Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:10:15.195Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:10:15.196Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:15.197Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:10:31.724Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:10:31.726Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:31.727Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:10:31.730Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:10:31.732Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:10:31.732Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:12:13.846Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:12:13.848Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:12:13.848Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:12:13.854Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:12:13.855Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:12:13.855Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:16:33.475Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:16:33.477Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:16:33.477Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:16:33.478Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:16:33.479Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:16:33.480Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:53:15.085Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:53:15.102Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:15.104Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:53:15.110Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:53:15.115Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:15.116Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:53:15.939Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:53:15.941Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:15.942Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-12T23:53:15.952Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:53:15.954Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:15.956Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:53:27.127Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-12T23:53:27.131Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:27.132Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-12T23:53:27.143Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-12T23:53:27.146Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-12T23:53:27.146Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T01:14:53.645Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T01:14:53.646Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T01:14:53.646Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T01:14:53.676Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T01:14:53.677Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T01:14:53.677Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T01:16:40.745Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T01:16:40.746Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T01:16:40.747Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T01:16:40.759Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T01:16:40.760Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T01:16:40.760Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T03:24:04.918Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T03:24:04.921Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T03:24:04.921Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T03:24:04.923Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T03:24:04.924Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T03:24:04.925Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T04:19:06.075Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T04:19:06.076Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:06.076Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T04:19:06.103Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T04:19:06.105Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:06.105Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T04:19:51.863Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T04:19:51.864Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:51.864Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T04:19:51.873Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T04:19:51.873Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:51.874Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T04:19:58.159Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T04:19:58.161Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:58.161Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T04:19:58.170Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T04:19:58.171Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:19:58.172Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-13T04:20:03.518Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-13T04:20:03.520Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:20:03.520Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-13T04:20:03.522Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-13T04:20:03.523Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-13T04:20:03.523Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-20T00:59:42.257Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-20T00:59:42.258Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-20T00:59:42.258Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-20T00:59:42.427Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-20T00:59:42.428Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-20T00:59:42.428Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-21T11:01:41.878Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-21T11:01:41.880Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-21T11:01:41.880Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-21T11:01:41.922Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-21T11:01:41.923Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-21T11:01:41.924Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-21T11:01:48.592Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-21T11:01:48.593Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-21T11:01:48.593Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-21T11:01:48.613Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-21T11:01:48.615Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-21T11:01:48.615Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:16:29.193Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:16:29.202Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:29.203Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-28T21:16:29.305Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:16:29.309Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:29.309Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:16:30.288Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:16:30.294Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:30.296Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-28T21:16:30.436Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:16:30.437Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:30.437Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:16:46.651Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:16:46.654Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:46.655Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:16:46.658Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:16:46.660Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:16:46.661Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-28T21:17:05.672Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:17:05.673Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:17:05.673Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:17:05.675Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:17:05.676Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:17:05.676Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-28T21:26:19.087Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:26:19.089Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:26:19.090Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:26:19.094Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:26:19.095Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:26:19.096Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-28T21:31:14.124Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/statistics...
+[2025-10-28T21:31:14.125Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:31:14.125Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-28T21:31:14.127Z] error: <httpProxy> Error calling http://192.168.0.221:2283/api/server/version...
+[2025-10-28T21:31:14.128Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:2283
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:2283) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 2283
+  }
+]
+[2025-10-28T21:31:14.128Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:2283/api/server/version
+[2025-10-31T18:58:50.506Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-31T19:13:35.071Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-31T19:13:35.971Z] error: <credentialedProxyHandler> HTTP Error 401 calling http://192.168.0.221:2283/api/server/statistics
+[2025-10-31T19:15:48.333Z] info: proxmox.yaml was copied to the config folder
+[2025-11-03T18:00:48.639Z] error: <httpProxy> Error calling http://192.168.0.221:11000/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2025-11-03T18:00:48.651Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:11000
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:11000) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 11000
+  }
+]
+[2025-11-03T18:00:48.652Z] error: <credentialedProxyHandler> HTTP Error 500 calling http://192.168.0.221:11000/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2025-11-08T14:05:33.761Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:05:33.762Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           version: 2
+ 53 |         
+ 54 | - Media:
+ 55 | →- Jellyfin:
+------^
+ 56 | →→→icon: jellyfin
+ 57 | →→→href: "https://jf.papatenko. ...
+[2025-11-08T14:05:33.967Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:05:33.968Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           version: 2
+ 53 |         
+ 54 | - Media:
+ 55 | →- Jellyfin:
+------^
+ 56 | →→→icon: jellyfin
+ 57 | →→→href: "https://jf.papatenko. ...
+[2025-11-08T14:05:34.288Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:05:34.288Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           version: 2
+ 53 |         
+ 54 | - Media:
+ 55 | →- Jellyfin:
+------^
+ 56 | →→→icon: jellyfin
+ 57 | →→→href: "https://jf.papatenko. ...
+[2025-11-08T14:06:15.382Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:15.383Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           version: 2
+ 53 |         
+ 54 | - Media:
+ 55 | →→- Jellyfin:
+------^
+ 56 | →→→icon: jellyfin
+ 57 | →→→href: "https://jf.papatenko. ...
+[2025-11-08T14:06:16.287Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:16.288Z] error: YAMLException: tab characters must not be used in indentation (55:1)
+
+ 52 |           version: 2
+ 53 |         
+ 54 | - Media:
+ 55 | →→- Jellyfin:
+------^
+ 56 | →→→icon: jellyfin
+ 57 | →→→href: "https://jf.papatenko. ...
+[2025-11-08T14:06:33.068Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:33.068Z] error: YAMLException: tab characters must not be used in indentation (56:1)
+
+ 53 |         
+ 54 | - Media:
+ 55 |     - Jellyfin:
+ 56 | →→→icon: jellyfin
+------^
+ 57 | →→→href: "https://jf.papatenko. ...
+ 58 | →→→→widget:
+[2025-11-08T14:06:33.784Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:33.784Z] error: YAMLException: tab characters must not be used in indentation (56:1)
+
+ 53 |         
+ 54 | - Media:
+ 55 |     - Jellyfin:
+ 56 | →→→icon: jellyfin
+------^
+ 57 | →→→href: "https://jf.papatenko. ...
+ 58 | →→→→widget:
+[2025-11-08T14:06:49.611Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:49.612Z] error: YAMLException: tab characters must not be used in indentation (58:1)
+
+ 55 |     - Jellyfin:
+ 56 |       icon: jellyfin
+ 57 |       href: "https://jf.papaten ...
+ 58 | →→→→widget:
+------^
+ 59 | →→→→→type: jellyfin
+ 60 | →→→→→url: http://192.168.0.133:8096
+[2025-11-08T14:06:50.294Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T14:06:50.294Z] error: YAMLException: tab characters must not be used in indentation (58:1)
+
+ 55 |     - Jellyfin:
+ 56 |       icon: jellyfin
+ 57 |       href: "https://jf.papaten ...
+ 58 | →→→→widget:
+------^
+ 59 | →→→→→type: jellyfin
+ 60 | →→→→→url: http://192.168.0.133:8096
+[2025-11-08T15:08:20.914Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:08:20.914Z] error: YAMLException: tab characters must not be used in indentation (58:1)
+
+ 55 |     - Jellyfin:
+ 56 |       icon: jellyfin
+ 57 |       href: "https://jf.papaten ...
+ 58 | →→→→widget:
+------^
+ 59 | →→→→→type: jellyfin
+ 60 | →→→→→url: http://192.168.0.133:8096
+[2025-11-08T15:08:22.761Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:08:22.761Z] error: YAMLException: tab characters must not be used in indentation (58:1)
+
+ 55 |     - Jellyfin:
+ 56 |       icon: jellyfin
+ 57 |       href: "https://jf.papaten ...
+ 58 | →→→→widget:
+------^
+ 59 | →→→→→type: jellyfin
+ 60 | →→→→→url: http://192.168.0.133:8096
+[2025-11-08T15:09:17.680Z] error: Failed to load services.yaml, please check for errors
+[2025-11-08T15:09:17.681Z] error: YAMLException: tab characters must not be used in indentation (58:1)
+
+ 55 |     - Jellyfin:
+ 56 |       icon: jellyfin
+ 57 |       href: "https://jf.papaten ...
+ 58 | →→→→widget:
+------^
+ 59 | →→→→→type: jellyfin
+ 60 | →→→→→url: http://192.168.0.133:8096
