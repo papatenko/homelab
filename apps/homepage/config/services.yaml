@@ -32,6 +32,10 @@
           username: "{{HOMEPAGE_VAR_WG_USERNAME}}"
           password: "{{HOMEPAGE_VAR_WG_PASSWORD}}"
           threshold: 2 # optional
+    - Open WebUI:
+        icon: open-webui
+        href: "{{HOMEPAGE_VAR_AI_URL}}"
+        siteMonitor: "{{HOMEPAGE_VAR_AI_URL}}"
 
 - Files:
     - Nextcloud Admin:
