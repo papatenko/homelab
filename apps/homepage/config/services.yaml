@@ -79,6 +79,3 @@
     - Portfolio:
         icon: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000/favicon.ico
         href: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000
-    - Odin Projects:
-        icon: https://papatenko-odin.netlify.app/favicon.ico
-        href: https://papatenko-odin.netlify.app/
