@@ -8,6 +8,6 @@ providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
 
-background:
-  image: /images/background.png
-  blur: md
+# background:
+#   image: /images/background.png
+#   blur: md
