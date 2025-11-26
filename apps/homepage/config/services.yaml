@@ -6,7 +6,6 @@
     - Pihole:
         icon: pi-hole
         href: https://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8443/admin
-        siteMonitor: https://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8443/admin
         widget:
           type: pihole
           url: https://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8443
@@ -15,7 +14,6 @@
     - NginxProxyManager:
         icon: nginx-proxy-manager
         href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:81
-        siteMonitor: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:81
         widget:
           type: npm
           url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:81
@@ -24,7 +22,6 @@
     - Wireguard:
         icon: wireguard
         href: "{{HOMEPAGE_VAR_WG_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_WG_URL}}"
         widget:
           type: wgeasy
           url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:51821
@@ -35,17 +32,14 @@
     - Open WebUI:
         icon: open-webui
         href: "{{HOMEPAGE_VAR_AI_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_AI_URL}}"
 
 - Files:
     - Nextcloud Admin:
         icon: nextcloud
         href: https://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:8080
-        siteMonitor: https://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:8080
     - Nextcloud:
         icon: nextcloud
         href: "{{HOMEPAGE_VAR_NC_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_NC_URL}}"
         widget:
           type: nextcloud
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:11000
@@ -54,7 +48,6 @@
     - Immich:
         icon: immich
         href: "{{HOMEPAGE_VAR_IM_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_IM_URL}}"
         widget:
           type: immich
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:2283
@@ -65,7 +58,6 @@
     - qBittorrent:
         icon: qbittorrent
         href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
-        siteMonitor: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
         widget:
           type: qbittorrent
           url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
@@ -76,7 +68,6 @@
     - Jellyfin:
         icon: jellyfin
         href: "{{HOMEPAGE_VAR_JF_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_JF_URL}}"
         widget:
           type: jellyfin
           url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8096
@@ -91,4 +82,3 @@
     - Portfolio:
         icon: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000/favicon.ico
         href: "{{HOMEPAGE_VAR_PORT_URL}}"
-        siteMonitor: "{{HOMEPAGE_VAR_PORT_URL}}"
