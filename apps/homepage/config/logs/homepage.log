@@ -13301,3 +13301,2754 @@
   }
 ]
 [2025-11-26T07:51:29.014Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T07:52:48.953Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T07:52:48.955Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T07:52:48.956Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T07:52:58.469Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T07:52:58.472Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T07:52:58.472Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T07:54:36.304Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T07:54:36.305Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T07:54:36.306Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T08:31:02.126Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T08:31:02.127Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T08:31:02.128Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T08:31:02.601Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T08:31:02.602Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T08:31:02.603Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T17:48:34.608Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T17:48:34.609Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T17:48:34.609Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:37:53.989Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:37:53.990Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:37:53.990Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:38:36.184Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:38:36.188Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:38:36.188Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:38:42.059Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:38:42.060Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:38:42.061Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:40:26.045Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:40:26.046Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:40:26.047Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:40:26.110Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:26.943Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:26.999Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:40:27.000Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:40:27.001Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:40:30.078Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:43.210Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:43.265Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:40:43.266Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:40:43.266Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:40:55.848Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:55.927Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:40:55.929Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:40:55.929Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:40:56.873Z] error: <glances> Missing Glances URL
+[2025-11-26T18:40:56.931Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:40:56.932Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:40:56.932Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:41:00.083Z] error: <glances> Missing Glances URL
+[2025-11-26T18:42:09.903Z] error: undefined
+[2025-11-26T18:42:09.976Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:42:09.978Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:42:09.978Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:42:10.898Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:42:10.899Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:42:10.900Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:42:25.701Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:42:25.703Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:42:25.703Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:43:37.844Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:43:37.846Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:43:37.847Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:43:55.978Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:43:55.979Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:43:55.980Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:44:01.385Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:44:01.386Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:44:01.387Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:44:54.004Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:44:54.006Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:44:54.006Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:45:53.707Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:45:53.709Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:45:53.709Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:45:54.279Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:45:54.280Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:45:54.280Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:46:00.037Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:46:00.038Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:46:00.040Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:47:08.334Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T18:47:08.334Z] error: end of the stream or a document separator is expected (13:1)
+
+ 10 |       - /mnt/hd1
+ 11 | 
+ 12 |       
+ 13 | logo:
+------^
+ 14 |   href: https://github.com/papa ...
+[2025-11-26T18:47:08.348Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:47:08.349Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:47:08.350Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:47:08.452Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T18:47:08.453Z] error: end of the stream or a document separator is expected (13:1)
+
+ 10 |       - /mnt/hd1
+ 11 | 
+ 12 |       
+ 13 | logo:
+------^
+ 14 |   href: https://github.com/papa ...
+[2025-11-26T18:47:09.282Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:47:09.283Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:47:09.284Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:47:09.335Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T18:47:09.335Z] error: end of the stream or a document separator is expected (13:1)
+
+ 10 |       - /mnt/hd1
+ 11 | 
+ 12 |       
+ 13 | logo:
+------^
+ 14 |   href: https://github.com/papa ...
+[2025-11-26T18:48:29.189Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T18:48:29.189Z] error: end of the stream or a document separator is expected (13:1)
+
+ 10 |       - /mnt/hd1
+ 11 | 
+ 12 |       
+ 13 | logo:
+------^
+ 14 |   href: https://github.com/papa ...
+[2025-11-26T18:48:29.258Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:48:29.259Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:48:29.260Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:49:54.810Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:49:54.812Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:49:54.813Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:49:55.703Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:49:55.704Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:49:55.705Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:50:23.562Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:50:23.563Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:50:23.564Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T18:51:13.362Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T18:51:13.366Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T18:51:13.367Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:05:52.076Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:05:52.079Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:05:52.080Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:05:52.136Z] error: <httpProxy> Error calling http://192.168.0.221/api/3/cpu...
+[2025-11-26T19:05:52.139Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:80
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:80) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 80
+  }
+]
+[2025-11-26T19:05:52.140Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-26T19:05:53.025Z] error: <httpProxy> Error calling http://192.168.0.221/api/3/cpu...
+[2025-11-26T19:05:53.026Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.221:80
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.221:80) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.221',
+    port: 80
+  }
+]
+[2025-11-26T19:05:53.026Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-26T19:05:53.093Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:05:53.095Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:05:53.096Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:15.852Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:15.853Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:15.867Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:15.959Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:15.961Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:15.962Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:16.015Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:16.016Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:16.495Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:16.500Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:16.501Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:16.545Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:16.546Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:21.431Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:21.432Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:21.433Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:21.474Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:21.475Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:29.335Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:29.335Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:29.384Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:29.385Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:29.386Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:40.580Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2025-11-26T19:06:40.581Z] error: bad indentation of a mapping entry (14:8)
+
+ 11 | 
+ 12 | - glances:
+ 13 |   url: http://192.168.0.221:61208
+ 14 |     cpu: true # optional, enabled by d ...
+-------------^
+ 15 |     mem: true # optional, enabled by d ...
+ 16 |     cputemp: true # disabled by default
+[2025-11-26T19:06:40.653Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:40.654Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:40.654Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:59.781Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:06:59.782Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:06:59.783Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:06:59.913Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:00.405Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:00.455Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:00.457Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:00.458Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:03.401Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:05.596Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:05.663Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:05.664Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:05.664Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:08.457Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:44.968Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:45.009Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:45.010Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:45.011Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:46.380Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:46.447Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:46.449Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:46.449Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:47.974Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:48.011Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:48.014Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:48.015Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:48.662Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:48.707Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:48.708Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:48.709Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:49.291Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:07:49.372Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:07:49.374Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:07:49.375Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:07:52.297Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:00.394Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:00.435Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:08:00.436Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:08:00.437Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:08:23.755Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:23.811Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:08:23.812Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:08:23.812Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:08:26.074Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:29.116Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:32.254Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:08:35.293Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:11:59.619Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.621Z] error: undefined
+[2025-11-26T19:11:59.622Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.645Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.647Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.648Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.649Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.650Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.654Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.669Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:11:59.671Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:11:59.671Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:11:59.840Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:11:59.840Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:00.197Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:00.197Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:05.535Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:05.536Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:05.537Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:05.537Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:06.149Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:06.149Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:16.107Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:16.107Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:27.450Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:27.451Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:29.198Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:12:29.198Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:12:35.540Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:12:35.542Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:12:35.543Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:23:40.682Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:23:40.683Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:23:40.684Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:23:53.908Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:23:53.910Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:23:53.910Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:24:17.058Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:24:17.059Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:24:17.060Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:06.070Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:06.072Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:06.072Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:06.843Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:06.844Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:06.844Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:35.548Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:35.552Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:35.553Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:36.511Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:36.512Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:36.513Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:44.317Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:44.319Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:44.319Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:45.162Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:45.163Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:45.164Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:25:59.540Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:25:59.542Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:25:59.542Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:06.151Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:06.154Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:06.155Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:18.808Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:18.809Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:18.809Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:19.621Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:19.674Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:19.675Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:19.676Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:26.740Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:26.766Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:26.767Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:26.768Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:27.640Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:27.705Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:27.706Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:27.707Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:31.708Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:31.753Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:31.755Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:31.755Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:34.530Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:34.630Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:34.632Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:34.633Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:42.754Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:42.813Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:42.815Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:42.816Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:43.655Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:43.703Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:43.704Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:43.705Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:49.356Z] error: <glances> HTTP 404 getting data from glances API. Data: {"detail":"Not Found"}
+[2025-11-26T19:26:49.437Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:49.438Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:49.439Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:26:50.422Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:26:50.424Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:26:50.425Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:01.274Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:01.280Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:01.281Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:02.139Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:02.141Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:02.142Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:09.959Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:09.961Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:09.964Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:10.788Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:10.789Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:10.790Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:29.088Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:29.089Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:29.089Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:29.985Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:29.987Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:29.989Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:36.801Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:36.802Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:36.802Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:37.741Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:37.744Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:37.744Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:58.363Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:58.364Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:58.365Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:27:59.218Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:27:59.220Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:27:59.222Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:09.564Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:09.567Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:09.567Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:10.537Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:10.539Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:10.540Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:25.640Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:25.642Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:25.642Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:26.592Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:26.593Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:26.593Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:32.810Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:32.812Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:32.812Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:33.688Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:33.689Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:33.690Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:45.873Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:45.874Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:45.874Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:58.625Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:58.627Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:58.627Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:28:59.636Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:28:59.638Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:28:59.639Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:30:20.281Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:30:20.282Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:30:20.283Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:30:21.326Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:30:21.328Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:30:21.328Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:31:19.349Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:31:19.350Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:31:19.351Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:31:20.303Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:31:20.304Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:31:20.305Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:31:30.108Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:31:30.109Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:31:30.110Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:32:25.523Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:32:25.524Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:32:25.525Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:32:36.541Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:32:36.543Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:32:36.544Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:32:37.466Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:32:37.468Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:32:37.469Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:32:43.732Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:32:43.733Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:32:43.733Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:32:44.657Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:32:44.658Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:32:44.658Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:33:52.828Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:33:52.830Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:33:52.831Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:35:02.816Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:35:02.817Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:35:02.818Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:35:09.230Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:35:09.232Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:35:09.232Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:36:08.226Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:36:08.227Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:36:08.227Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:03.229Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:03.230Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:03.231Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:03.877Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:03.878Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:03.878Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:13.394Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:13.396Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:13.396Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:19.219Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:19.220Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:19.220Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:19.971Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:19.972Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:19.972Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:34.605Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:34.605Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:34.605Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:39.060Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:39.062Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:39.063Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:55.232Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:55.234Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:55.235Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:37:56.275Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:37:56.277Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:37:56.278Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:38:16.868Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:38:16.869Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:38:16.869Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:38:17.436Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:38:17.438Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:38:17.439Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:38:26.683Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:38:26.685Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:38:26.686Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:39:33.290Z] error: <httpProxy> Error calling http://{{homepage_var_second_host}}:61208/api/4/cpu...
+[2025-11-26T19:39:33.291Z] error: <httpProxy> [
+  500,
+  [Error: getaddrinfo ENOTFOUND {{homepage_var_second_host}}] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: '{{homepage_var_second_host}}'
+  }
+]
+[2025-11-26T19:39:33.291Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-26T19:39:40.350Z] error: <httpProxy> Error calling http://{{homepage_var_second_host}}:61208/api/4/cpu...
+[2025-11-26T19:39:40.351Z] error: <httpProxy> [
+  500,
+  [Error: getaddrinfo ENOTFOUND {{homepage_var_second_host}}] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: '{{homepage_var_second_host}}'
+  }
+]
+[2025-11-26T19:39:40.351Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-26T19:39:46.477Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:39:46.481Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:39:46.482Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:39:47.404Z] error: <httpProxy> Error calling http://{{homepage_var_second_host}}:61208/api/4/cpu...
+[2025-11-26T19:39:47.405Z] error: <httpProxy> [
+  500,
+  [Error: getaddrinfo ENOTFOUND {{homepage_var_second_host}}] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: '{{homepage_var_second_host}}'
+  }
+]
+[2025-11-26T19:39:47.405Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-26T19:39:47.565Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:39:47.566Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:39:47.567Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:40:30.469Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:40:30.471Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:40:30.471Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:40:30.955Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:40:30.957Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:40:30.958Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:40:41.873Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:40:41.874Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:40:41.875Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:40:42.374Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:40:42.376Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:40:42.378Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:43:05.531Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:43:05.532Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:43:05.533Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:43:17.102Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:43:17.104Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:43:17.104Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:44:06.953Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.955Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.956Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.973Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.974Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.976Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.977Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.977Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.992Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:44:06.998Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:44:06.998Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:44:07.045Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:44:07.045Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:44:07.687Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:44:07.687Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:44:11.752Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:44:11.752Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:44:12.362Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:44:12.362Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:44:44.161Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:44:44.165Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:44:44.166Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:02.451Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:02.454Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:02.455Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:03.327Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:03.329Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:03.329Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:19.006Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:19.007Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:19.007Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:19.843Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:19.844Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:19.846Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:56.252Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:56.254Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:56.254Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:57.106Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:57.107Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:57.108Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:45:59.833Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:45:59.835Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:45:59.835Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:46:00.330Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:46:00.333Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:46:00.334Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:46:21.546Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:46:21.547Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:46:21.547Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:46:47.539Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:46:47.540Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:46:47.540Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:47:28.924Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:47:28.929Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:47:28.930Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:48:27.853Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.964Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.965Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.966Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.983Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.984Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.985Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.986Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:27.986Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:28.003Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:28.006Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:48:28.006Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:48:28.107Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:48:28.108Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:48:28.704Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:48:28.704Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:48:32.888Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:34.627Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:48:34.627Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:48:37.910Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:42.928Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:47.950Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:52.973Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:48:57.993Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:49:00.732Z] error: Failed to load services.yaml, please check for errors
+[2025-11-26T19:49:00.732Z] error: TypeError: b[c].forEach is not a function
+[2025-11-26T19:49:03.016Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:49:08.042Z] error: <servicesProxy> TypeError: b[c].forEach is not a function
+    at /app/.next/server/chunks/5438.js:1:13852
+    at Array.map (<anonymous>)
+    at a (/app/.next/server/chunks/5438.js:1:13798)
+    at r (/app/.next/server/chunks/5438.js:1:14167)
+    at async v (/app/.next/server/chunks/5438.js:1:16255)
+    at async w (/app/.next/server/chunks/5438.js:1:16534)
+    at async l (/app/.next/server/pages/api/services/proxy.js:41:32953)
+    at async ts (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:100925)
+    at async to.render (/app/node_modules/.pnpm/next@15.5.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages-api.runtime.prod.js:1:101640)
+    at async Module.m (/app/.next/server/pages/api/services/proxy.js:82:11757)
+[2025-11-26T19:49:14.549Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:49:14.550Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:49:14.551Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:49:15.527Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:49:15.530Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:49:15.530Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:49:27.592Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:49:27.593Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:49:27.593Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:49:28.464Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:49:28.466Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:49:28.466Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:50:15.448Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:50:15.450Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:50:15.450Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:50:16.946Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:50:16.951Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:50:16.952Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:50:59.057Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:50:59.059Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:50:59.060Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:50:59.904Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:50:59.905Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:50:59.906Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:06.314Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:06.317Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:06.318Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:06.769Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:06.770Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:06.771Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:26.268Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:26.270Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:26.271Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:27.201Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:27.202Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:27.202Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:57.942Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:57.944Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:57.945Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:51:58.823Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:51:58.824Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:51:58.825Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:53:03.174Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:53:03.175Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:53:03.176Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:55:32.371Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:55:32.374Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:55:32.374Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:56:22.995Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:56:22.996Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:56:22.996Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:56:23.867Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:56:23.870Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:56:23.872Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:56:50.906Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:56:50.907Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:56:50.908Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:56:51.767Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:56:51.768Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:56:51.769Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:58:42.055Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:58:42.056Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:58:42.057Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:58:54.833Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:58:54.834Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:58:54.835Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:59:30.253Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:59:30.254Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:59:30.255Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:59:35.443Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:59:35.444Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:59:35.444Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T19:59:36.447Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T19:59:36.449Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T19:59:36.449Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T20:00:39.864Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T20:00:39.865Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T20:00:39.865Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T20:00:40.646Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T20:00:40.647Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T20:00:40.647Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-26T20:01:26.424Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-26T20:01:26.425Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-26T20:01:26.425Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }

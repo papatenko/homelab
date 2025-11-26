@@ -5,12 +5,16 @@
 - resources:
     cpu: true
     memory: true
-    disk: 
-      - /
-      - /mnt/hd1
+    label: RASPI # optional
+
+- glances:
+    url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:61208
+    username: glances # optional if auth enabled in Glances
+    version: 4 # required only if running glances v4 or higher, defaults to 3
+    label: HPENVY # optional
 
 - datetime:
     text_size: xl
     format:
-        timeStyle: short
-        hour12: true
+      timeStyle: short
+
