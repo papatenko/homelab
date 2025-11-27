@@ -13,6 +13,12 @@
     username: glances # optional if auth enabled in Glances
     version: 4 # required only if running glances v4 or higher, defaults to 3
     label: HPENVY # optional
+    
+- glances:
+    url: http://{{HOMEPAGE_VAR_THIRD_ADDRESS}}:61208
+    username: glances # optional if auth enabled in Glances
+    version: 4 # required only if running glances v4 or higher, defaults to 3
+    label: CYBERPC # optional
 
 - datetime:
     text_size: xl
