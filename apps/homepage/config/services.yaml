@@ -30,14 +30,8 @@
           username: "{{HOMEPAGE_VAR_WG_USERNAME}}"
           password: "{{HOMEPAGE_VAR_WG_PASSWORD}}"
           threshold: 2 # optional
-    - Open WebUI:
-        icon: open-webui
-        href: "{{HOMEPAGE_VAR_AI_URL}}"
 
-- Files:
-    - Nextcloud Admin:
-        icon: nextcloud
-        href: https://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:8080
+- Media:
     - Nextcloud:
         icon: nextcloud
         href: "{{HOMEPAGE_VAR_NC_URL}}"
@@ -54,18 +48,6 @@
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:2283
           key: "{{HOMEPAGE_VAR_IM_API_KEY}}"
           version: 2
-
-- Media:
-    - qBittorrent:
-        icon: qbittorrent
-        href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
-        widget:
-          type: qbittorrent
-          url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
-          username: "{{HOMEPAGE_VAR_QB_USERNAME}}"
-          password: "{{HOMEPAGE_VAR_QB_PASSWORD}}"
-          enableLeechProgress: true # optional, defaults to false
-          enableLeechSize: true # optional, defaults to false
     - Jellyfin:
         icon: jellyfin
         href: "{{HOMEPAGE_VAR_JF_URL}}"
@@ -79,7 +61,14 @@
           showEpisodeNumber: true # optional, defaults to false
           expandOneStreamToTwoRows: false # optional, defaults to true
 
-- Websites:
+- Miscellaneous:
+    - Nextcloud Admin:
+        icon: nextcloud
+        href: https://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:8080
     - Portfolio:
         icon: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000/favicon.ico
+        siteMonitor: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:4000
         href: "{{HOMEPAGE_VAR_PORT_URL}}"
+    - Open WebUI:
+        icon: open-webui
+        siteMonitor: http://{{HOMEPAGE_VAR_THIRD_ADDRESS}}:8080

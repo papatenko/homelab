@@ -2,9 +2,18 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings/
 
-providers:
-  openweathermap: openweathermapapikey
-  weatherapi: weatherapiapikey
+layout:
+  Utilities:
+    style: row
+    columns: 3
+  Media:
+    style: row
+    columns: 3
+  Miscellaneous:
+    style: row
+    columns: 3
+
+statusStyle: dot
 
 background:
   image: /images/background.png

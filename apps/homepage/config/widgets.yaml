@@ -2,13 +2,30 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
 
-- resources:
+- glances:
+    url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:61208
+    username: glances
+    version: 4
     cpu: true
     memory: true
-    disk: 
-      - /
-      - /mnt/hd1
-
+    label: RASPI
+    
+- glances:
+    url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:61208
+    username: glances
+    version: 4
+    cpu: true
+    memory: true
+    label: HPENVY
+    
+- glances:
+    url: http://{{HOMEPAGE_VAR_THIRD_ADDRESS}}:61208
+    username: glances
+    version: 4
+    cpu: true
+    memory: true
+    label: CYBERPC
+  
 - datetime:
     text_size: xl
     format:

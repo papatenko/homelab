@@ -16913,3 +16913,2364 @@
   }
 ]
 [2025-11-27T03:26:37.204Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-27T03:29:11.314Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-27T03:29:11.316Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-27T03:29:11.317Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-27T03:29:24.996Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-27T03:29:24.997Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-27T03:29:24.998Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:07:36.557Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:07:36.559Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:07:36.559Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:07:37.192Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:07:37.194Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:07:37.194Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:08:18.936Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:08:18.937Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:08:18.937Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:30:03.793Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:30:03.795Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:30:03.795Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:50:43.058Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:50:43.060Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:50:43.061Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:50:54.642Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:50:54.643Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:50:54.644Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:52:03.097Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:52:03.098Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:52:03.098Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T02:52:09.404Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T02:52:09.405Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T02:52:09.406Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T03:17:48.253Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T03:17:48.255Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T03:17:48.256Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:44:52.695Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:44:52.696Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:44:52.697Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:46:57.226Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:46:57.228Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:46:57.228Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:47:50.285Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:47:50.287Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:47:50.287Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:48:09.273Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:48:09.274Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:48:09.274Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:48:31.917Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:48:31.918Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:48:31.919Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:48:32.324Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:48:32.325Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:48:32.325Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:48:55.808Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:48:55.809Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:48:55.810Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:49:15.172Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:49:15.173Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:49:15.173Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:49:16.622Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:49:16.623Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:49:16.623Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:50:18.879Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:50:18.880Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:50:18.880Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:51:21.634Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:51:21.635Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:51:21.635Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:51:31.923Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:51:31.924Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:51:31.924Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:51:50.718Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:51:50.719Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:51:50.720Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:51:51.188Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:51:51.190Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:51:51.190Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:52:31.024Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:52:31.025Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:52:31.025Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:52:31.474Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:52:31.476Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:52:31.477Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:52:48.920Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:52:48.921Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:52:48.922Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:53:05.738Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:53:05.739Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:53:05.740Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:53:25.078Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:53:25.078Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:53:25.079Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:53:47.630Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:53:47.631Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:53:47.632Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:55:28.857Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:55:28.859Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:55:28.859Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:55:29.417Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:55:29.421Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:55:29.422Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:56:22.601Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:56:22.603Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:56:22.603Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:56:55.399Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:56:55.400Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:56:55.400Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:56:55.847Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:56:55.848Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:56:55.849Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:58:05.398Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:58:05.399Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:58:05.399Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:59:23.935Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:59:23.937Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:59:23.937Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:59:24.354Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:59:24.356Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:59:24.357Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T14:59:59.321Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T14:59:59.323Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T14:59:59.323Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:00:18.985Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:00:18.987Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:00:18.987Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:00:19.512Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:00:19.515Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:00:19.516Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:00:24.656Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:00:24.657Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:00:24.658Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:00:50.765Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:00:50.767Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:00:50.768Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:01:04.455Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:01:04.456Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:01:04.457Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:01:05.057Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:01:05.058Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:01:05.059Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:01:44.027Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:01:44.028Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:01:44.028Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:01:58.988Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:01:58.989Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:01:58.990Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:05.322Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:05.323Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:05.324Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:05.801Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:05.808Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:05.809Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:11.847Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:11.847Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:11.848Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:32.644Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:32.645Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:32.645Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:33.083Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:33.084Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:33.084Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:38.616Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:38.617Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:38.618Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:39.018Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:39.019Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:39.019Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:46.689Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:46.690Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:46.691Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:47.037Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:47.039Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:47.039Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:52.611Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:52.613Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:52.614Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:53.053Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:53.054Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:53.054Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:02:58.376Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:02:58.377Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:02:58.377Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:03:06.194Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:03:06.195Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:03:06.196Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:03:06.589Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:03:06.590Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:03:06.590Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:03:21.634Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:03:21.635Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:03:21.636Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:04:28.872Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:04:28.873Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:04:28.874Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:04:29.325Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:04:29.326Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:04:29.326Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:04:32.344Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:04:32.345Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:04:35.416Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:04:35.417Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:02.296Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:02.297Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:05.368Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:05.369Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:08.171Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:05:08.172Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:08.173Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:05:08.440Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:08.441Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:11.512Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:11.513Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:38.552Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:38.553Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:41.624Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:41.625Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:56.412Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:05:56.413Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:05:56.414Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:05:59.416Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:05:59.417Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:06:02.488Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:06:02.489Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:06:46.994Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:06:46.996Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:06:46.996Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:06:50.040Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:06:50.041Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:06:53.112Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:06:53.113Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:15.960Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:15.961Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:19.032Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:19.033Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:24.230Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:07:24.231Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:24.231Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:07:24.629Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:07:24.630Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:24.630Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:07:27.677Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:27.677Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:30.748Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:30.749Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:43.204Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:07:43.205Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:43.206Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:07:46.232Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:46.232Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:07:49.304Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:07:49.305Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:08:22.392Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:08:22.393Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:08:25.468Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:08:25.469Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:08:26.467Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:08:26.468Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:08:26.468Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:31.832Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:09:31.834Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:31.835Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:32.367Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:09:32.372Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:32.373Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:34.840Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:34.841Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:34.842Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:34.842Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:37.531Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:09:37.533Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:37.533Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:37.912Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:37.913Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:37.913Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:37.914Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:42.637Z] error: undefined
+[2025-11-28T15:09:42.699Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:09:42.699Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:42.700Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:43.100Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:09:43.101Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:43.101Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:09:45.752Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:45.753Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:45.754Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:45.754Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:48.824Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:48.825Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:09:48.825Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:09:48.826Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:50.949Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:10:50.950Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:50.950Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:10:51.700Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:10:51.701Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:51.701Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:10:53.976Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:10:53.977Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:53.979Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:10:53.979Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:57.048Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:10:57.049Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:10:57.049Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:10:57.050Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:01.485Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:11:01.487Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:01.488Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:11:04.472Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:04.473Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:07.544Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:07.545Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:13.399Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:11:13.401Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:13.401Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:11:16.408Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:16.409Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:22.552Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:22.553Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:45.580Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:11:45.582Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:45.582Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:11:48.568Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:48.568Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:11:51.640Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:11:51.641Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:25.624Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:25.625Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:28.700Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:28.701Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:39.709Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:12:39.711Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:39.712Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:12:40.195Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:12:40.196Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:40.197Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:12:42.680Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:42.681Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:42.683Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:42.683Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:45.752Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:45.753Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:45.754Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:45.755Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:50.040Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:12:50.045Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:50.046Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:12:53.020Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:53.021Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:53.911Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:12:53.913Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:53.913Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:12:56.088Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:56.089Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:56.090Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:56.091Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:12:59.160Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:12:59.161Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:00.001Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:13:00.002Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:00.002Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:13:01.035Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:13:01.037Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:01.039Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:13:02.232Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:02.233Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:02.234Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:02.234Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:05.304Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:05.305Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:05.306Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:05.307Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:06.195Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:13:06.196Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:06.196Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:13:26.840Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:26.841Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:29.912Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:29.913Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:32.984Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:32.985Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:13:36.056Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:13:36.057Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:03.064Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:03.065Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:06.136Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:06.137Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:20.042Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:14:20.048Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:20.049Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:14:23.032Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:23.033Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:26.104Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:26.105Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:34.436Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:14:34.439Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:34.440Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:14:37.400Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:37.401Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:14:40.472Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:14:40.473Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:15:04.792Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:15:07.352Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:15:07.353Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:15:10.425Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:15:10.426Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:15:18.037Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:15:20.920Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:15:20.921Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:15:23.992Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:15:23.993Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:16:11.694Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:16:14.520Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:16:14.521Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:16:16.852Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:16:17.592Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:16:17.592Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:16:41.870Z] error: <httpProxy> Error calling http://192.168.0.134:8080/api/v2/torrents/info...
+[2025-11-28T15:16:41.871Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.0.134:8080
+      at <unknown> (Error: connect ECONNREFUSED 192.168.0.134:8080) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.0.134',
+    port: 8080
+  }
+]
+[2025-11-28T15:16:41.871Z] error: <qbittorrentProxyHandler> HTTP 500 getting data from qBittorrent.  Data: { error: [Object] }
+[2025-11-28T15:16:44.376Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:16:44.377Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:16:47.448Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:16:47.449Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:17:10.939Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:17:13.880Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:17:13.881Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:17:16.952Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:17:16.953Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:17:21.839Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:18:23.506Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:18:26.360Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:18:26.361Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:18:32.504Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:18:32.505Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:18:34.473Z] error: <qbittorrentProxyHandler> Error logging in to qBittorrent: Data: Fails.
+[2025-11-28T15:20:38.136Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:38.137Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:38.138Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:38.138Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:41.208Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:41.209Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:41.209Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:41.210Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:48.888Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:48.889Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:48.891Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:48.891Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:51.960Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:51.961Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:20:51.962Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:20:51.963Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:15.512Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:15.513Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:18.584Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:18.585Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:46.616Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:46.617Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:46.618Z] error: <httpProxy> Error calling http://192.168.0.183:61208/api/4/cpu...
+[2025-11-28T15:21:46.618Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:61208
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:61208) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 61208
+  }
+]
+[2025-11-28T15:21:46.618Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-28T15:21:46.619Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:46.619Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:49.688Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:49.689Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:49.690Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:49.690Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:52.760Z] error: <httpProxy> Error calling http://192.168.0.183:61208/api/4/cpu...
+[2025-11-28T15:21:52.761Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:61208
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:61208) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 61208
+  }
+]
+[2025-11-28T15:21:52.761Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-28T15:21:56.792Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:56.793Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:56.794Z] error: <httpProxy> Error calling http://192.168.0.183:61208/api/4/cpu...
+[2025-11-28T15:21:56.794Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:61208
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:61208) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 61208
+  }
+]
+[2025-11-28T15:21:56.794Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-28T15:21:56.795Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:56.795Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:56.796Z] error: <httpProxy> Error calling http://192.168.0.183:61208/api/4/cpu...
+[2025-11-28T15:21:56.796Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:61208
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:61208) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 61208
+  }
+]
+[2025-11-28T15:21:56.796Z] error: <glances> HTTP 500 getting data from glances API. Data: [object Object]
+[2025-11-28T15:21:59.864Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:59.865Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
+[2025-11-28T15:21:59.866Z] error: <httpProxy> Error calling http://192.168.0.183:8080/...
+[2025-11-28T15:21:59.867Z] error: <httpProxy> [
+  500,
+  Error: connect EHOSTUNREACH 192.168.0.183:8080
+      at <unknown> (Error: connect EHOSTUNREACH 192.168.0.183:8080) {
+    errno: -113,
+    code: 'EHOSTUNREACH',
+    syscall: 'connect',
+    address: '192.168.0.183',
+    port: 8080
+  }
+]
