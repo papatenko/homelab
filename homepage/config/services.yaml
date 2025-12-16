@@ -48,6 +48,16 @@
           url: http://{{HOMEPAGE_VAR_SECOND_ADDRESS}}:2283
           key: "{{HOMEPAGE_VAR_IM_API_KEY}}"
           version: 2
+    - qBittorrent:
+        icon: qbittorrent
+        href: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
+        widget:
+          type: qbittorrent
+          url: http://{{HOMEPAGE_VAR_HOST_ADDRESS}}:8080
+          username: "{{HOMEPAGE_VAR_QB_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_QB_PASSWORD}}"
+          enableLeechProgress: true # optional, defaults to false
+          enableLeechSize: true # optional, defaults to false
     - Jellyfin:
         icon: jellyfin
         href: "{{HOMEPAGE_VAR_JF_URL}}"

@@ -1,23 +1,23 @@
 # Docker Apps Gitignore
 
 # Pi-hole
-apps/pihole/etc-pihole/
-apps/pihole/etc-dnsmasq.d/
+pihole/etc-pihole/
+pihole/etc-dnsmasq.d/
 
 # Nginx Proxy Manager
-apps/nginxproxymanager/data/
-apps/nginxproxymanager/letsencrypt/
+nginxproxymanager/data/
+nginxproxymanager/letsencrypt/
 
 # Jellyfin
-apps/jellyfin/config/
-apps/jellyfin/cache/
+jellyfin/config/
+jellyfin/cache/
 
 # Immich
-apps/immich/postgres
+immich/postgres
 
 # qBittorrent
-apps/qbittorrent/qbittorent/
-apps/qbittorrent/config/
+qbittorrent/qbittorent/
+qbittorrent/config/
 
 # General
 .env
