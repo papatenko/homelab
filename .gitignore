@@ -8,6 +8,9 @@ pihole/etc-dnsmasq.d/
 nginxproxymanager/data/
 nginxproxymanager/letsencrypt/
 
+# Homarr
+homarr/homarr
+
 # Jellyfin
 jellyfin/config/
 jellyfin/cache/
