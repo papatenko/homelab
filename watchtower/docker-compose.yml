@@ -1,10 +1,6 @@
-version: "3.8"
 services:
   watchtower:
-    image: containrrr/watchtower
+    image: nickfedor/watchtower:latest
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
-    environment:
-      - WATCHTOWER_INTERVAL=3600
-      - WATCHTOWER_CLEANUP=true
