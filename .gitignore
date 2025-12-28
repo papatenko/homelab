@@ -11,6 +11,9 @@ nginxproxymanager/letsencrypt/
 # Homarr
 homarr/homarr
 
+# UpSnap
+upsnap/data/
+
 # Jellyfin
 jellyfin/config/
 jellyfin/cache/
