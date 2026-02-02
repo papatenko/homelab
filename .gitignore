@@ -21,6 +21,9 @@ jellyfin/cache/
 # Immich
 immich/postgres
 
+# Immich
+backrest/backrest
+
 # qBittorrent
 qbittorrent/qbittorent/
 qbittorrent/config/
