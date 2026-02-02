@@ -1,0 +1,22 @@
+services:
+  backrest:
+    image: ghcr.io/garethgeorge/backrest:latest
+    container_name: backrest
+    hostname: backrest
+    volumes:
+      - ./backrest/data:/data
+      - ./backrest/config:/config
+      - ./backrest/cache:/cache
+      - ./backrest/tmp:/tmp
+      - ./backrest/rclone:/root/.config/rclone
+      - ${BACKUP_SOURCE_PATH}:/userdata
+      - ${REPOS_PATH}:/repos
+    environment:
+      - BACKREST_DATA=/data
+      - BACKREST_CONFIG=/config/config.json
+      - XDG_CACHE_HOME=/cache
+      - TMPDIR=/tmp
+      - TZ=${TIMEZONE}
+    ports:
+      - "${BACKREST_PORT}:9898"
+    restart: unless-stopped
