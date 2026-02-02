@@ -10,7 +10,7 @@ services:
       - ./backrest/tmp:/tmp
       - ./backrest/rclone:/root/.config/rclone
       - ${BACKUP_SOURCE_PATH}:/userdata
-      - ${REPOS_PATH}:/repos
+      # - ${REPOS_PATH}:/repos
     environment:
       - BACKREST_DATA=/data
       - BACKREST_CONFIG=/config/config.json
