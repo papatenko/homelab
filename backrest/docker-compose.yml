@@ -9,7 +9,8 @@ services:
       - ./backrest/cache:/cache
       - ./backrest/tmp:/tmp
       - ./backrest/rclone:/root/.config/rclone
-      - ${BACKUP_SOURCE_PATH}:/userdata
+      - ${BACKUP_SOURCE_PATH_NC}:/userdata/nextcloud
+      - ${BACKUP_SOURCE_PATH_IM}:/userdata/immich
       # - ${REPOS_PATH}:/repos
     environment:
       - BACKREST_DATA=/data
