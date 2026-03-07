@@ -10,5 +10,6 @@ services:
       # Add any other Stream port you want to expose
       # - '21:21' # FTP
     volumes:
+      - /var/log/docker-npm:/data/logs
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
