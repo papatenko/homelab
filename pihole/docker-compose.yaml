@@ -15,7 +15,7 @@ services:
       #- "123:123/udp"
     environment:
       TZ: 'America/Chicago'
-      FTLCONF_webserver_api_password: '8122022'
+      FTLCONF_webserver_api_password: ${API_PASSWORD}
       FTLCONF_dns_listeningMode: 'all'
     volumes:
       - './etc-pihole:/etc/pihole'
