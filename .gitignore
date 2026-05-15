@@ -28,6 +28,9 @@ backrest/backrest
 qbittorrent/qbittorent/
 qbittorrent/config/
 
+# SearXNG
+openwebui/searxng/core-config/
+
 # General
 .env
 *.log
