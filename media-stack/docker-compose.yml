@@ -1,0 +1,115 @@
+services:
+  # --- Download Client ---
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config/qbittorrent:/config
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+    networks:
+      - media
+
+  # --- Media Server ---
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    user: "${PUID}:${PGID}"
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - ./config/jellyfin:/config
+      - ./cache/jellyfin:/cache
+      - ${MEDIA_LIBRARY}:/media
+      - ${BACKUP_MEDIA}:/media2:ro
+      - ${CUSTOM_FONTS}:/usr/local/share/fonts/custom:ro
+    environment:
+      - JELLYFIN_PublishedServerUrl=${PUBLISHED_URL}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    networks:
+      - media
+
+  # --- TV Shows ---
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./config/sonarr:/config
+      - ${DOWNLOAD_PATH}:/downloads
+      - ${MEDIA_LIBRARY}:/media
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+    networks:
+      - media
+
+  # --- Movies ---
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./config/radarr:/config
+      - ${DOWNLOAD_PATH}:/downloads
+      - ${MEDIA_LIBRARY}:/media
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    networks:
+      - media
+
+  # --- Indexer Manager ---
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./config/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+    networks:
+      - media
+
+  # --- Subtitles ---
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./config/bazarr:/config
+      - ${MEDIA_LIBRARY}:/media
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+    networks:
+      - media
+
+networks:
+  media:
+    driver: bridge

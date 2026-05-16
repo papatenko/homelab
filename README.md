@@ -4,4 +4,8 @@
 
 ### .env
 
-Rename `template.env` to `.env` and change variables for your setup. Idk if keeping everything in a .env is the best idea for security but its better than nothing.
+Rename `example.env` to `.env` in any service directory and change variables for your setup.
+
+### Stacks
+
+- **media-stack/** — qBittorrent + Jellyfin + Sonarr + Radarr + Prowlarr + Bazarr on a shared network.

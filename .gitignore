@@ -31,6 +31,10 @@ qbittorrent/config/
 # SearXNG
 openwebui/searxng/core-config/
 
+# Media Stack
+media-stack/config/
+media-stack/cache/
+
 # General
 .env
 *.log
