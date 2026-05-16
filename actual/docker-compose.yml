@@ -18,7 +18,7 @@ services:
     volumes:
       # Change './actual-data' below to the path to the folder you want Actual to store its data in on your server.
       # '/data' is the path Actual will look for its files in by default, so leave that as-is.
-      - ./actual-data:/data
+      - ${ACTUAL_DATA_DIR}:/data
     healthcheck:
       # Enable health check for the instance
       test: ['CMD-SHELL', 'node scripts/health-check.js']
