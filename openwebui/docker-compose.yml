@@ -18,6 +18,7 @@ services:
       - TIKA_SERVER_URL=http://127.0.0.1:9998
       - CHROMA_HTTP_HOST=127.0.0.1
       - CHROMA_HTTP_PORT=8000
+      - HF_TOKEN=${HF_TOKEN}
     restart: always
     depends_on:
       searxng-core:
@@ -32,7 +33,6 @@ services:
     image: docker.io/searxng/searxng:latest
     network_mode: host
     restart: always
-    env_file: ./searxng/.env
     volumes:
       - ./searxng/core-config/:/etc/searxng/:Z
       - searxng-core-data:/var/cache/searxng/
@@ -60,7 +60,7 @@ services:
 
   tika:
     container_name: tika
-    image: ghcr.io/apache/tika:latest
+    image: apache/tika:latest
     network_mode: host
     restart: always
 
