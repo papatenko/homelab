@@ -30,6 +30,7 @@ qbittorrent/config/
 
 # SearXNG
 openwebui/searxng/core-config/
+openwebui/data/
 
 # Media Stack
 media-stack/config/
