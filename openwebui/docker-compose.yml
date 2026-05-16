@@ -15,19 +15,11 @@ services:
       - WEB_SEARCH_RESULT_COUNT=${WEB_SEARCH_RESULT_COUNT:-3}
       - WEB_SEARCH_CONCURRENT_REQUESTS=${WEB_SEARCH_CONCURRENT_REQUESTS:-10}
       - SEARXNG_QUERY_URL=http://127.0.0.1:${SEARXNG_PORT:-8080}/search?q=<query>
-      - TIKA_SERVER_URL=http://127.0.0.1:9998
-      - CHROMA_HTTP_HOST=127.0.0.1
-      - CHROMA_HTTP_PORT=8000
       - HF_TOKEN=${HF_TOKEN}
     restart: always
     depends_on:
       searxng-core:
         condition: service_started
-      tika:
-        condition: service_started
-      chromadb:
-        condition: service_started
-
   searxng-core:
     container_name: searxng-core
     image: docker.io/searxng/searxng:latest
@@ -48,7 +40,9 @@ services:
       options:
         max-size: "1m"
         max-file: "1"
-
+    depends_on:
+      searxng-valkey:
+        condition: service_started
   searxng-valkey:
     container_name: searxng-valkey
     image: docker.io/valkey/valkey:9-alpine
@@ -57,27 +51,7 @@ services:
     restart: always
     volumes:
       - searxng-valkey-data:/data/
-
-  tika:
-    container_name: tika
-    image: apache/tika:latest
-    network_mode: host
-    restart: always
-
-  chromadb:
-    container_name: chromadb
-    image: chromadb/chroma:latest
-    network_mode: host
-    restart: always
-    volumes:
-      - chromadb-data:/chroma/chroma
-    environment:
-      - IS_PERSISTENT=TRUE
-      - PERSIST_DIRECTORY=/chroma/chroma
-      - ANONYMIZED_TELEMETRY=${CHROMA_TELEMETRY:-FALSE}
-
 volumes:
   open-webui:
   searxng-core-data:
   searxng-valkey-data:
-  chromadb-data:
