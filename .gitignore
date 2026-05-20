@@ -36,8 +36,6 @@ openwebui/data/
 media-stack/config/
 media-stack/cache/
 
-# Dockge
-dockge/data/
 
 # General
 .env
