@@ -8,7 +8,7 @@ else
 	SERVICE_PATH = .
 endif
 
-api-correct:
+api-fix:
 	export DOCKER_API_VERSION=1.41
 
 up:
