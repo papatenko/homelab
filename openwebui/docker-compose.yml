@@ -1,4 +1,4 @@
-name: ai-stack
+name: openwebui
 
 services:
   open-webui:

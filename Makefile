@@ -8,6 +8,9 @@ else
 	SERVICE_PATH = .
 endif
 
+api-correct:
+	export DOCKER_API_VERSION=1.41
+
 up:
 	cd $(SERVICE_PATH) && docker compose up -d
 
