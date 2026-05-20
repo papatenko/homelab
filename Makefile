@@ -1,6 +1,6 @@
 .PHONY: up down logs status restart backup deploy all
 
-SERVICES = actual backrest immich media-stack nextcloud nginxproxymanager openwebui pihole portainer stirling upsnap vaultwarden watchtower wg-easy
+SERVICES = actual backrest dockge immich media-stack nextcloud nginxproxymanager openwebui pihole stirling upsnap vaultwarden watchtower wg-easy
 
 ifdef SERVICE
 	SERVICE_PATH = $(SERVICE)
