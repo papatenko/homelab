@@ -4,11 +4,11 @@ services:
     container_name: backrest
     hostname: backrest
     volumes:
-      - ./backrest/data:/data
-      - ./backrest/config:/config
-      - ./backrest/cache:/cache
-      - ./backrest/tmp:/tmp
-      - ./backrest/rclone:/root/.config/rclone
+      - ${BACKREST_DATA_DIR}/data:/data
+      - ${BACKREST_DATA_DIR}/config:/config
+      - ${BACKREST_DATA_DIR}/cache:/cache
+      - ${BACKREST_DATA_DIR}/tmp:/tmp
+      - ${BACKREST_DATA_DIR}/rclone:/root/.config/rclone
       - ${BACKUP_SOURCE_PATH}:/userdata
       # - ${REPOS_PATH}:/repos
     environment:
