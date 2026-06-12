@@ -3,7 +3,7 @@ services:
     image: stirlingtools/stirling-pdf:latest
     container_name: stirling-pdf
     ports:
-      - '8080:8080'
+      - '8082:8080'
     volumes:
       - ${STIRLING_DATA_DIR}/tessdata:/usr/share/tessdata  # OCR language files
       - ${STIRLING_DATA_DIR}/configs:/configs               # Settings & database
