@@ -40,3 +40,4 @@ media-stack/cache/
 # General
 .env
 *.log
+__pycache__/
