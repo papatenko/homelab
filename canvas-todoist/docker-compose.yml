@@ -1,0 +1,10 @@
+services:
+  canvas-todoist:
+    build: .
+    container_name: canvas-todoist
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ./data:/data
