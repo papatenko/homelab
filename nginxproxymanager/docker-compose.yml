@@ -12,3 +12,16 @@ services:
     volumes:
       - ${DATA_DIR:-/opt/stacks/nginxproxymanager}/data:/data
       - ${DATA_DIR:-/opt/stacks/nginxproxymanager}/letsencrypt:/etc/letsencrypt
+
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    restart: unless-stopped
+    environment:
+      COLLECTIONS: crowdsecurity/nginx-proxy-manager
+      TZ: ${TZ:-America/Chicago}
+    volumes:
+      - ./crowdsec/acquis.yaml:/etc/crowdsec/acquis.d/nginx-proxy-manager.yaml:ro
+      - ${DATA_DIR:-/opt/stacks/nginxproxymanager}/data/logs:/var/log/nginx-proxy-manager:ro
+      - ${DATA_DIR:-/opt/stacks/nginxproxymanager}/crowdsec/data:/var/lib/crowdsec/data
+    depends_on:
+      - app
