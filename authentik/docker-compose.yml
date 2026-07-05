@@ -1,0 +1,57 @@
+services:
+  postgresql:
+    image: docker.io/library/postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: authentik
+      POSTGRES_PASSWORD: ${PG_PASS:?database password required}
+      POSTGRES_USER: authentik
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -d authentik -U authentik
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - ${DATA_DIR:-./data}/postgresql:/var/lib/postgresql/data
+
+  server:
+    image: ghcr.io/goauthentik/server:latest
+    command: server
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+    ports:
+      - ${COMPOSE_PORT_HTTP:-9000}:9000
+    shm_size: 512mb
+    volumes:
+      - ${DATA_DIR:-./data}/media:/media
+      - ${DATA_DIR:-./data}/custom-templates:/templates
+
+  worker:
+    image: ghcr.io/goauthentik/server:latest
+    command: worker
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+    user: root
+    volumes:
+      - ${DATA_DIR:-./data}/media:/media
+      - ${DATA_DIR:-./data}/certs:/certs
+      - ${DATA_DIR:-./data}/custom-templates:/templates
