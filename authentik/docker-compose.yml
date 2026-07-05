@@ -19,6 +19,21 @@ services:
       # versioned data directories under that path.
       - ${DATA_DIR:-./data}/postgresql:/var/lib/postgresql
 
+  redis:
+    image: docker.io/library/redis:alpine
+    command: --save 60 1 --loglevel warning
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli ping | grep PONG
+      interval: 30s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - ${DATA_DIR:-./data}/redis:/data
+
   server:
     image: ghcr.io/goauthentik/server:latest
     command: server
@@ -26,8 +41,11 @@ services:
     depends_on:
       postgresql:
         condition: service_healthy
+      redis:
+        condition: service_healthy
     environment:
       AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_REDIS__HOST: redis
       AUTHENTIK_POSTGRESQL__NAME: authentik
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
       AUTHENTIK_POSTGRESQL__USER: authentik
@@ -46,8 +64,11 @@ services:
     depends_on:
       postgresql:
         condition: service_healthy
+      redis:
+        condition: service_healthy
     environment:
       AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_REDIS__HOST: redis
       AUTHENTIK_POSTGRESQL__NAME: authentik
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
       AUTHENTIK_POSTGRESQL__USER: authentik
