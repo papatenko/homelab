@@ -1,0 +1,7 @@
+# CrowdSec log acquisition for Nginx Proxy Manager.
+# Phase 1 is detection-only: this reads NPM logs and creates alerts/decisions,
+# but does not enforce blocks until a bouncer is added later.
+filenames:
+  - /var/log/nginx-proxy-manager/*.log
+labels:
+  type: nginx-proxy-manager
