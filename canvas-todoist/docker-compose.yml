@@ -7,4 +7,4 @@ services:
     environment:
       - TZ=${TZ}
     volumes:
-      - ./data:/data
+      - ${DATA_DIR:-/opt/stacks/canvas-todoist}/data:/data
