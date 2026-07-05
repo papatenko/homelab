@@ -18,7 +18,6 @@ services:
     restart: unless-stopped
     environment:
       COLLECTIONS: crowdsecurity/nginx-proxy-manager
-      TZ: ${TZ:-America/Chicago}
     volumes:
       - ./crowdsec/acquis.yaml:/etc/crowdsec/acquis.d/nginx-proxy-manager.yaml:ro
       - ${DATA_DIR:-/opt/stacks/nginxproxymanager}/data/logs:/var/log/nginx-proxy-manager:ro
