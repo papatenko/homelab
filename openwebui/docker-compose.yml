@@ -26,7 +26,7 @@ services:
     network_mode: host
     restart: always
     volumes:
-      - ./searxng/core-config/:/etc/searxng/:Z
+      - ${DATA_DIR:-/opt/stacks/openwebui}/searxng/core-config/:/etc/searxng/:Z
       - searxng-core-data:/var/cache/searxng/
     cap_drop:
       - ALL

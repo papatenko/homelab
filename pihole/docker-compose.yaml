@@ -14,11 +14,11 @@ services:
       # Uncomment the line below if you are using Pi-hole as your NTP server
       #- "123:123/udp"
     environment:
-      TZ: 'America/Chicago'
+      TZ: ${TZ:-America/Chicago}
       FTLCONF_webserver_api_password: ${API_PASSWORD}
       FTLCONF_dns_listeningMode: 'all'
     volumes:
-      - './etc-pihole:/etc/pihole'
+      - ${DATA_DIR:-/opt/stacks/pihole}/etc-pihole:/etc/pihole
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
