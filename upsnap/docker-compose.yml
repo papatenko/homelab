@@ -5,7 +5,7 @@ services:
     network_mode: host
     restart: unless-stopped
     volumes:
-      - ./data:/app/pb_data
+      - ${DATA_DIR:-/opt/stacks/upsnap}/data:/app/pb_data
     # # To use a non-root user, create the mountpoint first (mkdir data) so that it has the right permission.
     # user: 1000:1000
     # environment:
