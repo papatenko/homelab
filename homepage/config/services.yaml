@@ -60,7 +60,7 @@
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
     - Backrest:
-        icon: http://{{HOMEPAGE_VAR_NAS_IP}}:9898/favicon.ico
+        icon: http://{{HOMEPAGE_VAR_NAS_IP}}:9898/assets/favicon-KELWFrrG.png
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
     - Open WebUI:
@@ -68,7 +68,7 @@
         href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
         siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
     - UpSnap:
-        icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/favicon.ico
+        icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
 
@@ -78,7 +78,7 @@
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
     - Portfolio:
-        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321/favicon.ico
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321/art/pixel-pfp-transparent.png
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
     - Old Portfolio:
@@ -90,7 +90,7 @@
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
     - POS:
-        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000/favicon.ico
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000/assets/camion-DkDWC_3D.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
     - RPS:
