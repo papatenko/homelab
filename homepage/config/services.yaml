@@ -23,6 +23,10 @@
         icon: portainer
         href: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
         siteMonitor: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+    - Proxmox:
+        icon: proxmox
+        href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
+        siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
 
 - Storage and Media:
     - Nextcloud:
