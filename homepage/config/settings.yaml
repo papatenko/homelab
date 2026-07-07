@@ -5,7 +5,7 @@
 layout:
   Core Infrastructure:
     style: row
-    columns: 5
+    columns: 6
   Storage and Media:
     style: row
     columns: 5
