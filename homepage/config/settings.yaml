@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+layout:
+  Core Infrastructure:
+    style: row
+    columns: 5
+  Storage and Media:
+    style: row
+    columns: 5
+  Apps:
+    style: row
+    columns: 6
+  Coolify Apps:
+    style: row
+    columns: 6
+
+statusStyle: dot
+
+background:
+  image: /images/background.png
+  blur: md
