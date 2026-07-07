@@ -1,0 +1,8 @@
+---
+# Keep Homepage free of API keys/passwords. Runtime checks live on service cards
+# via siteMonitor entries in services.yaml.
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
