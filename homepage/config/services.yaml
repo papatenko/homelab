@@ -60,7 +60,7 @@
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
     - Backrest:
-        icon: mdi-backup-restore
+        icon: http://{{HOMEPAGE_VAR_NAS_IP}}:9898/favicon.ico
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
     - Open WebUI:
@@ -68,7 +68,7 @@
         href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
         siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
     - UpSnap:
-        icon: mdi-power
+        icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/favicon.ico
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
 
@@ -78,22 +78,22 @@
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
     - Portfolio:
-        icon: mdi-web
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
     - Old Portfolio:
-        icon: mdi-archive
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4000/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4000
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4000
     - Metro:
-        icon: mdi-train
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
     - POS:
-        icon: mdi-cash-register
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
     - RPS:
-        icon: mdi-gamepad-variant
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
