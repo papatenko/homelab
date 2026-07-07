@@ -18,6 +18,3 @@ layout:
 
 statusStyle: dot
 
-background:
-  image: /images/background.png
-  blur: md
