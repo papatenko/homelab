@@ -38,6 +38,10 @@ services:
                 icon: portainer
                 href: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
                 siteMonitor: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+            - Proxmox:
+                icon: proxmox
+                href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
+                siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
         
         - Storage and Media:
             - Nextcloud:
@@ -121,7 +125,7 @@ services:
         layout:
           Core Infrastructure:
             style: row
-            columns: 5
+            columns: 6
           Storage and Media:
             style: row
             columns: 5
@@ -178,6 +182,7 @@ services:
       HOMEPAGE_VAR_NAS_IP: ${HOMEPAGE_VAR_NAS_IP}
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
       HOMEPAGE_VAR_PORTAINER_IP: ${HOMEPAGE_VAR_PORTAINER_IP}
+      HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
       HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
       HOMEPAGE_VAR_OPENWEBUI_IP: ${HOMEPAGE_VAR_OPENWEBUI_IP}
     restart: unless-stopped
