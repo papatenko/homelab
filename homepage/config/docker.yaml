@@ -1,0 +1,3 @@
+---
+# Docker integrations are intentionally disabled so Homepage does not need
+# docker socket access or service credentials for this internal link directory.

@@ -1,0 +1,99 @@
+---
+# Internal LAN service directory. IPs are supplied by Portainer stack variables
+# as HOMEPAGE_VAR_* values; ports stay visible here for quick reference.
+
+- Core Infrastructure:
+    - Pi-hole:
+        icon: pi-hole
+        href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8443/admin/
+        siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:8443/admin/
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:81
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:81
+    - WireGuard:
+        icon: wireguard
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:51821
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:51821
+    - Authentik:
+        icon: authentik
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:9000
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9000
+    - Portainer:
+        icon: portainer
+        href: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+        siteMonitor: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+
+- Storage and Media:
+    - Nextcloud:
+        icon: nextcloud
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:11000
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:11000
+    - Nextcloud Admin:
+        icon: nextcloud
+        href: https://{{HOMEPAGE_VAR_NAS_IP}}:8080
+        siteMonitor: https://{{HOMEPAGE_VAR_NAS_IP}}:8080
+    - Immich:
+        icon: immich
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:2283
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:2283
+    - Jellyfin:
+        icon: jellyfin
+        href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
+        siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
+    - qBittorrent:
+        icon: qbittorrent
+        href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
+        siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
+
+- Apps:
+    - Vaultwarden:
+        icon: vaultwarden
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
+    - Actual Budget:
+        icon: actual-budget
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+    - Wallos:
+        icon: wallos
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
+    - Backrest:
+        icon: mdi-backup-restore
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
+    - Open WebUI:
+        icon: open-webui
+        href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
+        siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
+    - UpSnap:
+        icon: mdi-power
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
+
+- Coolify Apps:
+    - Coolify:
+        icon: coolify
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8000
+    - Portfolio:
+        icon: mdi-web
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4321
+    - Old Portfolio:
+        icon: mdi-archive
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4000
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4000
+    - Metro:
+        icon: mdi-train
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4001
+    - POS:
+        icon: mdi-cash-register
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3000
+    - RPS:
+        icon: mdi-gamepad-variant
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
