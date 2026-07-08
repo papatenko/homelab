@@ -31,6 +31,9 @@ DATA_DIR=/opt/stacks/nginxproxymanager
 
 # Upsnap stack
 DATA_DIR=/opt/stacks/upsnap
+
+# Termix stack
+DATA_DIR=/opt/stacks/termix
 ```
 
 Compose files should prefer this pattern:
