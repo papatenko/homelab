@@ -1,0 +1,13 @@
+services:
+  whisper:
+    image: ${WHISPER_IMAGE:-onerahmet/openai-whisper-asr-webservice:latest}
+    container_name: whisper-asr
+    restart: unless-stopped
+    environment:
+      ASR_ENGINE: openai_whisper
+      ASR_MODEL: ${ASR_MODEL:-small}
+      ASR_MODEL_PATH: /data/whisper
+    ports:
+      - "${COMPOSE_PORT_HTTP:-9000}:9000"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/whisper}/cache:/data/whisper

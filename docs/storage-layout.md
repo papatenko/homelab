@@ -34,6 +34,9 @@ DATA_DIR=/opt/stacks/upsnap
 
 # Termix stack
 DATA_DIR=/opt/stacks/termix
+
+# Whisper stack
+DATA_DIR=/opt/stacks/whisper
 ```
 
 Compose files should prefer this pattern:
