@@ -1,0 +1,39 @@
+services:
+  opendesign:
+    image: ${OPEN_DESIGN_IMAGE:-opendesign:latest}
+    build:
+      context: ${OPEN_DESIGN_BUILD_CONTEXT:-https://github.com/nexu-io/open-design.git#main}
+      dockerfile: deploy/Dockerfile
+    container_name: open-design
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=192}
+      OD_BIND_HOST: 0.0.0.0
+      OD_ALLOWED_ORIGINS: ${OPEN_DESIGN_ALLOWED_ORIGINS:-}
+      OD_PORT: 7456
+      OD_WEB_PORT: ${COMPOSE_PORT_HTTP:-7456}
+      OD_API_TOKEN: ${OD_API_TOKEN:-}
+      OD_DISABLE_API_AUTH: ${OPEN_DESIGN_DISABLE_API_AUTH:-}
+      OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-}
+    ports:
+      - "${OPEN_DESIGN_BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7456}:7456/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/opendesign}/data:/app/.od
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: ${OPEN_DESIGN_MEM_LIMIT:-384m}
+    pids_limit: 256
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:7456/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
