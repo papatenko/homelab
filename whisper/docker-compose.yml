@@ -1,0 +1,18 @@
+services:
+  whisper:
+    image: ${WHISPER_IMAGE:-hwdsl2/whisper-server:latest}
+    container_name: whisper
+    restart: unless-stopped
+    environment:
+      WHISPER_MODEL: ${WHISPER_MODEL:-small}
+      WHISPER_LANGUAGE: ${WHISPER_LANGUAGE:-auto}
+      WHISPER_DEVICE: ${WHISPER_DEVICE:-cpu}
+      WHISPER_COMPUTE_TYPE: ${WHISPER_COMPUTE_TYPE:-int8}
+      WHISPER_THREADS: ${WHISPER_THREADS:-2}
+      WHISPER_API_KEY: ${WHISPER_API_KEY:-}
+      WHISPER_LOG_LEVEL: ${WHISPER_LOG_LEVEL:-INFO}
+      WHISPER_DISABLE_USAGE_COUNTS: ${WHISPER_DISABLE_USAGE_COUNTS:-1}
+    ports:
+      - "${COMPOSE_PORT_HTTP:-9000}:9000/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/whisper}/data:/var/lib/whisper
