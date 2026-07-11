@@ -1,9 +1,6 @@
 services:
   opendesign:
-    image: ${OPEN_DESIGN_IMAGE:-opendesign:latest}
-    build:
-      context: ${OPEN_DESIGN_BUILD_CONTEXT:-https://github.com/nexu-io/open-design.git#main}
-      dockerfile: deploy/Dockerfile
+    image: ${OPEN_DESIGN_IMAGE:-ghcr.io/nexu-io/od:latest}
     container_name: open-design
     restart: unless-stopped
     environment:
