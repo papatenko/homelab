@@ -1,16 +1,20 @@
-# Whisper ASR
+# Whisper
 
-Self-hosted OpenAI Whisper speech-to-text API using the `small` model by default.
+Self-hosted, OpenAI-compatible Whisper speech-to-text API using the `small` model by default.
 
 ## What it runs
 
-- Image: `onerahmet/openai-whisper-asr-webservice`
-- Engine: `openai_whisper`
+- Image: `hwdsl2/whisper-server`
+- Runtime: `faster-whisper`
 - Model: `small`
 - Internal HTTP port: `9000`
-- Persistent cache: `${DATA_DIR:-/opt/stacks/whisper}/cache`
+- Persistent data/cache: `${DATA_DIR:-/opt/stacks/whisper}/data`
+- OpenAI-compatible endpoints:
+  - `POST /v1/audio/transcriptions`
+  - `POST /v1/audio/translations`
+  - `GET /v1/models`
 
-The model is downloaded into the cache volume on first startup, so the first boot can take longer.
+The model is downloaded into the data volume on first startup, so the first boot can take longer.
 
 ## Portainer variables
 
@@ -18,9 +22,16 @@ Copy `example.env` into Portainer stack environment variables and adjust as need
 
 ```env
 DATA_DIR=/opt/stacks/whisper
-ASR_MODEL=small
+WHISPER_IMAGE=hwdsl2/whisper-server:latest
+WHISPER_MODEL=small
+WHISPER_LANGUAGE=auto
+WHISPER_DEVICE=cpu
+WHISPER_COMPUTE_TYPE=int8
+WHISPER_THREADS=2
+WHISPER_LOG_LEVEL=INFO
+WHISPER_DISABLE_USAGE_COUNTS=1
+WHISPER_API_KEY=TOKEN_HERE
 COMPOSE_PORT_HTTP=9000
-WHISPER_IMAGE=onerahmet/openai-whisper-asr-webservice:latest
 ```
 
 ## Remote access
@@ -29,7 +40,7 @@ Publish only the HTTP port internally, then expose it through your reverse proxy
 
 1. Deploy this stack on the chosen Docker host.
 2. Point your reverse proxy upstream at `http://<docker-host>:${COMPOSE_PORT_HTTP}`.
-3. Add access control in front of the service if the endpoint is reachable from the public internet.
+3. Require a bearer token with `WHISPER_API_KEY` if the endpoint is reachable from the public internet.
 
 Do not expose this unauthenticated API directly to the public internet. Whisper transcription can be CPU-heavy and accepts file uploads.
 
@@ -38,13 +49,25 @@ Do not expose this unauthenticated API directly to the public internet. Whisper 
 After deployment:
 
 - API docs: `http://<host>:9000/docs`
-- Transcribe endpoint: `POST /asr`
+- OpenAI-compatible base URL: `http://<host>:9000/v1`
+- Transcribe endpoint: `POST /v1/audio/transcriptions`
 
 Example:
 
 ```bash
-curl -X POST 'http://<host>:9000/asr?task=transcribe&language=en&output=json' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'audio_file=@sample.wav'
+curl 'http://<host>:9000/v1/audio/transcriptions' \
+  -F 'file=@sample.wav' \
+  -F 'model=whisper-1' \
+  -F 'language=en' \
+  -F 'response_format=json'
+```
+
+If `WHISPER_API_KEY` is set, include it as a bearer token in the `Authorization` header.
+
+For OpenAI-compatible GUI clients, use:
+
+```text
+Base URL: https://<your-whisper-host>/v1
+API key: <WHISPER_API_KEY>
+Model: whisper-1
 ```
