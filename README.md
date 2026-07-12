@@ -6,6 +6,12 @@
 
 Rename `example.env` to `.env` in any service directory and change variables for your setup.
 
+### Agent-readable workflows
+
+- **docs/agent-service-onboarding.md** — workflow for adding new services at the repo root through upstream Compose discovery, PRs, Portainer Git stacks, optional NPM/Auth, and optional API keys.
+- **docs/repo-organization-plan.md** — long-term proposal for services, infrastructure, automation, templates, inventories, and runbooks; not part of normal service onboarding.
+- **docs/storage-layout.md** — persistent data conventions for Portainer Git stacks.
+
 ### Stacks
 
 - **media-stack/** — qBittorrent + Jellyfin + Sonarr + Radarr + Prowlarr + Bazarr on a shared network.
