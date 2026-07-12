@@ -5,13 +5,13 @@
 layout:
   Core Infrastructure:
     style: row
-    columns: 6
+    columns: 7
   Storage and Media:
     style: row
     columns: 5
   Apps:
     style: row
-    columns: 6
+    columns: 7
   Coolify Apps:
     style: row
     columns: 6
