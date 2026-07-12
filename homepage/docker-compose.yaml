@@ -42,6 +42,10 @@ services:
                 icon: proxmox
                 href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
                 siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
+            - Omada Controller:
+                icon: tp-link
+                href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
+                siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
         
         - Storage and Media:
             - Nextcloud:
@@ -74,6 +78,10 @@ services:
                 icon: actual-budget
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+            - Actual MCP:
+                icon: actual-budget
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:3000
+                description: MCP endpoint for Actual Budget
             - Wallos:
                 icon: wallos
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
@@ -125,13 +133,13 @@ services:
         layout:
           Core Infrastructure:
             style: row
-            columns: 6
+            columns: 7
           Storage and Media:
             style: row
             columns: 5
           Apps:
             style: row
-            columns: 6
+            columns: 7
           Coolify Apps:
             style: row
             columns: 6
