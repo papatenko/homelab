@@ -15,6 +15,7 @@ This runbook follows the repo's current layout: **service directories live at th
 - Persistent data must live outside Portainer's Git checkout. See [`storage-layout.md`](storage-layout.md).
 - Keep public Git generic: avoid LAN IPs, private domains, hostnames, and tokens unless explicitly approved.
 - Keep the PR scoped to adding the requested service. Do not reorganize existing directories or introduce new top-level categories unless Justin explicitly asks for a repo reorganization.
+- Do not commit host recommendations or Portainer deployment notes into service files. Keep those operational details in the PR body, PR comments, or chat so the repo stays reusable and not tied to a specific deployment target.
 
 ## Step 1 — Find the Upstream Docker Compose
 
@@ -41,9 +42,9 @@ Record:
 
 Do not blindly copy demo Compose. Fix persistence, secrets, restart policy, and image tags for this repo.
 
-## Step 2 — Recommend the Target Machine
+## Step 2 — Check Deployment Fit Outside the Committed Files
 
-Before deployment, recommend where the service should run.
+Before deployment, confirm operational fit in the PR body, a PR comment, or chat — not inside the committed service files.
 
 Consider:
 
@@ -55,17 +56,7 @@ Consider:
 - CPU/GPU requirements.
 - Proximity to Nginx Proxy Manager, Authentik, NAS storage, or existing dependencies.
 
-Use this format in PRs or comments:
-
-```text
-Recommended host: <host or role>
-Reason:
-- <reason 1>
-- <reason 2>
-Tradeoffs:
-- <main tradeoff>
-Needs confirmation before deployment: yes
-```
+Do not add a committed "recommended host" section to service READMEs or other repo files unless Justin explicitly asks for that service to document a permanent placement rule.
 
 ## Step 3 — Add the Service to the Repo Root
 
@@ -114,13 +105,11 @@ Each service README should include:
 
 - Purpose.
 - Upstream source links.
-- Recommended host and rationale.
-- Portainer stack name and compose path.
-- Required Portainer variables.
 - Persistent data paths.
-- Nginx Proxy Manager notes, if exposed.
-- Authentik/OIDC/forward-auth notes, if used.
-- API-key notes, if Hermes or integrations use the service.
+- Service ports and runtime variables from `example.env`.
+- Nginx Proxy Manager notes only when they are generic service requirements, not deployment-target details.
+- Authentik/OIDC/forward-auth notes only when they are generic service capabilities, not a concrete deployment plan.
+- API-key notes if Hermes or integrations use the service, without committing credentials.
 - Validation and rollback notes.
 
 ## Step 4 — Open a PR
@@ -142,20 +131,9 @@ PR body should include:
 - <docs URL>
 - <compose URL>
 
-## Host recommendation
-Recommended host: <host or role>
-Reason:
-- ...
-Tradeoffs:
-- ...
-
-## Portainer deployment notes
-- Stack name: <service>
-- Compose path: `<service>/docker-compose.yml`
-- Git updates: enabled
-- Required variables:
-  - `DATA_DIR`
-  - `...`
+## Deployment fit
+- Architecture/platform support checked outside committed service files.
+- Port conflicts and storage needs reviewed outside committed service files.
 
 ## Optional follow-ups
 - [ ] Nginx Proxy Manager hostname
@@ -163,7 +141,7 @@ Tradeoffs:
 - [ ] API key for Hermes
 
 ## Validation
-- [ ] `docker compose -f <service>/docker-compose.yml config`
+- [ ] `docker compose -f <service>/docker-compose.yml config` or YAML parse
 - [ ] `git diff --check`
 - [ ] Diff reviewed for secrets/topology
 ```
