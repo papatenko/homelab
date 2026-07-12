@@ -98,6 +98,10 @@ services:
                 icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
+            - MotionEye:
+                icon: motioneye
+                href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+                siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
         
         - Coolify Apps:
             - Coolify:
@@ -139,7 +143,7 @@ services:
             columns: 5
           Apps:
             style: row
-            columns: 7
+            columns: 8
           Coolify Apps:
             style: row
             columns: 6

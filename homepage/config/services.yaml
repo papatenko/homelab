@@ -83,6 +83,10 @@
         icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
+    - MotionEye:
+        icon: motioneye
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
 
 - Coolify Apps:
     - Coolify:

@@ -11,7 +11,7 @@ layout:
     columns: 5
   Apps:
     style: row
-    columns: 7
+    columns: 8
   Coolify Apps:
     style: row
     columns: 6
