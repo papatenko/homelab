@@ -1,31 +1,45 @@
 services:
   actual_server:
-    image: docker.io/actualbudget/actual-server:latest
+    image: ${ACTUAL_IMAGE:-docker.io/actualbudget/actual-server:latest}
+    container_name: actual-server
+    restart: unless-stopped
     ports:
-      # This line makes Actual available at port 5006 of the device you run the server on,
-      # i.e. http://localhost:5006. You can change the first number to change the port, if you want.
-      - '5006:5006'
-    # environment:
-      # Uncomment any of the lines below to set configuration options.
-      # - ACTUAL_HTTPS_KEY=/data/selfhost.key
-      # - ACTUAL_HTTPS_CERT=/data/selfhost.crt
-      # - ACTUAL_PORT=5006
-      # - ACTUAL_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB=20
-      # - ACTUAL_UPLOAD_SYNC_ENCRYPTED_FILE_SYNC_SIZE_LIMIT_MB=50
-      # - ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB=20
-      # See all options and more details at https://actualbudget.org/docs/config/
-      # !! If you are not using any of these options, remove the 'environment:' tag entirely.
+      - "${ACTUAL_PORT:-5006}:5006"
+    environment:
+      ACTUAL_PORT: 5006
     volumes:
-      # Change './actual-data' below to the path to the folder you want Actual to store its data in on your server.
-      # '/data' is the path Actual will look for its files in by default, so leave that as-is.
-      - ${ACTUAL_DATA_DIR}:/data
+      - ${ACTUAL_DATA_DIR:-/opt/stacks/actual/data}:/data
     healthcheck:
-      # Enable health check for the instance
-      test: ['CMD-SHELL', 'node scripts/health-check.js']
-      # health check using self signed certs
-      # test: ['CMD-SHELL', 'NODE_EXTRA_CA_CERTS=/data/selfhost.crt node scripts/health-check.js']
+      test: ["CMD-SHELL", "node scripts/health-check.js"]
       interval: 60s
       timeout: 10s
       retries: 3
       start_period: 20s
+
+  actual_mcp:
+    image: ${ACTUAL_MCP_IMAGE:-sstefanov/actual-mcp:latest}
+    container_name: actual-mcp
     restart: unless-stopped
+    depends_on:
+      actual_server:
+        condition: service_healthy
+    ports:
+      - "${ACTUAL_MCP_PORT:-3000}:3000"
+    environment:
+      ACTUAL_SERVER_URL: ${ACTUAL_MCP_ACTUAL_SERVER_URL:-http://actual_server:5006}
+      ACTUAL_PASSWORD: ${ACTUAL_MCP_ACTUAL_PASSWORD:-}
+      ACTUAL_BUDGET_SYNC_ID: ${ACTUAL_MCP_BUDGET_SYNC_ID:-}
+      ACTUAL_BUDGET_ENCRYPTION_PASSWORD: ${ACTUAL_MCP_BUDGET_ENCRYPTION_PASSWORD:-}
+      ACTUAL_DATA_DIR: /data
+      BEARER_TOKEN: ${ACTUAL_MCP_BEARER_TOKEN:-}
+    volumes:
+      - ${ACTUAL_MCP_DATA_DIR:-/opt/stacks/actual-mcp/data}:/data
+    command:
+      - --sse
+      - --enable-bearer
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('net').connect(3000, '127.0.0.1').on('connect', () => process.exit(0)).on('error', () => process.exit(1))\""]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
