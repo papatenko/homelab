@@ -1,8 +1,10 @@
 # Agent Workflow: Add a Homelab Service
 
-This workflow is written for humans and coding agents. Use it when adding a new service to this homelab repository and deploying it through Portainer.
+This workflow is written for humans and coding agents. Use it only when adding a new service to this homelab repository and deploying it through Portainer.
 
 The key idea: **discover upstream, codify in Git, deploy from Portainer, then optionally expose/auth/integrate.**
+
+This runbook follows the repo's current layout: **service directories live at the repository root**. Do not create a `services/` directory as part of normal service onboarding. The separate repo organization plan is long-term planning material, not an instruction to reorganize while adding a service.
 
 ## Safety Rules
 
@@ -12,6 +14,7 @@ The key idea: **discover upstream, codify in Git, deploy from Portainer, then op
 - Prefer Git-backed Portainer stacks with Git updates enabled.
 - Persistent data must live outside Portainer's Git checkout. See [`storage-layout.md`](storage-layout.md).
 - Keep public Git generic: avoid LAN IPs, private domains, hostnames, and tokens unless explicitly approved.
+- Keep the PR scoped to adding the requested service. Do not reorganize existing directories or introduce new top-level categories unless Justin explicitly asks for a repo reorganization.
 
 ## Step 1 — Find the Upstream Docker Compose
 
@@ -64,7 +67,7 @@ Tradeoffs:
 Needs confirmation before deployment: yes
 ```
 
-## Step 3 — Add the Service to Git
+## Step 3 — Add the Service to the Repo Root
 
 Current repo convention is one service directory at repo root, for example:
 
@@ -75,7 +78,7 @@ whisper/
   README.md
 ```
 
-When adding a new service, follow the current convention unless the repo is being reorganized.
+When adding a new service, follow this root-directory convention. Do not place the new service under `services/` for normal onboarding.
 
 Required files:
 
@@ -85,6 +88,8 @@ Required files:
   example.env             # placeholders only; no secrets
   README.md               # deployment and integration notes
 ```
+
+Do not move existing stacks while adding a service. If the service needs shared documentation or automation, add only the minimum files required for that service and document follow-up work in the PR.
 
 ### Compose Guidelines
 

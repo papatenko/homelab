@@ -1,6 +1,8 @@
 # Plan: Organize This Homelab Repository
 
-This is an agent-readable plan for evolving the repository structure without breaking live Portainer stacks.
+This is an agent-readable long-term plan for evolving the repository structure without breaking live Portainer stacks.
+
+**Status: long-term planning only.** Do not execute this plan while adding a normal service. The current service-onboarding workflow keeps service compose directories at the repository root. Only start this reorganization when Justin explicitly asks for repo restructuring.
 
 ## Goal
 
@@ -222,4 +224,4 @@ After moving any live service:
 
 ## Suggested Near-Term Decision
 
-Keep existing root-level service directories for now. Start applying the new workflow to future services and add templates/CI first. Once the conventions are stable, move existing services under `services/` one at a time.
+Keep existing root-level service directories for now. Use [`agent-service-onboarding.md`](agent-service-onboarding.md) for normal service additions. Treat this file as a future organization proposal, not an active migration plan. Once Justin explicitly approves a reorganization, move existing services under `services/` one at a time.
