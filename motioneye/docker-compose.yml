@@ -1,0 +1,19 @@
+services:
+  motioneye:
+    image: ${MOTIONEYE_IMAGE:-ghcr.io/motioneye-project/motioneye:edge}
+    container_name: motioneye
+    restart: unless-stopped
+    hostname: motioneye
+    ports:
+      - "${MOTIONEYE_HTTP_PORT:-8765}:8765"
+      - "${MOTIONEYE_STREAM_PORT:-8081}:8081"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DATA_DIR:-/opt/stacks/motioneye}/config:/etc/motioneye
+      - ${DATA_DIR:-/opt/stacks/motioneye}/videos:/var/lib/motioneye
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8765/ >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
