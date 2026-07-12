@@ -1,0 +1,40 @@
+services:
+  omada-controller:
+    image: ${OMADA_IMAGE:-mbentley/omada-controller:6.2}
+    container_name: omada-controller
+    restart: unless-stopped
+    network_mode: host
+    stop_grace_period: 60s
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192
+    environment:
+      PUID: ${OMADA_PUID:-508}
+      PGID: ${OMADA_PGID:-508}
+      MANAGE_HTTP_PORT: ${OMADA_MANAGE_HTTP_PORT:-8088}
+      MANAGE_HTTPS_PORT: ${OMADA_MANAGE_HTTPS_PORT:-8043}
+      PORTAL_HTTP_PORT: ${OMADA_PORTAL_HTTP_PORT:-8088}
+      PORTAL_HTTPS_PORT: ${OMADA_PORTAL_HTTPS_PORT:-8843}
+      UPGRADE_HTTPS_PORT: ${OMADA_UPGRADE_HTTPS_PORT:-8043}
+      PORT_APP_DISCOVERY: ${OMADA_PORT_APP_DISCOVERY:-27001}
+      PORT_DISCOVERY: ${OMADA_PORT_DISCOVERY:-29810}
+      PORT_MANAGER_V1: ${OMADA_PORT_MANAGER_V1:-29811}
+      PORT_ADOPT_V1: ${OMADA_PORT_ADOPT_V1:-29812}
+      PORT_UPGRADE_V1: ${OMADA_PORT_UPGRADE_V1:-29813}
+      PORT_MANAGER_V2: ${OMADA_PORT_MANAGER_V2:-29814}
+      PORT_TRANSFER_V2: ${OMADA_PORT_TRANSFER_V2:-29815}
+      PORT_RTTY: ${OMADA_PORT_RTTY:-29816}
+      PORT_DEVICE_MONITOR: ${OMADA_PORT_DEVICE_MONITOR:-29817}
+      WEB_CONFIG_OVERRIDE: ${OMADA_WEB_CONFIG_OVERRIDE:-false}
+      SHOW_SERVER_LOGS: ${OMADA_SHOW_SERVER_LOGS:-true}
+      SHOW_MONGODB_LOGS: ${OMADA_SHOW_MONGODB_LOGS:-false}
+      SSL_CERT_NAME: ${OMADA_SSL_CERT_NAME:-tls.crt}
+      SSL_KEY_NAME: ${OMADA_SSL_KEY_NAME:-tls.key}
+      TZ: ${TZ:-Etc/UTC}
+      JAVA_MAX_HEAP_SIZE: ${OMADA_JAVA_MAX_HEAP_SIZE:-512m}
+      JAVA_MIN_HEAP_SIZE: ${OMADA_JAVA_MIN_HEAP_SIZE:-128m}
+      MONGOD_EXTRA_ARGS: ${OMADA_MONGOD_EXTRA_ARGS:---wiredTigerCacheSizeGB 0.25}
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/omada-controller}/data:/opt/tplink/EAPController/data
+      - ${DATA_DIR:-/opt/stacks/omada-controller}/logs:/opt/tplink/EAPController/logs
