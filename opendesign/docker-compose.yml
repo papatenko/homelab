@@ -20,9 +20,11 @@ services:
     image: ${OPEN_DESIGN_IMAGE:-ghcr.io/nexu-io/od:latest}
     container_name: open-design
     restart: unless-stopped
+    # Portainer's stack validator rejects the long-form depends_on condition
+    # here. Start the init service first; if the app races it, restart policy
+    # lets it come up once init finishes the data-dir prep.
     depends_on:
-      opendesign-init:
-        condition: service_completed_successfully
+      - opendesign-init
     environment:
       NODE_ENV: production
       NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=192}
