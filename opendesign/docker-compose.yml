@@ -1,8 +1,28 @@
 services:
+  opendesign-init:
+    image: node:24-alpine
+    container_name: open-design-init
+    restart: "no"
+    environment:
+      OPEN_DESIGN_VELA_CLI_VERSION: ${OPEN_DESIGN_VELA_CLI_VERSION:-0.0.21}
+    # Open Design runs as the open-design user (uid/gid 1001) and needs to
+    # create /app/.od/projects inside the bind-mounted data directory. The
+    # Docker image does not bundle the AMR/Vela CLI, so install it into the
+    # persistent data dir and put that bin path on the daemon PATH.
+    command: >-
+      sh -c "set -eu; mkdir -p /data/projects /data/tooling; if [ ! -x /data/tooling/node_modules/.bin/vela ]; then npm install --omit=dev --prefix /data/tooling @powerformer/vela-cli@$${OPEN_DESIGN_VELA_CLI_VERSION}; fi; chown -R 1001:1001 /data"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/opendesign}/data:/data
+    security_opt:
+      - no-new-privileges:true
+
   opendesign:
     image: ${OPEN_DESIGN_IMAGE:-ghcr.io/nexu-io/od:latest}
     container_name: open-design
     restart: unless-stopped
+    depends_on:
+      opendesign-init:
+        condition: service_completed_successfully
     environment:
       NODE_ENV: production
       NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=192}
@@ -12,6 +32,8 @@ services:
       OD_WEB_PORT: ${COMPOSE_PORT_HTTP:-7456}
       OD_API_TOKEN: ${OD_API_TOKEN:-}
       OD_DISABLE_API_AUTH: ${OPEN_DESIGN_DISABLE_API_AUTH:-}
+      VELA_BIN: /app/.od/tooling/node_modules/.bin/vela
+      PATH: /app/.od/tooling/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-}
     ports:
       - "${OPEN_DESIGN_BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7456}:7456/tcp"
