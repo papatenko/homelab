@@ -65,8 +65,8 @@
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
     - Actual MCP:
         icon: actual-budget
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:3000
-        description: MCP endpoint for Actual Budget
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:3600/health
+        description: MCP endpoint for Actual Budget at /http
     - Wallos:
         icon: wallos
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282

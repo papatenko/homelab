@@ -17,28 +17,25 @@ services:
       start_period: 20s
 
   actual_mcp:
-    image: ${ACTUAL_MCP_IMAGE:-sstefanov/actual-mcp:latest}
+    image: ${ACTUAL_MCP_IMAGE:-ghcr.io/agigante80/actual-mcp-server:latest}
     container_name: actual-mcp
     restart: unless-stopped
     depends_on:
       actual_server:
         condition: service_healthy
     ports:
-      - "${ACTUAL_MCP_PORT:-3000}:3000"
+      - "${ACTUAL_MCP_PORT:-3600}:3600"
     environment:
       ACTUAL_SERVER_URL: ${ACTUAL_MCP_ACTUAL_SERVER_URL:-http://actual_server:5006}
       ACTUAL_PASSWORD: ${ACTUAL_MCP_ACTUAL_PASSWORD:-}
       ACTUAL_BUDGET_SYNC_ID: ${ACTUAL_MCP_BUDGET_SYNC_ID:-}
-      ACTUAL_BUDGET_ENCRYPTION_PASSWORD: ${ACTUAL_MCP_BUDGET_ENCRYPTION_PASSWORD:-}
-      ACTUAL_DATA_DIR: /data
-      BEARER_TOKEN: ${ACTUAL_MCP_BEARER_TOKEN:-}
+      ACTUAL_BUDGET_PASSWORD: ${ACTUAL_MCP_BUDGET_ENCRYPTION_PASSWORD:-}
+      MCP_SSE_AUTHORIZATION: ${ACTUAL_MCP_BEARER_TOKEN:-}
+      MCP_BRIDGE_DATA_DIR: /app/data
     volumes:
-      - ${ACTUAL_MCP_DATA_DIR:-/opt/stacks/actual-mcp/data}:/data
-    command:
-      - --sse
-      - --enable-bearer
+      - ${ACTUAL_MCP_DATA_DIR:-/opt/stacks/actual-mcp/data}:/app/data
     healthcheck:
-      test: ["CMD-SHELL", "node -e \"require('net').connect(3000, '127.0.0.1').on('connect', () => process.exit(0)).on('error', () => process.exit(1))\""]
+      test: ["CMD-SHELL", "node -e \"require('net').connect(3600, '127.0.0.1').on('connect', () => process.exit(0)).on('error', () => process.exit(1))\""]
       interval: 30s
       timeout: 10s
       retries: 5
