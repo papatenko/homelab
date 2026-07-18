@@ -23,3 +23,4 @@ Rename `example.env` to `.env` in any service directory and change variables for
 - **canvas-todoist/** — Hourly sync of UH Canvas assignments into Todoist via the Canvas calendar feed.
 - **authentik/** — Authentik identity provider for SSO.
 - **termix/** — Termix browser-based SSH and remote desktop management.
+- **n8n/** — n8n workflow automation stack.
