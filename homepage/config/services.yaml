@@ -87,6 +87,10 @@
         icon: motioneye
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+    - n8n:
+        icon: n8n
+        href: "{{HOMEPAGE_VAR_N8N_URL}}"
+        siteMonitor: "{{HOMEPAGE_VAR_N8N_HEALTH_URL}}"
 
 - Coolify Apps:
     - Coolify:
