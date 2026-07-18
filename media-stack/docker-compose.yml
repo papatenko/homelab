@@ -51,6 +51,11 @@ services:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin
     user: "${PUID}:${PGID}"
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "${VIDEO_GID:-44}"
+      - "${RENDER_GID:-104}"
     ports:
       - "8096:8096/tcp"
       - "7359:7359/udp"
