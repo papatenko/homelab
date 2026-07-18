@@ -47,12 +47,34 @@
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:2283
     - Jellyfin:
         icon: jellyfin
-        href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
-        siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+
+- Media Stack:
+    - Sonarr:
+        icon: sonarr
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:8989
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8989
+    - Radarr:
+        icon: radarr
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:7878
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7878
+    - Prowlarr:
+        icon: prowlarr
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:9696
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9696
+    - Bazarr:
+        icon: bazarr
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:6767
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:6767
+    - Jellyseerr:
+        icon: jellyseerr
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:5055
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5055
     - qBittorrent:
         icon: qbittorrent
-        href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
-        siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
+        href: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
+        siteMonitor: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
 
 - Apps:
     - Vaultwarden:

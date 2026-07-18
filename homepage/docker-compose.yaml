@@ -16,7 +16,7 @@ services:
         ---
         # Internal LAN service directory. IPs are supplied by Portainer stack variables
         # as HOMEPAGE_VAR_* values; ports stay visible here for quick reference.
-        
+
         - Core Infrastructure:
             - Pi-hole:
                 icon: pi-hole
@@ -46,7 +46,7 @@ services:
                 icon: tp-link
                 href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
                 siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
-        
+
         - Storage and Media:
             - Nextcloud:
                 icon: nextcloud
@@ -62,13 +62,35 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:2283
             - Jellyfin:
                 icon: jellyfin
-                href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
-                siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8096
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+
+        - Media Stack:
+            - Sonarr:
+                icon: sonarr
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:8989
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8989
+            - Radarr:
+                icon: radarr
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:7878
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7878
+            - Prowlarr:
+                icon: prowlarr
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:9696
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9696
+            - Bazarr:
+                icon: bazarr
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:6767
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:6767
+            - Jellyseerr:
+                icon: jellyseerr
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:5055
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5055
             - qBittorrent:
                 icon: qbittorrent
-                href: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
-                siteMonitor: http://{{HOMEPAGE_VAR_JELLYFIN_IP}}:8081
-        
+                href: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
+                siteMonitor: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
+
         - Apps:
             - Vaultwarden:
                 icon: vaultwarden
@@ -80,8 +102,8 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
             - Actual MCP:
                 icon: actual-budget
-                href: http://{{HOMEPAGE_VAR_NAS_IP}}:3000
-                description: MCP endpoint for Actual Budget
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:3600/health
+                description: MCP endpoint for Actual Budget at /http
             - Wallos:
                 icon: wallos
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
@@ -102,7 +124,7 @@ services:
                 icon: motioneye
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
-        
+
         - Coolify Apps:
             - Coolify:
                 icon: coolify
@@ -141,6 +163,9 @@ services:
           Storage and Media:
             style: row
             columns: 5
+          Media Stack:
+            style: row
+            columns: 6
           Apps:
             style: row
             columns: 8
