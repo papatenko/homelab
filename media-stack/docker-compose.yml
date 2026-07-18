@@ -44,6 +44,7 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/qbittorrent:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+      - ${DOWNLOAD_PATH}:/downloads
     restart: unless-stopped
 
   jellyfin:
@@ -73,6 +74,7 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/sonarr:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+      - ${DOWNLOAD_PATH}:/downloads
     ports:
       - "8989:8989"
     restart: unless-stopped
@@ -87,6 +89,7 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/radarr:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+      - ${DOWNLOAD_PATH}:/downloads
     ports:
       - "7878:7878"
     restart: unless-stopped
