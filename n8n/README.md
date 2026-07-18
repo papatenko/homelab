@@ -11,6 +11,8 @@ Self-hosted n8n workflow automation with PostgreSQL, deployed as a Portainer Git
 
 This stack intentionally does not include Traefik. Add reverse-proxy, TLS, and public-webhook settings only after a separate approval.
 
+`n8n-init` initializes the two n8n-owned bind mounts with the container's non-root UID, so a fresh Portainer deployment can write its configuration and workflow files without manual host-side ownership changes.
+
 ## Required Portainer variables
 
 Copy `example.env` into the Portainer stack environment and set at minimum:
