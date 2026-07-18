@@ -1,47 +1,63 @@
 services:
-  # --- Download Client ---
+  # WireGuard client namespace for qBittorrent. qBittorrent has no independent
+  # network and therefore cannot reach the internet when this tunnel is down.
+  gluetun:
+    image: qmcgaw/gluetun:latest
+    container_name: media-gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=${VPN_SERVICE_PROVIDER:-custom}
+      - VPN_TYPE=${VPN_TYPE:-wireguard}
+      - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY:?WIREGUARD_PRIVATE_KEY is required}
+      - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES:?WIREGUARD_ADDRESSES is required}
+      - WIREGUARD_PUBLIC_KEY=${WIREGUARD_PUBLIC_KEY:?WIREGUARD_PUBLIC_KEY is required}
+      - WIREGUARD_ENDPOINT_IP=${WIREGUARD_ENDPOINT_IP:?WIREGUARD_ENDPOINT_IP is required}
+      - WIREGUARD_ENDPOINT_PORT=${WIREGUARD_ENDPOINT_PORT:-51820}
+      - WIREGUARD_PERSISTENT_KEEPALIVE=${WIREGUARD_PERSISTENT_KEEPALIVE:-25}
+      - FIREWALL_INPUT_PORTS=8080,6881
+      - TZ=${TZ}
+    ports:
+      - "8081:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: unless-stopped
+
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
+    network_mode: service:gluetun
+    depends_on:
+      - gluetun
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
       - WEBUI_PORT=8080
     volumes:
-      - ${CONFIG_PATH:-./config}/qbittorrent:/config
-      - ${DOWNLOAD_PATH}:/downloads
-    ports:
-      - 8081:8080
-      - 6881:6881
-      - 6881:6881/udp
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/qbittorrent:/config
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
     restart: unless-stopped
-    networks:
-      - media
 
-  # --- Media Server ---
   jellyfin:
-    image: jellyfin/jellyfin
+    image: jellyfin/jellyfin:latest
     container_name: jellyfin
     user: "${PUID}:${PGID}"
     ports:
-      - 8096:8096/tcp
-      - 7359:7359/udp
+      - "8096:8096/tcp"
+      - "7359:7359/udp"
     volumes:
-      - ${CONFIG_PATH:-./config}/jellyfin:/config
-      - ${CACHE_PATH:-./cache}/jellyfin:/cache
-      - ${MEDIA_LIBRARY}:/media
-      - ${BACKUP_MEDIA}:/media2:ro
-      - ${CUSTOM_FONTS}:/usr/local/share/fonts/custom:ro
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin:/config
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin-cache:/cache
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+      - ${CUSTOM_FONTS:-/usr/share/fonts/truetype}:/usr/local/share/fonts/custom:ro
     environment:
       - JELLYFIN_PublishedServerUrl=${PUBLISHED_URL}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - TZ=${TZ}
     restart: unless-stopped
-    networks:
-      - media
 
-  # --- TV Shows ---
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
@@ -50,16 +66,12 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${CONFIG_PATH:-./config}/sonarr:/config
-      - ${DOWNLOAD_PATH}:/downloads
-      - ${MEDIA_LIBRARY}:/media
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/sonarr:/config
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
     ports:
-      - 8989:8989
+      - "8989:8989"
     restart: unless-stopped
-    networks:
-      - media
 
-  # --- Movies ---
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
@@ -68,16 +80,12 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${CONFIG_PATH:-./config}/radarr:/config
-      - ${DOWNLOAD_PATH}:/downloads
-      - ${MEDIA_LIBRARY}:/media
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/radarr:/config
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
     ports:
-      - 7878:7878
+      - "7878:7878"
     restart: unless-stopped
-    networks:
-      - media
 
-  # --- Indexer Manager ---
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
@@ -86,14 +94,11 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${CONFIG_PATH:-./config}/prowlarr:/config
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/prowlarr:/config
     ports:
-      - 9696:9696
+      - "9696:9696"
     restart: unless-stopped
-    networks:
-      - media
 
-  # --- Subtitles ---
   bazarr:
     image: lscr.io/linuxserver/bazarr:latest
     container_name: bazarr
@@ -102,14 +107,25 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${CONFIG_PATH:-./config}/bazarr:/config
-      - ${MEDIA_LIBRARY}:/media
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/bazarr:/config
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
     ports:
-      - 6767:6767
+      - "6767:6767"
     restart: unless-stopped
-    networks:
-      - media
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=info
+      - TZ=${TZ}
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyseerr:/app/config
+    ports:
+      - "5055:5055"
+    restart: unless-stopped
 
 networks:
-  media:
+  default:
+    name: media
     driver: bridge
