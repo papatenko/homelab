@@ -56,7 +56,7 @@ services:
       - "7359:7359/udp"
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin:/config
-      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin-cache:/cache
+      - ${JELLYFIN_TRANSCODE_CACHE:-${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin-cache}:/cache
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
       - ${CUSTOM_FONTS:-/usr/share/fonts/truetype}:/usr/local/share/fonts/custom:ro
     environment:
