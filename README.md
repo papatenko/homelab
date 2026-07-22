@@ -22,4 +22,5 @@ Rename `example.env` to `.env` in any service directory and change variables for
 - **wallos/** — Wallos personal subscription tracker.
 - **canvas-todoist/** — Hourly sync of UH Canvas assignments into Todoist via the Canvas calendar feed.
 - **authentik/** — Authentik identity provider for SSO.
+- **nextcloud-mcp/** — Nextcloud MCP server (110+ tools) over streamable-HTTP at `/mcp` for remote MCP clients (Claude, ChatGPT). Fronted by nginxproxymanager.
 - **termix/** — Termix browser-based SSH and remote desktop management.
