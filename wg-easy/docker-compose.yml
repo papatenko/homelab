@@ -1,5 +1,7 @@
 volumes:
   etc_wireguard:
+    external: true
+    name: wgeasy_etc_wireguard
 
 services:
   wg-easy:
@@ -39,5 +41,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: ${IPV4_ADDRESS}/24
+        - subnet: ${IPV4_SUBNET}
         - subnet: ${IPV6_ADDRESS}::/64
