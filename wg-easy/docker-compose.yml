@@ -38,10 +38,5 @@ services:
 
 networks:
   wg:
-    driver: bridge
-    enable_ipv6: true
-    ipam:
-      driver: default
-      config:
-        - subnet: ${IPV4_SUBNET:-10.42.42.0/24}
-        - subnet: ${IPV6_ADDRESS}::/64
+    external: true
+    name: ${WG_NETWORK_NAME:-wg-easy_wg}
