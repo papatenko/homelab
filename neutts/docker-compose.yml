@@ -11,16 +11,16 @@ services:
       NEUTTS_SPEAKER: ${NEUTTS_SPEAKER:-emily}
       NEUTTS_EMOTION: ${NEUTTS_EMOTION:-neutral}
       NEUTTS_MAX_TEXT_CHARS: ${NEUTTS_MAX_TEXT_CHARS:-2000}
-      OMP_NUM_THREADS: ${NEUTTS_CPU_THREADS:-2}
-      OPENBLAS_NUM_THREADS: ${NEUTTS_CPU_THREADS:-2}
+      OMP_NUM_THREADS: ${NEUTTS_CPU_THREADS:-4}
+      OPENBLAS_NUM_THREADS: ${NEUTTS_CPU_THREADS:-4}
 
     ports:
-      - "${COMPOSE_PORT_HTTP:-8055}:8055/tcp"
+      - "${COMPOSE_PORT_HTTP:-8055}:8000/tcp"
     volumes:
       - ${DATA_DIR:-/opt/stacks/neutts}/data:/data
     # The quota bounds total CPU time. Thread settings above bound the CPU
     # libraries that honor OpenMP/OpenBLAS limits.
-    cpus: ${NEUTTS_CPU_LIMIT:-2.0}
+    cpus: ${NEUTTS_CPU_LIMIT:-4.0}
     mem_limit: ${NEUTTS_MEMORY_LIMIT:-2g}
     pids_limit: ${NEUTTS_PIDS_LIMIT:-256}
     healthcheck:
@@ -28,7 +28,7 @@ services:
         - CMD
         - python
         - -c
-        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8055/healthz', timeout=5)"
+        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/healthz', timeout=5)"
       interval: 30s
       timeout: 10s
       retries: 3
