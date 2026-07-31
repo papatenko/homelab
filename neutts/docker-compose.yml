@@ -37,9 +37,9 @@ services:
   # Separate clone-capable service. It leaves the fixed-speaker NeuTTS-2E
   # endpoint untouched, including its current consumer configuration.
   neutts-air:
-    build:
-      context: .
-      dockerfile: air.Dockerfile
+    # Build configuration lives only in docker-compose.build.yml. Portainer
+    # deploys this Git stack against the NAS-local image and must not invoke
+    # Compose BuildKit for it.
     image: ${NEUTTS_AIR_IMAGE:-homelab/neutts-air-api:1.0.0-cpu}
     # The Air image is built natively on the NAS. Prevent Portainer's Git
     # redeploy from attempting a registry pull for this host-local tag.
