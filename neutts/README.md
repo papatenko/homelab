@@ -11,10 +11,9 @@ The services are deliberately separate. Enabling NeuTTS-Air does not change Herm
 
 ## Requirements
 
-- Linux `amd64` host with Docker Compose and Portainer BuildKit support.
-- Enough capacity for both services. The Air defaults are `4` CPUs and `6g` memory. Confirm NAS headroom before enabling it.
-- LAN or VPN-only access. Do not put either endpoint behind public DNS or a public reverse proxy without a separately reviewed authentication design.
-- Separate NeuTTS-Air administrator and synthesis credentials configured only in Portainer stack environment. Never commit them.
+- Linux `amd64` host with Docker Compose support.
+- Enough RAM for the configured `NEUTTS_MEMORY_LIMIT` and the host's other applications.
+- Docker BuildKit access on the NAS for the one-time native image build. Portainer then deploys the prebuilt image without invoking its remote BuildKit integration.
 
 ## Custom-voice consent boundary
 
@@ -103,7 +102,19 @@ The enrollment response contains an opaque `voice_...` identifier. Use it for sy
 
 Deleting a voice ID removes its derived reference codes and catalog metadata. Deletion cannot recover raw reference audio because it was never stored.
 
-## Deployment and verification
+This stack deliberately separates image construction from service deployment. Portainer CE's remote agent BuildKit path can be unavailable even when native Docker builds work correctly on the target host.
+
+1. On the NAS, build the tagged image from the checked-out repository:
+
+   ```bash
+   cd /home/justink/homelab/neutts
+   docker compose -f docker-compose.yml -f docker-compose.build.yml build neutts
+   ```
+
+2. In Portainer, create a Git-backed stack from `neutts/docker-compose.yml` only. Do **not** add `docker-compose.build.yml` to the stack.
+3. Supply the stack variables, especially a strong `NEUTTS_API_KEY`, then deploy. Keep the API LAN or VPN-only unless a separately approved reverse-proxy design is in place.
+
+Git updates can continue to manage Compose configuration. When an update changes `Dockerfile`, `app.py`, or Python dependencies, rebuild the tagged image on NAS before redeploying the stack.
 
 1. Commit and merge the GitOps change first.
 2. In Portainer, preserve the existing stack variables and add the non-secret `NEUTTS_AIR_*` limits only if different from defaults. Keep `NEUTTS_API_KEY` value in Portainer, never Git.
