@@ -1,8 +1,5 @@
 services:
   neutts:
-    build:
-      context: .
-      dockerfile: Dockerfile
     image: ${NEUTTS_IMAGE:-homelab/neutts-api:1.4.1-cpu}
     container_name: neutts
     restart: unless-stopped
