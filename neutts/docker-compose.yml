@@ -63,8 +63,10 @@ services:
       - "${COMPOSE_PORT_AIR_HTTP:-8056}:8056/tcp"
     volumes:
       - ${NEUTTS_AIR_DATA_DIR:-/opt/stacks/neutts-air}/data:/data
+    # phonemizer loads an isolated eSpeak shared-library copy from TMPDIR.
+    # Keep uploads memory-backed and private, but permit shared-library mapping.
     tmpfs:
-      - /tmp:size=${NEUTTS_AIR_TMPFS_SIZE:-12m},mode=0700
+      - /tmp:size=${NEUTTS_AIR_TMPFS_SIZE:-12m},mode=0700,exec
     cap_drop:
       - ALL
     security_opt:
