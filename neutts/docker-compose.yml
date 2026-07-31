@@ -1,7 +1,7 @@
 services:
   neutts:
     image: ${NEUTTS_IMAGE:-homelab/neutts-api:1.4.1-cpu}
-    container_name: neutts
+    container_name: ${NEUTTS_CONTAINER_NAME:-neutts}
     restart: unless-stopped
     environment:
       HF_HOME: /data/huggingface
@@ -44,7 +44,7 @@ services:
     # The Air image is built natively on the NAS. Prevent Portainer's Git
     # redeploy from attempting a registry pull for this host-local tag.
     pull_policy: never
-    container_name: neutts-air
+    container_name: ${NEUTTS_AIR_CONTAINER_NAME:-neutts-air}
     restart: unless-stopped
     environment:
       HF_HOME: /data/huggingface
