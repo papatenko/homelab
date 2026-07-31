@@ -1,0 +1,38 @@
+services:
+  neutts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${NEUTTS_IMAGE:-homelab/neutts-api:1.4.1}
+    container_name: neutts
+    restart: unless-stopped
+    environment:
+      HF_HOME: /data/huggingface
+      NEUTTS_API_KEY: ${NEUTTS_API_KEY:-}
+      NEUTTS_BACKBONE_REPO: ${NEUTTS_BACKBONE_REPO:-neuphonic/neutts-2e}
+      NEUTTS_CODEC_REPO: ${NEUTTS_CODEC_REPO:-neuphonic/neucodec}
+      NEUTTS_SPEAKER: ${NEUTTS_SPEAKER:-emily}
+      NEUTTS_EMOTION: ${NEUTTS_EMOTION:-neutral}
+      NEUTTS_MAX_TEXT_CHARS: ${NEUTTS_MAX_TEXT_CHARS:-2000}
+      NEUTTS_REQUIRE_GPU: ${NEUTTS_REQUIRE_GPU:-1}
+    ports:
+      - "${COMPOSE_PORT_HTTP:-8055}:8055/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/neutts}/data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8055/healthz', timeout=5)"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 180s
