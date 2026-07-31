@@ -1,4 +1,4 @@
-"""Small OpenAI-compatible HTTP wrapper around GPU-backed NeuTTS-2E."""
+"""Small OpenAI-compatible HTTP wrapper around CPU-first NeuTTS-2E."""
 
 from __future__ import annotations
 
@@ -11,7 +11,6 @@ from dataclasses import dataclass
 
 import numpy as np
 import soundfile as sf
-import torch
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
@@ -27,18 +26,17 @@ class Settings:
     default_speaker: str
     default_emotion: str
     max_text_chars: int
-    require_gpu: bool
+
 
     @classmethod
     def from_environment(cls) -> "Settings":
         return cls(
             api_key=os.environ.get("NEUTTS_API_KEY", ""),
-            backbone_repo=os.environ.get("NEUTTS_BACKBONE_REPO", "neuphonic/neutts-2e"),
-            codec_repo=os.environ.get("NEUTTS_CODEC_REPO", "neuphonic/neucodec"),
+            backbone_repo=os.environ.get("NEUTTS_BACKBONE_REPO", "neuphonic/neutts-2e-q4-gguf"),
+            codec_repo=os.environ.get("NEUTTS_CODEC_REPO", "neuphonic/neucodec-onnx-decoder-int8"),
             default_speaker=os.environ.get("NEUTTS_SPEAKER", "emily"),
             default_emotion=os.environ.get("NEUTTS_EMOTION", "neutral"),
             max_text_chars=int(os.environ.get("NEUTTS_MAX_TEXT_CHARS", "2000")),
-            require_gpu=os.environ.get("NEUTTS_REQUIRE_GPU", "1") == "1",
         )
 
 
@@ -95,15 +93,11 @@ def synthesize(text: str, speaker: str, emotion: str) -> bytes:
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     global model
-    has_gpu = torch.cuda.is_available()
-    if settings.require_gpu and not has_gpu:
-        raise RuntimeError("CUDA GPU is required but unavailable")
-    device = "cuda" if has_gpu else "cpu"
     model = NeuTTS2E(
         backbone_repo=settings.backbone_repo,
-        backbone_device=device,
+        backbone_device="cpu",
         codec_repo=settings.codec_repo,
-        codec_device=device,
+        codec_device="cpu",
     )
     model.warmup()
     yield
@@ -115,7 +109,13 @@ app = FastAPI(title="NeuTTS API", version="1.4.1", lifespan=lifespan)
 
 @app.get("/healthz")
 def healthz() -> dict[str, object]:
-    return {"status": "ok", "model_loaded": model is not None, "cuda": torch.cuda.is_available()}
+    return {
+        "status": "ok",
+        "model_loaded": model is not None,
+        "backbone": settings.backbone_repo,
+        "codec": settings.codec_repo,
+        "device": "cpu",
+    }
 
 
 @app.get("/v1/models")

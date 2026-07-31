@@ -3,29 +3,29 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ${NEUTTS_IMAGE:-homelab/neutts-api:1.4.1}
+    image: ${NEUTTS_IMAGE:-homelab/neutts-api:1.4.1-cpu}
     container_name: neutts
     restart: unless-stopped
     environment:
       HF_HOME: /data/huggingface
       NEUTTS_API_KEY: ${NEUTTS_API_KEY:-}
-      NEUTTS_BACKBONE_REPO: ${NEUTTS_BACKBONE_REPO:-neuphonic/neutts-2e}
-      NEUTTS_CODEC_REPO: ${NEUTTS_CODEC_REPO:-neuphonic/neucodec}
+      NEUTTS_BACKBONE_REPO: ${NEUTTS_BACKBONE_REPO:-neuphonic/neutts-2e-q4-gguf}
+      NEUTTS_CODEC_REPO: ${NEUTTS_CODEC_REPO:-neuphonic/neucodec-onnx-decoder-int8}
       NEUTTS_SPEAKER: ${NEUTTS_SPEAKER:-emily}
       NEUTTS_EMOTION: ${NEUTTS_EMOTION:-neutral}
       NEUTTS_MAX_TEXT_CHARS: ${NEUTTS_MAX_TEXT_CHARS:-2000}
-      NEUTTS_REQUIRE_GPU: ${NEUTTS_REQUIRE_GPU:-1}
+      OMP_NUM_THREADS: ${NEUTTS_CPU_THREADS:-2}
+      OPENBLAS_NUM_THREADS: ${NEUTTS_CPU_THREADS:-2}
+
     ports:
       - "${COMPOSE_PORT_HTTP:-8055}:8055/tcp"
     volumes:
       - ${DATA_DIR:-/opt/stacks/neutts}/data:/data
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    # The quota bounds total CPU time. Thread settings above bound the CPU
+    # libraries that honor OpenMP/OpenBLAS limits.
+    cpus: ${NEUTTS_CPU_LIMIT:-2.0}
+    mem_limit: ${NEUTTS_MEMORY_LIMIT:-2g}
+    pids_limit: ${NEUTTS_PIDS_LIMIT:-256}
     healthcheck:
       test:
         - CMD
