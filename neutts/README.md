@@ -111,7 +111,7 @@ This stack deliberately separates image construction from service deployment. Po
    docker compose -f docker-compose.yml -f docker-compose.build.yml build neutts
    ```
 
-2. In Portainer, create a Git-backed stack from `neutts/docker-compose.yml` only. Do **not** add `docker-compose.build.yml` to the stack.
+2. In Portainer, create a Git-backed stack from `neutts/docker-compose.yml` only. Do **not** add `docker-compose.build.yml` to the stack. The default `neutts` and `neutts-air` container names are used for the production stack. For a temporary side-by-side migration, override both `*_CONTAINER_NAME` values and both published ports, verify the replacement, then retire the old stack before restoring the defaults.
 3. Supply the stack variables, especially a strong `NEUTTS_API_KEY`, then deploy. Keep the API LAN or VPN-only unless a separately approved reverse-proxy design is in place.
 
 Git updates can continue to manage Compose configuration. When an update changes `Dockerfile`, `app.py`, or Python dependencies, rebuild the tagged image on NAS before redeploying the stack.
