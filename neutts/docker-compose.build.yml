@@ -1,0 +1,8 @@
+# Native image-build overlay. Do not select this file for Portainer Git stacks.
+# On the NAS, run:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml build neutts
+services:
+  neutts:
+    build:
+      context: .
+      dockerfile: Dockerfile

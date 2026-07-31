@@ -14,7 +14,7 @@ This stack uses the English **NeuTTS-2E Q4 GGUF** model with the INT8 ONNX codec
 
 - Linux `amd64` host with Docker Compose support.
 - Enough RAM for the configured `NEUTTS_MEMORY_LIMIT` and the host's other applications.
-- Docker BuildKit access from the Portainer Git stack, because this service image is built from `Dockerfile`.
+- Docker BuildKit access on the NAS for the one-time native image build. Portainer then deploys the prebuilt image without invoking its remote BuildKit integration.
 
 The default CPU path uses the Q4 GGUF backbone, OpenBLAS, and an INT8 ONNX decoder. It does not require NVIDIA tooling or an iGPU. The container's default two-CPU, 2 GB limit prevents speech jobs from consuming an entire host, at the cost of slower synthesis under load.
 
@@ -57,7 +57,19 @@ For protected deployments, send a bearer token that matches `NEUTTS_API_KEY`.
 
 ## Portainer deployment
 
-Create a Git-backed stack using `neutts/docker-compose.yml` after this PR is merged. Prefer a host with enough headroom to isolate this TTS service from existing speech-to-text work. Enable Git updates only after the stack variables have been supplied. Keep the API LAN or VPN-only unless a separately approved reverse-proxy and authentication design is in place.
+This stack deliberately separates image construction from service deployment. Portainer CE's remote agent BuildKit path can be unavailable even when native Docker builds work correctly on the target host.
+
+1. On the NAS, build the tagged image from the checked-out repository:
+
+   ```bash
+   cd /home/justink/homelab/neutts
+   docker compose -f docker-compose.yml -f docker-compose.build.yml build neutts
+   ```
+
+2. In Portainer, create a Git-backed stack from `neutts/docker-compose.yml` only. Do **not** add `docker-compose.build.yml` to the stack.
+3. Supply the stack variables, especially a strong `NEUTTS_API_KEY`, then deploy. Keep the API LAN or VPN-only unless a separately approved reverse-proxy design is in place.
+
+Git updates can continue to manage Compose configuration. When an update changes `Dockerfile`, `app.py`, or Python dependencies, rebuild the tagged image on NAS before redeploying the stack.
 
 ## Validation and rollback
 
