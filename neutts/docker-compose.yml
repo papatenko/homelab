@@ -41,6 +41,9 @@ services:
       context: .
       dockerfile: air.Dockerfile
     image: ${NEUTTS_AIR_IMAGE:-homelab/neutts-air-api:1.0.0-cpu}
+    # The Air image is built natively on the NAS. Prevent Portainer's Git
+    # redeploy from attempting a registry pull for this host-local tag.
+    pull_policy: never
     container_name: neutts-air
     restart: unless-stopped
     environment:
