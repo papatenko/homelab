@@ -33,3 +33,49 @@ services:
       timeout: 10s
       retries: 3
       start_period: 180s
+
+  # Separate clone-capable service. It leaves the fixed-speaker NeuTTS-2E
+  # endpoint untouched, including its current consumer configuration.
+  neutts-air:
+    build:
+      context: .
+      dockerfile: air.Dockerfile
+    image: ${NEUTTS_AIR_IMAGE:-homelab/neutts-air-api:1.0.0-cpu}
+    container_name: neutts-air
+    restart: unless-stopped
+    environment:
+      HF_HOME: /data/huggingface
+      NEUTTS_AIR_ADMIN_API_KEY: ${NEUTTS_AIR_ADMIN_API_KEY:-}
+      NEUTTS_AIR_SYNTHESIS_API_KEY: ${NEUTTS_AIR_SYNTHESIS_API_KEY:-}
+      NEUTTS_AIR_BACKBONE_REPO: ${NEUTTS_AIR_BACKBONE_REPO:-neuphonic/neutts-air}
+      NEUTTS_AIR_CODEC_REPO: ${NEUTTS_AIR_CODEC_REPO:-neuphonic/neucodec}
+      NEUTTS_AIR_VOICES_DIR: /data/voices
+      NEUTTS_AIR_MAX_TEXT_CHARS: ${NEUTTS_AIR_MAX_TEXT_CHARS:-2000}
+      NEUTTS_AIR_MAX_REFERENCE_BYTES: ${NEUTTS_AIR_MAX_REFERENCE_BYTES:-10485760}
+      NEUTTS_AIR_MIN_REFERENCE_SECONDS: ${NEUTTS_AIR_MIN_REFERENCE_SECONDS:-3}
+      NEUTTS_AIR_MAX_REFERENCE_SECONDS: ${NEUTTS_AIR_MAX_REFERENCE_SECONDS:-15}
+      OMP_NUM_THREADS: ${NEUTTS_AIR_CPU_THREADS:-4}
+      OPENBLAS_NUM_THREADS: ${NEUTTS_AIR_CPU_THREADS:-4}
+    ports:
+      - "${COMPOSE_PORT_AIR_HTTP:-8056}:8056/tcp"
+    volumes:
+      - ${NEUTTS_AIR_DATA_DIR:-/opt/stacks/neutts-air}/data:/data
+    tmpfs:
+      - /tmp:size=${NEUTTS_AIR_TMPFS_SIZE:-12m},mode=0700
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: ${NEUTTS_AIR_CPU_LIMIT:-4.0}
+    mem_limit: ${NEUTTS_AIR_MEMORY_LIMIT:-6g}
+    pids_limit: ${NEUTTS_AIR_PIDS_LIMIT:-512}
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8056/healthz', timeout=5)"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 600s

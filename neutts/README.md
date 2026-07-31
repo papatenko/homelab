@@ -1,14 +1,13 @@
 # NeuTTS API
 
-A CPU-first, on-device HTTP service for [NeuTTS](https://github.com/neuphonic/neutts). The stack keeps the model loaded after startup and exposes a narrow OpenAI-compatible speech route for trusted local integrations.
+A CPU-first, on-device HTTP service for [NeuTTS](https://github.com/neuphonic/neutts). The Git-backed stack keeps model processes warm and exposes narrow authenticated endpoints for trusted LAN or VPN integrations.
 
-This stack uses the English **NeuTTS-2E Q4 GGUF** model with the INT8 ONNX codec decoder. It offers four built-in speakers (`emily`, `paul`, `sophie`, `steven`) and seven emotions. It does not expose arbitrary voice cloning through the HTTP API.
+It contains two independent services:
 
-## Upstream
+- **NeuTTS-2E** on port `8055`: the existing fixed-speaker service, with `emily`, `paul`, `sophie`, and `steven` plus emotion controls.
+- **NeuTTS-Air** on port `8056`: reference-audio enrollment and synthesis for authorized custom voices.
 
-- [NeuTTS source and model documentation](https://github.com/neuphonic/neutts)
-- [NeuTTS-2E model](https://huggingface.co/neuphonic/neutts-2e)
-- [NeuCodec model](https://huggingface.co/neuphonic/neucodec)
+The services are deliberately separate. Enabling NeuTTS-Air does not change Hermes' existing Paul configuration or interrupt the fixed-speaker endpoint.
 
 ## Requirements
 
@@ -16,46 +15,92 @@ This stack uses the English **NeuTTS-2E Q4 GGUF** model with the INT8 ONNX codec
 - Enough RAM for the configured `NEUTTS_MEMORY_LIMIT` and the host's other applications.
 - Docker BuildKit access on the NAS for the one-time native image build. Portainer then deploys the prebuilt image without invoking its remote BuildKit integration.
 
-The default CPU path uses the Q4 GGUF backbone, OpenBLAS, and an INT8 ONNX decoder. It does not require NVIDIA tooling or an iGPU. The container's default two-CPU, 2 GB limit prevents speech jobs from consuming an entire host, at the cost of slower synthesis under load.
+## Custom-voice consent boundary
+
+Only enroll reference audio where the caller has the right and explicit permission to create the voice model. Enrollment requires an external consent-record ID, which must reference the operator's durable authorization record. The operator remains responsible for ensuring that record is accurate, accessible, and retained for the required period.
+
+Do not use copyrighted performer or character clips without rights and consent.
+
+The server accepts only clean speech reference material meeting these constraints:
+
+- WAV, mono, 16 to 44.1 kHz
+- 3 to 15 seconds long
+- At most 10 MiB by default
+- Accurate matching transcript supplied as `reference_text`
+
+Raw uploaded audio is staged only in a bounded container `tmpfs` while encoding and is deleted on normal completion. It is not written to the persistent service-data mount. The persistent catalog stores derived reference codes, the transcript, and the external consent-record ID. It does not retain raw reference audio. The Air catalog is isolated in its own mounted `/data/voices` directory.
 
 ## Configuration
 
-Copy `example.env` into Portainer stack variables. Do not commit a real `.env` file.
+Use `example.env` as the list of Portainer stack variables. Do not commit a real `.env` file.
 
-- `DATA_DIR`: persistent Hugging Face model cache, default `/opt/stacks/neutts`.
-- `COMPOSE_PORT_HTTP`: published HTTP port, default `8055`.
-- `NEUTTS_API_KEY`: optional bearer token for API requests. Leave unset only on a trusted LAN or VPN path.
-- `NEUTTS_CPU_LIMIT`, `NEUTTS_MEMORY_LIMIT`, `NEUTTS_PIDS_LIMIT`: Compose resource ceilings, defaulting to `2.0`, `2g`, and `256`.
-- `NEUTTS_CPU_THREADS`: OpenMP/OpenBLAS thread limit, default `2`. The Compose CPU quota remains the final limit on total CPU time.
-- `NEUTTS_SPEAKER`: default voice, one of `emily`, `paul`, `sophie`, or `steven`.
-- `NEUTTS_EMOTION`: default emotion, one of `angry`, `disgusted`, `fearful`, `happy`, `neutral`, `sad`, or `surprised`.
-- `NEUTTS_MAX_TEXT_CHARS`: input guardrail, default `2000`.
+### Fixed speakers
 
-The first launch downloads the model into `${DATA_DIR}/data/huggingface`. It will take longer than later restarts. Keep the stack separate from a CPU-based speech-to-text workload when either service must remain responsive during concurrent requests.
+- `DATA_DIR`: persistent fixed-speaker model cache, default `/opt/stacks/neutts`.
+- `COMPOSE_PORT_HTTP`: fixed-speaker host port, default `8055`.
+- `NEUTTS_API_KEY`: required bearer token for all protected endpoints.
+- `NEUTTS_SPEAKER`, `NEUTTS_EMOTION`, and `NEUTTS_MAX_TEXT_CHARS`: fixed-speaker behavior.
+- `NEUTTS_CPU_LIMIT`, `NEUTTS_CPU_THREADS`, `NEUTTS_MEMORY_LIMIT`, and `NEUTTS_PIDS_LIMIT`: fixed-speaker resource limits.
+
+### NeuTTS-Air custom voices
+
+- `NEUTTS_AIR_DATA_DIR`: dedicated persistent Air model cache and derived-voice catalog, default `/opt/stacks/neutts-air`.
+- `NEUTTS_AIR_ADMIN_API_KEY`: management credential for voice enrollment, inventory, and deletion. Keep it out of synthesis clients.
+- `NEUTTS_AIR_SYNTHESIS_API_KEY`: restricted credential for custom-voice synthesis only.
+- `NEUTTS_AIR_TMPFS_SIZE`: bounded transient upload workspace, default `12m`.
+- `COMPOSE_PORT_AIR_HTTP`: custom-voice host port, default `8056`.
+- `NEUTTS_AIR_BACKBONE_REPO`: defaults to `neuphonic/neutts-air`.
+- `NEUTTS_AIR_CODEC_REPO`: defaults to `neuphonic/neucodec`, which can encode new reference audio. Do not substitute the decoder-only ONNX codec for enrollment.
+- `NEUTTS_AIR_MAX_REFERENCE_BYTES`, `NEUTTS_AIR_MIN_REFERENCE_SECONDS`, and `NEUTTS_AIR_MAX_REFERENCE_SECONDS`: enrollment guardrails.
+- `NEUTTS_AIR_CPU_LIMIT`, `NEUTTS_AIR_CPU_THREADS`, `NEUTTS_AIR_MEMORY_LIMIT`, and `NEUTTS_AIR_PIDS_LIMIT`: Air resource limits.
+
+The first start downloads the Air model into `${DATA_DIR}/data/huggingface` and may take several minutes. The startup health-check grace period is ten minutes. Keep the current fixed-speaker service and its data path until Air passes an authenticated real synthesis test.
 
 ## API
 
-The service provides:
+`GET /healthz` is deliberately unauthenticated for Docker health checks. Air voice enrollment, inventory, and deletion require `NEUTTS_AIR_ADMIN_API_KEY`. Custom-voice synthesis requires `NEUTTS_AIR_SYNTHESIS_API_KEY`.
 
-- `GET /healthz`, no authentication, returns model, codec, and CPU readiness.
-- `GET /v1/models`, bearer authentication if `NEUTTS_API_KEY` is set.
-- `POST /v1/audio/speech`, bearer authentication if `NEUTTS_API_KEY` is set.
+### Fixed-speaker service, port 8055
 
-`POST /v1/audio/speech` accepts the OpenAI request shape below. This implementation currently returns PCM WAV only.
+- `GET /v1/models`
+- `POST /v1/audio/speech`
 
 ```json
 {
   "model": "neutts-2e",
   "input": "Hello from local speech synthesis.",
-  "voice": "emily",
+  "voice": "paul",
   "emotion": "happy",
   "response_format": "wav"
 }
 ```
 
-For protected deployments, send a bearer token that matches `NEUTTS_API_KEY`.
+### Custom-voice service, port 8056
 
-## Portainer deployment
+- `GET /v1/models`
+- `GET /v1/voices`
+- `POST /v1/voices`
+- `DELETE /v1/voices/{voice_id}`
+- `POST /v1/audio/speech`
+
+Enroll with `multipart/form-data` fields:
+
+- `reference_audio`: authorized WAV file
+- `reference_text`: exact transcript of the reference speech
+- `consent_record_id`: durable external record ID demonstrating the operator's authorization
+
+The enrollment response contains an opaque `voice_...` identifier. Use it for synthesis:
+
+```json
+{
+  "model": "neutts-air",
+  "input": "Hello from an approved custom voice.",
+  "voice": "voice_REPLACE_WITH_ENROLLMENT_ID",
+  "response_format": "wav"
+}
+```
+
+Deleting a voice ID removes its derived reference codes and catalog metadata. Deletion cannot recover raw reference audio because it was never stored.
 
 This stack deliberately separates image construction from service deployment. Portainer CE's remote agent BuildKit path can be unavailable even when native Docker builds work correctly on the target host.
 
@@ -71,8 +116,15 @@ This stack deliberately separates image construction from service deployment. Po
 
 Git updates can continue to manage Compose configuration. When an update changes `Dockerfile`, `app.py`, or Python dependencies, rebuild the tagged image on NAS before redeploying the stack.
 
-## Validation and rollback
+1. Commit and merge the GitOps change first.
+2. In Portainer, preserve the existing stack variables and add the non-secret `NEUTTS_AIR_*` limits only if different from defaults. Keep `NEUTTS_API_KEY` value in Portainer, never Git.
+3. Pull and redeploy the configured Git stack.
+4. Verify fixed-speaker `/healthz` on port `8055` remains healthy.
+5. Verify Air `/healthz` on port `8056` reports `model_loaded: true`.
+6. Verify unauthenticated `/v1/models` requests receive `401` on both ports.
+7. Enroll only a consented test voice, synthesize a short WAV from its returned ID, then delete that test ID.
+8. Confirm both containers remain healthy within their CPU, memory, and PID limits.
 
-Before deployment, validate the Compose file and review the diff for secrets. After deployment, confirm the container is healthy, `GET /healthz` reports the expected Q4 backbone and CPU device, and a short authenticated or trusted-network WAV request succeeds.
+## Rollback
 
-To roll back, stop and remove the stack. Keep `${DATA_DIR}` until a replacement has been tested, so model cache downloads are recoverable.
+Stop or remove only the `neutts-air` service if it fails verification. The existing `neutts` fixed-speaker service, its consumer configuration, and the shared model cache remain available. Preserve `${DATA_DIR}` until a tested replacement is running.
