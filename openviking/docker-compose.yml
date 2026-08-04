@@ -1,0 +1,38 @@
+services:
+  openviking:
+    image: ${OPENVIKING_IMAGE:-ghcr.io/volcengine/openviking@sha256:ab9ca907ea5ead297d2e05989c64438fd55b54ba1b0e0e4add080257561d3893}
+    container_name: openviking
+    restart: unless-stopped
+    ports:
+      # Set this to the NAS's LAN address in Portainer. Do not use 0.0.0.0.
+      - "${OPENVIKING_BIND_ADDRESS:?Set the NAS LAN address}:${OPENVIKING_SERVER_PORT:-1933}:${OPENVIKING_SERVER_PORT:-1933}"
+    environment:
+      OPENVIKING_SERVER_PORT: ${OPENVIKING_SERVER_PORT:-1933}
+      OPENVIKING_PUBLIC_BASE_URL: ""
+    volumes:
+      # Contains only OpenViking configuration, OAuth state, models, and derived indexes.
+      - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}:/app/.openviking
+      # The authoritative Nextcloud vault is deliberately read-only.
+      - "/mnt/nextcloud/Justin Kondratenko/files/Apps/Obsidian/wiki:/vault/wiki:ro"
+      - "/mnt/nextcloud/Justin Kondratenko/files/Apps/Obsidian/skills:/vault/skills:ro"
+    healthcheck:
+      test: ["CMD", "openviking-entrypoint", "--healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 45s
+
+  # Local-only embeddings keep vectorization separate from Codex OAuth, which
+  # OpenViking uses for its VLM. No port is published for this container.
+  embeddings:
+    image: ${OLLAMA_IMAGE:-ollama/ollama@sha256:98c19ced6600f2924e80b92d701cd867d8f7ef0c4dde516c619484e31e47f103}
+    container_name: openviking-embeddings
+    restart: unless-stopped
+    volumes:
+      - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}/ollama:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
