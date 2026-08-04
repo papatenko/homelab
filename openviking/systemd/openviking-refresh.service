@@ -1,0 +1,14 @@
+[Unit]
+Description=Refresh read-only Obsidian resources in OpenViking
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+EnvironmentFile=/mnt/misc/appdata/openviking/secrets/refresh.env
+ExecStart=/mnt/misc/appdata/openviking/bin/refresh-resources.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
