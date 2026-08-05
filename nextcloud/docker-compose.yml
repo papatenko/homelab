@@ -35,7 +35,11 @@ services:
       # WATCHTOWER_DOCKER_SOCKET_PATH: /var/run/docker.sock # Needs to be specified if the docker socket on the host is not located in the default '/var/run/docker.sock'. Otherwise mastercontainer updates will fail. For macos it needs to be '/var/run/docker.sock'
     # security_opt: ["label:disable"] # Is needed when using SELinux
 
+  # Opt-in safety gate. Keep this profile disabled until all OAuth URLs and
+  # secrets have been provisioned in Portainer's saved stack environment.
+  # This prevents a Git auto-update from deploying a crash-looping MCP service.
   nextcloud-mcp:
+    profiles: ["nextcloud-mcp"]
     image: ghcr.io/cbcoutinho/nextcloud-mcp-server:latest
     container_name: nextcloud-mcp
     restart: always
