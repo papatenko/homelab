@@ -28,6 +28,12 @@ services:
     image: ${OLLAMA_IMAGE:-ollama/ollama@sha256:98c19ced6600f2924e80b92d701cd867d8f7ef0c4dde516c619484e31e47f103}
     container_name: openviking-embeddings
     restart: unless-stopped
+    devices:
+      # AMD integrated GPU render node. Required for Ollama's Vulkan backend.
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    environment:
+      # Ollama otherwise intentionally ignores integrated GPUs.
+      OLLAMA_IGPU_ENABLE: "1"
     volumes:
       - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}/ollama:/root/.ollama
     healthcheck:
