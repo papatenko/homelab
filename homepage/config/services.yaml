@@ -11,7 +11,7 @@
         icon: nginx-proxy-manager
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:81
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:81
-    - WireGuard:
+    - WireGuard (wg-easy):
         icon: wireguard
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:51821
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:51821
@@ -113,6 +113,18 @@
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678/healthz
+    - Whisper:
+        icon: si-openai
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9000/docs
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9000/docs
+    - OpenViking:
+        icon: mdi-brain
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:1933
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:1933
+    - OmniRoute:
+        icon: si-openai
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
 
 - Coolify Apps:
     - Coolify:

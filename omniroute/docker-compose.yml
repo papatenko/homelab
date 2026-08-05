@@ -1,0 +1,16 @@
+services:
+  omniroute:
+    image: ${OMNIROUTE_IMAGE:-diegosouzapw/omniroute:3.8.49}
+    container_name: omniroute
+    restart: unless-stopped
+    stop_grace_period: 40s
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      API_KEY_SECRET: ${API_KEY_SECRET}
+      INITIAL_PASSWORD: ${INITIAL_PASSWORD:-CHANGEME}
+      STORAGE_ENCRYPTION_KEY: ${STORAGE_ENCRYPTION_KEY:-}
+      PORT: ${COMPOSE_PORT_HTTP:-20128}
+    ports:
+      - "${COMPOSE_PORT_HTTP:-20128}:20128/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/omniroute}/data:/app/data
