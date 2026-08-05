@@ -67,11 +67,9 @@ services:
       # Encrypted per-user token storage
       - TOKEN_STORAGE_DB=/app/data/tokens.db
       - TOKEN_ENCRYPTION_KEY=${TOKEN_ENCRYPTION_KEY}
-      # --- External IdP (e.g. Authentik): uncomment these for Authentik instead of
-      #     Nextcloud-as-IdP, and set the matching vars in .env. Leave them commented
-      #     to use Nextcloud's own built-in OIDC provider. ---
-      # - OIDC_DISCOVERY_URL=${OIDC_DISCOVERY_URL}
-      # - NEXTCLOUD_PUBLIC_URL=${NEXTCLOUD_PUBLIC_URL}
+      # --- External IdP (Authentik): set these in Portainer's saved stack env. ---
+      - OIDC_DISCOVERY_URL=${OIDC_DISCOVERY_URL}
+      - NEXTCLOUD_PUBLIC_URL=${NEXTCLOUD_PUBLIC_URL}
 
 #   # Optional: Caddy reverse proxy. See https://github.com/nextcloud/all-in-one/discussions/575
 #   # Alternatively, use Tailscale if you don't have a domain yet. See https://github.com/nextcloud/all-in-one/discussions/5439
