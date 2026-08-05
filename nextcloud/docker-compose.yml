@@ -35,6 +35,40 @@ services:
       # WATCHTOWER_DOCKER_SOCKET_PATH: /var/run/docker.sock # Needs to be specified if the docker socket on the host is not located in the default '/var/run/docker.sock'. Otherwise mastercontainer updates will fail. For macos it needs to be '/var/run/docker.sock'
     # security_opt: ["label:disable"] # Is needed when using SELinux
 
+  nextcloud-mcp:
+    image: ghcr.io/cbcoutinho/nextcloud-mcp-server:latest
+    container_name: nextcloud-mcp
+    restart: always
+    # Login Flow v2 (multi-user OAuth): each user authenticates via OAuth and the
+    # server provisions a per-user Nextcloud app password transparently, so people
+    # use their own Nextcloud accounts. See upstream docs/login-flow-v2.md.
+    # Serves streamable-http at /mcp on container port 8000; the host port is
+    # published so nginxproxymanager can front it with HTTPS.
+    command: ["--transport", "streamable-http", "--oauth", "--port", "8000"]
+    ports:
+      - ${NEXTCLOUD_MCP_PORT:-8009}:8000
+    volumes:
+      # Encrypted per-user app-password store (persist across restarts)
+      - ${DATA_DIR:-/opt/stacks/nextcloud}/mcp:/app/data
+    environment:
+      - MCP_DEPLOYMENT_MODE=login_flow
+      # Data leg: how the MCP server reaches Nextcloud
+      - NEXTCLOUD_HOST=${NEXTCLOUD_HOST}
+      # Public, browser-facing URLs for OAuth redirects and issuer validation
+      - NEXTCLOUD_MCP_SERVER_URL=${NEXTCLOUD_MCP_SERVER_URL}
+      - NEXTCLOUD_PUBLIC_ISSUER_URL=${NEXTCLOUD_PUBLIC_ISSUER_URL}
+      # OIDC client the MCP server uses with the IdP
+      - NEXTCLOUD_OIDC_CLIENT_ID=${NEXTCLOUD_OIDC_CLIENT_ID}
+      - NEXTCLOUD_OIDC_CLIENT_SECRET=${NEXTCLOUD_OIDC_CLIENT_SECRET}
+      # Encrypted per-user token storage
+      - TOKEN_STORAGE_DB=/app/data/tokens.db
+      - TOKEN_ENCRYPTION_KEY=${TOKEN_ENCRYPTION_KEY}
+      # --- External IdP (e.g. Authentik): uncomment these for Authentik instead of
+      #     Nextcloud-as-IdP, and set the matching vars in .env. Leave them commented
+      #     to use Nextcloud's own built-in OIDC provider. ---
+      # - OIDC_DISCOVERY_URL=${OIDC_DISCOVERY_URL}
+      # - NEXTCLOUD_PUBLIC_URL=${NEXTCLOUD_PUBLIC_URL}
+
 #   # Optional: Caddy reverse proxy. See https://github.com/nextcloud/all-in-one/discussions/575
 #   # Alternatively, use Tailscale if you don't have a domain yet. See https://github.com/nextcloud/all-in-one/discussions/5439
 #   # Hint: You need to uncomment APACHE_PORT: 11000 above, adjust cloud.example.com to your domain and uncomment the necessary docker volumes at the bottom of this file in order to make it work
