@@ -28,7 +28,7 @@ install -m 0644 systemd/openviking-refresh.timer /etc/systemd/system/
 
 Use a Git-backed Portainer stack from this repository, with Compose path `openviking/docker-compose.yml`, Git updates enabled, and the values from `example.env`.
 
-Set `OPENVIKING_BIND_ADDRESS` to the NAS LAN address in Portainer. Do not set it to `0.0.0.0`. The public hostname is `configured-public-hostname`, and Nginx Proxy Manager forwards it to the NAS address on port 1933.
+Set `OPENVIKING_BIND_ADDRESS` to the NAS LAN address in Portainer. Do not set it to `0.0.0.0`. Set `OPENVIKING_PUBLIC_BASE_URL` to the externally reachable HTTPS base URL, and configure the reverse proxy to forward that hostname to the NAS address on port 1933.
 
 The image's native health check serves `GET /health` on port 1933. The `embeddings` container has no published port and supplies local `nomic-embed-text` embeddings. This keeps VLM processing on Codex OAuth without requiring a separate embedding API credential.
 
@@ -107,19 +107,19 @@ The native endpoint exposes additional mutating tools to any USER key. In Antigr
 
 ## Claude Web and ChatGPT Web
 
-Use the public MCP endpoint:
+Use the public MCP endpoint formed from `OPENVIKING_PUBLIC_BASE_URL`:
 
 ```text
-https://configured-public-hostname/mcp
+${OPENVIKING_PUBLIC_BASE_URL}/mcp
 ```
 
 Both clients should use OAuth when adding the connector. OpenViking publishes the OAuth metadata required for dynamic client registration and then prompts for an OpenViking API key in its consent page. Do not paste the root server key into either client. Use a dedicated USER key and restrict the client to retrieval tools where the client supports tool allowlists.
 
-Before adding the connector, verify that the metadata advertises the new hostname rather than the former `configured-public-hostname` hostname:
+Before adding the connector, verify that the metadata advertises the configured public hostname:
 
 ```bash
-curl -fsS https://configured-public-hostname/.well-known/oauth-authorization-server
-curl -fsS https://configured-public-hostname/.well-known/oauth-protected-resource
+curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/.well-known/oauth-authorization-server"
+curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/.well-known/oauth-protected-resource"
 ```
 
 ## Validation
