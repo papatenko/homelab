@@ -50,6 +50,7 @@ services:
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
       AUTHENTIK_POSTGRESQL__USER: authentik
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+      AUTHENTIK_PUBLIC_URL: ${AUTHENTIK_PUBLIC_URL:-}
     ports:
       - ${COMPOSE_PORT_HTTP:-9000}:9000
     shm_size: 512mb
@@ -73,6 +74,7 @@ services:
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS:?database password required}
       AUTHENTIK_POSTGRESQL__USER: authentik
       AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?secret key required}
+      AUTHENTIK_PUBLIC_URL: ${AUTHENTIK_PUBLIC_URL:-}
     user: root
     volumes:
       - ${DATA_DIR:-./data}/media:/media
