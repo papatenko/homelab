@@ -70,6 +70,9 @@ services:
       # --- External IdP (Authentik): set these in Portainer's saved stack env. ---
       - OIDC_DISCOVERY_URL=${OIDC_DISCOVERY_URL}
       - NEXTCLOUD_PUBLIC_URL=${NEXTCLOUD_PUBLIC_URL}
+      # Static MCP client allowlist for Claude Web / Claude Desktop.
+      # Format: client_id|redirect_url (comma-separated for multiple clients)
+      - ALLOWED_MCP_CLIENTS=${ALLOWED_MCP_CLIENTS}
 
 #   # Optional: Caddy reverse proxy. See https://github.com/nextcloud/all-in-one/discussions/575
 #   # Alternatively, use Tailscale if you don't have a domain yet. See https://github.com/nextcloud/all-in-one/discussions/5439
