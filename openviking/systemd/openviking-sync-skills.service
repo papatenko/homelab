@@ -1,0 +1,14 @@
+[Unit]
+Description=Sync Obsidian SKILL.md files into OpenViking skills namespace
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+EnvironmentFile=/mnt/misc/appdata/openviking/secrets/refresh.env
+ExecStart=/mnt/misc/appdata/openviking/bin/sync-skills.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
