@@ -1,6 +1,6 @@
-# OpenViking private vault index
+# OpenViking vault index
 
-A dedicated, Git-managed Portainer stack for read-only, derived indexing of the authoritative Nextcloud Obsidian vault. It deliberately has no reverse proxy, public route, web client, or connection to the media stack.
+A dedicated, Git-managed Portainer stack for read-only, derived indexing of the authoritative Nextcloud Obsidian vault. The MCP endpoint is exposed through the `configured-public-hostname` reverse-proxy route with OpenViking's native API-key and OAuth protection.
 
 ## Scope
 
@@ -28,7 +28,7 @@ install -m 0644 systemd/openviking-refresh.timer /etc/systemd/system/
 
 Use a Git-backed Portainer stack from this repository, with Compose path `openviking/docker-compose.yml`, Git updates enabled, and the values from `example.env`.
 
-Set `OPENVIKING_BIND_ADDRESS` to the NAS LAN address in Portainer. Do not set it to `0.0.0.0`, do not publish it through Nginx Proxy Manager, and do not add a DNS or web-client connector.
+Set `OPENVIKING_BIND_ADDRESS` to the NAS LAN address in Portainer. Do not set it to `0.0.0.0`. The public hostname is `configured-public-hostname`, and Nginx Proxy Manager forwards it to the NAS address on port 1933.
 
 The image's native health check serves `GET /health` on port 1933. The `embeddings` container has no published port and supplies local `nomic-embed-text` embeddings. This keeps VLM processing on Codex OAuth without requiring a separate embedding API credential.
 
@@ -104,6 +104,23 @@ Install from the official OpenViking marketplace, then approve the hooks in a fr
 Use OpenViking's native `/mcp` endpoint as a private, manually invoked retrieval MCP server, configured with a dedicated USER key and the NAS LAN URL. Do not install the lifecycle plugin or set automatic-recall/capture variables for Antigravity in this phase.
 
 The native endpoint exposes additional mutating tools to any USER key. In Antigravity, explicitly allow only the retrieval/health tools (`find`, `search`, `read`, `ls`, `health`) and do not authorize `remember`, `add_resource`, `forget`, or watch-management tools. If Antigravity cannot enforce a tool allowlist, defer this connection rather than presenting the native endpoint as read-only.
+
+## Claude Web and ChatGPT Web
+
+Use the public MCP endpoint:
+
+```text
+https://configured-public-hostname/mcp
+```
+
+Both clients should use OAuth when adding the connector. OpenViking publishes the OAuth metadata required for dynamic client registration and then prompts for an OpenViking API key in its consent page. Do not paste the root server key into either client. Use a dedicated USER key and restrict the client to retrieval tools where the client supports tool allowlists.
+
+Before adding the connector, verify that the metadata advertises the new hostname rather than the former `configured-public-hostname` hostname:
+
+```bash
+curl -fsS https://configured-public-hostname/.well-known/oauth-authorization-server
+curl -fsS https://configured-public-hostname/.well-known/oauth-protected-resource
+```
 
 ## Validation
 
