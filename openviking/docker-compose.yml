@@ -9,6 +9,7 @@ services:
     environment:
       OPENVIKING_SERVER_PORT: ${OPENVIKING_SERVER_PORT:-1933}
       OPENVIKING_PUBLIC_BASE_URL: "https://configured-public-hostname"
+      OPENVIKING_VLM_MODEL: "${OPENVIKING_VLM_MODEL:-gpt-5.4-mini}"
     volumes:
       # Contains only OpenViking configuration, OAuth state, models, and derived indexes.
       - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}:/app/.openviking
