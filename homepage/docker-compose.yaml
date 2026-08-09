@@ -44,8 +44,8 @@ services:
                 siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
             - PBS:
                 icon: proxmox
-                href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8007
-                siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8007
+                href: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
+                siteMonitor: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
             - Omada Controller:
                 icon: tp-link
                 href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
@@ -244,6 +244,7 @@ services:
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
       HOMEPAGE_VAR_PORTAINER_IP: ${HOMEPAGE_VAR_PORTAINER_IP}
       HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
+      HOMEPAGE_VAR_PBS_IP: ${HOMEPAGE_VAR_PBS_IP}
       HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
       HOMEPAGE_VAR_OPENWEBUI_IP: ${HOMEPAGE_VAR_OPENWEBUI_IP}
     restart: unless-stopped
