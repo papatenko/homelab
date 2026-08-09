@@ -27,6 +27,10 @@
         icon: proxmox
         href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
         siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
+    - PBS:
+        icon: proxmox
+        href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8007
+        siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8007
     - Omada Controller:
         icon: tp-link
         href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
@@ -81,14 +85,6 @@
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
-    - Actual Budget:
-        icon: actual-budget
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
-        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
-    - Actual MCP:
-        icon: actual-budget
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:3600/health
-        description: MCP endpoint for Actual Budget at /http
     - Wallos:
         icon: wallos
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
@@ -97,10 +93,6 @@
         icon: http://{{HOMEPAGE_VAR_NAS_IP}}:9898/assets/favicon-KELWFrrG.png
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
-    - Open WebUI:
-        icon: open-webui
-        href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
-        siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
     - UpSnap:
         icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
@@ -109,6 +101,22 @@
         icon: motioneye
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+
+- Finance:
+    - Actual Budget:
+        icon: actual-budget
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+    - Actual MCP:
+        icon: actual-budget
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:3600/health
+        description: MCP endpoint for Actual Budget at /http
+
+- AI and Automation:
+    - Open WebUI:
+        icon: open-webui
+        href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
+        siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
     - n8n:
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678
