@@ -17,11 +17,18 @@ source "$secrets_env"
 server_url="${OPENVIKING_URL:?Set OPENVIKING_URL in the secrets environment}"
 vault_skills="${VAULT_SKILLS_DIR:?Set VAULT_SKILLS_DIR in the secrets environment}"
 api_key="${OPENVIKING_API_KEY:?Set OPENVIKING_API_KEY in the secrets environment}"
+state_file="${OPENVIKING_SKILLS_STATE_FILE:-/var/lib/openviking/skills-sync-state.json}"
 
 if [[ ! -d "$vault_skills" ]]; then
   printf 'ERROR: skills source directory not found: %s\n' "$vault_skills" >&2
   exit 1
 fi
+
+state_dir="$(dirname "$state_file")"
+mkdir -p "$state_dir"
+chmod 700 "$state_dir"
+touch "$state_file"
+chmod 600 "$state_file"
 
 payload_file="$(mktemp)"
 response_file="$(mktemp)"
@@ -44,12 +51,30 @@ while IFS= read -r -d '' skill_file; do
     continue
   fi
 
-  python3 - "$skill_file" "$name" > "$payload_file" <<'PY'
+  digest="$(sha256sum "$skill_file" | awk '{print $1}')"
+  if python3 - "$state_file" "$name" "$digest" <<'PY'
 import json
 import sys
 from pathlib import Path
 
-path, name = sys.argv[1:]
+state_path, name, digest = sys.argv[1:]
+try:
+    state = json.loads(Path(state_path).read_text() or "{}")
+except (OSError, json.JSONDecodeError):
+    state = {}
+raise SystemExit(0 if state.get(name) == digest else 1)
+PY
+  then
+    printf 'SKIP: %s (unchanged)\n' "$name"
+    continue
+  fi
+
+  python3 - "$skill_file" > "$payload_file" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+path = sys.argv[1]
 print(json.dumps({"data": Path(path).read_text()}))
 PY
 
@@ -77,6 +102,33 @@ PY
 
   if [[ "$status" == "200" || "$status" == "201" ]]; then
     printf 'OK: %s\n' "$name"
+    python3 - "$state_file" "$name" "$digest" <<'PY'
+import json
+import os
+import sys
+import tempfile
+from pathlib import Path
+
+state_path, name, digest = sys.argv[1:]
+path = Path(state_path)
+try:
+    state = json.loads(path.read_text() or "{}")
+except (OSError, json.JSONDecodeError):
+    state = {}
+state[name] = digest
+fd, temporary = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
+try:
+    with os.fdopen(fd, "w") as stream:
+        json.dump(state, stream, sort_keys=True)
+        stream.write("\n")
+    os.chmod(temporary, 0o600)
+    os.replace(temporary, path)
+finally:
+    try:
+        os.unlink(temporary)
+    except FileNotFoundError:
+        pass
+PY
     ok=$((ok + 1))
   else
     printf 'FAIL (%s): %s\n' "$status" "$name" >&2
