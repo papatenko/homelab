@@ -1,143 +1,108 @@
 # OpenViking vault index
 
-A dedicated, Git-managed Portainer stack for read-only, derived indexing of the authoritative Nextcloud Obsidian vault. The MCP endpoint is exposed through the `configured-public-hostname` reverse-proxy route with OpenViking's native API-key and OAuth protection.
+A dedicated, Git-managed Portainer stack for read-only, derived indexing of an authoritative Obsidian vault. Deployment-specific paths, addresses, and URLs are supplied through Portainer or a host-local environment file, not stored in this repository.
 
 ## Scope
 
-Only these read-only container paths are importable:
+Only these container paths are imported:
 
-- `/vault/wiki` → `viking://resources/obsidian/wiki`
-- `/vault/skills` → `viking://resources/obsidian/skills`
+- `/vault/wiki` to `viking://resources/obsidian/wiki`
+- `/vault/skills` to `viking://resources/obsidian/skills`
 
-The host mounts are fixed to the server-side Nextcloud directories in `docker-compose.yml`. They are not mounted anywhere writable. The refresh script also excludes `.raw/`, `inbox/`, `journal/`, and `templates/` if any appear below either approved source root.
-
-## Persistent state and backup policy
-
-`OPENVIKING_DATA_DIR` defaults to `/mnt/misc/appdata/openviking`. It contains configuration, Codex OAuth state, local embedding models, and derived OpenViking indexes only. During this pilot, exclude the entire directory from scheduled backups. The source vault remains authoritative and is never modified by OpenViking.
-
-Create restricted paths before deployment:
-
-```bash
-install -d -m 0700 /mnt/misc/appdata/openviking/{secrets,bin}
-install -m 0700 refresh-resources.sh /mnt/misc/appdata/openviking/bin/refresh-resources.sh
-install -m 0644 systemd/openviking-refresh.service /etc/systemd/system/
-install -m 0644 systemd/openviking-refresh.timer /etc/systemd/system/
-```
+The source mounts are read-only. OpenViking never writes to the source vault.
 
 ## Portainer deployment
 
-Use a Git-backed Portainer stack from this repository, with Compose path `openviking/docker-compose.yml`, Git updates enabled, and the values from `example.env`.
+Create or update a Git-backed stack using `openviking/docker-compose.yml`. Set every required value in `example.env`, including:
 
-Set `OPENVIKING_BIND_ADDRESS` to the NAS LAN address in Portainer. Do not set it to `0.0.0.0`. Set `OPENVIKING_PUBLIC_BASE_URL` to the externally reachable HTTPS base URL, and configure the reverse proxy to forward that hostname to the NAS address on port 1933.
+- `OPENVIKING_BIND_ADDRESS`, the private address where the service should listen
+- `OPENVIKING_PUBLIC_BASE_URL`, the externally reachable HTTPS base URL
+- `OPENVIKING_DATA_DIR`, the deployment host's persistent state directory
+- `OPENVIKING_WIKI_PATH` and `OPENVIKING_SKILLS_PATH`, the source directories
 
-The image's native health check serves `GET /health` on port 1933. The `embeddings` container has no published port and supplies local `nomic-embed-text` embeddings. This keeps VLM processing on Codex OAuth without requiring a separate embedding API credential.
+Do not use `0.0.0.0` for the bind address. Do not commit these values to Git. Keep the source mounts read-only and expose the service only through the intended private or authenticated route.
+
+The embeddings service has no published port. It supplies local `nomic-embed-text` embeddings and stores its state below `OPENVIKING_DATA_DIR`.
 
 ## First-time initialization
 
-After the stack is running, prepare the local embedding model:
+After the stack is running, prepare the embedding model and initialize OpenViking using the deployment's container names:
 
 ```bash
 docker exec openviking-embeddings ollama pull nomic-embed-text
-```
-
-Run the official interactive setup on the NAS:
-
-```bash
 docker exec -it openviking openviking-server init
 docker exec openviking openviking-server doctor
 ```
 
-Choose an Ollama embedding provider with model `nomic-embed-text`, endpoint `http://embeddings:11434`, and dimension `768`. Choose **OpenAI Codex** for the VLM and complete its OAuth login. The OAuth credential remains only under the restricted `OPENVIKING_DATA_DIR`; never add it to this repository or to the vault.
+Choose the embeddings service as the Ollama endpoint and choose the configured VLM provider. Keep OAuth state and API keys in the restricted state directory or a secret manager. Create a least-privilege user key for scheduled synchronization and client access. Never commit or paste a root key into a client configuration.
 
-Configure the server to require authentication before LAN exposure. Generate the root key on the NAS, store the server config and refresh credential only under the restricted state directory, then create a least-privilege user key for developer clients. Do not use development mode on a LAN address.
+## Resource refresh timer
 
-The refresh service requires this root-owned mode-0600 file, which is not versioned:
+The existing resource refresh timer imports the two approved container paths and uses stable resource URIs. Install its files using paths appropriate for the deployment host, then provide a root-owned mode-0600 environment file containing:
 
-```bash
-# /mnt/misc/appdata/openviking/secrets/refresh.env
-OPENVIKING_URL=http://127.0.0.1:1933
-OPENVIKING_API_KEY=<restricted OpenViking user key>
-OPENVIKING_ACCOUNT=justin
-OPENVIKING_USER=refresh
+```text
+OPENVIKING_URL=<local-or-private-service-url>
+OPENVIKING_API_KEY=<least-privilege-user-key>
+OPENVIKING_ACCOUNT=<account>
+OPENVIKING_USER=<user>
 ```
 
-Then enable the 15-minute NAS-side timer:
+The refresh script does not use a network address fallback. It requires `OPENVIKING_URL` and `OPENVIKING_API_KEY`.
+
+## Skills synchronization timer
+
+`sync-skills.sh` synchronizes every local `SKILL.md` below `VAULT_SKILLS_DIR`:
+
+1. It submits a named skill with `POST /api/v1/skills`.
+2. If the skill already exists, it updates it with `PUT /api/v1/skills/{name}`.
+3. It rejects invalid skill names before making a request.
+4. It uses temporary files created by `mktemp` and removes them on exit.
+5. It reports each failure and exits nonzero if any skill fails.
+
+Install the script and service using deployment-local paths. The checked-in service intentionally references generic locations:
+
+```bash
+install -d -m 0700 /etc/openviking /usr/local/libexec
+install -m 0700 sync-skills.sh /usr/local/libexec/openviking-sync-skills.sh
+install -m 0644 systemd/openviking-sync-skills.service /etc/systemd/system/
+install -m 0644 systemd/openviking-sync-skills.timer /etc/systemd/system/
+```
+
+Create `/etc/openviking/sync-skills.env` with values appropriate to the host:
+
+```text
+OPENVIKING_SECRETS_ENV=<path-to-root-owned-secrets-file>
+```
+
+The referenced secrets file must contain:
+
+```text
+OPENVIKING_URL=<local-or-private-service-url>
+OPENVIKING_API_KEY=<least-privilege-user-key>
+VAULT_SKILLS_DIR=<host-local-skills-directory>
+```
+
+Enable and test the hourly timer:
 
 ```bash
 systemctl daemon-reload
-systemctl enable --now openviking-refresh.timer
-systemctl start openviking-refresh.service
-systemctl status openviking-refresh.timer
+systemctl enable --now openviking-sync-skills.timer
+systemctl start openviking-sync-skills.service
+systemctl status openviking-sync-skills.timer
 ```
 
-The timer only executes `ov add-resource` against the two read-only mount paths and stable resource URIs. It does not use OpenViking's internal watcher and therefore cannot mutate the vault.
+## Client access
 
-## Claude Code and Codex lifecycle integration
-
-Install the official plugin separately on each developer machine that runs the client, not inside the NAS container. Configure that machine's `~/.openviking/ovcli.conf` with the NAS LAN URL and a dedicated USER key. The official installer is idempotent:
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/volcengine/OpenViking/main/examples/memory-plugin-shared/install.sh)
-```
-
-For manual installation, use `claude plugin marketplace add https://raw.githubusercontent.com/volcengine/OpenViking/main/.claude-plugin/marketplace.json` then `claude plugin install openviking-memory@openviking`; for Codex use `codex plugin marketplace add volcengine/OpenViking` then `codex plugin add openviking-memory@openviking`.
-
-Set these environment variables in the Claude Code and Codex launch environment:
-
-```bash
-OPENVIKING_AUTO_RECALL=true
-OPENVIKING_AUTO_CAPTURE=false
-OPENVIKING_MEMORY_ENABLED=true
-```
-
-For Codex, also ensure `~/.codex/config.toml` includes:
-
-```toml
-[features]
-plugin_hooks = true
-```
-
-Install from the official OpenViking marketplace, then approve the hooks in a fresh client session. `OPENVIKING_AUTO_CAPTURE=false` is mandatory for this pilot, so recall remains automatic while session content is never written to OpenViking.
-
-## Antigravity
-
-Use OpenViking's native `/mcp` endpoint as a private, manually invoked retrieval MCP server, configured with a dedicated USER key and the NAS LAN URL. Do not install the lifecycle plugin or set automatic-recall/capture variables for Antigravity in this phase.
-
-The native endpoint exposes additional mutating tools to any USER key. In Antigravity, explicitly allow only the retrieval/health tools (`find`, `search`, `read`, `ls`, `health`) and do not authorize `remember`, `add_resource`, `forget`, or watch-management tools. If Antigravity cannot enforce a tool allowlist, defer this connection rather than presenting the native endpoint as read-only.
-
-## Claude Web and ChatGPT Web
-
-Use the public MCP endpoint formed from `OPENVIKING_PUBLIC_BASE_URL`:
-
-```text
-${OPENVIKING_PUBLIC_BASE_URL}/mcp
-```
-
-Both clients should use OAuth when adding the connector. OpenViking publishes the OAuth metadata required for dynamic client registration and then prompts for an OpenViking API key in its consent page. Do not paste the root server key into either client. Use a dedicated USER key and restrict the client to retrieval tools where the client supports tool allowlists.
-
-Before adding the connector, verify that the metadata advertises the configured public hostname:
-
-```bash
-curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/.well-known/oauth-authorization-server"
-curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/.well-known/oauth-protected-resource"
-```
+Use `OPENVIKING_PUBLIC_BASE_URL` when configuring an authenticated MCP client. Use a dedicated user key and restrict the client to retrieval and health tools where the client supports tool allowlists. Do not authorize mutating or watch-management tools for a retrieval-only client.
 
 ## Validation
 
 ```bash
-# NAS health and non-public bind
-curl -fsS http://127.0.0.1:1933/health
-ss -ltnp | grep ':1933'
-docker inspect openviking --format '{{range .Mounts}}{{println .Source .Destination .RW}}{{end}}'
-
-# Verify derived state survives restart
-docker compose restart openviking
-docker ps --filter name=^/openviking$ --format '{{.Status}}'
-
-# Verify read-only mounts, then stable resource namespaces
-docker exec openviking sh -c 'test -r /vault/wiki && test -r /vault/skills && ! touch /vault/wiki/.openviking-write-test'
+curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/health"
+docker inspect openviking --format '{{range .Mounts}}{{println .Destination .RW}}{{end}}'
+docker exec openviking sh -c 'test -r /vault/wiki && test -r /vault/skills && ! touch /vault/wiki/.write-test'
 docker exec openviking ov find 'known wiki fact' --path viking://resources/obsidian/wiki
 docker exec openviking ov find 'known skill' --path viking://resources/obsidian/skills
 ```
 
-For the change test, edit one harmless note through the existing vault workflow, wait at least one timer interval, query the matching resource, and compare its source-file checksum before and after. Do not edit vault files from the OpenViking container.
+For a change test, edit a harmless note through the normal vault workflow, wait for the relevant timer, query the corresponding resource, and verify that the source file remains unchanged by the container.

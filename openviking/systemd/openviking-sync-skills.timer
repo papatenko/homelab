@@ -1,0 +1,11 @@
+[Unit]
+Description=Run OpenViking skills sync every hour
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=1h
+Persistent=true
+Unit=openviking-sync-skills.service
+
+[Install]
+WantedBy=timers.target

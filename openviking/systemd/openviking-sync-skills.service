@@ -1,0 +1,14 @@
+[Unit]
+Description=Synchronize local SKILL.md files into OpenViking
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+EnvironmentFile=/etc/openviking/sync-skills.env
+ExecStart=/usr/local/libexec/openviking-sync-skills.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
