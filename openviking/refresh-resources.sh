@@ -26,4 +26,5 @@ refresh() {
 }
 
 refresh /vault/wiki viking://resources/obsidian/wiki
+refresh /vault/mocs viking://resources/obsidian/mocs
 refresh /vault/skills viking://resources/obsidian/skills

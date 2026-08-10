@@ -19,6 +19,7 @@ services:
       - "${OPENVIKING_DATA_DIR:?Set the OpenViking data path}:/app/.openviking"
       # Mount the authoritative source directories read-only.
       - "${OPENVIKING_WIKI_PATH:?Set the wiki source path}:/vault/wiki:ro"
+      - "${OPENVIKING_MOC_PATH:?Set the MOC source path}:/vault/mocs:ro"
       - "${OPENVIKING_SKILLS_PATH:?Set the skills source path}:/vault/skills:ro"
     healthcheck:
       test: ["CMD", "openviking-entrypoint", "--healthcheck"]

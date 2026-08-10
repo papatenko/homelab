@@ -7,6 +7,7 @@ A dedicated, Git-managed Portainer stack for read-only, derived indexing of an a
 Only these container paths are imported:
 
 - `/vault/wiki` to `viking://resources/obsidian/wiki`
+- `/vault/mocs` to `viking://resources/obsidian/mocs`
 - `/vault/skills` to `viking://resources/obsidian/skills`
 
 The source mounts are read-only. OpenViking never writes to the source vault.
@@ -18,7 +19,7 @@ Create or update a Git-backed stack using `openviking/docker-compose.yml`. Set e
 - `OPENVIKING_BIND_ADDRESS`, the private address where the service should listen
 - `OPENVIKING_PUBLIC_BASE_URL`, the externally reachable HTTPS base URL
 - `OPENVIKING_DATA_DIR`, the deployment host's persistent state directory
-- `OPENVIKING_WIKI_PATH` and `OPENVIKING_SKILLS_PATH`, the source directories
+- `OPENVIKING_WIKI_PATH`, `OPENVIKING_MOC_PATH`, and `OPENVIKING_SKILLS_PATH`, the source directories
 
 Do not use `0.0.0.0` for the bind address. Do not commit these values to Git. Keep the source mounts read-only and expose the service only through the intended private or authenticated route.
 
@@ -38,7 +39,7 @@ Choose the embeddings service as the Ollama endpoint and choose the configured V
 
 ## Resource refresh timer
 
-The existing resource refresh timer imports the two approved container paths and uses stable resource URIs. Install its files using paths appropriate for the deployment host, then provide a root-owned mode-0600 environment file containing:
+The existing resource refresh timer imports the three approved container paths and uses stable resource URIs. Install its files using paths appropriate for the deployment host, then provide a root-owned mode-0600 environment file containing:
 
 ```text
 OPENVIKING_URL=<local-or-private-service-url>
@@ -51,13 +52,15 @@ The refresh script does not use a network address fallback. It requires `OPENVIK
 
 ## Skills synchronization timer
 
-`sync-skills.sh` synchronizes every local `SKILL.md` below `VAULT_SKILLS_DIR`:
+`sync-skills.sh` synchronizes local `SKILL.md` files below `VAULT_SKILLS_DIR`:
 
-1. It submits a named skill with `POST /api/v1/skills`.
-2. If the skill already exists, it updates it with `PUT /api/v1/skills/{name}`.
-3. It rejects invalid skill names before making a request.
-4. It uses temporary files created by `mktemp` and removes them on exit.
-5. It reports each failure and exits nonzero if any skill fails.
+1. It hashes each file and skips unchanged skills, avoiding unnecessary VLM calls and token usage.
+2. It submits changed or new skills with `POST /api/v1/skills`.
+3. If a skill already exists, it updates it with `PUT /api/v1/skills/{name}`.
+4. It records successful content hashes in a restricted state file.
+5. It rejects invalid skill names before making a request.
+6. It uses temporary files created by `mktemp` and removes them on exit.
+7. It reports each failure and exits nonzero if any skill fails.
 
 Install the script and service using deployment-local paths. The checked-in service intentionally references generic locations:
 
@@ -72,6 +75,7 @@ Create `/etc/openviking/sync-skills.env` with values appropriate to the host:
 
 ```text
 OPENVIKING_SECRETS_ENV=<path-to-root-owned-secrets-file>
+OPENVIKING_SKILLS_STATE_FILE=<optional-state-file-path>
 ```
 
 The referenced secrets file must contain:
@@ -100,8 +104,9 @@ Use `OPENVIKING_PUBLIC_BASE_URL` when configuring an authenticated MCP client. U
 ```bash
 curl -fsS "${OPENVIKING_PUBLIC_BASE_URL}/health"
 docker inspect openviking --format '{{range .Mounts}}{{println .Destination .RW}}{{end}}'
-docker exec openviking sh -c 'test -r /vault/wiki && test -r /vault/skills && ! touch /vault/wiki/.write-test'
+docker exec openviking sh -c 'test -r /vault/wiki && test -r /vault/mocs && test -r /vault/skills && ! touch /vault/wiki/.write-test'
 docker exec openviking ov find 'known wiki fact' --path viking://resources/obsidian/wiki
+docker exec openviking ov find 'known MOC topic' --path viking://resources/obsidian/mocs
 docker exec openviking ov find 'known skill' --path viking://resources/obsidian/skills
 ```
 
