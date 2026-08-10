@@ -25,8 +25,12 @@ fi
 
 payload_file="$(mktemp)"
 response_file="$(mktemp)"
+curl_config_file="$(mktemp)"
+chmod 600 "$curl_config_file"
+printf 'header = "X-API-Key: %s"\nheader = "Content-Type: application/json"\n' \
+  "$api_key" > "$curl_config_file"
 cleanup() {
-  rm -f "$payload_file" "$response_file"
+  rm -f "$payload_file" "$response_file" "$curl_config_file"
 }
 trap cleanup EXIT
 
@@ -46,14 +50,13 @@ import sys
 from pathlib import Path
 
 path, name = sys.argv[1:]
-print(json.dumps({"name": name, "data": Path(path).read_text(), "wait": True}))
+print(json.dumps({"data": Path(path).read_text()}))
 PY
 
   if status=$(curl --silent --show-error \
       --output "$response_file" --write-out '%{http_code}' \
       --request POST "$server_url/api/v1/skills" \
-      --header "X-API-Key: $api_key" \
-      --header 'Content-Type: application/json' \
+      --config "$curl_config_file" \
       --data-binary "@$payload_file"); then
     :
   else
@@ -64,8 +67,7 @@ PY
     if status=$(curl --silent --show-error \
         --output "$response_file" --write-out '%{http_code}' \
         --request PUT "$server_url/api/v1/skills/$name" \
-        --header "X-API-Key: $api_key" \
-        --header 'Content-Type: application/json' \
+        --config "$curl_config_file" \
         --data-binary "@$payload_file"); then
       :
     else
