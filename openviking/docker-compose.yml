@@ -4,21 +4,22 @@ services:
     container_name: openviking
     restart: unless-stopped
     ports:
-      # Set this to the NAS's LAN address in Portainer. Do not use 0.0.0.0.
-      - "${OPENVIKING_BIND_ADDRESS:?Set the NAS LAN address}:${OPENVIKING_SERVER_PORT:-1933}:${OPENVIKING_SERVER_PORT:-1933}"
+      # Set this to the deployment host's private bind address in Portainer.
+      # Do not use 0.0.0.0.
+      - "${OPENVIKING_BIND_ADDRESS:?Set the private bind address}:${OPENVIKING_SERVER_PORT:-1933}:${OPENVIKING_SERVER_PORT:-1933}"
     environment:
       OPENVIKING_SERVER_PORT: ${OPENVIKING_SERVER_PORT:-1933}
-      OPENVIKING_PUBLIC_BASE_URL: "${OPENVIKING_PUBLIC_BASE_URL:?Set the public base URL in Portainer}"
+      OPENVIKING_PUBLIC_BASE_URL: "${OPENVIKING_PUBLIC_BASE_URL:?Set the public base URL}"
       OPENVIKING_VLM_MODEL: "${OPENVIKING_VLM_MODEL:-gpt-5.4-mini}"
       OPENVIKING_VLM_PROVIDER: "${OPENVIKING_VLM_PROVIDER:-openai-codex}"
       OPENVIKING_VLM_API_BASE: "${OPENVIKING_VLM_API_BASE:-https://chatgpt.com/backend-api/codex}"
       OPENVIKING_AUTH_MODE: "${OPENVIKING_AUTH_MODE:-api_key}"
     volumes:
       # Contains only OpenViking configuration, OAuth state, models, and derived indexes.
-      - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}:/app/.openviking
-      # The authoritative Nextcloud vault is deliberately read-only.
-      - "/mnt/nextcloud/Justin Kondratenko/files/Apps/Obsidian/wiki:/vault/wiki:ro"
-      - "/mnt/nextcloud/Justin Kondratenko/files/Apps/Obsidian/skills:/vault/skills:ro"
+      - "${OPENVIKING_DATA_DIR:?Set the OpenViking data path}:/app/.openviking"
+      # Mount the authoritative source directories read-only.
+      - "${OPENVIKING_WIKI_PATH:?Set the wiki source path}:/vault/wiki:ro"
+      - "${OPENVIKING_SKILLS_PATH:?Set the skills source path}:/vault/skills:ro"
     healthcheck:
       test: ["CMD", "openviking-entrypoint", "--healthcheck"]
       interval: 30s
@@ -39,7 +40,7 @@ services:
       # Ollama otherwise intentionally ignores integrated GPUs.
       OLLAMA_IGPU_ENABLE: "1"
     volumes:
-      - ${OPENVIKING_DATA_DIR:-/mnt/misc/appdata/openviking}/ollama:/root/.ollama
+      - "${OPENVIKING_DATA_DIR:?Set the OpenViking data path}/ollama:/root/.ollama"
     healthcheck:
       test: ["CMD", "ollama", "list"]
       interval: 30s
