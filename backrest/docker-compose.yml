@@ -10,7 +10,7 @@ services:
       - ${BACKREST_DATA_DIR}/tmp:/tmp
       - ${BACKREST_DATA_DIR}/rclone:/root/.config/rclone
       - ${BACKUP_SOURCE_PATH}:/userdata
-      # - ${REPOS_PATH}:/repos
+      - ${PORTAINER_DATA_PATH}:/portainer-data:ro
     environment:
       - BACKREST_DATA=/data
       - BACKREST_CONFIG=/config/config.json
