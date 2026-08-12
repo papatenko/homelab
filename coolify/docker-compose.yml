@@ -1,4 +1,13 @@
 services:
+  watchtower:
+    image: nickfedor/watchtower:latest
+    container_name: coolify-watchtower
+    restart: unless-stopped
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   coolify:
     image: "${COOLIFY_IMAGE:-ghcr.io/coollabsio/coolify:v4.3.0}"
     container_name: coolify
