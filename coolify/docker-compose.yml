@@ -1,6 +1,6 @@
 services:
   coolify:
-    image: "${COOLIFY_IMAGE:-ghcr.io/coollabsio/coolify:4.0.0-beta.462}"
+    image: "${COOLIFY_IMAGE:-ghcr.io/coollabsio/coolify:v4.3.0}"
     container_name: coolify
     restart: always
     working_dir: /var/www/html
@@ -78,7 +78,7 @@ services:
       timeout: 2s
 
   realtime:
-    image: "${COOLIFY_REALTIME_IMAGE:-ghcr.io/coollabsio/coolify-realtime:1.0.10}"
+    image: "${COOLIFY_REALTIME_IMAGE:-ghcr.io/coollabsio/coolify-realtime:1.0.17}"
     container_name: coolify-realtime
     restart: always
     extra_hosts:
@@ -104,7 +104,7 @@ services:
       timeout: 2s
 
   proxy:
-    image: "${COOLIFY_PROXY_IMAGE:-traefik:v3.6}"
+    image: "${COOLIFY_PROXY_IMAGE:-traefik:v3.7.10}"
     container_name: coolify-proxy
     restart: unless-stopped
     extra_hosts:

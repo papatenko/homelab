@@ -21,18 +21,18 @@ Coolify remains responsible for the application, database, and service container
 - [Coolify Compose source](https://github.com/coollabsio/coolify/tree/v4.x)
 - [Coolify releases](https://github.com/coollabsio/coolify/releases)
 
-## Current migration baseline
+## Current migration image set
 
-The initial definition intentionally preserves the versions observed on the existing installation:
+The definition uses current pinned releases where the upgrade is clear and keeps the stateful database/cache major versions unchanged for the first cutover:
 
-- Coolify: `4.0.0-beta.462`
-- Realtime: `1.0.10`
+- Coolify: `v4.3.0`
+- Realtime: `1.0.17`
 - Sentinel: `0.0.22`
-- Traefik: `v3.6`
+- Traefik: `v3.7.10`
 - PostgreSQL: `15-alpine`
 - Redis: `7-alpine`
 
-The current installation is not upgraded as part of centralization. Upgrading to a newer Coolify release is a separate change.
+PostgreSQL and Redis remain on their existing major versions for the first cutover. PostgreSQL major-version changes require a deliberate dump/restore or in-place migration plan, and Redis major-version changes require compatibility validation. They should not be mixed into the ownership migration.
 
 ## Required Portainer variables
 
@@ -73,7 +73,7 @@ Backrest should continue covering `${COOLIFY_DATA_DIR}` and the two named-volume
 
 ## Portainer deployment notes
 
-Deployment is intentionally not included in this phase-two change. Before deployment:
+Before deployment:
 
 1. Merge this change into the repository's default branch.
 2. Create a Git-backed Portainer stack from `coolify/docker-compose.yml`.
