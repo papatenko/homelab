@@ -113,8 +113,6 @@ services:
     image: "${COOLIFY_PROXY_IMAGE:-traefik:v3.7.10}"
     container_name: coolify-proxy
     restart: unless-stopped
-    labels:
-      com.centurylinklabs.watchtower.enable: "false"
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:
@@ -153,6 +151,7 @@ services:
       traefik.http.services.traefik.loadbalancer.server.port: "8080"
       coolify.managed: "true"
       coolify.proxy: "true"
+      com.centurylinklabs.watchtower.enable: "false"
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:80/ping || exit 1"]
       interval: 4s
