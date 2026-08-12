@@ -1,22 +1,22 @@
 services:
   backrest:
     image: ghcr.io/garethgeorge/backrest:latest
-    container_name: backrest
-    hostname: backrest
+    container_name: ${BACKREST_CONTAINER_NAME:-backrest}
+    hostname: ${BACKREST_HOSTNAME:-backrest}
     volumes:
       - ${BACKREST_DATA_DIR}/data:/data
       - ${BACKREST_DATA_DIR}/config:/config
       - ${BACKREST_DATA_DIR}/cache:/cache
       - ${BACKREST_DATA_DIR}/tmp:/tmp
       - ${BACKREST_DATA_DIR}/rclone:/root/.config/rclone
-      - ${BACKUP_SOURCE_PATH}:/userdata
-      - ${PORTAINER_DATA_PATH}:/portainer-data:ro
+      - ${BACKUP_SOURCE_PATH:-/}:/userdata:ro
+      - ${PORTAINER_DATA_PATH:-/}:/portainer-data:ro
     environment:
-      - BACKREST_DATA=/data
-      - BACKREST_CONFIG=/config/config.json
-      - XDG_CACHE_HOME=/cache
-      - TMPDIR=/tmp
-      - TZ=${TIMEZONE}
+      BACKREST_DATA: /data
+      BACKREST_CONFIG: /config/config.json
+      XDG_CACHE_HOME: /cache
+      TMPDIR: /tmp
+      TZ: ${TIMEZONE:-America/Chicago}
     ports:
-      - "${BACKREST_PORT}:9898"
+      - "${BACKREST_PORT:-9898}:9898"
     restart: unless-stopped
