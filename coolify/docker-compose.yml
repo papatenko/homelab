@@ -158,19 +158,6 @@ services:
       timeout: 2s
       retries: 5
 
-  sentinel:
-    image: "${COOLIFY_SENTINEL_IMAGE:-ghcr.io/coollabsio/sentinel:0.0.22}"
-    container_name: coolify-sentinel
-    restart: "no"
-    labels:
-      com.centurylinklabs.watchtower.enable: "true"
-    command: ["/app/sentinel"]
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - "${COOLIFY_DATA_DIR:?Set COOLIFY_DATA_DIR}/sentinel:/app/db"
-    environment:
-      TOKEN: "${COOLIFY_SENTINEL_TOKEN:?Set COOLIFY_SENTINEL_TOKEN}"
-
 volumes:
   coolify-db:
     name: coolify-db
