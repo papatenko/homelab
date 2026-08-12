@@ -25,8 +25,6 @@ services:
       - "${COOLIFY_DATA_DIR:?Set COOLIFY_DATA_DIR}/databases:/var/www/html/storage/app/databases"
       - "${COOLIFY_DATA_DIR:?Set COOLIFY_DATA_DIR}/services:/var/www/html/storage/app/services"
       - "${COOLIFY_DATA_DIR:?Set COOLIFY_DATA_DIR}/backups:/var/www/html/storage/app/backups"
-    env_file:
-      - "${COOLIFY_DATA_DIR:?Set COOLIFY_DATA_DIR}/source/.env"
     environment:
       APP_ENV: "${APP_ENV:-production}"
       PHP_MEMORY_LIMIT: "${PHP_MEMORY_LIMIT:-256M}"
