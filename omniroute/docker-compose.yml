@@ -1,6 +1,6 @@
 services:
   omniroute:
-    image: ${OMNIROUTE_IMAGE:-diegosouzapw/omniroute:3.8.49}
+    image: ${OMNIROUTE_IMAGE:-diegosouzapw/omniroute:latest}
     container_name: omniroute
     restart: unless-stopped
     stop_grace_period: 40s
