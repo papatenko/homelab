@@ -5,12 +5,13 @@ services:
     restart: "no"
     environment:
       OPEN_DESIGN_VELA_CLI_VERSION: ${OPEN_DESIGN_VELA_CLI_VERSION:-0.0.21}
+      OPEN_DESIGN_CODEX_CLI_VERSION: ${OPEN_DESIGN_CODEX_CLI_VERSION:-0.144.1}
     # Open Design runs as the open-design user (uid/gid 1001) and needs to
     # create /app/.od/projects inside the bind-mounted data directory. The
-    # Docker image does not bundle the AMR/Vela CLI, so install it into the
-    # persistent data dir and put that bin path on the daemon PATH.
+    # Docker image does not bundle the AMR/Vela or Codex CLI, so install them
+    # into the persistent data dir and put their bin paths on the daemon PATH.
     command: >-
-      sh -c "set -eu; mkdir -p /data/projects /data/tooling; if [ ! -x /data/tooling/node_modules/.bin/vela ]; then npm install --omit=dev --prefix /data/tooling @powerformer/vela-cli@$${OPEN_DESIGN_VELA_CLI_VERSION}; fi; chown -R 1001:1001 /data"
+      sh -c "set -eu; mkdir -p /data/projects /data/tooling /data/codex; if [ ! -x /data/tooling/node_modules/.bin/vela ]; then npm install --omit=dev --prefix /data/tooling @powerformer/vela-cli@$${OPEN_DESIGN_VELA_CLI_VERSION}; fi; if [ ! -x /data/tooling/node_modules/.bin/codex ]; then npm install --omit=dev --prefix /data/tooling @openai/codex@$${OPEN_DESIGN_CODEX_CLI_VERSION}; fi; chown -R 1001:1001 /data; chmod 700 /data/codex; if [ -f /data/codex/auth.json ]; then chmod 600 /data/codex/auth.json; fi"
     volumes:
       - ${DATA_DIR:-/opt/stacks/opendesign}/data:/data
     security_opt:
@@ -35,6 +36,8 @@ services:
       OD_API_TOKEN: ${OD_API_TOKEN:-}
       OD_DISABLE_API_AUTH: ${OPEN_DESIGN_DISABLE_API_AUTH:-}
       VELA_BIN: /app/.od/tooling/node_modules/.bin/vela
+      CODEX_BIN: /app/.od/tooling/node_modules/.bin/codex
+      CODEX_HOME: /app/.od/codex
       PATH: /app/.od/tooling/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-}
     ports:
