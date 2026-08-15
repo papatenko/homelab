@@ -11,7 +11,7 @@ services:
     # Docker image does not bundle the AMR/Vela or Codex CLI, so install them
     # into the persistent data dir and put their bin paths on the daemon PATH.
     command: >-
-      sh -c "set -eu; mkdir -p /data/projects /data/tooling /data/codex; if [ ! -x /data/tooling/node_modules/.bin/vela ]; then npm install --omit=dev --prefix /data/tooling @powerformer/vela-cli@$${OPEN_DESIGN_VELA_CLI_VERSION}; fi; if [ ! -x /data/tooling/node_modules/.bin/codex ]; then npm install --omit=dev --prefix /data/tooling @openai/codex@$${OPEN_DESIGN_CODEX_CLI_VERSION}; fi; chown -R 1001:1001 /data; chmod 700 /data/codex; if [ -f /data/codex/auth.json ]; then chmod 600 /data/codex/auth.json; fi"
+      sh -c "set -eu; mkdir -p /data/projects /data/tooling /data/codex; if [ ! -x /data/tooling/node_modules/.bin/vela ]; then npm install --omit=dev --prefix /data/tooling @powerformer/vela-cli@$${OPEN_DESIGN_VELA_CLI_VERSION}; fi; if [ ! -x /data/tooling/node_modules/.bin/codex ]; then npm install --omit=dev --prefix /data/tooling @openai/codex@$${OPEN_DESIGN_CODEX_CLI_VERSION}; fi; printf '%s\n' '#!/usr/bin/env node' \"const { spawn } = require('node:child_process');\" \"const raw = process.argv.slice(2);\" \"const args = [];\" \"for (let i = 0; i < raw.length; i++) { if (raw[i] === '--disable' && raw[i + 1] === 'plugins') { i++; continue; } args.push(raw[i]); }\" \"const child = spawn(process.execPath, ['/app/.od/tooling/node_modules/@openai/codex/bin/codex.js', ...args], { stdio: 'inherit' });\" \"child.on('exit', (code, signal) => { if (signal) process.kill(process.pid, signal); else process.exit(code ?? 1); });\" > /data/tooling/codex-open-design-wrapper.mjs; chmod 755 /data/tooling/codex-open-design-wrapper.mjs; chown -R 1001:1001 /data; chmod 700 /data/codex; if [ -f /data/codex/auth.json ]; then chmod 600 /data/codex/auth.json; fi"
     volumes:
       - ${DATA_DIR:-/opt/stacks/opendesign}/data:/data
     security_opt:
@@ -36,12 +36,16 @@ services:
       OD_API_TOKEN: ${OD_API_TOKEN:-}
       OD_DISABLE_API_AUTH: ${OPEN_DESIGN_DISABLE_API_AUTH:-}
       VELA_BIN: /app/.od/tooling/node_modules/.bin/vela
-      CODEX_BIN: /app/.od/tooling/node_modules/.bin/codex
+      CODEX_BIN: /app/.od/tooling/codex-open-design-wrapper.mjs
       CODEX_HOME: /app/.od/codex
       HOME: /tmp/open-design-home
       TMPDIR: /tmp
-      PATH: /app/.od/tooling/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      OPENVIKING_CREDENTIAL_SOURCE: env
+      OPENVIKING_CODEX_STATE_DIR: /app/.od/openviking/codex-plugin-state
+      PATH: /app/.od/tooling/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/bin
       OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-danger-full-access}
+    env_file:
+      - /mnt/misc/appdata/openviking/secrets/codex.env
     ports:
       - "${OPEN_DESIGN_BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7456}:7456/tcp"
     volumes:
