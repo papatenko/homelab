@@ -38,6 +38,8 @@ services:
       VELA_BIN: /app/.od/tooling/node_modules/.bin/vela
       CODEX_BIN: /app/.od/tooling/node_modules/.bin/codex
       CODEX_HOME: /app/.od/codex
+      HOME: /tmp/open-design-home
+      TMPDIR: /tmp
       PATH: /app/.od/tooling/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-danger-full-access}
     ports:
