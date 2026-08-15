@@ -119,8 +119,8 @@
         siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
     - Open Design:
         icon: mdi-palette-swatch
-        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:7456
-        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:7456/api/health
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:7456
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7456/api/health
     - n8n:
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678
