@@ -5,25 +5,25 @@
 layout:
   Core Infrastructure:
     style: row
-    columns: 7
+    columns: 4
   Storage and Media:
     style: row
     columns: 4
   Media Stack:
     style: row
-    columns: 6
+    columns: 4
   Apps:
     style: row
-    columns: 5
+    columns: 4
   Finance:
     style: row
     columns: 2
   AI and Automation:
     style: row
-    columns: 5
+    columns: 4
   Coolify Apps:
     style: row
-    columns: 6
+    columns: 4
 
 statusStyle: dot
 

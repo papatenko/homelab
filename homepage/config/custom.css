@@ -1,0 +1,5 @@
+/* Allow long service names and status text to shrink instead of widening the page. */
+.services-group,
+.services-list > li {
+  min-width: 0;
+}
