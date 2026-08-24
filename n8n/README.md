@@ -49,7 +49,7 @@ Copy `example.env` into the Portainer stack environment and set at minimum:
 - `SANDBOX_API_RUNNER_REGISTRATION_TOKEN` — runner registration token.
 - `SANDBOX_API_RUNNER_API_KEY` — runner authentication key.
 - `N8N_INSTANCE_AI_SANDBOX_API_KEY` — must match a value in `SANDBOX_API_KEYS`.
-- `N8N_INSTANCE_AI_MODEL_API_KEY` — API key for Anthropic, OpenAI, or OpenRouter, unless configured in the n8n UI.
+- Configure the AI model and provider key in the n8n UI. Do not set `N8N_INSTANCE_AI_MODEL` in Portainer if the model should remain editable from the UI, because n8n treats that value as environment-managed.
 
 Do not commit real passwords, encryption keys, model keys, sandbox tokens, or hostname-specific settings. Retrieve service credentials through the approved secret-delivery path.
 
