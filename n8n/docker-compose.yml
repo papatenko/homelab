@@ -102,13 +102,11 @@ services:
     image: ghcr.io/searxng/searxng:latest
     container_name: n8n-searxng
     restart: unless-stopped
-    profiles:
-      - ai-search
     depends_on:
       searxng-secret-check:
         condition: service_completed_successfully
     environment:
-      SEARXNG_SECRET: ${SEARXNG_SECRET:-}
+      SEARXNG_SECRET: ${SEARXNG_SECRET:?Set SEARXNG_SECRET in Portainer before deploying}
     volumes:
       - ./searxng-settings.yml:/etc/searxng/settings.yml:ro
 
@@ -116,16 +114,14 @@ services:
     image: busybox:1.36
     container_name: n8n-searxng-secret-check
     restart: "no"
-    profiles:
-      - ai-search
     command:
       - sh
       - -c
       - >
         test -n "$${SEARXNG_SECRET}" ||
-        (echo 'SEARXNG_SECRET must be set when the ai-search profile is enabled' >&2; exit 1)
+        (echo 'SEARXNG_SECRET must be set before deploying SearXNG' >&2; exit 1)
     environment:
-      SEARXNG_SECRET: ${SEARXNG_SECRET:-}
+      SEARXNG_SECRET: ${SEARXNG_SECRET:?Set SEARXNG_SECRET in Portainer before deploying}
 
   n8n:
     image: ${N8N_IMAGE:-docker.n8n.io/n8nio/n8n:stable}
@@ -166,7 +162,7 @@ services:
       N8N_INSTANCE_AI_SANDBOX_IMAGE: ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.1.0
       N8N_INSTANCE_AI_SANDBOX_API_URL: http://sandbox-api:8080
       N8N_INSTANCE_AI_SANDBOX_API_KEY: ${N8N_INSTANCE_AI_SANDBOX_API_KEY:?Set N8N_INSTANCE_AI_SANDBOX_API_KEY in Portainer before deploying}
-      N8N_INSTANCE_AI_SEARXNG_URL: ${N8N_INSTANCE_AI_SEARXNG_URL:-}
+      N8N_INSTANCE_AI_SEARXNG_URL: ${N8N_INSTANCE_AI_SEARXNG_URL:-http://searxng:8080}
     volumes:
       - ${DATA_DIR:-/opt/stacks/n8n}/data:/home/node/.n8n
       - ${DATA_DIR:-/opt/stacks/n8n}/files:/files

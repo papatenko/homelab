@@ -27,14 +27,7 @@ The runner is `privileged: true`, which is a significant security boundary. It h
 
 ## SearXNG status
 
-SearXNG is included in the Compose file but disabled by default through the `ai-search` profile. It will not deploy during a normal `docker compose up` or Portainer deployment, so it does not consume RAM.
-
-To enable it later:
-
-1. Set `COMPOSE_PROFILES=ai-search` in the Portainer stack environment.
-2. Set a unique `SEARXNG_SECRET`.
-3. Set `N8N_INSTANCE_AI_SEARXNG_URL=http://searxng:8080`.
-4. Redeploy the stack. The profile has a preflight container that fails closed if `SEARXNG_SECRET` is missing.
+SearXNG is enabled by default for the n8n AI Assistant. Set a unique `SEARXNG_SECRET` in Portainer, generated for example with `openssl rand -hex 32`. The stack fails closed if the secret is missing. n8n uses the internal URL `http://searxng:8080`, and no SearXNG port is published to the host.
 
 The SearXNG configuration is stored in `searxng-settings.yml` and enables the JSON API required by n8n. Do not publish its port.
 
