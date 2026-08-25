@@ -121,6 +121,10 @@
         icon: mdi-palette-swatch
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:7456
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7456/api/health
+    - TokenTracker:
+        icon: mdi-chart-line
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:7680
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7680
     - n8n:
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678

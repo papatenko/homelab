@@ -1,0 +1,37 @@
+services:
+  tokentracker:
+    build: .
+    container_name: tokentracker
+    restart: unless-stopped
+    environment:
+      TOKENTRACKER_PORT: 7680
+      TOKENTRACKER_SYNC_FLAG: ${TOKENTRACKER_SYNC_FLAG:-}
+      TOKENTRACKER_DEVICE_TOKEN: ${TOKENTRACKER_DEVICE_TOKEN:-}
+      TOKENTRACKER_ACCESS_TOKEN: ${TOKENTRACKER_ACCESS_TOKEN:-}
+      INSFORGE_BASE_URL: ${INSFORGE_BASE_URL:-}
+      INSFORGE_ANON_KEY: ${INSFORGE_ANON_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+    ports:
+      - "${BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7680}:7680/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/tokentracker}/data:/home/tokentracker/.tokentracker
+      # Optional, read-only: mount AI CLI credential/log directories from the
+      # host so the dashboard's usage-limits panel and token history have real
+      # data to show. Uncomment and adjust per Justin's confirmed deployment
+      # target — do not enable by default. See README.md.
+      # - ${CLAUDE_CODE_HOME:-/opt/stacks/tokentracker/claude}:/home/tokentracker/.claude:ro
+      # - ${CODEX_HOME:-/opt/stacks/tokentracker/codex}:/home/tokentracker/.codex:ro
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: ${TOKENTRACKER_MEM_LIMIT:-384m}
+    pids_limit: 256
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:7680/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
