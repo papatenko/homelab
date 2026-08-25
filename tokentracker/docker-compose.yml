@@ -1,6 +1,11 @@
 services:
   tokentracker:
-    build: .
+    # Prebuilt locally, same workaround as neutts (see docker-compose.build.yml
+    # and README): Portainer's remote-agent BuildKit path can't run
+    # `docker compose build` (HTTP/2 frame error listing workers), so the
+    # image is built on the target host and Portainer's Git stack only ever
+    # references this plain docker-compose.yml.
+    image: ${TOKENTRACKER_IMAGE:-homelab/tokentracker:1.0.0}
     container_name: tokentracker
     restart: unless-stopped
     environment:

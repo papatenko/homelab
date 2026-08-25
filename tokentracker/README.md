@@ -50,13 +50,39 @@ unrelated backend; the optional `INSFORGE_*` / `TOKENTRACKER_*_TOKEN` vars in
 
 ## Ports / variables
 
-See `example.env`. Default published port: `7680`.
+See `example.env`. Default published port: `7680`. The container listens
+internally on `8765`, not `7680` — see the comment in `docker-compose.yml`:
+some Docker networking configs run a docker-proxy *inside* the container's
+own network namespace on the published container port, which collides with
+`socat` trying to bind that same port for its loopback forward.
+
+## Build (same workaround as `neutts`)
+
+This stack deliberately separates image construction from service
+deployment. Portainer CE's remote agent BuildKit path can be unavailable
+even when native Docker builds work correctly on the target host (observed:
+`docker compose up --build` over a Portainer git-repository stack fails
+listing BuildKit workers with an HTTP/2 frame error).
+
+1. On the target host (Services), build the tagged image from the checked-out
+   repository:
+
+   ```bash
+   docker compose -f docker-compose.yml -f docker-compose.build.yml build tokentracker
+   ```
+
+2. In Portainer, create a Git-backed stack from `tokentracker/docker-compose.yml`
+   only. Do **not** add `docker-compose.build.yml` to the stack.
+
+When a Git update changes `Dockerfile`, `entrypoint.sh`, or `run-tracker.sh`,
+rebuild the tagged image on the target host before redeploying the stack.
 
 ## Validation
 
 ```bash
-docker compose -f tokentracker/docker-compose.yml config
-docker compose -f tokentracker/docker-compose.yml up --build
+docker compose -f tokentracker/docker-compose.yml -f tokentracker/docker-compose.build.yml config
+docker compose -f tokentracker/docker-compose.yml -f tokentracker/docker-compose.build.yml build tokentracker
+docker compose -f tokentracker/docker-compose.yml up -d
 curl -sf http://localhost:7680/
 ```
 
