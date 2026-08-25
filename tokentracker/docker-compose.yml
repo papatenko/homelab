@@ -4,7 +4,14 @@ services:
     container_name: tokentracker
     restart: unless-stopped
     environment:
-      TOKENTRACKER_PORT: 7680
+      # Deliberately different from tracker's own hardcoded internal port
+      # (7680, see run-tracker.sh) — some Docker networking configs run a
+      # docker-proxy *inside* the container's netns that already occupies
+      # 0.0.0.0:<published-container-port>, so socat's own bind on that same
+      # port number fails with "Address in use". Publishing a distinct
+      # container-side port sidesteps the collision; the host-facing port
+      # (COMPOSE_PORT_HTTP) is unaffected and still defaults to 7680.
+      TOKENTRACKER_PORT: 8765
       TOKENTRACKER_SYNC_FLAG: ${TOKENTRACKER_SYNC_FLAG:-}
       TOKENTRACKER_DEVICE_TOKEN: ${TOKENTRACKER_DEVICE_TOKEN:-}
       TOKENTRACKER_ACCESS_TOKEN: ${TOKENTRACKER_ACCESS_TOKEN:-}
@@ -12,7 +19,7 @@ services:
       INSFORGE_ANON_KEY: ${INSFORGE_ANON_KEY:-}
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
     ports:
-      - "${BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7680}:7680/tcp"
+      - "${BIND_IP:-0.0.0.0}:${COMPOSE_PORT_HTTP:-7680}:8765/tcp"
     volumes:
       - ${DATA_DIR:-/opt/stacks/tokentracker}/data:/home/tokentracker/.tokentracker
       # Optional, read-only: mount AI CLI credential/log directories from the
