@@ -7,5 +7,5 @@ services:
     volumes:
       - ${DATA_DIR:-/opt/stacks/termix}:/app/data
     environment:
-      PORT: "8080"
+      PORT: "8082"
       ENABLE_TELEMETRY: "false"

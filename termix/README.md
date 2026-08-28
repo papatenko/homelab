@@ -13,7 +13,7 @@ Termix is a self-hosted server-management interface with browser-based SSH termi
 This stack runs the SSH/SFTP portion of Termix with SQLite-backed application data. Remote desktop support is intentionally omitted, so the optional `guacd` service is not deployed.
 
 - Networking: `network_mode: host` — required so Termix's Wake-on-LAN feature can actually broadcast magic packets onto the LAN (Docker's default bridge network drops broadcast traffic before it reaches the physical NIC; same fix already applied to `upsnap`, see `upsnap/docker-compose.yml`)
-- Port: `8080` (bound directly on the host; no port mapping under host networking)
+- Port: `PORT` env, default `8082` (bound directly on the host; no Docker port mapping under host networking, so pick a port not already claimed by another host-level process — `8080` is taken on Raspi by `crowdsec`'s local API)
 - Persistent mount: `${DATA_DIR}/` to `/app/data`
 - Telemetry: disabled by default
 - Image: `ghcr.io/lukegus/termix:latest` (official multi-architecture image, including arm64)
@@ -22,7 +22,7 @@ Set the stack variables from `example.env` in Portainer. Do not commit real cred
 
 ## First run
 
-1. Open Termix on host port `8080`.
+1. Open Termix on host port `8082` (or the configured `PORT`).
 2. Complete the initial administrator setup.
 3. Add SSH hosts and credentials through Termix.
 4. Keep the application reachable only through the intended LAN/VPN or authenticated reverse-proxy path.
