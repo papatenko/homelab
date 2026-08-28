@@ -36,8 +36,8 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9000
             - Portainer:
                 icon: portainer
-                href: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
-                siteMonitor: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+                href: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
+                siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
             - Proxmox:
                 icon: proxmox
                 href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
@@ -256,7 +256,6 @@ services:
       HOMEPAGE_VAR_RASPI_IP: ${HOMEPAGE_VAR_RASPI_IP}
       HOMEPAGE_VAR_NAS_IP: ${HOMEPAGE_VAR_NAS_IP}
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
-      HOMEPAGE_VAR_PORTAINER_IP: ${HOMEPAGE_VAR_PORTAINER_IP}
       HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
       HOMEPAGE_VAR_PBS_IP: ${HOMEPAGE_VAR_PBS_IP}
       HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
