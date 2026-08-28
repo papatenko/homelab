@@ -21,8 +21,8 @@
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9000
     - Portainer:
         icon: portainer
-        href: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
-        siteMonitor: https://{{HOMEPAGE_VAR_PORTAINER_IP}}:9443
+        href: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
+        siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
     - Proxmox:
         icon: proxmox
         href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
