@@ -13,7 +13,7 @@ Termix is a self-hosted server-management interface with browser-based SSH termi
 This stack runs the SSH/SFTP portion of Termix with SQLite-backed application data. Remote desktop support is intentionally omitted, so the optional `guacd` service is not deployed.
 
 - Container port: `8080`
-- Published host port: `TERMIX_HTTP_PORT`, default `8080`
+- Published host port: `TERMIX_HOST_PORT`, default `8082`
 - Persistent mount: `${DATA_DIR}/` to `/app/data`
 - Telemetry: disabled by default
 - Image: `ghcr.io/lukegus/termix:latest` (official multi-architecture image, including arm64)
