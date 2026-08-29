@@ -1,6 +1,6 @@
 services:
   languagetool:
-    image: erikvl87/languagetool:6.8
+    image: erikvl87/languagetool:latest
     container_name: languagetool
     restart: unless-stopped
     read_only: true
