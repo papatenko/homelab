@@ -1,0 +1,22 @@
+services:
+  languagetool:
+    image: meyayl/languagetool:6.8-6
+    container_name: languagetool
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:exec
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - '8010:8010/tcp'
+    environment:
+      download_ngrams_for_langs: ${DOWNLOAD_NGRAMS_FOR_LANGS:-en}
+      MAP_UID: ${MAP_UID:-783}
+      MAP_GID: ${MAP_GID:-783}
+      Java_Xms: ${JAVA_XMS:-512m}
+      Java_Xmx: ${JAVA_XMX:-2g}
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/languagetool}/ngrams:/ngrams
