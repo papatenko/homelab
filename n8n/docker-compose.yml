@@ -140,7 +140,7 @@ services:
       SEARXNG_SECRET: ${SEARXNG_SECRET:?Set SEARXNG_SECRET in Portainer before deploying}
 
   n8n:
-    image: ${N8N_IMAGE:-docker.n8n.io/n8nio/n8n:latest}
+    image: ${N8N_IMAGE:-docker.n8n.io/n8nio/n8n:stable}
     container_name: n8n
     restart: unless-stopped
     depends_on:
