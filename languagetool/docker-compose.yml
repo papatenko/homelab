@@ -1,6 +1,6 @@
 services:
   languagetool:
-    image: meyayl/languagetool:6.8-6
+    image: erikvl87/languagetool:6.8
     container_name: languagetool
     restart: unless-stopped
     read_only: true
@@ -13,9 +13,7 @@ services:
     ports:
       - '8010:8010/tcp'
     environment:
-      download_ngrams_for_langs: ${DOWNLOAD_NGRAMS_FOR_LANGS:-en}
-      MAP_UID: ${MAP_UID:-783}
-      MAP_GID: ${MAP_GID:-783}
+      langtool_languageModel: /ngrams
       Java_Xms: ${JAVA_XMS:-512m}
       Java_Xmx: ${JAVA_XMX:-2g}
     volumes:

@@ -4,7 +4,7 @@ Self-hosted LanguageTool HTTP API for privacy-preserving spelling and grammar ch
 
 ## Upstream
 
-- Image project: https://github.com/meyayl/docker-languagetool
+- Image project: https://github.com/Erikvl87/docker-languagetool
 - LanguageTool project: https://github.com/languagetool-org/languagetool
 - API documentation: https://dev.languagetool.org/public-http-api.html
 
@@ -13,14 +13,12 @@ Self-hosted LanguageTool HTTP API for privacy-preserving spelling and grammar ch
 The service listens on port `8010` and exposes the LanguageTool API under `/v2`.
 For browser extensions, configure the custom API server as `<service-url>/v2`.
 
-The n-gram datasets are downloaded on first startup for the languages listed in
-`DOWNLOAD_NGRAMS_FOR_LANGS`. They are stored in the persistent `DATA_DIR` mount.
+Optional n-gram datasets can be placed in the persistent `DATA_DIR` mount and
+are exposed to LanguageTool at `/ngrams`.
 
 ## Portainer variables
 
 - `DATA_DIR`: host path for persistent LanguageTool data
-- `DOWNLOAD_NGRAMS_FOR_LANGS`: comma-separated language codes, default `en`
-- `MAP_UID` and `MAP_GID`: runtime data ownership, default `783`
 - `JAVA_XMS` and `JAVA_XMX`: Java heap bounds, default `512m` and `2g`
 
 Do not commit real deployment values or secrets. Set stack variables in Portainer.
