@@ -11,7 +11,7 @@ services:
       - WG_HOST=${WG_HOST}
       - WG_DEFAULT_DNS=${WG_DEFAULT_DNS}
       - WG_DEFAULT_ADDRESS=${WG_DEFAULT_ADDRESS}
-    image: ghcr.io/wg-easy/wg-easy:15
+    image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wg-easy
     networks:
       wg:
