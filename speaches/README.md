@@ -7,7 +7,7 @@ Self-hosted multilingual speech-to-text for private dictation, using the officia
 - Image: `ghcr.io/speaches-ai/speaches:latest-cuda-12.6.3`
 - API port: `8000`
 - GPU: NVIDIA CUDA through Docker Compose device reservations
-- Preferred model: `deepdml/faster-whisper-large-v3-turbo-ct2`
+- Preferred model: `Systran/faster-whisper-medium`
 - Model cache: `${DATA_DIR}/huggingface`
 - Access boundary: Tailscale only, with no public reverse proxy in the initial deployment
 - Web UI: disabled
@@ -22,7 +22,7 @@ Keep `SPEACHES_API_KEY` in Portainer only. Do not commit it or place it in this 
 
 ## Model fallback
 
-Start with `deepdml/faster-whisper-large-v3-turbo-ct2`. If startup logs show CUDA out-of-memory or unacceptable latency, change `PRELOAD_MODELS` to a smaller multilingual CTranslate2 model, such as:
+Start with `Systran/faster-whisper-medium`. If startup logs show CUDA out-of-memory or unacceptable latency, change `PRELOAD_MODELS` to a smaller multilingual CTranslate2 model, such as:
 
 ```text
 Systran/faster-whisper-small
