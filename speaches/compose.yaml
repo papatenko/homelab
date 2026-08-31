@@ -25,7 +25,7 @@ services:
               capabilities:
                 - gpu
     healthcheck:
-      test: ["CMD-SHELL", "curl --fail --silent --show-error -H 'Authorization: Bearer $${API_KEY}' http://127.0.0.1:8000/health"]
+      test: ["CMD-SHELL", "python -c \"import os,urllib.request; r=urllib.request.Request('http://127.0.0.1:8000/health',headers={'Authorization':'Bearer '+os.environ['API_KEY']}); urllib.request.urlopen(r).read()\""]
       interval: 30s
       timeout: 10s
       retries: 5
