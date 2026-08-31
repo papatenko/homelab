@@ -1,0 +1,32 @@
+services:
+  speaches:
+    image: ${SPEACHES_IMAGE:-ghcr.io/speaches-ai/speaches:latest-cuda-12.6.3}
+    container_name: speaches
+    restart: unless-stopped
+    ports:
+      - "${COMPOSE_PORT_HTTP:-8000}:8000"
+    environment:
+      API_KEY: ${SPEACHES_API_KEY:-}
+      WHISPER__INFERENCE_DEVICE: ${WHISPER_INFERENCE_DEVICE:-cuda}
+      WHISPER__COMPUTE_TYPE: ${WHISPER_COMPUTE_TYPE:-float16}
+      WHISPER__DEVICE_INDEX: ${WHISPER_DEVICE_INDEX:-0}
+      STT_MODEL_TTL: ${STT_MODEL_TTL:--1}
+      PRELOAD_MODELS: ${PRELOAD_MODELS:-["deepdml/faster-whisper-large-v3-turbo-ct2"]}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      ENABLE_UI: ${ENABLE_UI:-false}
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/speaches}/huggingface:/home/ubuntu/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
