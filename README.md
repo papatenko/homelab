@@ -19,7 +19,6 @@ Rename `example.env` to `.env` in any service directory and change variables for
 - **whisper/** — Self-hosted OpenAI Whisper speech-to-text API using the small model by default.
 - **neutts/** — GPU-backed, on-device NeuTTS-2E API for local speech synthesis.
 - **motioneye/** — motionEye camera monitoring and motion detection stack for the Raspberry Pi.
-- **opendesign/** — Open Design web UI/API for agent-native design artifacts.
 - **wallos/** — Wallos personal subscription tracker.
 - **canvas-todoist/** — Hourly sync of UH Canvas assignments into Todoist via the Canvas calendar feed.
 - **authentik/** — Authentik identity provider for SSO.
