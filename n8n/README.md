@@ -25,11 +25,6 @@ The default stack includes n8n's self-hosted sandbox:
 
 The runner is `privileged: true`, which is a significant security boundary. It has no published ports and must remain on the private Compose network. Treat this setup as appropriate for a controlled homelab or evaluation environment. n8n currently recommends Daytona for production deployments.
 
-## SearXNG status
-
-SearXNG is enabled by default for the n8n AI Assistant. Set a unique `SEARXNG_SECRET` in Portainer, generated for example with `openssl rand -hex 32`. The stack fails closed if the secret is missing. n8n uses the internal URL `http://searxng:8080`, and no SearXNG port is published to the host.
-
-The SearXNG configuration is stored in `searxng-settings.yml` and enables the JSON API required by n8n. Do not publish its port.
 
 ## Required Portainer variables
 
