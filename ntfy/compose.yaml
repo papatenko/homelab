@@ -1,0 +1,18 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy:v2.28.0
+    container_name: ntfy
+    restart: unless-stopped
+    command: ["serve"]
+    environment:
+      TZ: ${TZ:-UTC}
+      NTFY_BASE_URL: ${NTFY_BASE_URL:-http://127.0.0.1:8080}
+      NTFY_LISTEN_HTTP: 0.0.0.0:80
+      NTFY_CACHE_FILE: /var/cache/ntfy/cache.db
+      NTFY_AUTH_FILE: /var/cache/ntfy/user.db
+      NTFY_AUTH_DEFAULT_ACCESS: deny
+      NTFY_BEHIND_PROXY: "false"
+    ports:
+      - "${NTFY_BIND_ADDRESS:-127.0.0.1}:${NTFY_PORT:-8080}:80"
+    volumes:
+      - ${NTFY_DATA_DIR:-/opt/stacks/ntfy}:/var/cache/ntfy
