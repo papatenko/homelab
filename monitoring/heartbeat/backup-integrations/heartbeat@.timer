@@ -1,0 +1,11 @@
+[Unit]
+Description=Scheduled verified heartbeat producer (%i)
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+RandomizedDelaySec=15m
+Unit=heartbeat@%i.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=Verified heartbeat producer (%i)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Install the repository's producer directory at this reviewed path.
+ExecStart=/opt/monitoring/heartbeat/producers/%i.sh
+EnvironmentFile=/etc/monitoring/heartbeat/%i.env
+User=heartbeat
+Group=heartbeat
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/monitoring/heartbeat
