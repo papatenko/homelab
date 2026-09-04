@@ -38,8 +38,6 @@ DATA_DIR=/opt/stacks/termix
 # Whisper stack
 DATA_DIR=/opt/stacks/whisper
 
-# Open Design stack
-DATA_DIR=/opt/stacks/opendesign
 ```
 
 Compose files should prefer this pattern:
