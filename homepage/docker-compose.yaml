@@ -122,22 +122,18 @@ services:
                 icon: mdi-backup-restore
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
-                description: NAS backup node and central repository view
             - Raspberry Pi Backrest:
                 icon: mdi-backup-restore
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
-                description: Raspberry Pi backup node
             - Services Backrest:
                 icon: mdi-backup-restore
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
-                description: Services host backup node
             - Hermes Backrest:
                 icon: mdi-backup-restore
                 href: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
                 siteMonitor: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
-                description: Hermes host backup node
 
         - Finance:
             - Actual Budget:
@@ -201,7 +197,7 @@ services:
         ---
         # For configuration options and examples, please see:
         # https://gethomepage.dev/configs/settings/
-        
+
         layout:
           Core Infrastructure:
             style: row
@@ -215,6 +211,9 @@ services:
           Apps:
             style: row
             columns: 4
+          Backups:
+            style: row
+            columns: 4
           Finance:
             style: row
             columns: 2
@@ -224,9 +223,8 @@ services:
           Coolify Apps:
             style: row
             columns: 4
-        
+
         statusStyle: dot
-        
         HOMEPAGE_SETTINGS_YAML
         cat > /app/config/widgets.yaml <<'HOMEPAGE_WIDGETS_YAML'
         ---

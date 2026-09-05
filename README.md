@@ -12,6 +12,19 @@ Rename `example.env` to `.env` in any service directory and change variables for
 - **docs/repo-organization-plan.md** — long-term proposal for services, infrastructure, automation, templates, inventories, and runbooks; not part of normal service onboarding.
 - **docs/storage-layout.md** — persistent data conventions for Portainer Git stacks.
 
+### Homepage layout convention
+
+Every Homepage section must be declared in `homepage/config/settings.yaml` with
+`style: row` and an explicit column count. Use four columns by default so new
+sections match the existing dashboard layout. Keep the embedded `services.yaml`
+and `settings.yaml` blocks in `homepage/docker-compose.yaml` synchronized with
+their standalone files. Service cards should use a concise label, icon, `href`,
+and `siteMonitor`; omit descriptions unless they convey essential information
+that the label cannot. Never commit literal LAN IP addresses in Homepage or
+other homelab configuration. Add or reuse a deployment variable such as
+`HOMEPAGE_VAR_*`, and keep the real address only in Portainer or the applicable
+runtime environment.
+
 ### Stacks
 
 - **media-stack/** — qBittorrent + Jellyfin + Sonarr + Radarr + Prowlarr + Bazarr on a shared network.

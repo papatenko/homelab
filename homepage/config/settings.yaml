@@ -15,6 +15,9 @@ layout:
   Apps:
     style: row
     columns: 4
+  Backups:
+    style: row
+    columns: 4
   Finance:
     style: row
     columns: 2
