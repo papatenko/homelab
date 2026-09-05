@@ -107,22 +107,18 @@
         icon: mdi-backup-restore
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
-        description: NAS backup node and central repository view
     - Raspberry Pi Backrest:
         icon: mdi-backup-restore
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
-        description: Raspberry Pi backup node
     - Services Backrest:
         icon: mdi-backup-restore
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
-        description: Services host backup node
     - Hermes Backrest:
         icon: mdi-backup-restore
         href: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
-        description: Hermes host backup node
 
 - Finance:
     - Actual Budget:
