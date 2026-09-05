@@ -1,0 +1,23 @@
+[Unit]
+Description=Verified heartbeat producer (%i)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Install the repository's producer directory at this reviewed path.
+ExecStartPre=/usr/bin/test -x /opt/monitoring/heartbeat/producers/%i.sh
+ExecStartPre=/usr/bin/test -s /etc/monitoring/heartbeat/%i.env
+ExecStart=/opt/monitoring/heartbeat/producers/%i.sh
+EnvironmentFile=/etc/monitoring/heartbeat/%i.env
+User=heartbeat
+Group=heartbeat
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/monitoring/heartbeat
+# HEARTBEAT_TIMEOUT defaults to 900 seconds per command; allow both the job and
+# verification phases, plus notification/cleanup headroom.
+TimeoutStartSec=1900
+TimeoutStopSec=30
