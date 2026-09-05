@@ -46,10 +46,6 @@ services:
                 icon: proxmox
                 href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
                 siteMonitor: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
-            - PBS:
-                icon: proxmox
-                href: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
-                siteMonitor: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
             - Omada Controller:
                 icon: tp-link
                 href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8043
@@ -108,10 +104,6 @@ services:
                 icon: wallos
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
-            - Backrest:
-                icon: http://{{HOMEPAGE_VAR_NAS_IP}}:9898/assets/favicon-KELWFrrG.png
-                href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
-                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
             - UpSnap:
                 icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
@@ -120,6 +112,32 @@ services:
                 icon: motioneye
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+
+        - Backups:
+            - Proxmox Backup Server:
+                icon: proxmox
+                href: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
+                siteMonitor: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
+            - NAS Backrest:
+                icon: mdi-backup-restore
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
+                description: NAS backup node and central repository view
+            - Raspberry Pi Backrest:
+                icon: mdi-backup-restore
+                href: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
+                siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
+                description: Raspberry Pi backup node
+            - Services Backrest:
+                icon: mdi-backup-restore
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
+                description: Services host backup node
+            - Hermes Backrest:
+                icon: mdi-backup-restore
+                href: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
+                siteMonitor: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
+                description: Hermes host backup node
 
         - Finance:
             - Actual Budget:
@@ -256,6 +274,7 @@ services:
       HOMEPAGE_VAR_RASPI_IP: ${HOMEPAGE_VAR_RASPI_IP}
       HOMEPAGE_VAR_NAS_IP: ${HOMEPAGE_VAR_NAS_IP}
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
+      HOMEPAGE_VAR_HERMES_IP: ${HOMEPAGE_VAR_HERMES_IP}
       HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
       HOMEPAGE_VAR_PBS_IP: ${HOMEPAGE_VAR_PBS_IP}
       HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
