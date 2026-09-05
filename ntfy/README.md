@@ -28,15 +28,28 @@ The coordinator performs these steps on the target host/Portainer stack after th
 reviewed. Workers must not provision credentials or deploy remotely.
 
 1. Create the local data directory with ownership/permissions appropriate for the ntfy image.
-2. Render the stack with non-secret variables only and verify the bind address is loopback or a
-   private LAN/VPN interface.
-3. Start the stack and verify the local health endpoint.
-4. Provision separate ntfy identities using the supported `ntfy user` commands (or the approved
+2. Run the repository preflight on the target host before rendering or deploying:
+
+   ```bash
+   NTFY_BIND_ADDRESS=<approved-private-address> \
+   NTFY_PORT=<approved-port> \
+   NTFY_DATA_DIR=<local-directory> \
+   NTFY_BASE_URL=<matching-private-url> \
+   ./ntfy/preflight.sh
+   ```
+
+   The preflight rejects unspecified/public bindings, non-local storage, missing or
+   unwritable data directories, and a base URL that does not resolve to the bind address.
+3. Render the stack with the same non-secret variables and verify the bind address remains
+   loopback or a private LAN/VPN interface. `NTFY_BASE_URL` is required and must match the
+   direct bind address and port, so generated links cannot silently remain on loopback.
+4. Start the stack and verify the `/v1/health` container healthcheck becomes healthy.
+5. Provision separate ntfy identities using the supported `ntfy user` commands (or the approved
    control-plane equivalent): a write-only producer identity for heartbeat publishers and a
    read-only consumer identity for readers. Store credentials only in the approved secret store.
-5. Grant each identity only the required topic ACLs. Do not put credentials in stack files,
+6. Grant each identity only the required topic ACLs. Do not put credentials in stack files,
    shell arguments, logs, chat, or this repository.
-6. Run a synthetic authenticated publish/subscribe test without printing credentials.
+7. Run a synthetic authenticated publish/subscribe test without printing credentials.
 
 There is no unauthenticated bootstrap mode in this definition. If a first-boot procedure ever
 requires temporarily disabling auth to create the auth database, that must be an explicit,

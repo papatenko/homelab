@@ -28,9 +28,21 @@ updating it on a Raspberry Pi.
 ## Coordinator-only runtime setup
 
 The coordinator creates the local data directory, supplies non-secret stack variables through the
-approved Git-backed control plane, and completes first-run setup in the Kuma UI. Workers must not
-deploy remotely or create monitor credentials. Configure monitors from the approved monitoring
-matrix only, and keep existing n8n watchlist coverage until parity and alert behavior are verified.
+approved Git-backed control plane, and completes first-run setup in the Kuma UI. Before rendering
+or deploying, run the repository preflight on the target host with the exact deployment values:
+
+```bash
+KUMA_BIND_ADDRESS=<approved-private-address> \
+KUMA_PORT=<approved-port> \
+KUMA_DATA_DIR=<local-directory> \
+./uptime-kuma/preflight.sh
+```
+
+The preflight rejects unspecified/public bindings, non-local storage, and missing or unwritable
+data directories. After deployment, require the strict upstream-compatible HTTP 302 container
+healthcheck to become healthy. Workers must not deploy remotely or create monitor credentials.
+Configure monitors from the approved monitoring matrix only, and keep existing n8n watchlist
+coverage until parity and alert behavior are verified.
 
 When ntfy is selected as an alert channel, add the authenticated read/write details through the
 Kuma UI or approved secret mechanism at runtime; never commit them or place them in Compose.

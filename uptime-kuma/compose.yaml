@@ -6,11 +6,11 @@ services:
     environment:
       TZ: ${TZ:-UTC}
     ports:
-      - "${KUMA_BIND_ADDRESS:-127.0.0.1}:${KUMA_PORT:-3001}:3001"
+      - "${KUMA_BIND_ADDRESS:?Set KUMA_BIND_ADDRESS to loopback or a private LAN/VPN address}:${KUMA_PORT:?Set KUMA_PORT to the approved host port}:3001"
     volumes:
-      - ${KUMA_DATA_DIR:-/opt/stacks/uptime-kuma}:/app/data
+      - ${KUMA_DATA_DIR:?Set KUMA_DATA_DIR to an existing local-disk host directory}:/app/data
     healthcheck:
-      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:3001/',r=>process.exit(r.statusCode < 500 ? 0 : 1)).on('error',()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:3001/',r=>process.exit(r.statusCode === 302 ? 0 : 1)).on('error',()=>process.exit(1))"]
       interval: 30s
       timeout: 5s
       retries: 3
