@@ -4,6 +4,10 @@ These producers wrap an existing host-local job. They do **not** replace or edit
 that job. Set `HEARTBEAT_COMMAND` to the existing command and
 `HEARTBEAT_VERIFY` to an independent, read-only post-check at runtime.
 
+Each producer establishes its own safe `HEARTBEAT_PRODUCER` identity before
+invoking the generic runner. The identity is for logs/metrics or coordinator
+routing; it does not select a job command.
+
 Included producer entry points:
 
 - `producers/nas-backrest.sh`
@@ -43,15 +47,26 @@ and `NTFY_TOPIC` are present. The token is sent as an Authorization header and
 never appears in arguments or output.
 
 Commands are intentionally shell strings because existing backup jobs may be
-local wrappers. They must be supplied by the host administrator and treated as
-trusted configuration. Do not put secrets in command strings.
+local wrappers. They must be supplied by the coordinator/host administrator as
+trusted configuration for the selected producer; this repository does not know
+which job a host uses and therefore does not claim a producer-to-command mapping.
+The runner executes each trusted command in its own process group, and terminates
+the whole group if the configured timeout expires. Do not put secrets in command
+strings.
 
 ## Backup integration templates
 
 `backup-integrations/heartbeat@.service` and `.timer` are generic systemd
 templates. Copy them into the host's reviewed systemd configuration and point
-the environment file at a host-local, owner-only file. They are templates only;
-this change does not install, enable, or run anything remotely.
+the environment file at a host-local, owner-only file. The service has explicit
+`TimeoutStartSec=1900` and `TimeoutStopSec=30`; the start timeout allows both
+job and verification commands to use the 900-second default, with headroom for
+notification/cleanup. The service is skipped unless both
+`/opt/monitoring/heartbeat/producers/%i.sh` and
+`/etc/monitoring/heartbeat/%i.env` exist. The referenced producer must be
+executable, and the environment file must define non-empty
+`HEARTBEAT_COMMAND` and `HEARTBEAT_VERIFY`. They are templates only; this
+change does not install, enable, or run anything remotely.
 
 Suggested verification commands should be specific to each existing backup
 system. Examples (adapt to the installed tool and plan identity):

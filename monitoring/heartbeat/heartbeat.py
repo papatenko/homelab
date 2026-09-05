@@ -6,8 +6,9 @@ captures or prints child-process output, URLs, or credential values.
 """
 from __future__ import annotations
 
-import argparse
 import os
+import re
+import signal
 import subprocess
 import sys
 import urllib.error
@@ -20,6 +21,7 @@ from typing import Optional
 class HeartbeatConfig:
     command: str
     verify: str
+    producer: str = "heartbeat"
     timeout: float = 900.0
     healthcheck_success_url: Optional[str] = None
     healthcheck_failure_url: Optional[str] = None
@@ -31,8 +33,11 @@ class HeartbeatConfig:
     def from_env(cls) -> "HeartbeatConfig":
         command = os.environ.get("HEARTBEAT_COMMAND", "").strip()
         verify = os.environ.get("HEARTBEAT_VERIFY", "").strip()
+        producer = os.environ.get("HEARTBEAT_PRODUCER", "heartbeat").strip()
         if not command or not verify:
             raise ValueError("HEARTBEAT_COMMAND and HEARTBEAT_VERIFY are required")
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", producer):
+            raise ValueError("HEARTBEAT_PRODUCER must be a safe identifier")
         try:
             timeout = float(os.environ.get("HEARTBEAT_TIMEOUT", "900"))
         except ValueError as exc:
@@ -42,6 +47,7 @@ class HeartbeatConfig:
         return cls(
             command=command,
             verify=verify,
+            producer=producer,
             timeout=timeout,
             healthcheck_success_url=os.environ.get("HEALTHCHECKS_SUCCESS_URL") or None,
             healthcheck_failure_url=os.environ.get("HEALTHCHECKS_FAILURE_URL") or None,
@@ -94,18 +100,32 @@ class HeartbeatRunner:
         self.publisher = publisher
 
     def _command(self, command: str) -> tuple[str, Optional[int]]:
+        process = None
         try:
-            completed = subprocess.run(
+            process = subprocess.Popen(
                 command,
                 shell=True,
                 executable="/bin/sh",
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
-                timeout=self.config.timeout,
-                check=False,
+                start_new_session=True,
             )
-            return "ok" if completed.returncode == 0 else "command", completed.returncode
+            returncode = process.wait(timeout=self.config.timeout)
+            return "ok" if returncode == 0 else "command", returncode
         except subprocess.TimeoutExpired:
+            if process is not None:
+                try:
+                    os.killpg(process.pid, signal.SIGTERM)
+                except ProcessLookupError:
+                    pass
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    process.wait()
             return "timeout", None
         except OSError:
             return "command", None

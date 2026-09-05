@@ -2,6 +2,8 @@
 Description=Verified heartbeat producer (%i)
 After=network-online.target
 Wants=network-online.target
+ConditionPathExists=/opt/monitoring/heartbeat/producers/%i.sh
+ConditionPathExists=/etc/monitoring/heartbeat/%i.env
 
 [Service]
 Type=oneshot
@@ -15,3 +17,7 @@ PrivateTmp=yes
 ProtectSystem=strict
 ProtectHome=read-only
 ReadWritePaths=/var/lib/monitoring/heartbeat
+# HEARTBEAT_TIMEOUT defaults to 900 seconds per command; allow both the job and
+# verification phases, plus notification/cleanup headroom.
+TimeoutStartSec=1900
+TimeoutStopSec=30
