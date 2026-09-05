@@ -23,6 +23,10 @@
         icon: portainer
         href: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
         siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:9443
+    - Uptime Kuma:
+        icon: uptime-kuma
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
     - Proxmox:
         icon: proxmox
         href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006

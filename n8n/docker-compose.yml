@@ -1,6 +1,3 @@
-volumes:
-  n8n-sandbox-tls:
-
 services:
   postgres:
     image: ${POSTGRES_IMAGE:-postgres:16-alpine}
@@ -28,77 +25,6 @@ services:
       - ${DATA_DIR:-/opt/stacks/n8n}/data:/data
       - ${DATA_DIR:-/opt/stacks/n8n}/files:/files
 
-  sandbox-certs:
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.2.0
-    container_name: n8n-sandbox-certs
-    user: "0:0"
-    restart: "no"
-    entrypoint: ["sh", "-c"]
-    command:
-      - >
-        bootstrap-mtls.sh --out-dir /tls --api-san sandbox-api
-        --control-san-prefix sandbox-runner &&
-        chown -R sandbox-api:sandbox-api /tls/api
-    environment:
-      NUM_RUNNERS: "1"
-    volumes:
-      - n8n-sandbox-tls:/tls
-
-  sandbox-api:
-    image: ghcr.io/n8n-io/n8n-sandbox-service-api:1.2.0
-    container_name: n8n-sandbox-api
-    restart: unless-stopped
-    depends_on:
-      sandbox-certs:
-        condition: service_completed_successfully
-    environment:
-      SANDBOX_API_KEYS: ${SANDBOX_API_KEYS:?Set SANDBOX_API_KEYS in Portainer before deploying}
-      SANDBOX_API_RUNNER_REGISTRATION_TOKEN: ${SANDBOX_API_RUNNER_REGISTRATION_TOKEN:?Set SANDBOX_API_RUNNER_REGISTRATION_TOKEN in Portainer before deploying}
-      SANDBOX_API_RUNNER_API_KEY: ${SANDBOX_API_RUNNER_API_KEY:?Set SANDBOX_API_RUNNER_API_KEY in Portainer before deploying}
-      SANDBOX_API_GRPC_TLS_CERT_FILE: /tls/api/grpc-server.crt
-      SANDBOX_API_GRPC_TLS_KEY_FILE: /tls/api/grpc-server.key
-      SANDBOX_API_GRPC_TLS_CLIENT_CA_FILE: /tls/api/ca.crt
-      SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CA_FILE: /tls/api/ca.crt
-      SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CERT_FILE: /tls/api/control-grpc-api-client.crt
-      SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_KEY_FILE: /tls/api/control-grpc-api-client.key
-      SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_SERVER_NAME: sandbox-runner-1
-    volumes:
-      - n8n-sandbox-tls:/tls:ro
-    healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 10s
-
-  sandbox-runner-1:
-    image: ghcr.io/n8n-io/n8n-sandbox-service-runner-dind:1.2.0
-    container_name: n8n-sandbox-runner-1
-    restart: unless-stopped
-    privileged: true
-    depends_on:
-      sandbox-api:
-        condition: service_healthy
-    environment:
-      SANDBOX_RUNNER_API_KEYS: ${SANDBOX_API_RUNNER_API_KEY:?Set SANDBOX_API_RUNNER_API_KEY in Portainer before deploying}
-      SANDBOX_RUNNER_REGISTRATION_TOKEN: ${SANDBOX_API_RUNNER_REGISTRATION_TOKEN:?Set SANDBOX_API_RUNNER_REGISTRATION_TOKEN in Portainer before deploying}
-      SANDBOX_RUNNER_API_GRPC_ADDR: sandbox-api:9090
-      SANDBOX_RUNNER_HTTP_BASE_URL: http://sandbox-runner-1:8080
-      SANDBOX_RUNNER_CONTROL_GRPC_LISTEN_ADDR: ":9091"
-      SANDBOX_RUNNER_CONTROL_GRPC_ADVERTISE_ADDR: sandbox-runner-1:9091
-      SANDBOX_RUNNER_ID: runner-1
-      SANDBOX_RUNNER_DOCKER_SANDBOX_IMAGE: ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.1.0
-      SANDBOX_RUNNER_REGISTRATION_GRPC_CA_FILE: /tls/runner/ca.crt
-      SANDBOX_RUNNER_REGISTRATION_GRPC_CERT_FILE: /tls/runner/grpc-client.crt
-      SANDBOX_RUNNER_REGISTRATION_GRPC_KEY_FILE: /tls/runner/grpc-client.key
-      SANDBOX_RUNNER_REGISTRATION_GRPC_SERVER_NAME: sandbox-api
-      SANDBOX_RUNNER_CONTROL_GRPC_TLS_CERT_FILE: /tls/runner/control-grpc-server.crt
-      SANDBOX_RUNNER_CONTROL_GRPC_TLS_KEY_FILE: /tls/runner/control-grpc-server.key
-      SANDBOX_RUNNER_CONTROL_GRPC_TLS_CLIENT_CA_FILE: /tls/runner/ca.crt
-    volumes:
-      - n8n-sandbox-tls:/tls:ro
-
-
   n8n:
     image: ${N8N_IMAGE:-docker.n8n.io/n8nio/n8n:stable}
     container_name: n8n
@@ -108,8 +34,7 @@ services:
         condition: service_healthy
       n8n-init:
         condition: service_completed_successfully
-      sandbox-api:
-        condition: service_healthy
+
     ports:
       - "${N8N_BIND_IP:-0.0.0.0}:${N8N_PORT:-5678}:5678/tcp"
     environment:
@@ -132,12 +57,7 @@ services:
       N8N_SECURE_COOKIE: ${N8N_SECURE_COOKIE:-false}
       N8N_RESTRICT_FILE_ACCESS_TO: /files
       N8N_DIAGNOSTICS_ENABLED: "false"
-      N8N_ENABLED_MODULES: ${N8N_ENABLED_MODULES:-instance-ai}
-      N8N_INSTANCE_AI_SANDBOX_ENABLED: "true"
-      N8N_INSTANCE_AI_SANDBOX_PROVIDER: n8n-sandbox
-      N8N_INSTANCE_AI_SANDBOX_IMAGE: ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.1.0
-      N8N_INSTANCE_AI_SANDBOX_API_URL: http://sandbox-api:8080
-      N8N_INSTANCE_AI_SANDBOX_API_KEY: ${N8N_INSTANCE_AI_SANDBOX_API_KEY:?Set N8N_INSTANCE_AI_SANDBOX_API_KEY in Portainer before deploying}
+
     volumes:
       - ${DATA_DIR:-/opt/stacks/n8n}/data:/home/node/.n8n
       - ${DATA_DIR:-/opt/stacks/n8n}/files:/files

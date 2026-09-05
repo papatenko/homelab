@@ -1,29 +1,19 @@
 # n8n
 
-Self-hosted n8n workflow automation with PostgreSQL and the n8n AI Assistant sandbox, deployed as a Portainer Git stack.
+Self-hosted n8n workflow automation with PostgreSQL, deployed as a Portainer Git stack.
 
 ## Compose source
 
 - n8n image: `docker.n8n.io/n8nio/n8n:stable`
 - PostgreSQL image: `postgres:16-alpine`
-- AI Assistant sandbox images: `ghcr.io/n8n-io/n8n-sandbox-service-*` (pinned versions)
+
 - Upstream n8n Docker Compose guide: https://docs.n8n.io/deploy/host-n8n/install-options/install-using-docker-compose
-- AI Assistant configuration: https://docs.n8n.io/deploy/host-n8n/configure-n8n/set-up-ai-assistant
+
 - Monitoring endpoints: https://docs.n8n.io/hosting/configuration/configuration-examples/monitoring/
 
 This stack intentionally does not include Traefik. Add reverse-proxy, TLS, and public-webhook settings only after a separate approval.
 
 `n8n-init` initializes the two n8n-owned bind mounts with the container's non-root UID, so a fresh Portainer deployment can write its configuration and workflow files without manual host-side ownership changes.
-
-## AI Assistant architecture
-
-The default stack includes n8n's self-hosted sandbox:
-
-- `sandbox-certs` generates the internal mTLS certificates and exits.
-- `sandbox-api` is the private control plane that n8n contacts.
-- `sandbox-runner-1` runs the actual code sandboxes through Docker-in-Docker.
-
-The runner is `privileged: true`, which is a significant security boundary. It has no published ports and must remain on the private Compose network. Treat this setup as appropriate for a controlled homelab or evaluation environment. n8n currently recommends Daytona for production deployments.
 
 
 ## Required Portainer variables
@@ -33,13 +23,7 @@ Copy `example.env` into the Portainer stack environment and set at minimum:
 - `DATA_DIR` — persistent root for n8n data, PostgreSQL, workflow files, and local backups.
 - `POSTGRES_PASSWORD` — a unique non-empty PostgreSQL password.
 - `N8N_ENCRYPTION_KEY` — generate once and retain permanently; n8n uses it to encrypt credentials.
-- `SANDBOX_API_KEYS` — sandbox API key list.
-- `SANDBOX_API_RUNNER_REGISTRATION_TOKEN` — runner registration token.
-- `SANDBOX_API_RUNNER_API_KEY` — runner authentication key.
-- `N8N_INSTANCE_AI_SANDBOX_API_KEY` — must match a value in `SANDBOX_API_KEYS`.
-- Configure the AI model and provider key in the n8n UI. Do not set `N8N_INSTANCE_AI_MODEL` in Portainer if the model should remain editable from the UI, because n8n treats that value as environment-managed.
-
-Do not commit real passwords, encryption keys, model keys, sandbox tokens, or hostname-specific settings. Retrieve service credentials through the approved secret-delivery path.
+Do not commit real passwords, encryption keys, or hostname-specific settings. Retrieve service credentials through the approved secret-delivery path.
 
 ## Exposure
 
@@ -68,17 +52,12 @@ Schedule it only after the first manual backup succeeds. The local backup direct
 
 - `/healthz` confirms the n8n web service is reachable.
 - `/healthz/readiness` additionally checks database connectivity and migrations; Docker uses this for the container healthcheck.
-- `sandbox-api` uses `http://sandbox-api:8080/healthz` internally.
-
 Useful verification commands after deployment:
 
 ```bash
-docker compose exec n8n wget -qO- http://sandbox-api:8080/healthz
 curl -sf http://localhost:5678/healthz
 ```
 
-`sandbox-certs` must complete successfully and `sandbox-api` must become healthy before n8n starts. The runner registers asynchronously after the API starts, so verify runner registration in the `sandbox-api` logs before testing an AI Assistant code execution.
-
 ## Rollback
 
-To disable AI Assistant without deleting n8n data, revert the Compose change and redeploy the previous Git revision. Preserve the PostgreSQL data, n8n data, encryption key, and `n8n-sandbox-tls` volume until the replacement stack is healthy. Removing the sandbox services should not remove workflows or credentials.
+The retired AI Assistant sandbox TLS volume is intentionally preserved temporarily outside this Compose definition. Reverting this change and redeploying the previous Git revision restores the sandbox services without changing PostgreSQL data, n8n data, workflows, credentials, or the encryption key.
