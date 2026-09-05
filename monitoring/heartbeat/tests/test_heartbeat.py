@@ -107,6 +107,17 @@ class HeartbeatRunnerTests(unittest.TestCase):
         self.assertFalse(result.success)
         self.assertEqual("notification", result.reason)
 
+    def test_producer_identity_is_in_sanitized_ntfy_event(self):
+        publisher = RecordingPublisher()
+        runner = HeartbeatRunner(self.config(producer="nas-rsync"), publisher)
+
+        result = runner.run()
+
+        self.assertTrue(result.success)
+        ntfy_event = next(event for event in publisher.events if event[0] == "ntfy")
+        self.assertIn("nas-rsync", ntfy_event[1])
+        self.assertIn("producer=nas-rsync", ntfy_event[2])
+
     def test_environment_configuration_does_not_require_endpoints(self):
         with patch.dict(os.environ, {"HEARTBEAT_COMMAND": "true", "HEARTBEAT_VERIFY": "true"}, clear=True):
             config = HeartbeatConfig.from_env()

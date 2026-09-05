@@ -131,9 +131,11 @@ class HeartbeatRunner:
             return "command", None
 
     def _notify(self, status: str, title: str, message: str) -> bool:
+        producer_title = f"{self.config.producer}: {title}"
+        producer_message = f"producer={self.config.producer}; {message}"
         try:
             self.publisher.healthcheck(status)
-            self.publisher.ntfy(title, message)
+            self.publisher.ntfy(producer_title, producer_message)
             return True
         except Exception:
             return False

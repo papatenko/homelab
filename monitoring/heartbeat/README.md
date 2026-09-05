@@ -61,12 +61,12 @@ templates. Copy them into the host's reviewed systemd configuration and point
 the environment file at a host-local, owner-only file. The service has explicit
 `TimeoutStartSec=1900` and `TimeoutStopSec=30`; the start timeout allows both
 job and verification commands to use the 900-second default, with headroom for
-notification/cleanup. The service is skipped unless both
-`/opt/monitoring/heartbeat/producers/%i.sh` and
-`/etc/monitoring/heartbeat/%i.env` exist. The referenced producer must be
-executable, and the environment file must define non-empty
-`HEARTBEAT_COMMAND` and `HEARTBEAT_VERIFY`. They are templates only; this
-change does not install, enable, or run anything remotely.
+notification/cleanup. Before the producer starts, `ExecStartPre` requires an
+executable `/opt/monitoring/heartbeat/producers/%i.sh` and a non-empty
+`/etc/monitoring/heartbeat/%i.env`. The runner then validates that the environment
+file defines non-empty `HEARTBEAT_COMMAND` and `HEARTBEAT_VERIFY`; invalid values
+fail the service without emitting success. They are templates only; this change
+does not install, enable, or run anything remotely.
 
 Suggested verification commands should be specific to each existing backup
 system. Examples (adapt to the installed tool and plan identity):
