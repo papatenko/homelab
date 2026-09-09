@@ -1,32 +1,47 @@
 # Whisper
 
-Self-hosted, OpenAI-compatible Whisper speech-to-text API using the `small` model by default.
+Self-hosted, OpenAI-compatible Whisper speech-to-text API with one GitOps stack that can run in CPU or NVIDIA CUDA mode.
 
-## What it runs
+## Runtime modes
 
-- Image: `hwdsl2/whisper-server`
-- Runtime: `faster-whisper`
-- Model: `small`
-- Internal HTTP port: `9000`
-- Persistent data/cache: `${DATA_DIR:-/opt/stacks/whisper}/data`
-- OpenAI-compatible endpoints:
-  - `POST /v1/audio/transcriptions`
-  - `POST /v1/audio/translations`
-  - `GET /v1/models`
+Select exactly one Compose profile through the Portainer stack environment:
 
-The model is downloaded into the data volume on first startup, so the first boot can take longer.
+```text
+COMPOSE_PROFILES=cpu
+```
+
+or:
+
+```text
+COMPOSE_PROFILES=gpu
+```
+
+The CPU profile runs `hwdsl2/whisper-server:latest`. The GPU profile runs `hwdsl2/whisper-server:cuda` with an NVIDIA device reservation. Both profiles use the same container name, port, API contract, persistent data path, and environment variables, so switching modes does not require changing Hermes or OpenWhispr endpoints.
+
+## GPU requirements
+
+The GPU profile requires:
+
+- Docker Desktop with the WSL2 backend
+- A working NVIDIA driver
+- Docker GPU support verified with `docker run --rm --gpus all ... nvidia-smi`
+- An NVIDIA-capable host
+
+Use `WHISPER_MODEL=large-v3-turbo` for the preferred multilingual dictation model on the RTX 2070. If that model does not fit or has unacceptable latency, use `medium` or `small`.
 
 ## Portainer variables
 
-Copy `example.env` into Portainer stack environment variables and adjust as needed:
+Required or recommended values:
 
 ```env
 DATA_DIR=/opt/stacks/whisper
+COMPOSE_PROFILES=gpu
 WHISPER_IMAGE=hwdsl2/whisper-server:latest
-WHISPER_MODEL=small
+WHISPER_GPU_IMAGE=hwdsl2/whisper-server:cuda
+WHISPER_MODEL=large-v3-turbo
 WHISPER_LANGUAGE=auto
-WHISPER_DEVICE=cpu
-WHISPER_COMPUTE_TYPE=int8
+WHISPER_DEVICE=cuda
+WHISPER_COMPUTE_TYPE=float16
 WHISPER_THREADS=2
 WHISPER_LOG_LEVEL=INFO
 WHISPER_DISABLE_USAGE_COUNTS=1
@@ -34,40 +49,22 @@ WHISPER_API_KEY=TOKEN_HERE
 COMPOSE_PORT_HTTP=9000
 ```
 
-## Remote access
+For CPU mode, use `COMPOSE_PROFILES=cpu`, `WHISPER_DEVICE=cpu`, and `WHISPER_COMPUTE_TYPE=int8`.
 
-Publish only the HTTP port internally, then expose it through your reverse proxy for HTTPS remote access. Recommended production shape:
+Keep the real API key in Portainer only. Do not commit it or place it in this repository. Leave it blank only for a deliberately trusted VPN-only deployment.
 
-1. Deploy this stack on the chosen Docker host.
-2. Point your reverse proxy upstream at `http://<docker-host>:${COMPOSE_PORT_HTTP}`.
-3. Require a bearer token with `WHISPER_API_KEY` if the endpoint is reachable from the public internet.
+## API
 
-Do not expose this unauthenticated API directly to the public internet. Whisper transcription can be CPU-heavy and accepts file uploads.
-
-## API usage
-
-After deployment:
-
-- API docs: `http://<host>:9000/docs`
+- Internal HTTP port: `9000`
 - OpenAI-compatible base URL: `http://<host>:9000/v1`
-- Transcribe endpoint: `POST /v1/audio/transcriptions`
+- Transcription: `POST /v1/audio/transcriptions`
+- Translation: `POST /v1/audio/translations`
+- Models: `GET /v1/models`
 
-Example:
+The model is downloaded into `${DATA_DIR}/data` on first startup, so initial deployment can take longer.
 
-```bash
-curl 'http://<host>:9000/v1/audio/transcriptions' \
-  -F 'file=@sample.wav' \
-  -F 'model=whisper-1' \
-  -F 'language=en' \
-  -F 'response_format=json'
-```
+## Hermes and OpenWhispr
 
-If `WHISPER_API_KEY` is set, include it as a bearer token in the `Authorization` header.
+Both CPU and GPU profiles preserve the same OpenAI-compatible endpoint. Clients should use model `whisper-1` unless the client specifically supports the server's model name.
 
-For OpenAI-compatible GUI clients, use:
-
-```text
-Base URL: https://<your-whisper-host>/v1
-API key: <WHISPER_API_KEY>
-Model: whisper-1
-```
+Do not expose this upload-capable API directly to the public internet. Use Tailscale or another private network boundary, and keep any public reverse-proxy exposure separately approved.
