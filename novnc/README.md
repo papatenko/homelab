@@ -12,7 +12,21 @@ This stack is intentionally separate from NotebookLM MCP. It does not contain No
 - [Xvfb](https://www.x.org/releases/current/doc/man/man1/Xvfb.1.xhtml)
 - [Chromium](https://www.chromium.org/)
 
-The image is built from Debian Bookworm packages so the browser desktop components remain in one reproducible stack definition.
+The Dockerfile remains in this directory as the reproducible build source. The current Hermes Portainer Agent cannot build this image through its remote BuildKit path, so the image must be built and preloaded on the Hermes Docker host before the Git-backed stack is deployed.
+
+Current image tag:
+
+```text
+homelab-novnc:20260910
+```
+
+Build or refresh it on the target host before changing the tag in the Compose file:
+
+```bash
+docker build -t homelab-novnc:YYYYMMDD novnc
+```
+
+Portainer uses `pull_policy: never` so it does not attempt to pull this host-local image or invoke the broken remote BuildKit path. The stack itself remains Git-backed and all container configuration remains controlled by the merged repository revision. This is a deliberate host-local image limitation and should be replaced with a registry-backed image pipeline when GHCR or another approved registry is available.
 
 ## Runtime design
 
