@@ -1,0 +1,38 @@
+services:
+  novnc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: novnc:debian-bookworm
+    container_name: novnc
+    restart: unless-stopped
+    ports:
+      - "${NOVNC_BIND_ADDRESS:-127.0.0.1}:${NOVNC_PORT:-6080}:6080"
+    volumes:
+      - "${DATA_DIR:-/opt/stacks/novnc}/data:/data"
+    environment:
+      DISPLAY_NUM: "${DISPLAY_NUM:-99}"
+      SCREEN_RESOLUTION: "${SCREEN_RESOLUTION:-1280x800x24}"
+      VNC_PORT: "5900"
+      NOVNC_PORT: "6080"
+      DATA_DIR: "/data"
+      ENABLE_VNC: "${ENABLE_VNC:-true}"
+      START_BROWSER: "${START_BROWSER:-true}"
+      BROWSER_URL: "${BROWSER_URL:-about:blank}"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://127.0.0.1:6080/vnc.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
