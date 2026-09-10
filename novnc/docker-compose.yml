@@ -1,9 +1,7 @@
 services:
   novnc:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: novnc:debian-bookworm
+    image: homelab-novnc:20260910
+    pull_policy: never
     container_name: novnc
     restart: unless-stopped
     ports:
