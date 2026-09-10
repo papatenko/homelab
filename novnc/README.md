@@ -17,7 +17,7 @@ The Dockerfile remains in this directory as the reproducible build source. The c
 Current image tag:
 
 ```text
-homelab-novnc:20260910
+homelab-novnc:20260910-1
 ```
 
 Build or refresh it on the target host before changing the tag in the Compose file:
