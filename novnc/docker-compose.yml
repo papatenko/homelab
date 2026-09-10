@@ -1,6 +1,6 @@
 services:
   novnc:
-    image: homelab-novnc:20260910
+    image: homelab-novnc:20260910-1
     pull_policy: never
     container_name: novnc
     restart: unless-stopped

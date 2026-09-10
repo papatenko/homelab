@@ -49,6 +49,7 @@ if [[ "${START_BROWSER,,}" == "true" ]]; then
     --disable-dev-shm-usage \
     --no-first-run \
     --no-default-browser-check \
+    --no-sandbox \
     --user-data-dir="${DATA_DIR}/chromium" \
     "${BROWSER_URL}" >/tmp/chromium.log 2>&1 &
 fi
