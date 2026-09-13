@@ -1,0 +1,10 @@
+services:
+  openhands:
+    image: ${OPENHANDS_IMAGE:-ghcr.io/openhands/agent-canvas:1.18.0}
+    container_name: openhands
+    restart: unless-stopped
+    ports:
+      - "${COMPOSE_PORT_HTTP:-8011}:8000/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/openhands}/config:/home/openhands/.openhands
+      - ${PROJECTS_DIR:-/opt/stacks/openhands/projects}:/projects

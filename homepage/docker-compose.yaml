@@ -166,6 +166,10 @@ services:
                 icon: si-openai
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
+            - OpenHands:
+                icon: si-openai
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
 
         - Coolify Apps:
             - Coolify:
