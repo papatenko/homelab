@@ -151,6 +151,10 @@
         icon: si-openai
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
+    - Hister:
+        icon: mdi-magnify-scan
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
     - OpenHands:
         icon: si-openai
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
