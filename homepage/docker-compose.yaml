@@ -166,6 +166,10 @@ services:
                 icon: si-openai
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
+            - Hister:
+                icon: mdi-magnify-scan
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
             - OpenHands:
                 icon: si-openai
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
@@ -223,7 +227,7 @@ services:
             columns: 2
           AI and Automation:
             style: row
-            columns: 4
+            columns: 5
           Coolify Apps:
             style: row
             columns: 4
