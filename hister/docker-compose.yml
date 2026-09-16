@@ -1,0 +1,26 @@
+services:
+  hister:
+    image: ${HISTER_IMAGE:-ghcr.io/asciimoo/hister:latest}
+    container_name: hister
+    restart: unless-stopped
+    read_only: true
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    ports:
+      - "${HISTER_BIND_ADDRESS:-127.0.0.1}:${HISTER_PORT:-4433}:4433"
+    volumes:
+      - ${HISTER_DATA_DIR:?Set HISTER_DATA_DIR to a dedicated NAS data directory}:/hister/data
+    tmpfs:
+      - /tmp:noexec,nosuid,size=64m
+    environment:
+      HISTER__SERVER__ADDRESS: 0.0.0.0:4433
+      HISTER__SERVER__BASE_URL: ${HISTER_BASE_URL:?Set HISTER_BASE_URL to the LAN URL}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:4433/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
