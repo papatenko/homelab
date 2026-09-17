@@ -8,7 +8,7 @@ Headroom first, and Headroom forwards them to the configured provider/backend.
 
 - Documentation: https://headroomlabs-ai.github.io/headroom/docker-install/
 - Source: https://github.com/headroomlabs-ai/headroom
-- Image: `ghcr.io/headroomlabs-ai/headroom:latest`
+- Image: `ghcr.io/headroomlabs-ai/headroom:code`
 - Internal listener: `8989` in this deployment, matching the existing
   directory-scoped client convention. Upstream's default is `8787`.
 
@@ -19,7 +19,7 @@ Set these stack variables before deployment:
 ```env
 DATA_DIR=/opt/stacks/headroom
 HEADROOM_PORT=8989
-HEADROOM_IMAGE=ghcr.io/headroomlabs-ai/headroom:latest
+HEADROOM_IMAGE=ghcr.io/headroomlabs-ai/headroom:code
 HEADROOM_PROXY_TOKEN=<long random token, stored only in Portainer>
 ```
 
