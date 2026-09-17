@@ -20,12 +20,15 @@ Set these stack variables before deployment:
 DATA_DIR=/opt/stacks/headroom
 HEADROOM_PORT=8989
 HEADROOM_IMAGE=ghcr.io/headroomlabs-ai/headroom:latest
+HEADROOM_PROXY_TOKEN=<long random token, stored only in Portainer>
 ```
 
 `DATA_DIR` is persistent Headroom state and must remain outside Portainer's Git
-checkout. No provider credentials or agent OAuth directories are mounted by
-this stack. Provider routing remains the responsibility of the configured
-client backend or OmniRoute.
+checkout. `HEADROOM_PROXY_TOKEN` is required because this deployment binds to
+the Services host rather than loopback. Store it only in Portainer stack
+variables or the approved secret manager. No provider credentials or agent
+OAuth directories are mounted by this stack. Provider routing remains the
+responsibility of the configured client backend or OmniRoute.
 
 ## Access boundary
 

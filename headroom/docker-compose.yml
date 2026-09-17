@@ -8,6 +8,7 @@ services:
     environment:
       HOME: /tmp/headroom-home
       HEADROOM_HOST: 0.0.0.0
+      HEADROOM_PROXY_TOKEN: ${HEADROOM_PROXY_TOKEN:?set HEADROOM_PROXY_TOKEN}
       HEADROOM_WORKSPACE_DIR: /tmp/headroom-home/.headroom
       HEADROOM_CONFIG_DIR: /tmp/headroom-home/.headroom/config
     ports:
