@@ -9,8 +9,8 @@ Headroom first, and Headroom forwards them to the configured provider/backend.
 - Documentation: https://headroomlabs-ai.github.io/headroom/docker-install/
 - Source: https://github.com/headroomlabs-ai/headroom
 - Image: `ghcr.io/headroomlabs-ai/headroom:code`
-- Internal listener: `8989` in this deployment, matching the existing
-  directory-scoped client convention. Upstream's default is `8787`.
+- Internal listener: `8787` by default. Existing deployments may override it
+  with `HEADROOM_PORT`.
 
 ## Portainer variables
 
@@ -18,7 +18,7 @@ Set these stack variables before deployment:
 
 ```env
 DATA_DIR=/opt/stacks/headroom
-HEADROOM_PORT=8989
+HEADROOM_PORT=8787
 HEADROOM_BIND_ADDRESS=127.0.0.1
 HEADROOM_IMAGE=ghcr.io/headroomlabs-ai/headroom:code
 HEADROOM_PROXY_TOKEN=<long random token, stored only in Portainer>
@@ -49,15 +49,15 @@ The initial intended coding scope is the local `Nextcloud/Projects/code`
 directory and its descendants on each developer machine, subject to each
 machine's actual mount path. Existing `.envrc` and `.headroom-bin` files must
 be inspected before applying changes. On the current Fedora setup, that scope
-already uses `HEADROOM_PORT=8989`; before cutover, either expose this stack on
-that same port or update the directory-scoped configuration atomically.
+currently uses `HEADROOM_PORT=8989`; keep that explicit override until the
+client and deployment are cut over together.
 
 ## Validation
 
 ```bash
 docker compose -f headroom/docker-compose.yml config
 git diff --check
-curl -fsS http://<services-host>:8989/health
+curl -fsS http://<services-host>:8787/health
 ```
 
 A running container is not sufficient. Verify the listener and a harmless
