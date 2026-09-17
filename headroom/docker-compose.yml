@@ -1,0 +1,17 @@
+services:
+  headroom:
+    image: ${HEADROOM_IMAGE:-ghcr.io/headroomlabs-ai/headroom:latest}
+    container_name: headroom
+    entrypoint: ["headroom", "proxy"]
+    command: ["--host", "0.0.0.0", "--port", "${HEADROOM_PORT:-8787}"]
+    working_dir: /workspace
+    environment:
+      HOME: /tmp/headroom-home
+      HEADROOM_HOST: 0.0.0.0
+      HEADROOM_WORKSPACE_DIR: /tmp/headroom-home/.headroom
+      HEADROOM_CONFIG_DIR: /tmp/headroom-home/.headroom/config
+    ports:
+      - "${HEADROOM_PORT:-8989}:${HEADROOM_PORT:-8989}/tcp"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/headroom}/.headroom:/tmp/headroom-home/.headroom
+    restart: unless-stopped

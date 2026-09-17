@@ -159,6 +159,10 @@
         icon: si-openai
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
+    - Headroom:
+        icon: mdi-head-sync
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8989
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8989/health
 
 - Coolify Apps:
     - Coolify:
