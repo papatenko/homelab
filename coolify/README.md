@@ -28,7 +28,7 @@ The definition uses current pinned releases where the upgrade is clear and keeps
 - Coolify: `v4.3.0`
 - Realtime: `1.0.17`
 - Sentinel: `0.0.22`
-- Traefik: `v3.7.10`
+- Traefik: `v3.7.13`
 - PostgreSQL: `15-alpine`
 - Redis: `7-alpine`
 

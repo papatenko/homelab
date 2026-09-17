@@ -110,7 +110,7 @@ services:
       timeout: 2s
 
   proxy:
-    image: "${COOLIFY_PROXY_IMAGE:-traefik:v3.7.10}"
+    image: "${COOLIFY_PROXY_IMAGE:-traefik:v3.7.13}"
     container_name: coolify-proxy
     restart: unless-stopped
     extra_hosts:
