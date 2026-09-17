@@ -8,11 +8,11 @@ services:
     environment:
       HOME: /tmp/headroom-home
       HEADROOM_HOST: 0.0.0.0
-      HEADROOM_PROXY_TOKEN: ${HEADROOM_PROXY_TOKEN:?set HEADROOM_PROXY_TOKEN}
+      HEADROOM_PROXY_TOKEN: ${HEADROOM_PROXY_TOKEN:-}
       HEADROOM_WORKSPACE_DIR: /tmp/headroom-home/.headroom
       HEADROOM_CONFIG_DIR: /tmp/headroom-home/.headroom/config
     ports:
-      - "${HEADROOM_PORT:-8989}:${HEADROOM_PORT:-8989}/tcp"
+      - "${HEADROOM_BIND_ADDRESS:-127.0.0.1}:${HEADROOM_PORT:-8989}:${HEADROOM_PORT:-8989}/tcp"
     volumes:
       - ${DATA_DIR:-/opt/stacks/headroom}/.headroom:/tmp/headroom-home/.headroom
     restart: unless-stopped

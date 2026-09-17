@@ -19,22 +19,24 @@ Set these stack variables before deployment:
 ```env
 DATA_DIR=/opt/stacks/headroom
 HEADROOM_PORT=8989
+HEADROOM_BIND_ADDRESS=127.0.0.1
 HEADROOM_IMAGE=ghcr.io/headroomlabs-ai/headroom:code
 HEADROOM_PROXY_TOKEN=<long random token, stored only in Portainer>
 ```
 
 `DATA_DIR` is persistent Headroom state and must remain outside Portainer's Git
-checkout. `HEADROOM_PROXY_TOKEN` is required because this deployment binds to
-the Services host rather than loopback. Store it only in Portainer stack
-variables or the approved secret manager. No provider credentials or agent
+checkout. For a non-loopback binding, set `HEADROOM_PROXY_TOKEN` in Portainer
+stack variables or the approved secret manager. Loopback-only deployments may
+leave it empty. No provider credentials or agent
 OAuth directories are mounted by this stack. Provider routing remains the
 responsibility of the configured client backend or OmniRoute.
 
 ## Access boundary
 
-This stack publishes its port for private LAN/Tailscale clients only. It is not
-configured for Nginx Proxy Manager, public DNS, Authentik, or internet exposure.
-Do not expose the raw listener publicly.
+The Services deployment publishes its port for private LAN/Tailscale clients
+and requires `HEADROOM_PROXY_TOKEN`. The desktop-W​​SL deployment binds only to
+loopback for local coding agents. It is not configured for Nginx Proxy Manager,
+public DNS, Authentik, or internet exposure.
 
 ## Client integration
 
