@@ -57,7 +57,7 @@ that same port or update the directory-scoped configuration atomically.
 ```bash
 docker compose -f headroom/docker-compose.yml config
 git diff --check
-curl -fsS http://<services-host>:8787/health
+curl -fsS http://<services-host>:8989/health
 ```
 
 A running container is not sufficient. Verify the listener and a harmless
