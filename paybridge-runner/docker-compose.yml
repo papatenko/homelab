@@ -1,0 +1,18 @@
+services:
+  runner:
+    image: ${RUNNER_IMAGE:-myoung34/github-runner:latest}
+    container_name: paybridge-runner
+    restart: unless-stopped
+    environment:
+      RUNNER_NAME: ${RUNNER_NAME:-paybridge-runner-services}
+      RUNNER_SCOPE: repo
+      REPO_URL: https://github.com/momenta-fire/paybridge
+      ACCESS_TOKEN: ${GH_RUNNER_PAT:?Set GH_RUNNER_PAT in Portainer before deploying}
+      LABELS: self-hosted,paybridge
+      RUNNER_WORKDIR: /tmp/runner/work
+      EPHEMERAL: "1"
+      DISABLE_AUTO_UPDATE: "1"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/paybridge-runner}/work:/tmp/runner/work
+    security_opt:
+      - no-new-privileges:true
