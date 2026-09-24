@@ -1,6 +1,6 @@
 services:
   neko:
-    image: browser-lab:8e5d416
+    image: browser-lab:cdp-enabled-20260924
     pull_policy: never
     restart: unless-stopped
     network_mode: host

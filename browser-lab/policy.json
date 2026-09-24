@@ -3,7 +3,7 @@
   "AutofillCreditCardEnabled": false,
   "BrowserSignin": 0,
   "DefaultNotificationsSetting": 2,
-  "DeveloperToolsAvailability": 2,
+  "DeveloperToolsAvailability": 0,
   "EditBookmarksEnabled": false,
   "FullscreenAllowed": true,
   "IncognitoModeAvailability": 1,
