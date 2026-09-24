@@ -4,13 +4,29 @@ Private, persistent Neko Google Chrome browser for the Services host.
 
 ## Design
 
-- Google Chrome image pinned to Neko `v3.1.5`.
-- Derived image adds CDP on the configured Tailscale address and port.
+- The derived image is built on the target Docker host from this Git source and
+  tagged `browser-lab:8e5d416`; Portainer deploys the Git-backed Compose stack using
+  that local artifact because this Portainer endpoint cannot perform remote Compose
+  builds reliably.
 - Neko uses host networking because WebRTC needs a predictable UDP range.
 - The browser profile is mounted from `${DATA_DIR}/profile`.
 - Neko's persistent-data policy retains cookies and restores the previous session.
 - Extensions remain blocked by default. Bitwarden can be used through its Web Vault
   with manual copy and paste. Extension policy can be revisited separately.
+
+## Target-host image preparation
+
+Run this on the target Docker host from the merged `main` source before the
+Portainer stack is created:
+
+```text
+git clone --branch main https://github.com/papatenko/homelab.git /tmp/homelab-browser-lab
+docker build -t browser-lab:8e5d416 /tmp/homelab-browser-lab/browser-lab
+```
+
+The tag is tied to the reviewed source commit. Verify the image exists locally
+before creating or redeploying the Portainer stack. A future registry-backed image
+can replace this host-local artifact without changing the runtime contract.
 
 ## Portainer environment
 
