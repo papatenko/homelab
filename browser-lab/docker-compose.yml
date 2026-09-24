@@ -12,6 +12,7 @@ services:
       retries: 5
       start_period: 30s
     environment:
+      NEKO_SESSION_IMPLICIT_HOSTING: "true"
       NEKO_DESKTOP_SCREEN: ${NEKO_DESKTOP_SCREEN:?set in Portainer}
       NEKO_MEMBER_MULTIUSER_USER_PASSWORD: ${NEKO_MEMBER_MULTIUSER_USER_PASSWORD:?set in Portainer}
       NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: ${NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD:?set in Portainer}
