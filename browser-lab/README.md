@@ -11,6 +11,8 @@ Private, persistent Neko Google Chrome browser for the Services host.
 - Neko uses host networking because WebRTC needs a predictable UDP range.
 - The browser profile is mounted from `${DATA_DIR}/profile` at Chrome's non-default
   in-container path `/home/neko/.config/google-chrome-cdp` so Chrome permits CDP.
+- Chrome listens on loopback for CDP; a supervised `socat` proxy exposes the same
+  port only on the configured Tailscale address.
 - Neko's persistent-data policy retains cookies and restores the previous session.
 - Extensions remain blocked by default. Bitwarden can be used through its Web Vault
   with manual copy and paste. Extension policy can be revisited separately.
