@@ -5,6 +5,12 @@ services:
     restart: unless-stopped
     network_mode: host
     shm_size: 2gb
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://$${NEKO_SERVER_BIND}/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     environment:
       NEKO_DESKTOP_SCREEN: ${NEKO_DESKTOP_SCREEN:?set in Portainer}
       NEKO_MEMBER_MULTIUSER_USER_PASSWORD: ${NEKO_MEMBER_MULTIUSER_USER_PASSWORD:?set in Portainer}
