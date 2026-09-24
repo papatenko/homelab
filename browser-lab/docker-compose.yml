@@ -1,8 +1,7 @@
 services:
   neko:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: browser-lab:8e5d416
+    pull_policy: never
     restart: unless-stopped
     network_mode: host
     shm_size: 2gb
