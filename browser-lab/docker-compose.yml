@@ -6,7 +6,7 @@ services:
     network_mode: host
     shm_size: 2gb
     healthcheck:
-      test: ["CMD-SHELL", "wget -q --spider http://$${NEKO_SERVER_BIND}/ || exit 1"]
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://$${NEKO_SERVER_BIND}/ || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 5
