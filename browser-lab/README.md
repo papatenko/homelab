@@ -5,7 +5,7 @@ Private, persistent Neko Google Chrome browser for the Services host.
 ## Design
 
 - The derived image is built on the target Docker host from this Git source and
-  tagged `browser-lab:8e5d416`; Portainer deploys the Git-backed Compose stack using
+  tagged `browser-lab:cdp-enabled-20260924`; Portainer deploys the Git-backed Compose stack using
   that local artifact because this Portainer endpoint cannot perform remote Compose
   builds reliably.
 - Neko uses host networking because WebRTC needs a predictable UDP range.
@@ -21,7 +21,7 @@ Portainer stack is created:
 
 ```text
 git clone --branch main https://github.com/papatenko/homelab.git /tmp/homelab-browser-lab
-docker build -t browser-lab:8e5d416 /tmp/homelab-browser-lab/browser-lab
+docker build -t browser-lab:cdp-enabled-20260924 /tmp/homelab-browser-lab/browser-lab
 ```
 
 The tag is tied to the reviewed source commit. Verify the image exists locally
