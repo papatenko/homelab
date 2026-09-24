@@ -15,4 +15,4 @@ services:
       CDP_PORT: ${CDP_PORT:?set in Portainer}
       CDP_BIND_ADDRESS: ${CDP_BIND_ADDRESS:?set in Portainer}
     volumes:
-      - ${DATA_DIR:?set in Portainer}/profile:/home/neko/.config/google-chrome
+      - ${DATA_DIR:?set in Portainer}/profile:/home/neko/.config/google-chrome-cdp
