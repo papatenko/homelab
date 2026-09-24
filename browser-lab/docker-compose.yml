@@ -1,0 +1,19 @@
+services:
+  neko:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    network_mode: host
+    shm_size: 2gb
+    environment:
+      NEKO_DESKTOP_SCREEN: ${NEKO_DESKTOP_SCREEN:?set in Portainer}
+      NEKO_MEMBER_MULTIUSER_USER_PASSWORD: ${NEKO_MEMBER_MULTIUSER_USER_PASSWORD:?set in Portainer}
+      NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: ${NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD:?set in Portainer}
+      NEKO_SERVER_BIND: ${NEKO_SERVER_BIND:?set in Portainer}
+      NEKO_WEBRTC_EPR: ${NEKO_WEBRTC_EPR:?set in Portainer}
+      NEKO_WEBRTC_NAT1TO1: ${NEKO_WEBRTC_NAT1TO1:?set in Portainer}
+      CDP_PORT: ${CDP_PORT:?set in Portainer}
+      CDP_BIND_ADDRESS: ${CDP_BIND_ADDRESS:?set in Portainer}
+    volumes:
+      - ${DATA_DIR:?set in Portainer}/profile:/home/neko/.config/google-chrome
