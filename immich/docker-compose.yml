@@ -19,7 +19,9 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE_NAME: ${DB_DATABASE_NAME}
       TZ: ${TZ:-America/Chicago}
-
+    extends:
+      file: hwaccel.transcoding.yml
+      service: vaapi
     volumes:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
       - ${UPLOAD_LOCATION}:/data
@@ -38,9 +40,9 @@ services:
     # For hardware acceleration, add one of -[armnn, cuda, rocm, openvino, rknn] to the image tag.
     # Example tag: ${IMMICH_VERSION:-release}-cuda
     image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
-    extends: # CPU inference while validating HPENVY stability without AMDGPU.
+    extends:
       file: hwaccel.ml.yml
-      service: cpu
+      service: openvino
     volumes:
       - model-cache:/cache
     restart: always
