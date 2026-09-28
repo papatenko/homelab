@@ -14,6 +14,9 @@ Private, persistent Neko Google Chrome browser for the Services host.
 - Chrome listens on loopback for CDP; a supervised `socat` proxy exposes the same
   port only on the configured Tailscale address.
 - Neko's persistent-data policy retains cookies and restores the previous session.
+- Regular Neko users are explicitly granted room clipboard access through
+  `NEKO_MEMBER_MULTIUSER_USER_PROFILE`; Neko's default user profile does not
+  necessarily include that permission.
 - Extensions remain blocked by default. Bitwarden can be used through its Web Vault
   with manual copy and paste. Extension policy can be revisited separately.
 
