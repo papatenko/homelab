@@ -14,8 +14,9 @@ services:
       # Pinned third-party image: update the digest in Portainer deliberately.
       com.centurylinklabs.watchtower.enable: "false"
     ports:
-      # Bind ONLY to the Services Tailscale IP. Never 0.0.0.0 (the API has no auth).
+      # Bind ONLY to the Services Tailscale and LAN IPs. Never 0.0.0.0 (the API has no auth).
       - "${AW_BIND_ADDRESS:?Set to the Services Tailscale IP}:${AW_PORT:-5600}:5600"
+      - "${AW_LAN_BIND_ADDRESS:?Set to the Services LAN IP}:${AW_PORT:-5600}:5600"
     volumes:
       - ${AW_DATA_DIR:?Set AW_DATA_DIR to a dedicated host data directory}:/config
     tmpfs:
@@ -29,7 +30,7 @@ services:
       - --host
       - 0.0.0.0
       - --cors-origins
-      - http://${AW_BIND_ADDRESS}:${AW_PORT:-5600}
+      - http://${AW_BIND_ADDRESS}:${AW_PORT:-5600},http://${AW_LAN_BIND_ADDRESS}:${AW_PORT:-5600}
     healthcheck:
       # The image has no wget/curl; probe with bash /dev/tcp.
       test:

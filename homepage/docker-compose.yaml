@@ -180,8 +180,8 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8989/health
             - ActivityWatch:
                 icon: mdi-chart-timeline-variant
-                href: http://100.89.183.56:5600
-                siteMonitor: http://100.89.183.56:5600
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5600
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5600
 
         - Coolify Apps:
             - Coolify:
