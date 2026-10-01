@@ -32,6 +32,8 @@ services:
       ACTUAL_BUDGET_PASSWORD: ${ACTUAL_MCP_BUDGET_ENCRYPTION_PASSWORD:-}
       MCP_SSE_AUTHORIZATION: ${ACTUAL_MCP_BEARER_TOKEN:-}
       MCP_BRIDGE_DATA_DIR: /app/data
+      # Bank sync waits up to 30s for the SDK provider result; allow headroom for its other work.
+      ACTUAL_OP_TIMEOUT_MS: 90000
     volumes:
       - ${ACTUAL_MCP_DATA_DIR:-/opt/stacks/actual-mcp/data}:/app/data
     healthcheck:
