@@ -25,6 +25,15 @@ other homelab configuration. Add or reuse a deployment variable such as
 `HOMEPAGE_VAR_*`, and keep the real address only in Portainer or the applicable
 runtime environment.
 
+### Addressing rule: IP and port only
+
+Never use a domain name or hostname (for example `app.example.com`, `*.local`,
+or an NPM proxy host) to reach a service. Every Homepage `href`, `siteMonitor`,
+and `icon` URL, and every other service link or monitor, must be built as
+`<scheme>://{{HOMEPAGE_VAR_<HOST>_IP}}:<port>[/path]`. This applies to every
+website and service, including ones that also have a proxied public hostname.
+The `HOMEPAGE_VAR_*_IP` values must be IP addresses, not hostnames.
+
 ### Stacks
 
 - **media-stack/** — qBittorrent + Jellyfin + Sonarr + Radarr + Prowlarr + Bazarr on a shared network.

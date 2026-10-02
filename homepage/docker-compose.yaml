@@ -208,10 +208,6 @@ services:
                 icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003/favicon.ico
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
-            - Magic Asset:
-                icon: https://magicasset.papatenko.org/favicon.ico
-                href: https://magicasset.papatenko.org
-                siteMonitor: https://magicasset.papatenko.org
         HOMEPAGE_SERVICES_YAML
         cat > /app/config/settings.yaml <<'HOMEPAGE_SETTINGS_YAML'
         ---

@@ -14,6 +14,7 @@ This runbook follows the repo's current layout: **service directories live at th
 - Prefer Git-backed Portainer stacks with Git updates enabled.
 - Persistent data must live outside Portainer's Git checkout. See [`storage-layout.md`](storage-layout.md).
 - Keep public Git generic: avoid LAN IPs, private domains, hostnames, and tokens unless explicitly approved.
+- **Never link to or monitor a service by domain name or hostname.** Homepage cards, monitors, and any other service links must use the host's IP and the service port only, e.g. `http://{{HOMEPAGE_VAR_NAS_IP}}:4433`, with the IP supplied by a deployment variable (see the "Addressing rule" in the root `README.md`). NPM hostnames are optional access paths, never what Homepage points at.
 - Keep the PR scoped to adding the requested service. Do not reorganize existing directories or introduce new top-level categories unless Justin explicitly asks for a repo reorganization.
 - Do not commit host recommendations or Portainer deployment notes into service files. Keep those operational details in the PR body, PR comments, or chat so the repo stays reusable and not tied to a specific deployment target.
 
