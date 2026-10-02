@@ -10,7 +10,7 @@ It is installed by script on the Fedora workstation and bound to the **Tailscale
 cockpit/install.sh
 ```
 
-Idempotent. It installs `cockpit-system` and `cockpit-ws` with `dnf` (via `pkexec`), writes a `cockpit.socket` drop-in that listens on `127.0.0.1:9090` and the current Tailscale IPv4 address (`FreeBind=yes`, so it still starts before Tailscale is up), enables the socket, and registers every unit in `register-user-service.sh`'s search roots. Re-run it if the Tailscale IP changes.
+Idempotent. It installs `cockpit-system` and `cockpit-ws` with `dnf` (via `pkexec`), writes a `cockpit.socket` drop-in that listens on `127.0.0.1:9090` and the current Tailscale IPv4 address (`FreeBind=yes`, so it still starts before Tailscale is up), and enables the socket. Re-run it if the Tailscale IP changes.
 
 Open `https://<tailscale-ip>:9090`, log in as your Linux user, open **Services**, and switch the toggle to **User**.
 
