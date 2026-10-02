@@ -10,6 +10,7 @@ Rename `example.env` to `.env` in any service directory and change variables for
 
 - **docs/agent-service-onboarding.md** — workflow for adding new services at the repo root through upstream Compose discovery, PRs, Portainer Git stacks, optional NPM/Auth, and optional API keys.
 - **docs/repo-organization-plan.md** — long-term proposal for services, infrastructure, automation, templates, inventories, and runbooks; not part of normal service onboarding.
+- **docs/host-services.md** — standard for custom workstation daemons (systemd user services, viewed in Cockpit; see `cockpit/`).
 - **docs/storage-layout.md** — persistent data conventions for Portainer Git stacks.
 
 ### Homepage layout convention
