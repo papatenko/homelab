@@ -208,6 +208,10 @@ services:
                 icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003/favicon.ico
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
+            - Magic Asset:
+                icon: "{{HOMEPAGE_VAR_MAGICASSET_URL}}/favicon.ico"
+                href: "{{HOMEPAGE_VAR_MAGICASSET_URL}}"
+                siteMonitor: "{{HOMEPAGE_VAR_MAGICASSET_URL}}"
         HOMEPAGE_SERVICES_YAML
         cat > /app/config/settings.yaml <<'HOMEPAGE_SETTINGS_YAML'
         ---
@@ -293,6 +297,7 @@ services:
       HOMEPAGE_VAR_PBS_IP: ${HOMEPAGE_VAR_PBS_IP}
       HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
       HOMEPAGE_VAR_OPENWEBUI_IP: ${HOMEPAGE_VAR_OPENWEBUI_IP}
+      HOMEPAGE_VAR_MAGICASSET_URL: ${HOMEPAGE_VAR_MAGICASSET_URL}
     restart: unless-stopped
 
 volumes:

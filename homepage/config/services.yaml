@@ -193,3 +193,7 @@
         icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3003
+    - Magic Asset:
+        icon: "{{HOMEPAGE_VAR_MAGICASSET_URL}}/favicon.ico"
+        href: "{{HOMEPAGE_VAR_MAGICASSET_URL}}"
+        siteMonitor: "{{HOMEPAGE_VAR_MAGICASSET_URL}}"
