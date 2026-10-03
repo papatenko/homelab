@@ -7,6 +7,10 @@
         icon: pi-hole
         href: https://{{HOMEPAGE_VAR_RASPI_IP}}:8443/admin/
         siteMonitor: https://{{HOMEPAGE_VAR_RASPI_IP}}:8443/admin/
+    - Pi-hole (Secondary):
+        icon: pi-hole
+        href: https://{{HOMEPAGE_VAR_COOLIFY_IP}}:8453/admin/
+        siteMonitor: https://{{HOMEPAGE_VAR_COOLIFY_IP}}:8453/admin/
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:81
