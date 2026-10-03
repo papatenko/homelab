@@ -22,6 +22,14 @@ Deliberately **not** synced (`SYNC_CONFIG_DNS_EXCLUDE`): `upstreams`,
 (`DNS_UPSTREAMS`) so it never depends on the primary. Changes made on the
 secondary are overwritten; make all edits on the primary.
 
+## Sync health monitoring
+
+Set `SYNC_SUCCESS_WEBHOOK_URL` and `SYNC_FAILURE_WEBHOOK_URL` as stack variables to
+ping a monitor after every run. With an Uptime Kuma push monitor, use the push
+URL with `?status=up` for success and `?status=down` for failure, and set the
+monitor's heartbeat interval a little longer than `SYNC_CRON` so a stalled
+container also alerts. Treat the URLs as secrets (they contain the push token).
+
 ## Persistent data
 
 `${DATA_DIR:-/opt/stacks/pihole-secondary}/etc-pihole`
