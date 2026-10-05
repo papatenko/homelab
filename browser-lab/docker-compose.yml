@@ -12,6 +12,9 @@ services:
       retries: 5
       start_period: 30s
     environment:
+      # Keep the interactive browser's rendered schedule and course automation
+      # in the user's local academic timezone, without changing the host clock.
+      TZ: America/Chicago
       NEKO_SESSION_IMPLICIT_HOSTING: "true"
       NEKO_DESKTOP_SCREEN: ${NEKO_DESKTOP_SCREEN:?set in Portainer}
       NEKO_MEMBER_MULTIUSER_USER_PASSWORD: ${NEKO_MEMBER_MULTIUSER_USER_PASSWORD:?set in Portainer}
