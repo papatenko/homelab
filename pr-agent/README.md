@@ -2,43 +2,55 @@
 
 Self-hosted, open-source PR-Agent on the Services Docker host, deployed through a Portainer **Git-backed stack** with this directory as the Compose path. This service complements OpenHands; it does not replace it. Image `pragent/pr-agent:0.47.0-github_app` is pinned to the upstream multi-platform digest in `docker-compose.yml` (Linux amd64 and arm64).
 
-**Status:** configuration only. Do not deploy or publish ingress until the app, secret, model route, firewall, and review scope are ready. A successful Compose validation is not a successful PR review.
+**Status:** configuration only. Do not deploy or publish ingress until the GitHub App, webhook ingress, and OmniRoute credential are ready. A healthy container alone does not verify integration.
 
-## Portainer runtime variables
+## Portainer stack variables
 
-Set these on the Services endpoint when creating the Git stack (not in Git or a committed `.env` file):
+Set all of these in Portainer when creating the Git stack. No host-side files, no mounted secrets directory, no SSH into Services required. Every value stays inside Portainer's encrypted variable store.
 
-- `PR_AGENT_CONFIG_DIR`: existing absolute host directory containing `.secrets.toml`, readable by container UID 10001. Example placeholder: `/opt/stacks/pr-agent/config`. Mount is read-only at `/app/pr_agent/settings_prod`, where PR-Agent v0.47.0 loads `.secrets.toml`.
-- `PR_AGENT_OPENAI_API_BASE`: the privately reachable OmniRoute OpenAI-compatible API base URL, including its `/v1` path as appropriate. Enter the **actual** private URL only in Portainer.
-- `PR_AGENT_MODEL`: an OmniRoute-supported model identifier with the `openai/` prefix, for example `openai/<gateway-model-id>`. Confirm that OmniRoute actually supports this model and the needed chat-completions behavior. No consumer ChatGPT/Codex subscription is assumed to be an unattended API key.
-- `PR_AGENT_BIND_ADDRESS`: optional host bind IP. Default `127.0.0.1` allows only a proxy on the same host. If the reverse proxy is on another host, explicitly bind to a Services private interface and firewall the port to the proxy host only.
-- `PR_AGENT_PORT`: optional host port, default `3110`. Check conflicts before deploying.
+| Variable | Required | Description |
+|---|---|---|
+| `PR_AGENT_GITHUB_APP_ID` | Yes | Numeric GitHub App ID (visible on the App settings page, not a secret) |
+| `PR_AGENT_GITHUB_PRIVATE_KEY` | Yes | Full PEM private key generated from the GitHub App settings page. Include the `-----BEGIN RSA PRIVATE KEY-----` header and footer with literal newlines. |
+| `PR_AGENT_GITHUB_WEBHOOK_SECRET` | Yes | The random secret string you enter both in Portainer and in the GitHub App webhook settings. Webhooks with a missing or wrong signature are rejected with HTTP 403. |
+| `PR_AGENT_OPENAI_KEY` | Yes | OmniRoute API key (gateway credential, not a consumer ChatGPT/Codex password). |
+| `PR_AGENT_OPENAI_API_BASE` | Yes | OmniRoute OpenAI-compatible API base URL, e.g. `http://192.168.0.X:PORT/v1`. Keep this on the private LAN; do not expose it publicly. |
+| `PR_AGENT_MODEL` | Yes | OmniRoute model ID with the `openai/` prefix, e.g. `openai/gpt-5.6-terra`. |
+| `PR_AGENT_BIND_ADDRESS` | No | Host bind IP; default `127.0.0.1` for a proxy on the same host. |
+| `PR_AGENT_PORT` | No | Host port; default `3110`. |
 
-Never enter the API key or GitHub App private key in Portainer stack variables. The host-side `.secrets.toml` must be **provisioned from Bitwarden Secrets Manager at runtime**, not put in Git or Portainer. It must contain this shape with real values supplied securely and appropriate quoting for PEM newlines:
+The PEM key is multi-line. Portainer's stack variable editor accepts literal newlines in values: paste the full PEM block exactly as downloaded from GitHub.
 
-```toml
-[github]
-app_id = 123456
-private_key = """<GitHub App PEM private key>"""
-webhook_secret = "<long random GitHub webhook secret>"
+## GitHub App registration
 
-[openai]
-key = "<OmniRoute-compatible gateway credential>"
-```
+1. Go to **GitHub Settings > Developer settings > GitHub Apps > New GitHub App**.
+2. Set the **Webhook URL** to `https://<your-public-domain>/api/v1/github_webhooks` (configure this after the reverse proxy is in place).
+3. Set a strong random **Webhook secret** and copy it; you will enter the same string in Portainer as `PR_AGENT_GITHUB_WEBHOOK_SECRET`.
+4. **Permissions (Repository):** Pull requests: Read & write; Contents: Read; Issues: Read & write (for issue comment events).
+5. **Subscribe to events:** Pull request; Issue comment; Pull request review comment.
+6. **Installation:** choose "Only on this account" and install on selected repositories only. Start with one test repo.
+7. After creation, download the **private key** PEM from the App settings page. Copy the entire file contents (header, body, footer) into Portainer as `PR_AGENT_GITHUB_PRIVATE_KEY`.
+8. Note the **App ID** (shown at the top of the App settings page) and enter it as `PR_AGENT_GITHUB_APP_ID`.
 
-Provision the host directory as owner UID/GID `10001:10001` with mode `0700` and the file with mode `0400`; do not commit, paste, or log the populated file. Create it atomically from BWS values with restrictive umask, never a world-readable Compose variable or CLI argument. The app ID is not a secret, but this arrangement keeps the entire GitHub identity together. Verify that the Services host can reach the configured private API base without making the gateway public. Rotation means updating the runtime file securely and recreating the stack; rollback means removing ingress and the Git stack while preserving the host-side secrets until explicitly retired.
+## Reverse proxy (NPM)
 
-## GitHub App and webhook
+Expose **only** `POST /api/v1/github_webhooks` publicly over HTTPS. GitHub must reach this URL; OmniRoute does not need public exposure.
 
-1. After review and merge, create a dedicated GitHub App with **selected repositories only**. Grant the permissions upstream PR-Agent requires for pull request reads/comments, contents reads, and checks only if needed. Subscribe to `Pull request`, `Issue comment`, and `Pull request review comment` events; confirm exact permissions/events in the [upstream GitHub App installation guide](https://qodo-merge-docs.qodo.ai/installation/github/) for the pinned release. Do not install the app broadly for this trial.
-2. Create the private key and a strong webhook secret, record them only in BWS, then stage the host-side file above. The configured secret is mandatory: PR-Agent rejects unsigned and incorrectly signed webhooks.
-3. On the reverse proxy, expose **only** `POST /api/v1/github_webhooks` over HTTPS to this private upstream. Deny other paths and methods at the proxy; keep `/` health, `/docs`, and other routes private. Enable proxy/request limits and monitor logs without request-body or secret logging. Route the callback only after private bind/firewall validation.
-4. In GitHub App settings, point the webhook URL to `https://<approved-public-host>/api/v1/github_webhooks` and set the matching secret. Install on one approved test repository. GitHub must reach this URL; OmniRoute does **not** need public exposure.
-5. The stack automatically invokes only `/review` on newly opened/reopened/ready-for-review PRs. Comment commands remain available through the GitHub App. Repository-supplied PR-Agent settings are disabled to keep the trial's model and routing fixed.
+- Upstream: `http://services-host:3110` (or the configured `PR_AGENT_PORT`).
+- Deny or 404 all other paths and methods at the proxy level.
+- The webhook endpoint validates the HMAC-SHA256 signature automatically; an incorrect or missing secret returns HTTP 403 before any model call is made.
 
-## Deployment and verification gate
+## Deployment checklist
 
-- Review this PR and merge through the normal Homelab process. Create a **Git-backed** Portainer stack targeting this Compose path on Services; do not manually paste Compose or deploy an unmerged branch.
-- Confirm image digest and pull, container health (`GET /` responds), private bind/firewall, and the reverse proxy's rejection of unapproved paths. A healthy container alone does not verify integration.
-- First send a webhook with an invalid signature and verify rejection; use GitHub's delivery UI to confirm a valid delivery. Then open a harmless PR in the selected test repository and verify **one** PR-Agent review comment and an actual successful OmniRoute request. Check `/review` comment command. Check that neither sensitive values nor PR content appear in proxy access logs beyond what is necessary.
-- If any step fails, disable GitHub App delivery/remove the callback, remove the reverse-proxy route, and roll back the stack. Keep the BWS items for controlled retirement or rotation; do not delete them as an incidental rollback.
+- [ ] GitHub App registered, private key and webhook secret stored in Portainer variables.
+- [ ] OmniRoute API key and model ID confirmed and stored in Portainer variables.
+- [ ] NPM proxy configured with HTTPS, routing only `POST /api/v1/github_webhooks` to `services-host:3110`.
+- [ ] PR merged to `main`; Portainer Git stack created targeting `pr-agent/` on `main`.
+- [ ] Container starts healthy (`GET /` returns 200).
+- [ ] Test: send a webhook with a wrong secret, verify HTTP 403 rejection.
+- [ ] Test: open a harmless PR in the selected test repo, verify PR-Agent posts a `/review` comment.
+- [ ] If anything fails: disable GitHub App webhook delivery in GitHub App settings, remove the NPM proxy route, and stop the Portainer stack. No data volume to protect; variables remain in Portainer for later recovery.
+
+## Rollback
+
+Stop the Portainer stack and remove the NPM proxy forward. No persistent data volumes are used. To retire permanently, also delete or suspend the GitHub App in GitHub settings and remove the Portainer stack variables.

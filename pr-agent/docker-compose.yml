@@ -10,19 +10,23 @@ services:
     cap_drop:
       - ALL
     environment:
-      # Portainer variables contain routing metadata, never the authentication key.
-      OPENAI__API_BASE: ${PR_AGENT_OPENAI_API_BASE:?Set the private OmniRoute-compatible API base URL in Portainer}
-      CONFIG__MODEL: ${PR_AGENT_MODEL:?Set an OmniRoute-supported model with the openai/ prefix in Portainer}
+      # --- GitHub App identity (all required, set in Portainer stack variables) ---
+      GITHUB__APP_ID: ${PR_AGENT_GITHUB_APP_ID:?Set the GitHub App numeric ID in Portainer}
+      GITHUB__PRIVATE_KEY: ${PR_AGENT_GITHUB_PRIVATE_KEY:?Set the GitHub App PEM private key in Portainer}
+      GITHUB__WEBHOOK_SECRET: ${PR_AGENT_GITHUB_WEBHOOK_SECRET:?Set the GitHub webhook secret in Portainer}
+      GITHUB__DEPLOYMENT_TYPE: "app"
+      # --- OmniRoute model routing (set in Portainer stack variables) ---
+      OPENAI__KEY: ${PR_AGENT_OPENAI_KEY:?Set the OmniRoute API key in Portainer}
+      OPENAI__API_BASE: ${PR_AGENT_OPENAI_API_BASE:?Set the OmniRoute API base URL in Portainer}
+      CONFIG__MODEL: ${PR_AGENT_MODEL:?Set the OmniRoute model ID (openai/<name>) in Portainer}
+      # --- Fixed operational settings ---
       CONFIG__USE_REPO_SETTINGS_FILE: "false"
       GITHUB_APP__PR_COMMANDS: '["/review"]'
       GUNICORN_MAX_WORKERS: "2"
     ports:
-      # Loopback by default. For a reverse proxy on another host, bind only to a
-      # private interface via PR_AGENT_BIND_ADDRESS and restrict access by firewall.
+      # Loopback by default. If the reverse proxy is on another host, set
+      # PR_AGENT_BIND_ADDRESS to a Services private interface and firewall that port.
       - "${PR_AGENT_BIND_ADDRESS:-127.0.0.1}:${PR_AGENT_PORT:-3110}:3000/tcp"
-    volumes:
-      # Host-side, BWS-sourced TOML. Portainer must point to an existing directory.
-      - "${PR_AGENT_CONFIG_DIR:?Set a host directory containing .secrets.toml in Portainer}:/app/pr_agent/settings_prod:ro"
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3000/', timeout=5).close()"]
       interval: 30s
