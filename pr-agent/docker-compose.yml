@@ -1,0 +1,35 @@
+services:
+  pr-agent:
+    # GitHub App target, not the CLI or GitHub Actions image.
+    image: pragent/pr-agent:0.47.0-github_app@sha256:c1603bc4c765d730e21f08daa1af75fbd508624e9b8d278013dd5ad108e41129
+    container_name: pr-agent
+    restart: unless-stopped
+    user: "10001:10001"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      # --- GitHub App identity (all required, set in Portainer stack variables) ---
+      GITHUB__APP_ID: ${PR_AGENT_GITHUB_APP_ID:?Set the GitHub App numeric ID in Portainer}
+      GITHUB__PRIVATE_KEY: ${PR_AGENT_GITHUB_PRIVATE_KEY:?Set the GitHub App PEM private key in Portainer}
+      GITHUB__WEBHOOK_SECRET: ${PR_AGENT_GITHUB_WEBHOOK_SECRET:?Set the GitHub webhook secret in Portainer}
+      GITHUB__DEPLOYMENT_TYPE: "app"
+      # --- OmniRoute model routing (set in Portainer stack variables) ---
+      OPENAI__KEY: ${PR_AGENT_OPENAI_KEY:?Set the OmniRoute API key in Portainer}
+      OPENAI__API_BASE: ${PR_AGENT_OPENAI_API_BASE:?Set the OmniRoute API base URL in Portainer}
+      CONFIG__MODEL: ${PR_AGENT_MODEL:?Set the OmniRoute model ID (openai/<name>) in Portainer}
+      # --- Fixed operational settings ---
+      CONFIG__USE_REPO_SETTINGS_FILE: "false"
+      GITHUB_APP__PR_COMMANDS: '["/review"]'
+      GUNICORN_MAX_WORKERS: "2"
+    ports:
+      # Loopback by default. If the reverse proxy is on another host, set
+      # PR_AGENT_BIND_ADDRESS to a Services private interface and firewall that port.
+      - "${PR_AGENT_BIND_ADDRESS:-127.0.0.1}:${PR_AGENT_PORT:-3110}:3000/tcp"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3000/', timeout=5).close()"]
+      interval: 30s
+      timeout: 8s
+      start_period: 60s
+      retries: 3
