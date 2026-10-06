@@ -1,0 +1,31 @@
+services:
+  pr-agent:
+    # GitHub App target, not the CLI or GitHub Actions image.
+    image: pragent/pr-agent:0.47.0-github_app@sha256:c1603bc4c765d730e21f08daa1af75fbd508624e9b8d278013dd5ad108e41129
+    container_name: pr-agent
+    restart: unless-stopped
+    user: "10001:10001"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      # Portainer variables contain routing metadata, never the authentication key.
+      OPENAI__API_BASE: ${PR_AGENT_OPENAI_API_BASE:?Set the private OmniRoute-compatible API base URL in Portainer}
+      CONFIG__MODEL: ${PR_AGENT_MODEL:?Set an OmniRoute-supported model with the openai/ prefix in Portainer}
+      CONFIG__USE_REPO_SETTINGS_FILE: "false"
+      GITHUB_APP__PR_COMMANDS: '["/review"]'
+      GUNICORN_MAX_WORKERS: "2"
+    ports:
+      # Loopback by default. For a reverse proxy on another host, bind only to a
+      # private interface via PR_AGENT_BIND_ADDRESS and restrict access by firewall.
+      - "${PR_AGENT_BIND_ADDRESS:-127.0.0.1}:${PR_AGENT_PORT:-3110}:3000/tcp"
+    volumes:
+      # Host-side, BWS-sourced TOML. Portainer must point to an existing directory.
+      - "${PR_AGENT_CONFIG_DIR:?Set a host directory containing .secrets.toml in Portainer}:/app/pr_agent/settings_prod:ro"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3000/', timeout=5).close()"]
+      interval: 30s
+      timeout: 8s
+      start_period: 60s
+      retries: 3
