@@ -13,6 +13,14 @@ The RAG pilot is CPU-first. Do not combine GPU recovery with this stack change.
 
 ## Phase 2, NAS Open WebUI
 
+### Image updates
+
+Open WebUI intentionally follows the upstream `main` container tag. Before an approved Portainer image update/redeploy, read the upstream release notes, confirm a recent backup of the derived state root, and retain the previously running image digest for rollback. Do not enable unattended Watchtower updates for this stateful service.
+
+### Search and vector-store boundary
+
+This pilot intentionally excludes SearXNG and a standalone Chroma service. SearXNG is a follow-up public-web research capability, with its own outbound-data policy and internal-network isolation requirements. The single-process embedded vector store is the supported low-dependency starting point; add an external store only after measured scaling/concurrency needs justify its additional backup and recovery surface.
+
 1. Confirm the NAS backup job has a recent successful run and a tested restore path covering `/mnt/misc/open-webui/`. The preflight that accompanied this PR found a failing active backup unit, so this is a deployment blocker.
 2. Choose a non-secret Markdown-only pilot, about 50 to 150 notes. Configure its exact NAS-local path as `OBSIDIAN_PILOT_SOURCE_DIR`, never the vault root.
 3. Confirm that the `oikb` image UID can traverse and read the pilot directory. The mount must stay `:ro`.

@@ -7,8 +7,17 @@ This is a Portainer Git-stack definition for the NAS-hosted, CPU-first Open WebU
 - Obsidian is canonical. Open WebUI state under `/mnt/misc/open-webui/` is disposable and rebuildable.
 - `oikb` sees only the single, explicitly approved pilot directory mounted as `/source:ro`.
 - The stack has no host networking, no Docker socket, no generic outbound tool configuration, no local LLM, and no embedded real-world topology.
-- The image tags are pinned: Open WebUI `v0.11.4`, `oikb` `v0.5.0`.
+- Open WebUI deliberately tracks the upstream `main` container tag at Justin's request, so Portainer pulls current upstream images during an approved redeploy. `oikb` remains on `v0.5.0`, the explicitly reviewed companion-compatible release.
 - The `oikb` API endpoints are internal-only. Its two API keys are mounted from runtime secret files, never committed.
+
+## Search and vector-store decisions
+
+- SearXNG is deliberately deferred from this bounded RAG pilot. It solves public-web discovery, not private-vault retrieval, and adds outbound-query, web-loader, engine-maintenance, and policy concerns. Add it later as a separate internal-only service only after vault-only retrieval is validated.
+- A separate Chroma service is deliberately deferred. Open WebUI's persisted embedded Chroma store is the documented simple single-process topology and is adequate for the 50 to 150 note pilot. Reassess an external vector store only for multi-worker/replica operation or measured retrieval/sync bottlenecks.
+
+## Image update policy
+
+Open WebUI uses `ghcr.io/open-webui/open-webui:main` intentionally. This is a user-directed rolling update policy, not an accidental unpinned reference. Review release notes and back up the derived data root before any Portainer image update/redeploy. The stack is not configured for Watchtower and has no automated redeploy rule.
 
 ## Approval gates before deployment
 
