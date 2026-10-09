@@ -52,3 +52,9 @@ The rolling oikb image does not include `wget`. Its healthcheck uses the imageâ€
 ## Private host publication
 
 Open WebUI publishes only its explicitly configured private host binding. The shared application network must not use Docker `internal: true`, because Docker suppresses host port publication for a container attached only to an internal network. oikb remains un-published and is reachable only by the application network.
+
+## Secondary source collection
+
+`SECONDARY_SOURCE_DIR` mounts one additional approved directory read-only at `/sources/secondary`. It syncs to its own Knowledge Base and never shares one with the primary pilot source.
+
+Order of operations: create the Knowledge Base and grant the sync identity write access, add its entry with the real UUID to the host-side `oikb.yaml`, set `SECONDARY_SOURCE_DIR` in Portainer, then redeploy. The variable is required, so a redeploy without it fails instead of mounting an unintended path.

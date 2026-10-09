@@ -57,6 +57,8 @@ services:
       - oikb_api_key
     volumes:
       - ${OBSIDIAN_PILOT_SOURCE_DIR:?set an approved local pilot directory in Portainer}:/source:ro
+      # Optional second approved collection, synced to its own Knowledge Base.
+      - ${SECONDARY_SOURCE_DIR:?set an approved second source directory in Portainer}:/sources/secondary:ro
       - ${OIKB_CONFIG_PATH:?set a host-side generated config path in Portainer}:/app/.oikb.yaml:ro
     networks:
       - openwebui-internal

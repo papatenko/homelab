@@ -12,3 +12,11 @@ sources:
     source: /source
     kb-id: <knowledge-base-uuid-created-after-deployment>
     interval: "6h"
+
+  # Second collection. Use its own Knowledge Base, separate from the first.
+  - name: secondary-collection
+    source: /sources/secondary
+    kb-id: <secondary-knowledge-base-uuid>
+    interval: "6h"
+    filter:
+      include: ["*.pdf"]
