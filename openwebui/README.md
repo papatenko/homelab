@@ -35,7 +35,13 @@ Stop and remove the Portainer stack. It never writes to the mounted source. Pres
 
 ## Local embedding runtime
 
-The current upstream Open WebUI image selects its built-in SentenceTransformers implementation when `RAG_EMBEDDING_ENGINE` is empty. Do not set it to `sentence_transformers`, which current upstream releases reject as an unknown engine. The model remains `sentence-transformers/all-MiniLM-L6-v2`.
+The current upstream Open WebUI image selects its built-in SentenceTransformers implementation when `RAG_EMBEDDING_ENGINE` is empty. Do not set it to `sentence_transformers`, which current upstream releases reject as an unknown engine.
+
+The configured model is `BAAI/bge-small-en-v1.5`, a CPU-first English retrieval model. It preserves the compact 384-dimensional vector footprint of the prior MiniLM setting while supporting a 512-token input window, which better fits structured course Markdown and normalized OCR/PDF material.
+
+Changing `RAG_EMBEDDING_MODEL` changes the vector space. After an approved Portainer redeploy, an administrator must use Open WebUI's **Admin Settings → Documents → Reindex** action to rebuild every Knowledge Base before trusting retrieval. Never mix existing MiniLM vectors with BGE vectors. Reindexing is a separate derived-data operation and must follow a verified backup of `/mnt/misc/open-webui/` plus the retrieval-evaluation plan in the canonical Obsidian plan.
+
+The initial model load and full reindex can consume NAS CPU and memory. Keep the existing resource limits, schedule the work for a low-use period, and verify retrieval and citations against the fixed course evaluation set before expanding scope.
 
 ## Runtime port and synchronizer
 
