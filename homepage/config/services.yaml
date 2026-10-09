@@ -137,8 +137,8 @@
 - AI and Automation:
     - Open WebUI:
         icon: open-webui
-        href: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
-        siteMonitor: http://{{HOMEPAGE_VAR_OPENWEBUI_IP}}:8080
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:3001
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:3001
     - n8n:
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678
