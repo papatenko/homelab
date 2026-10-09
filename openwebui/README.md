@@ -36,3 +36,7 @@ Stop and remove the Portainer stack. It never writes to the mounted source. Pres
 ## Local embedding runtime
 
 The current upstream Open WebUI image selects its built-in SentenceTransformers implementation when `RAG_EMBEDDING_ENGINE` is empty. Do not set it to `sentence_transformers`, which current upstream releases reject as an unknown engine. The model remains `sentence-transformers/all-MiniLM-L6-v2`.
+
+## Runtime port and synchronizer
+
+Use a private host port that does not conflict with existing NAS services. The current NAS deployment uses port `3000`. The `oikb` image entrypoint is `oikb`, so Compose must supply `command: daemon` to keep the scheduled synchronizer running.

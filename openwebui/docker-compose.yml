@@ -62,6 +62,7 @@ services:
       - openwebui-internal
     expose:
       - "8080"
+    command: daemon
     depends_on:
       open-webui:
         condition: service_healthy
