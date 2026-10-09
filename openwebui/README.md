@@ -32,3 +32,7 @@ Open WebUI uses `ghcr.io/open-webui/open-webui:main` intentionally. This is a us
 ## Rollback
 
 Stop and remove the Portainer stack. It never writes to the mounted source. Preserve `/mnt/misc/open-webui/` for investigation or restore from the verified backup. Removing that directory is a separate explicit authorization, because it destroys derived data.
+
+## Local embedding runtime
+
+The current upstream Open WebUI image selects its built-in SentenceTransformers implementation when `RAG_EMBEDDING_ENGINE` is empty. Do not set it to `sentence_transformers`, which current upstream releases reject as an unknown engine. The model remains `sentence-transformers/all-MiniLM-L6-v2`.

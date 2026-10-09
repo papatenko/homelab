@@ -12,7 +12,8 @@ services:
       WEBUI_AUTH: "true"
       # The first start may fetch the pinned local embedding model. No source
       # documents are sent to a remote embedding provider.
-      RAG_EMBEDDING_ENGINE: "sentence_transformers"
+      # Empty selects Open WebUI built-in SentenceTransformers embeddings.
+      RAG_EMBEDDING_ENGINE: ""
       RAG_EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
       ENABLE_RAG_HYBRID_SEARCH: "true"
     volumes:
