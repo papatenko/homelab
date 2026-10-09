@@ -87,8 +87,6 @@ sudo rsync -a ~/homelab/nginxproxymanager/letsencrypt/ /opt/stacks/nginxproxyman
 sudo mkdir -p /opt/stacks/upsnap
 sudo rsync -a ~/homelab/upsnap/data/ /opt/stacks/upsnap/data/
 
-sudo mkdir -p /opt/stacks/canvas-todoist
-sudo rsync -a ~/homelab/canvas-todoist/data/ /opt/stacks/canvas-todoist/data/
 
 sudo mkdir -p /opt/stacks/openwebui/searxng
 sudo rsync -a ~/homelab/openwebui/searxng/core-config/ /opt/stacks/openwebui/searxng/core-config/

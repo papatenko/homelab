@@ -33,7 +33,6 @@ runtime environment.
 - **neutts/** — GPU-backed, on-device NeuTTS-2E API for local speech synthesis.
 - **motioneye/** — motionEye camera monitoring and motion detection stack for the Raspberry Pi.
 - **wallos/** — Wallos personal subscription tracker.
-- **canvas-todoist/** — Hourly sync of UH Canvas assignments into Todoist via the Canvas calendar feed.
 - **authentik/** — Authentik identity provider for SSO.
 - **nextcloud/** — Nextcloud All-in-One instance, with a co-located Nextcloud MCP server (110+ tools) over streamable-HTTP at `/mcp` for remote MCP clients (Claude, ChatGPT). Fronted by nginxproxymanager.
 - **termix/** — Termix browser-based SSH and remote desktop management.
