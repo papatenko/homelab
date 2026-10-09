@@ -48,3 +48,7 @@ The oikb daemon reads its default configuration from `/app/.oikb.yaml`; mount th
 ## oikb healthcheck
 
 The rolling oikb image does not include `wget`. Its healthcheck uses the image’s bundled Python runtime to request `/health/ready` instead.
+
+## Private host publication
+
+Open WebUI publishes only its explicitly configured private host binding. The shared application network must not use Docker `internal: true`, because Docker suppresses host port publication for a container attached only to an internal network. oikb remains un-published and is reachable only by the application network.

@@ -82,10 +82,12 @@ services:
       start_period: 15s
 
 networks:
+  # This network is not Docker-internal because Open WebUI publishes one
+  # explicitly private host binding. External exposure remains controlled by
+  # OPEN_WEBUI_BIND_ADDRESS, with no oikb port published.
   openwebui-internal:
     name: openwebui-internal
     driver: bridge
-    internal: true
 
 secrets:
   open_webui_rag_sync_api_key:
