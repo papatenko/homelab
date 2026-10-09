@@ -7,7 +7,7 @@ This is a Portainer Git-stack definition for the NAS-hosted, CPU-first Open WebU
 - Obsidian is canonical. Open WebUI state under `/mnt/misc/open-webui/` is disposable and rebuildable.
 - `oikb` sees only the single, explicitly approved pilot directory mounted as `/source:ro`.
 - The stack has no host networking, no Docker socket, no generic outbound tool configuration, no local LLM, and no embedded real-world topology.
-- Open WebUI deliberately tracks the upstream `main` container tag at Justin's request, so Portainer pulls current upstream images during an approved redeploy. `oikb` remains on `v0.5.0`, the explicitly reviewed companion-compatible release.
+- Open WebUI deliberately tracks the upstream `main` container tag at Justin's request, so Portainer pulls current upstream images during an approved redeploy. `oikb` deliberately tracks the upstream `latest` image alongside Open WebUI, per Justin's rolling-image policy.
 - The `oikb` API endpoints are internal-only. Its two API keys are mounted from runtime secret files, never committed.
 
 ## Search and vector-store decisions
