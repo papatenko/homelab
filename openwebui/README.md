@@ -52,3 +52,10 @@ The rolling oikb image does not include `wget`. Its healthcheck uses the imageâ€
 ## Private host publication
 
 Open WebUI publishes only its explicitly configured private host binding. The shared application network must not use Docker `internal: true`, because Docker suppresses host port publication for a container attached only to an internal network. oikb remains un-published and is reachable only by the application network.
+
+## Single sign-on
+
+Open WebUI can delegate login to an OIDC provider so the provider's MFA applies. The stack uses a public client with PKCE (`S256`, token endpoint auth `none`), so no client secret is stored anywhere. Sign-up through SSO is disabled, and an SSO login merges into the existing local account with the same email.
+
+Order: create the OIDC application with redirect URI `<OPEN_WEBUI_PUBLIC_URL>/oauth/oidc/callback`, set the `OPEN_WEBUI_*` SSO variables in Portainer, then redeploy. Once an SSO login is verified, set `OPEN_WEBUI_ENABLE_LOGIN_FORM=false` and redeploy to make SSO the only interactive sign-in path. API keys keep working.
+

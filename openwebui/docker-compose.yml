@@ -16,6 +16,18 @@ services:
       RAG_EMBEDDING_ENGINE: ""
       RAG_EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
       ENABLE_RAG_HYBRID_SEARCH: "true"
+      # Optional OIDC single sign-on. Enabled only when the client ID and
+      # provider URL are set. Public client with PKCE, so no client secret.
+      WEBUI_URL: ${OPEN_WEBUI_PUBLIC_URL:-}
+      OAUTH_CLIENT_ID: ${OPEN_WEBUI_OIDC_CLIENT_ID:-}
+      OPENID_PROVIDER_URL: ${OPEN_WEBUI_OIDC_PROVIDER_URL:-}
+      OPENID_REDIRECT_URI: ${OPEN_WEBUI_PUBLIC_URL:-}/oauth/oidc/callback
+      OAUTH_PROVIDER_NAME: ${OPEN_WEBUI_OIDC_PROVIDER_NAME:-SSO}
+      OAUTH_CODE_CHALLENGE_METHOD: "S256"
+      OAUTH_TOKEN_ENDPOINT_AUTH_METHOD: "none"
+      ENABLE_OAUTH_SIGNUP: "false"
+      OAUTH_MERGE_ACCOUNTS_BY_EMAIL: "true"
+      ENABLE_LOGIN_FORM: ${OPEN_WEBUI_ENABLE_LOGIN_FORM:-true}
     volumes:
       - ${OPEN_WEBUI_DATA_DIR:?set OPEN_WEBUI_DATA_DIR in Portainer}:/app/backend/data
     networks:
