@@ -14,7 +14,7 @@ services:
       # documents are sent to a remote embedding provider.
       # Empty selects Open WebUI built-in SentenceTransformers embeddings.
       RAG_EMBEDDING_ENGINE: ""
-      RAG_EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
+      RAG_EMBEDDING_MODEL: "BAAI/bge-small-en-v1.5"
       ENABLE_RAG_HYBRID_SEARCH: "true"
       # Optional OIDC single sign-on. Enabled only when the client ID and
       # provider URL are set. Public client with PKCE, so no client secret.
