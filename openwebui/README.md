@@ -44,3 +44,7 @@ Use a private host port that does not conflict with existing NAS services. The c
 ## oikb configuration mount
 
 The oikb daemon reads its default configuration from `/app/.oikb.yaml`; mount the protected host-side generated configuration there. Mounting it at `/data/.oikb.yaml` leaves the daemon with no configured sources.
+
+## oikb healthcheck
+
+The rolling oikb image does not include `wget`. Its healthcheck uses the image’s bundled Python runtime to request `/health/ready` instead.
