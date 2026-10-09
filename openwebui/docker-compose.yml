@@ -3,55 +3,90 @@ name: openwebui
 services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
-    network_mode: host
     container_name: open-webui
-    volumes:
-      - open-webui:/app/backend/data
+    restart: unless-stopped
+    init: true
     environment:
-      - PORT=${OPEN_WEBUI_PORT:-8888}
-      - OLLAMA_BASE_URL=http://127.0.0.1:11434
-      - ENABLE_WEB_SEARCH=True
-      - WEB_SEARCH_ENGINE=searxng
-      - WEB_SEARCH_RESULT_COUNT=${WEB_SEARCH_RESULT_COUNT:-3}
-      - WEB_SEARCH_CONCURRENT_REQUESTS=${WEB_SEARCH_CONCURRENT_REQUESTS:-10}
-      - SEARXNG_QUERY_URL=http://127.0.0.1:${SEARXNG_PORT:-8080}/search?q=<query>
-      - HF_TOKEN=${HF_TOKEN}
-    restart: always
-    depends_on:
-      searxng-core:
-        condition: service_started
-  searxng-core:
-    container_name: searxng-core
-    image: docker.io/searxng/searxng:latest
-    network_mode: host
-    restart: always
+      ENABLE_OLLAMA_API: "false"
+      ENABLE_SIGNUP: "false"
+      WEBUI_AUTH: "true"
+      # The first start may fetch the pinned local embedding model. No source
+      # documents are sent to a remote embedding provider.
+      RAG_EMBEDDING_ENGINE: "sentence_transformers"
+      RAG_EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
+      ENABLE_RAG_HYBRID_SEARCH: "true"
     volumes:
-      - ${DATA_DIR:-/opt/stacks/openwebui}/searxng/core-config/:/etc/searxng/:Z
-      - searxng-core-data:/var/cache/searxng/
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
-      - DAC_OVERRIDE
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "1m"
-        max-file: "1"
-    depends_on:
-      searxng-valkey:
-        condition: service_started
-  searxng-valkey:
-    container_name: searxng-valkey
-    image: docker.io/valkey/valkey:9-alpine
-    network_mode: host
-    command: valkey-server --save 30 1 --loglevel warning
-    restart: always
+      - ${OPEN_WEBUI_DATA_DIR:?set OPEN_WEBUI_DATA_DIR in Portainer}:/app/backend/data
+    networks:
+      - openwebui-internal
+    ports:
+      - "${OPEN_WEBUI_BIND_ADDRESS:?set OPEN_WEBUI_BIND_ADDRESS in Portainer}:${OPEN_WEBUI_PORT:-3000}:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 6G
+        reservations:
+          cpus: "0.50"
+          memory: 2G
+    healthcheck:
+      test: ["CMD", "bash", "-c", "</dev/tcp/127.0.0.1/8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+
+  oikb:
+    image: ghcr.io/open-webui/oikb:v0.5.0
+    container_name: oikb
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+    environment:
+      OPEN_WEBUI_URL: http://open-webui:8080
+      OPEN_WEBUI_API_KEY_FILE: /run/secrets/open_webui_rag_sync_api_key
+      OIKB_API_KEY_FILE: /run/secrets/oikb_api_key
+      LOG_FORMAT: json
+      HOME: /tmp
+      XDG_CONFIG_HOME: /tmp
+    secrets:
+      - open_webui_rag_sync_api_key
+      - oikb_api_key
     volumes:
-      - searxng-valkey-data:/data/
-volumes:
-  open-webui:
-  searxng-core-data:
-  searxng-valkey-data:
+      - ${OBSIDIAN_PILOT_SOURCE_DIR:?set an approved local pilot directory in Portainer}:/source:ro
+      - ${OIKB_CONFIG_PATH:?set a host-side generated config path in Portainer}:/data/.oikb.yaml:ro
+    networks:
+      - openwebui-internal
+    expose:
+      - "8080"
+    depends_on:
+      open-webui:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.10"
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/health/ready"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+networks:
+  openwebui-internal:
+    name: openwebui-internal
+    driver: bridge
+    internal: true
+
+secrets:
+  open_webui_rag_sync_api_key:
+    file: ${OPEN_WEBUI_RAG_SYNC_API_KEY_FILE:?set a BWS/Portainer-managed secret file path}
+  oikb_api_key:
+    file: ${OIKB_API_KEY_FILE:?set a BWS/Portainer-managed secret file path}

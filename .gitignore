@@ -41,3 +41,7 @@ media-stack/cache/
 .env
 *.log
 __pycache__/
+
+# Open WebUI runtime state and secret files
+openwebui/.env
+openwebui/runtime/

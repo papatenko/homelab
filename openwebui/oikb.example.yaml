@@ -1,0 +1,14 @@
+# Host-side template. Copy to the path set by OIKB_CONFIG_PATH after authorized
+# Open WebUI deployment and dedicated non-admin API-key creation. Do not commit
+# a real KB UUID, source path, or secret.
+defaults:
+  interval: "6h"
+  concurrency: 1
+  filter:
+    max-size: 5mb
+
+sources:
+  - name: approved-markdown-pilot
+    source: /source
+    kb-id: <knowledge-base-uuid-created-after-deployment>
+    interval: "6h"
