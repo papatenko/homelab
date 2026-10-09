@@ -40,3 +40,7 @@ The current upstream Open WebUI image selects its built-in SentenceTransformers 
 ## Runtime port and synchronizer
 
 Use a private host port that does not conflict with existing NAS services. The current NAS deployment uses port `3000`. The `oikb` image entrypoint is `oikb`, so Compose must supply `command: daemon` to keep the scheduled synchronizer running.
+
+## oikb configuration mount
+
+The oikb daemon reads its default configuration from `/app/.oikb.yaml`; mount the protected host-side generated configuration there. Mounting it at `/data/.oikb.yaml` leaves the daemon with no configured sources.
