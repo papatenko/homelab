@@ -57,7 +57,7 @@ services:
       - oikb_api_key
     volumes:
       - ${OBSIDIAN_PILOT_SOURCE_DIR:?set an approved local pilot directory in Portainer}:/source:ro
-      - ${OIKB_CONFIG_PATH:?set a host-side generated config path in Portainer}:/data/.oikb.yaml:ro
+      - ${OIKB_CONFIG_PATH:?set a host-side generated config path in Portainer}:/app/.oikb.yaml:ro
     networks:
       - openwebui-internal
     expose:
