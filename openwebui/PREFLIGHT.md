@@ -15,7 +15,7 @@ The RAG pilot is CPU-first. Do not combine GPU recovery with this stack change.
 
 ### Image updates
 
-Open WebUI intentionally follows the upstream `main` container tag. Before an approved Portainer image update/redeploy, read the upstream release notes, confirm a recent backup of the derived state root, and retain the previously running image digest for rollback. Do not enable unattended Watchtower updates for this stateful service.
+Open WebUI and `oikb` intentionally follow their upstream rolling container tags (`main` and `latest`). Before an approved Portainer image update/redeploy, read the upstream release notes, confirm a recent backup of the derived state root, and retain the previously running image digest for rollback. Do not enable unattended Watchtower updates for this stateful service.
 
 ### Search and vector-store boundary
 

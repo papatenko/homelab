@@ -37,7 +37,7 @@ services:
       start_period: 90s
 
   oikb:
-    image: ghcr.io/open-webui/oikb:v0.5.0
+    image: ghcr.io/open-webui/oikb:latest
     container_name: oikb
     restart: unless-stopped
     init: true
