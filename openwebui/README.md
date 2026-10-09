@@ -56,4 +56,9 @@ Open WebUI publishes only its explicitly configured private host binding. The sh
 ## oikb API key loading
 
 oikb resolves its own `OIKB_API_KEY` from `OIKB_API_KEY_FILE`, but reads the Open WebUI key only from `OPEN_WEBUI_API_KEY` or its config file. The compose entrypoint therefore exports `OPEN_WEBUI_API_KEY` from the mounted secret immediately before `exec oikb daemon`. The value never appears in the compose file, Portainer variables, or logs.
+## Single sign-on
+
+Open WebUI can delegate login to an OIDC provider so the provider's MFA applies. The stack uses a public client with PKCE (`S256`, token endpoint auth `none`), so no client secret is stored anywhere. Sign-up through SSO is disabled, and an SSO login merges into the existing local account with the same email.
+
+Order: create the OIDC application with redirect URI `<OPEN_WEBUI_PUBLIC_URL>/oauth/oidc/callback`, set the `OPEN_WEBUI_*` SSO variables in Portainer, then redeploy. Once an SSO login is verified, set `OPEN_WEBUI_ENABLE_LOGIN_FORM=false` and redeploy to make SSO the only interactive sign-in path. API keys keep working.
 
