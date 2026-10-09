@@ -59,7 +59,6 @@ services:
       - /tmp:mode=1777,size=64m
     environment:
       OPEN_WEBUI_URL: http://open-webui:8080
-      OPEN_WEBUI_API_KEY_FILE: /run/secrets/open_webui_rag_sync_api_key
       OIKB_API_KEY_FILE: /run/secrets/oikb_api_key
       LOG_FORMAT: json
       HOME: /tmp
@@ -74,7 +73,9 @@ services:
       - openwebui-internal
     expose:
       - "8080"
-    command: daemon
+    # oikb reads the Open WebUI key only from OPEN_WEBUI_API_KEY (no *_FILE
+    # support for this variable), so load it from the secret at startup.
+    entrypoint: ["sh", "-c", "OPEN_WEBUI_API_KEY=\"$$(cat /run/secrets/open_webui_rag_sync_api_key)\" exec oikb daemon"]
     depends_on:
       open-webui:
         condition: service_healthy
