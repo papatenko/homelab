@@ -37,7 +37,9 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          # BGE embedding/reindex is CPU-bound. Six cores adds headroom while
+          # retaining half of the 12-logical-CPU NAS for other workloads.
+          cpus: "6.0"
           memory: 6G
         reservations:
           cpus: "0.50"
