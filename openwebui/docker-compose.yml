@@ -10,11 +10,13 @@ services:
       ENABLE_OLLAMA_API: "false"
       ENABLE_SIGNUP: "false"
       WEBUI_AUTH: "true"
-      # The first start may fetch the pinned local embedding model. No source
-      # documents are sent to a remote embedding provider.
-      # Empty selects Open WebUI built-in SentenceTransformers embeddings.
-      RAG_EMBEDDING_ENGINE: ""
-      RAG_EMBEDDING_MODEL: "BAAI/bge-base-en-v1.5"
+      # Embeddings use OpenAI's public API. The credential is supplied only at
+      # Portainer runtime from Bitwarden Secrets Manager, never from this repo.
+      # Source extraction, chunks, vectors, and retrieval state remain local.
+      RAG_EMBEDDING_ENGINE: "openai"
+      RAG_OPENAI_API_BASE_URL: "https://api.openai.com/v1"
+      RAG_OPENAI_API_KEY: ${OPENAI_EMBEDDING_API_KEY:?set in Portainer from BWS}
+      RAG_EMBEDDING_MODEL: "text-embedding-3-small"
       ENABLE_RAG_HYBRID_SEARCH: "true"
       # Optional OIDC single sign-on. Enabled only when the client ID and
       # provider URL are set. Public client with PKCE, so no client secret.
