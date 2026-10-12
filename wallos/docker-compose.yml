@@ -3,10 +3,10 @@ services:
     image: bellamy/wallos:latest
     container_name: wallos
     ports:
-      - '8282:80/tcp'
+      - "${WALLOS_PORT:-8282}:80/tcp"
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-America/Chicago}
     volumes:
-      - ${WALLOS_DATA_DIR}/db:/var/www/html/db
-      - ${WALLOS_DATA_DIR}/logos:/var/www/html/images/uploads/logos
+      - ${WALLOS_DATA_DIR:-/opt/stacks/wallos}/db:/var/www/html/db
+      - ${WALLOS_DATA_DIR:-/opt/stacks/wallos}/logos:/var/www/html/images/uploads/logos
     restart: unless-stopped
