@@ -7,7 +7,7 @@ A private, CPU-only side-by-side speech-to-text pilot using NVIDIA's Parakeet-TD
 - It does **not** replace or disable the current Whisper service.
 - The API is loopback-only by default and uses the existing OpenAI-compatible multipart route: `POST /v1/audio/transcriptions` with `model` and `file`, returning JSON with `text`.
 - It runs one bounded HTTP worker, capped at 2 CPUs, 2 GiB RAM, and 256 PIDs.
-- Persistent runtime binaries and the Q8 model cache are at `${DATA_DIR}`, outside the Portainer Git checkout. Set it to the approved durable NAS path in Portainer.
+- Persistent runtime binaries and the Q8 model cache are at `${DATA_DIR}`, outside the Portainer Git checkout. Set it to the approved durable NAS path in Portainer. Stage the validated release archive and model into that persistent directory before creating the offline runtime stack, because the NAS stack intentionally does not depend on public DNS at container start.
 - The Q8 model artifact is approximately 714 MB. NeMo-Speech.cpp and the model are downloaded once into persistent storage, validated by the runtime, then reused.
 
 ## Deployment
