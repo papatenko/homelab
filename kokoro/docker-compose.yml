@@ -1,0 +1,32 @@
+services:
+  kokoro:
+    image: ${KOKORO_IMAGE:-ghcr.io/remsky/kokoro-fastapi-cpu:latest}
+    container_name: ${KOKORO_CONTAINER_NAME:-kokoro}
+    restart: unless-stopped
+    ports:
+      - "${COMPOSE_PORT_HTTP:-8880}:8880/tcp"
+    environment:
+      DEVICE_TYPE: cpu
+      USE_GPU: "false"
+      DOWNLOAD_MODEL: "true"
+      MODEL_DIR: /app/api/src/models
+      VOICES_DIR: /app/api/src/voices/v1_0
+      DEFAULT_VOICE: ${KOKORO_DEFAULT_VOICE:-am_michael}
+      WEB_CONCURRENCY: "1"
+      API_LOG_LEVEL: ${KOKORO_API_LOG_LEVEL:-INFO}
+      OMP_NUM_THREADS: ${KOKORO_CPU_THREADS:-2}
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/kokoro}/models:/app/api/src/models
+    cpus: ${KOKORO_CPU_LIMIT:-2.0}
+    mem_limit: ${KOKORO_MEMORY_LIMIT:-4g}
+    pids_limit: ${KOKORO_PIDS_LIMIT:-256}
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -fsS
+        - http://127.0.0.1:8880/health
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
