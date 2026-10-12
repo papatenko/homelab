@@ -7,7 +7,7 @@ A private, CPU-only pilot of [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-
 - Fixed upstream voices only. The default is `am_michael`, a male English voice identifier. It is not represented as Russian-accented.
 - The service has no configured application API authentication. Keep it private, with access restricted by the deployment network boundary. Do not publish it through a public proxy.
 - One Uvicorn worker processes synthesis requests sequentially. The initial ceiling is 2 CPUs, 4 GiB RAM, and 256 PIDs.
-- Model files persist at `${DATA_DIR}/models`, outside the Portainer Git checkout.
+- Model files persist at `${DATA_DIR}/models`, mounted at the upstream model-version directory outside the Portainer Git checkout.
 
 ## Portainer variables
 

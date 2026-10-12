@@ -16,7 +16,7 @@ services:
       API_LOG_LEVEL: ${KOKORO_API_LOG_LEVEL:-INFO}
       OMP_NUM_THREADS: ${KOKORO_CPU_THREADS:-2}
     volumes:
-      - ${DATA_DIR:-/opt/stacks/kokoro}/models:/app/api/src/models
+      - ${DATA_DIR:-/opt/stacks/kokoro}/models:/app/api/src/models/v1_0
     cpus: ${KOKORO_CPU_LIMIT:-2.0}
     mem_limit: ${KOKORO_MEMORY_LIMIT:-4g}
     pids_limit: ${KOKORO_PIDS_LIMIT:-256}
