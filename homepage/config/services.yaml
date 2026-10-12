@@ -91,8 +91,8 @@
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
     - Wallos:
         icon: wallos
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
-        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8282
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
     - UpSnap:
         icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
