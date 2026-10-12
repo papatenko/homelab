@@ -1,0 +1,49 @@
+services:
+  parakeet:
+    image: ${PARAKEET_RUNTIME_IMAGE:-debian:bookworm-slim}
+    container_name: ${PARAKEET_CONTAINER_NAME:-parakeet}
+    restart: unless-stopped
+    ports:
+      - "${PARAKEET_BIND_ADDRESS:-127.0.0.1}:${COMPOSE_PORT_HTTP:-8080}:8080/tcp"
+    environment:
+      NEMO_SPEECH_MODEL_DIR: /data/models
+      PARAKEET_RELEASE: ${PARAKEET_RELEASE:-0.2.0}
+      PARAKEET_THREADS: ${PARAKEET_THREADS:-1}
+      PARAKEET_MODEL: /data/models/nvidia/parakeet-tdt-0.6b-v3/541d1f99c6b0c3cd0b11a95167540bb8edefd82b/parakeet-tdt-0.6b-v3.q8_0.gguf
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/parakeet}:/data
+    cpus: ${PARAKEET_CPU_LIMIT:-2.0}
+    mem_limit: ${PARAKEET_MEMORY_LIMIT:-2g}
+    pids_limit: ${PARAKEET_PIDS_LIMIT:-256}
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        export DEBIAN_FRONTEND=noninteractive
+        apt-get update
+        apt-get install -y --no-install-recommends ca-certificates curl
+        rm -rf /var/lib/apt/lists/*
+        archive="/data/nemo-speech-$${PARAKEET_RELEASE}-linux-x86_64-cpu.tar.gz"
+        app="/data/nemo-speech-$${PARAKEET_RELEASE}"
+        if [ ! -x "$$app/bin/nemo-speech" ]; then
+          curl -fsSL --retry 3 --retry-delay 2 \
+            -o "$$archive" \
+            "https://github.com/NVIDIA/NeMo-Speech.cpp/releases/download/v$${PARAKEET_RELEASE}/nemo-speech-$${PARAKEET_RELEASE}-linux-x86_64-cpu.tar.gz"
+          mkdir -p "$$app"
+          tar -xzf "$$archive" --strip-components=1 -C "$$app"
+          rm -f "$$archive"
+        fi
+        if [ ! -f "$$PARAKEET_MODEL" ]; then
+          "$$app/bin/nemo-speech" pull parakeet-tdt
+        fi
+        exec "$$app/bin/nemo-speech" serve \
+          --host 0.0.0.0 --port 8080 --threads "$$PARAKEET_THREADS" \
+          --asr-model "$$PARAKEET_MODEL" --device cpu --no-ui
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://127.0.0.1:8080/health || curl -fsS http://127.0.0.1:8080/v1/models
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
