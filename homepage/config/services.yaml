@@ -87,8 +87,8 @@
 - Apps:
     - Vaultwarden:
         icon: vaultwarden
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
-        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9445
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
     - Wallos:
         icon: wallos
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
