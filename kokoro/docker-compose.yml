@@ -4,7 +4,7 @@ services:
     container_name: ${KOKORO_CONTAINER_NAME:-kokoro}
     restart: unless-stopped
     ports:
-      - "${COMPOSE_PORT_HTTP:-8880}:8880/tcp"
+      - "${KOKORO_BIND_ADDRESS:-127.0.0.1}:${COMPOSE_PORT_HTTP:-8880}:8880/tcp"
     environment:
       DEVICE_TYPE: cpu
       USE_GPU: "false"

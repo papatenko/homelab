@@ -11,7 +11,7 @@ A private, CPU-only pilot of [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-
 
 ## Portainer variables
 
-Create the Git-backed stack from `kokoro/docker-compose.yml` and enter the values from `example.env` in Portainer. Set `DATA_DIR` to a durable NAS path. Do not store host details or secrets in Git.
+Create the Git-backed stack from `kokoro/docker-compose.yml` and enter the values from `example.env` in Portainer. Set `DATA_DIR` to a durable NAS path. The listener defaults to loopback. Assign a separately approved private bind address only when an authorized client needs network access. Do not store host details or secrets in Git.
 
 The stack follows the upstream CPU image by default. A tested explicit image version may be entered in Portainer for rollback. The stack uses upstream `GET /health` for container health.
 
