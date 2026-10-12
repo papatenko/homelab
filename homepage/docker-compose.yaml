@@ -142,12 +142,16 @@ services:
         - Finance:
             - Actual Budget:
                 icon: actual-budget
-                href: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
-                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:5006
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5006
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5006
             - Actual MCP:
                 icon: actual-budget
-                href: http://{{HOMEPAGE_VAR_NAS_IP}}:3600/health
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
                 description: MCP endpoint for Actual Budget at /http
+            - LanguageTool:
+                icon: languagetool
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
 
         - AI and Automation:
             - Open WebUI:
