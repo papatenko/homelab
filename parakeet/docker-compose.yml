@@ -24,7 +24,7 @@ services:
         test -f "$$PARAKEET_MODEL"
         exec "$$app/bin/nemo-speech" serve \
           --host 0.0.0.0 --port 8080 --threads "$$PARAKEET_THREADS" \
-          --asr-model "$$PARAKEET_MODEL" --device cpu --no-ui
+          --asr-model "$$PARAKEET_MODEL" --asr.enabled=true --device cpu --no-ui
     healthcheck:
       test:
         - CMD-SHELL
