@@ -1,0 +1,38 @@
+# Self-hosted RustDesk server: hbbs (ID/rendezvous) + hbbr (relay).
+# Upstream: https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/
+# Host networking is required so hbbs sees real client addresses (NAT type detection / hole punching).
+# Ports used on the host: TCP 21115-21119 and UDP 21116.
+services:
+  hbbs:
+    image: ${RUSTDESK_IMAGE:-rustdesk/rustdesk-server:1.1.16}
+    container_name: rustdesk-hbbs
+    restart: unless-stopped
+    network_mode: host
+    working_dir: /root
+    # -r: relay address that hbbs hands to clients (host or host:port, reachable by clients).
+    # -k _: only clients configured with this server's public key may connect.
+    command: ["hbbs", "-r", "${RUSTDESK_RELAY:?Set RUSTDESK_RELAY to the relay host[:21117] clients can reach}", "-k", "_"]
+    environment:
+      ENCRYPTED_ONLY: "1"
+    volumes:
+      # Holds the generated key pair (id_ed25519, id_ed25519.pub) and the peer database.
+      - ${DATA_DIR:-/opt/stacks/rustdesk}/data:/root
+    depends_on:
+      - hbbr
+    labels:
+      # Pinned image: update deliberately via RUSTDESK_IMAGE.
+      com.centurylinklabs.watchtower.enable: "false"
+
+  hbbr:
+    image: ${RUSTDESK_IMAGE:-rustdesk/rustdesk-server:1.1.16}
+    container_name: rustdesk-hbbr
+    restart: unless-stopped
+    network_mode: host
+    working_dir: /root
+    command: ["hbbr", "-k", "_"]
+    environment:
+      ENCRYPTED_ONLY: "1"
+    volumes:
+      - ${DATA_DIR:-/opt/stacks/rustdesk}/data:/root
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"
