@@ -20,7 +20,7 @@ layout:
     columns: 4
   Finance:
     style: row
-    columns: 2
+    columns: 4
   AI and Automation:
     style: row
     columns: 5
