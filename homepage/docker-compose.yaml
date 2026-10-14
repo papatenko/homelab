@@ -104,10 +104,6 @@ services:
                 icon: vaultwarden
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
-            - Wallos:
-                icon: wallos
-                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
-                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
             - UpSnap:
                 icon: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090/gopher.svg
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8090
@@ -118,8 +114,11 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
             - RustDesk:
                 icon: rustdesk
-                description: Self-hosted remote desktop server
                 ping: "{{HOMEPAGE_VAR_COOLIFY_IP}}"
+            - LanguageTool:
+                icon: languagetool
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
 
         - Backups:
             - Proxmox Backup Server:
@@ -151,11 +150,11 @@ services:
             - Actual MCP:
                 icon: actual-budget
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
-                description: MCP endpoint for Actual Budget at /http
-            - LanguageTool:
-                icon: languagetool
-                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
-                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
+            - Wallos:
+                icon: wallos
+                href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
+                siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
 
         - AI and Automation:
             - Open WebUI:
@@ -244,7 +243,7 @@ services:
             columns: 4
           Finance:
             style: row
-            columns: 2
+            columns: 4
           AI and Automation:
             style: row
             columns: 5
