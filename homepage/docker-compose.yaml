@@ -116,6 +116,10 @@ services:
                 icon: motioneye
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
+            - RustDesk:
+                icon: rustdesk
+                description: Self-hosted remote desktop server
+                ping: "{{HOMEPAGE_VAR_COOLIFY_IP}}"
 
         - Backups:
             - Proxmox Backup Server:
