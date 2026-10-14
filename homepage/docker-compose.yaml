@@ -114,7 +114,6 @@ services:
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:8765
             - RustDesk:
                 icon: rustdesk
-                description: Self-hosted remote desktop server
                 ping: "{{HOMEPAGE_VAR_COOLIFY_IP}}"
             - LanguageTool:
                 icon: languagetool
@@ -151,7 +150,6 @@ services:
             - Actual MCP:
                 icon: actual-budget
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
-                description: MCP endpoint for Actual Budget at /http
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
             - Wallos:
                 icon: wallos
