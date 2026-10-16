@@ -1,0 +1,23 @@
+[Unit]
+Description=Private desktop lifecycle relay
+Wants=network-online.target
+After=network-online.target docker.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/desktop-lifecycle-relay
+EnvironmentFile=/etc/desktop-lifecycle-relay/relay.env
+ExecStart=/usr/bin/python3 /opt/desktop-lifecycle-relay/relay.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/root/.ssh/id_ed25519_services /root/.ssh/known_hosts
+ReadWritePaths=/run/desktop-lifecycle-relay
+
+[Install]
+WantedBy=multi-user.target
