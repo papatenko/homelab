@@ -31,7 +31,7 @@ services:
       SHOW_MONGODB_LOGS: ${OMADA_SHOW_MONGODB_LOGS:-false}
       SSL_CERT_NAME: ${OMADA_SSL_CERT_NAME:-tls.crt}
       SSL_KEY_NAME: ${OMADA_SSL_KEY_NAME:-tls.key}
-      TZ: ${TZ:-Etc/UTC}
+      TZ: ${TZ:-America/Chicago}
       JAVA_MAX_HEAP_SIZE: ${OMADA_JAVA_MAX_HEAP_SIZE:-512m}
       JAVA_MIN_HEAP_SIZE: ${OMADA_JAVA_MIN_HEAP_SIZE:-128m}
       MONGOD_EXTRA_ARGS: ${OMADA_MONGOD_EXTRA_ARGS:---wiredTigerCacheSizeGB 0.25}
