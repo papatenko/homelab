@@ -59,6 +59,10 @@ The rolling oikb image does not include `wget`. Its healthcheck uses the imageâ€
 
 Open WebUI publishes only its explicitly configured private host binding. The shared application network must not use Docker `internal: true`, because Docker suppresses host port publication for a container attached only to an internal network. oikb remains un-published and is reachable only by the application network.
 
+## Course RAG Sync MCP bridge
+
+The `rag-sync-mcp` service exposes only two course-scoped Streamable HTTP tools and is not host-published. It joins `openwebui-internal`, uses its own `RAG_SYNC_MCP_TOKEN_FILE` bearer secret plus the oikb API secret, and must be reached only through an approved HTTPS reverse-proxy route. See `rag-sync-mcp/README.md` for scope and test instructions. Do not deploy until the oikb API contract and protected ingress are independently verified.
+
 ## oikb API key loading
 
 oikb resolves its own `OIKB_API_KEY` from `OIKB_API_KEY_FILE`, but reads the Open WebUI key only from `OPEN_WEBUI_API_KEY` or its config file. The compose entrypoint therefore exports `OPEN_WEBUI_API_KEY` from the mounted secret immediately before `exec oikb daemon`. The value never appears in the compose file, Portainer variables, or logs.
