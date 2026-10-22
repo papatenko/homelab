@@ -3,6 +3,14 @@ services:
     image: ${OPENVIKING_IMAGE:-ghcr.io/volcengine/openviking:latest}
     container_name: openviking
     restart: unless-stopped
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        set -a
+        . /run/secrets/openviking-vlm.env
+        set +a
+        exec openviking-entrypoint
     ports:
       # Set this to the deployment host's private bind address in Portainer.
       # Do not use 0.0.0.0.
@@ -15,12 +23,12 @@ services:
       OPENVIKING_VLM_API_BASE: "${OPENVIKING_VLM_API_BASE:-https://chatgpt.com/backend-api/codex}"
       OPENVIKING_VLM_SESSION_ID: "${OPENVIKING_VLM_SESSION_ID:-openviking-agent-memory}"
       OPENVIKING_AUTH_MODE: "${OPENVIKING_AUTH_MODE:-api_key}"
-    # Root-owned runtime secret file, provisioned from BWS. Do not commit it.
-    env_file:
-      - "${OPENVIKING_VLM_SECRETS_FILE:-/run/openviking/vlm.env}"
+
     volumes:
       # Contains only OpenViking configuration, OAuth state, models, and derived indexes.
       - "${OPENVIKING_DATA_DIR:?Set the OpenViking data path}:/app/.openviking"
+      # Root-owned BWS-fed VLM key, mounted read-only from the Docker endpoint.
+      - "${OPENVIKING_VLM_SECRETS_FILE:-/run/openviking/vlm.env}:/run/secrets/openviking-vlm.env:ro"
       # Mount the authoritative source directories read-only.
       - "${OPENVIKING_WIKI_PATH:?Set the wiki source path}:/vault/wiki:ro"
       - "${OPENVIKING_MOC_PATH:?Set the MOC source path}:/vault/mocs:ro"
