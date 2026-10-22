@@ -19,7 +19,7 @@ with sqlite3.connect(f"file:{db}?mode=ro", uri=True) as conn:
         FROM usage_token_hourly WHERE date_utc=date('now')"""
     ).fetchone()
     requests = conn.execute(
-        """SELECT status_code, COUNT(*) FROM request_audit
+        """SELECT status_code, COUNT(*), AVG(duration_ms) FROM request_audit
         WHERE date(created_at)=date('now') GROUP BY status_code"""
     ).fetchall()
     commits = conn.execute(
@@ -32,7 +32,10 @@ record = {
     "vlm_input_tokens_today": row[0],
     "vlm_output_tokens_today": row[1],
     "session_commits_today": commits,
-    "requests_by_status_today": {str(status): count for status, count in requests},
+    "requests_by_status_today": {
+        str(status): {"count": count, "avg_duration_ms": round(duration or 0)}
+        for status, count, duration in requests
+    },
 }
 with output.open("a", encoding="utf-8") as f:
     f.write(json.dumps(record, separators=(",", ":")) + "\n")

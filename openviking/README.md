@@ -27,7 +27,7 @@ The embeddings service has no published port. It supplies local `nomic-embed-tex
 
 ## OpenCode Go VLM pilot
 
-The stack supports an OpenAI-compatible VLM with its key supplied only through the root-owned runtime file named by `OPENVIKING_VLM_SECRETS_FILE`. Provision that file from Bitwarden Secrets Manager, with mode `0600`, containing only:
+The stack supports an OpenAI-compatible VLM with its key supplied only through the root-owned runtime file named by `OPENVIKING_VLM_SECRETS_FILE`. Portainer's Docker endpoint mounts it read-only at `/run/secrets/openviking-vlm.env`; the container entrypoint exports it before OpenViking expands `ov.conf`. It is not an `env_file`, because stack parsing happens on the Portainer host. Provision the endpoint file from Bitwarden Secrets Manager, with mode `0600`, containing only:
 
 ```text
 OPENVIKING_VLM_API_KEY=BWS_INJECTED_VALUE
@@ -39,7 +39,7 @@ For the reversible Go pilot, set the non-secret Portainer environment values in 
 
 ### Performance record
 
-OpenViking's `usage_audit.sqlite3` is the authoritative durable record for VLM input/output token totals, successful retrieval operations, and session commits. Retain it in `OPENVIKING_DATA_DIR`; compare the Go pilot's successful commits, 429/error count, token totals, and retrieval quality against the pre-pilot Codex baseline before making the route permanent.
+OpenViking's `usage_audit.sqlite3` is the authoritative durable record for VLM input/output token totals, successful retrieval operations, session commits, and request durations. Retain it in `OPENVIKING_DATA_DIR`; compare the Go pilot's successful commits, 429/error count, token totals, latency, and retrieval quality against the pre-pilot Codex baseline before making the route permanent.
 
 ## First-time initialization
 
