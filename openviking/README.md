@@ -25,6 +25,22 @@ Do not use `0.0.0.0` for the bind address. Do not commit these values to Git. Ke
 
 The embeddings service has no published port. It supplies local `nomic-embed-text` embeddings and stores its state below `OPENVIKING_DATA_DIR`.
 
+## OpenCode Go VLM pilot
+
+The stack supports an OpenAI-compatible VLM with its key supplied only through the root-owned runtime file named by `OPENVIKING_VLM_SECRETS_FILE`. Provision that file from Bitwarden Secrets Manager, with mode `0600`, containing only:
+
+```text
+OPENVIKING_VLM_API_KEY=BWS_INJECTED_VALUE
+```
+
+For the reversible Go pilot, set the non-secret Portainer environment values in `example.env`: provider `openai`, model `glm-5.3-flash`, and API base `https://opencode.ai/inference/go/v1`. The persisted `ov.conf` must refer to `OPENVIKING_VLM_API_KEY` and set an `x-opencode-session` header. Use a stable service scope, not a random request value, and keep this route limited to OpenViking agent-memory extraction.
+
+`OPENVIKING_VLM_SESSION_ID` is intentionally non-secret. The persisted `ov.conf` maps it into `vlm.extra_headers.x-opencode-session`; use a stable OpenViking agent-memory scope for the Go pilot.
+
+### Performance record
+
+OpenViking's `usage_audit.sqlite3` is the authoritative durable record for VLM input/output token totals, successful retrieval operations, and session commits. Retain it in `OPENVIKING_DATA_DIR`; compare the Go pilot's successful commits, 429/error count, token totals, and retrieval quality against the pre-pilot Codex baseline before making the route permanent.
+
 ## First-time initialization
 
 After the stack is running, prepare the embedding model and initialize OpenViking using the deployment's container names:

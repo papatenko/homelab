@@ -1,0 +1,11 @@
+[Unit]
+Description=Record OpenViking VLM performance hourly
+
+[Timer]
+OnBootSec=10m
+OnUnitActiveSec=1h
+Persistent=true
+Unit=openviking-vlm-performance.service
+
+[Install]
+WantedBy=timers.target
