@@ -108,8 +108,11 @@ services:
     environment:
       OIKB_URL: http://oikb:8080
       BRIDGE_TOKEN_FILE: /run/secrets/rag_sync_mcp_token
+      BRIDGE_STATE_FILE: /data/pending-job.json
       OIKB_TOKEN_FILE: /run/secrets/oikb_api_key
       MCP_ALLOWED_HOST: ${RAG_SYNC_MCP_ALLOWED_HOST:-}
+    volumes:
+      - rag-sync-mcp-state:/data
     secrets:
       - rag_sync_mcp_token
       - oikb_api_key
@@ -123,6 +126,7 @@ services:
       oikb:
         condition: service_healthy
     deploy:
+      replicas: 1
       resources:
         limits:
           cpus: "0.50"
@@ -144,6 +148,9 @@ networks:
   openwebui-internal:
     name: openwebui-internal
     driver: bridge
+
+volumes:
+  rag-sync-mcp-state:
 
 secrets:
   open_webui_rag_sync_api_key:

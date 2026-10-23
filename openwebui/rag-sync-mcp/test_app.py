@@ -5,6 +5,138 @@ import httpx
 from app import ALIASES, Bridge, create_app
 
 class BridgeTests(unittest.TestCase):
+    def test_single_process_guard_rejects_second_owner(self):
+        import tempfile
+        from pathlib import Path
+        from app import acquire_singleton
+        with tempfile.TemporaryDirectory() as directory:
+            first = acquire_singleton(Path(directory) / "bridge.lock")
+            try:
+                with self.assertRaisesRegex(RuntimeError, "already running"):
+                    acquire_singleton(Path(directory) / "bridge.lock")
+            finally:
+                first.close()
+            again = acquire_singleton(Path(directory) / "bridge.lock")
+            again.close()
+
+    def test_incomplete_other_source_health_blocks_dispatch(self):
+        client = Mock()
+        client.request.return_value.json.return_value = {"sources": {
+            "cosc-4337": {"status": "idle"}, "cosc-4351": {"status": "mystery"}}}
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        with self.assertRaisesRegex(RuntimeError, "Sync service unavailable"):
+            bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
+        self.assertTrue(all(c.args[0] == "GET" for c in client.request.call_args_list))
+
+    def test_corrupt_state_preserves_status_but_blocks_new_sync(self):
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as state_dir:
+            state = Path(state_dir) / "pending.json"
+            state.write_text("not-json")
+            client = Mock()
+            client.request.return_value.json.return_value = {"sources": {"cosc-4337": {"status": "idle"}}}
+            bridge = Bridge("http://oikb:8080", "secret", client, state_path=state)
+            self.assertEqual(bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})["status"], "busy")
+            self.assertEqual(bridge.invoke("get_sync_status", {"collection": "cosc-4337"})["state"], "idle")
+            self.assertFalse(any(c.args[0] == "POST" for c in client.request.call_args_list))
+
+    def test_invalid_persisted_state_blocks_dispatch(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as state_dir:
+            state = Path(state_dir) / "pending.json"
+            for payload in ({}, {"active_alias": "bogus", "baseline_sync": 1, "seen_running": False},
+                            {"active_alias": None}):
+                state.write_text(json.dumps(payload))
+                client = Mock()
+                bridge = Bridge("http://oikb:8080", "secret", client, state_path=state)
+                self.assertEqual(bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})["status"], "busy")
+                client.request.assert_not_called()
+
+    def test_pending_job_survives_restart_and_blocks_dispatch_until_fresh_completion(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as state_dir:
+            client = Mock()
+            client.request.side_effect = [
+                Mock(json=lambda: {"sources": {"cosc-4337": {"status": "idle", "last_sync": 1}}}, raise_for_status=Mock()),
+                Mock(json=lambda: {"triggered": True, "name": "cosc-4337"}, raise_for_status=Mock()),
+            ]
+            first = Bridge("http://oikb:8080", "secret", client, state_path=f"{state_dir}/pending.json")
+            first.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
+
+            restarted_client = Mock()
+            restarted_client.request.return_value.json.return_value = {"sources": {
+                "cosc-4337": {"status": "idle", "last_sync": 1}}}
+            restarted = Bridge("http://oikb:8080", "secret", restarted_client,
+                               state_path=f"{state_dir}/pending.json")
+            self.assertEqual(restarted.invoke("sync_knowledge_base", {"collection": "cosc-4337"})["status"], "busy")
+            self.assertEqual([c.args[0] for c in restarted_client.request.call_args_list], [])
+            restarted_client.request.return_value.json.return_value = {"sources": {
+                "cosc-4337": {"status": "running", "last_sync": 1}}}
+            self.assertEqual(restarted.invoke("get_sync_status", {"collection": "cosc-4337"})["state"], "running")
+            restarted_client.request.return_value.json.return_value = {"sources": {
+                "cosc-4337": {"status": "success", "last_sync": 2}}}
+            self.assertEqual(restarted.invoke("get_sync_status", {"collection": "cosc-4337"})["state"], "success")
+            self.assertEqual(restarted.active_alias, None)
+
+    def test_unknown_health_state_fails_closed_without_post(self):
+        client = Mock()
+        client.request.return_value.json.return_value = {"sources": {}}
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        with self.assertRaisesRegex(RuntimeError, "Sync service unavailable"):
+            bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
+        self.assertTrue(all(call.args[0] == "GET" for call in client.request.call_args_list))
+        self.assertFalse(bridge.lock.locked())
+
+    def test_external_running_source_blocks_new_sync(self):
+        client = Mock()
+        client.request.return_value.json.return_value = {"sources": {
+            alias: {"name": alias, "status": "running" if alias == "mark-3336" else "idle"}
+            for alias in ALIASES}}
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        result = bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
+        self.assertEqual(result["status"], "busy")
+        self.assertTrue(all(call.args[0] == "GET" for call in client.request.call_args_list))
+
+    def test_reconcile_releases_completed_job_without_client_poll(self):
+        client = Mock()
+        client.request.return_value.json.return_value = {"sources": {
+            "cosc-4337": {"status": "success", "last_sync": 2}}}
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        bridge.lock.acquire()
+        bridge.active_alias, bridge.baseline_sync = "cosc-4337", 1
+        bridge.reconcile()
+        self.assertIsNone(bridge.active_alias)
+        self.assertFalse(bridge.lock.locked())
+
+    def test_ambiguous_trigger_timeout_keeps_lock(self):
+        client = Mock()
+        def request(method, *args, **kwargs):
+            if method == "POST": raise httpx.ReadTimeout("private")
+            response = Mock()
+            response.json.return_value = {"sources": {alias: {"status": "idle"} for alias in ALIASES}}
+            return response
+        client.request.side_effect = request
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        with self.assertRaises(RuntimeError):
+            bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
+        self.assertTrue(bridge.lock.locked())
+        self.assertEqual(bridge.active_alias, "cosc-4337")
+
+    def test_sync_requests_are_throttled(self):
+        client = Mock()
+        client.request.return_value.json.side_effect = [
+            {"sources": {alias: {"status": "idle"} for alias in ALIASES}},
+            {"triggered": True, "name": "cosc-4337"},
+        ]
+        bridge = Bridge("http://oikb:8080", "secret", client)
+        self.assertTrue(bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})["accepted"])
+        bridge.active_alias = None
+        bridge.lock.release()
+        self.assertEqual(bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})["status"], "rate_limited")
+
     def test_fixed_alias_tool_surface(self):
         app = create_app(Bridge("http://oikb:8080", "secret", Mock()), "bridge")
         names = {getattr(route, "path", None) for route in app.routes}
@@ -36,11 +168,14 @@ class BridgeTests(unittest.TestCase):
         self.assertFalse(bridge.lock.locked())
         self.assertNotIn("secret", str(status))
     def test_upstream_http_errors_are_not_accepted(self):
-        client = Mock(); client.request.return_value.raise_for_status.side_effect = [None, httpx.HTTPStatusError("bad", request=Mock(), response=Mock())]
-        client.request.return_value.json.return_value = {"sources": {}}
+        client = Mock()
+        client.request.return_value.raise_for_status.side_effect = [None, httpx.HTTPStatusError("bad", request=Mock(), response=Mock())]
+        client.request.return_value.json.return_value = {"sources": {alias: {"status": "idle"} for alias in ALIASES}}
         bridge = Bridge("http://oikb:8080", "secret", client)
         with self.assertRaises(RuntimeError): bridge.invoke("sync_knowledge_base", {"collection": "cosc-4337"})
-        self.assertFalse(bridge.lock.locked())
+        # An HTTP failure after dispatch does not prove the job was not started.
+        self.assertTrue(bridge.lock.locked())
+        self.assertEqual(bridge.active_alias, "cosc-4337")
     def test_auth_http_enforced(self):
         async def run():
             app = create_app(Bridge("http://oikb:8080", "x", Mock()), "token")
