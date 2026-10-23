@@ -111,6 +111,7 @@ services:
       BRIDGE_STATE_FILE: /data/pending-job.json
       OIKB_TOKEN_FILE: /run/secrets/oikb_api_key
       MCP_ALLOWED_HOST: ${RAG_SYNC_MCP_ALLOWED_HOST:-}
+      MCP_APPROVED_ALIASES: ${RAG_SYNC_MCP_APPROVED_ALIASES:-cosc-4337,cosc-4351,cosc-4397,mark-3336}
     volumes:
       - rag-sync-mcp-state:/data
     secrets:
