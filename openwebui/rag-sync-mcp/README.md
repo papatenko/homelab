@@ -2,7 +2,10 @@
 
 The approved runtime hostname is `webuikb.papatenko.org`, with MCP path `/mcp`.
 Supply the hostname through `RAG_SYNC_MCP_ALLOWED_HOST` at deployment, not as a
-portable source default. This name does not expand the four-course allowlist.
+portable source default. The current four aliases are the deployment default.
+A future KB can be added through the explicit `RAG_SYNC_MCP_APPROVED_ALIASES`
+Portainer variable after reviewing its oikb source and authorization. The
+bridge never auto-discovers or accepts arbitrary client-provided source names.
 
 Run exactly one replica and one Uvicorn worker. A background monitor reconciles
 active jobs every five seconds, even after the initiating client disconnects.

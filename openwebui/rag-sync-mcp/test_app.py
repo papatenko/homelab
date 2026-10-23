@@ -5,6 +5,24 @@ import httpx
 from app import ALIASES, Bridge, create_app
 
 class BridgeTests(unittest.TestCase):
+    def test_invalid_alias_configuration_is_rejected(self):
+        for aliases in (set(), {"../sync/all"}, {"bad alias"}, {"x" * 81}):
+            with self.assertRaises(ValueError):
+                Bridge("http://oikb:8080", "secret", Mock(), aliases=aliases)
+
+    def test_explicit_allowlist_is_extensible_but_never_auto_discovers(self):
+        client = Mock()
+        client.request.return_value.json.side_effect = [
+            {"sources": {"future-kb": {"status": "idle"}}},
+            {"triggered": True, "name": "future-kb"},
+        ]
+        approved = Bridge("http://oikb:8080", "secret", client, aliases={"future-kb"})
+        self.assertTrue(approved.invoke("sync_knowledge_base", {"collection": "future-kb"})["accepted"])
+        denied = Bridge("http://oikb:8080", "secret", Mock(), aliases={"cosc-4337"})
+        with self.assertRaises(ValueError):
+            denied.invoke("sync_knowledge_base", {"collection": "future-kb"})
+        denied.client.request.assert_not_called()
+
     def test_single_process_guard_rejects_second_owner(self):
         import tempfile
         from pathlib import Path

@@ -28,6 +28,12 @@ def acquire_singleton(path: Path):
         raise RuntimeError("bridge already running") from None
     return handle
 
+def parse_aliases(value: str) -> frozenset[str]:
+    parts = value.split(",")
+    if any(not part or part.strip() != part for part in parts):
+        raise ValueError("invalid alias allowlist")
+    return frozenset(parts)
+
 class BearerAuthMiddleware:
     def __init__(self, app: ASGIApp, token: str): self.app, self.token = app, token
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
@@ -41,7 +47,12 @@ class BearerAuthMiddleware:
 
 class Bridge:
     def __init__(self, upstream: str, upstream_token: str, client: Any | None = None,
-                 state_path: str | Path | None = None):
+                 state_path: str | Path | None = None, aliases: frozenset[str] | set[str] = ALIASES):
+        if not aliases or any(not isinstance(a, str) or not a or len(a) > 80 or
+                              not all(c.isascii() and (c.isalnum() or c in "-_") for c in a)
+                              for a in aliases):
+            raise ValueError("invalid alias allowlist")
+        self.aliases = frozenset(aliases)
         self.upstream = upstream.rstrip("/"); self.upstream_token = upstream_token
         self.client = client or httpx.Client(timeout=httpx.Timeout(5.0, connect=2.0), follow_redirects=False)
         self.lock = threading.Lock()
@@ -81,7 +92,7 @@ class Bridge:
             baseline = state.get("baseline_sync")
             if alias is None and baseline is None and state.get("seen_running") is False:
                 return
-            if alias not in ALIASES or (baseline is not None and (isinstance(baseline, bool) or not isinstance(baseline, (int, float)))):
+            if alias not in self.aliases or (baseline is not None and (isinstance(baseline, bool) or not isinstance(baseline, (int, float)))):
                 raise ValueError("invalid persisted state")
             self.active_alias, self.baseline_sync, self.seen_running = alias, baseline, False
             self.lock.acquire()
@@ -130,7 +141,7 @@ class Bridge:
         return result
     def reconcile(self) -> None:
         with self.state_lock:
-            if self.active_alias in ALIASES:
+            if self.active_alias in self.aliases:
                 self._invoke("get_sync_status", {"collection": self.active_alias})
 
     def invoke(self, name: str, args: dict[str, Any]) -> dict[str, Any]:
@@ -140,7 +151,7 @@ class Bridge:
     def _invoke(self, name: str, args: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(args, dict) or set(args) != {"collection"}: raise ValueError("invalid arguments")
         alias = args["collection"]
-        if not isinstance(alias, str) or alias not in ALIASES: raise ValueError("invalid collection")
+        if not isinstance(alias, str) or alias not in self.aliases: raise ValueError("invalid collection")
         if name == "get_sync_status":
             result = self._status(alias)
             if alias == self.active_alias and result["state"] in {"success", "failed"}:
@@ -226,7 +237,8 @@ def main() -> None:
     state_path = Path(os.environ["BRIDGE_STATE_FILE"])
     owner = acquire_singleton(state_path.parent / "bridge.lock")
     bridge = Bridge(os.environ.get("OIKB_URL", "http://oikb:8080"), read_secret("OIKB_TOKEN_FILE"),
-                    state_path=state_path)
+                    state_path=state_path,
+                    aliases=parse_aliases(os.environ.get("MCP_APPROVED_ALIASES", ",".join(sorted(ALIASES)))))
     def monitor() -> None:
         while True:
             time.sleep(5)
