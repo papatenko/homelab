@@ -103,6 +103,8 @@ services:
     restart: unless-stopped
     init: true
     read_only: true
+    group_add:
+      - "1000" # NAS secret files are root:justink 0640; app remains uid 10001.
     tmpfs:
       - /tmp:mode=1777,size=16m
     environment:
