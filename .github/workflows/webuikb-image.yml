@@ -1,0 +1,86 @@
+# Build the WebUI KB MCP bridge image and publish it to GHCR.
+#
+# Build context: openwebui/rag-sync-mcp (Dockerfile at its root).
+# Image: ghcr.io/papatenko/webuikb-mcp
+#
+# Tags pushed:
+#   latest      - MUTABLE convenience tag. Never deploy this.
+#   sha-<full>  - Immutable-by-convention tag for the exact Git commit.
+#
+# DEPLOYMENT: pin the registry manifest digest (ghcr.io/papatenko/webuikb-mcp@sha256:...),
+# not a tag. Tags can be re-pointed; only the digest is content-addressed. The digest is
+# printed in the job summary and exposed as the `digest` step output. Set it as
+# RAG_SYNC_MCP_IMAGE in the Portainer stack after review.
+#
+# Auth: GITHUB_TOKEN only; no custom secrets.
+name: webuikb-image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "openwebui/rag-sync-mcp/**"
+      - ".github/workflows/webuikb-image.yml"
+  workflow_dispatch:
+
+# Deny everything by default; the job grants only what it needs.
+permissions: {}
+
+concurrency:
+  group: webuikb-image-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  IMAGE: ghcr.io/papatenko/webuikb-mcp
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: openwebui/rag-sync-mcp
+          file: openwebui/rag-sync-mcp/Dockerfile
+          push: true
+          provenance: false
+          tags: |
+            ${{ env.IMAGE }}:latest
+            ${{ env.IMAGE }}:sha-${{ github.sha }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+
+      - name: Report digest
+        env:
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          {
+            echo "### webuikb-mcp image"
+            echo
+            echo "Pin this digest in deployment (do NOT use a tag):"
+            echo
+            echo '```'
+            echo "${IMAGE}@${DIGEST}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
