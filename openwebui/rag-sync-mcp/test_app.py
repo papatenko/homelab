@@ -207,6 +207,24 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(denied.status_code, 401)
         self.assertEqual(allowed.status_code, 200)
 
+    def test_protocol_sync_call_with_only_collection_is_accepted(self):
+        async def run():
+            client_upstream = Mock()
+            client_upstream.request.return_value.json.side_effect = [
+                {"sources": {alias: {"status": "idle"} for alias in ALIASES}},
+                {"triggered": True, "name": "mark-3336"},
+            ]
+            app = create_app(Bridge("http://oikb:8080", "secret", client_upstream), "token")
+            async with app.router.lifespan_context(app):
+                async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://localhost") as client:
+                    response = await client.post("/mcp", headers={"Authorization": "Bearer token", "Accept": "application/json, text/event-stream"},
+                        json={"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "sync_knowledge_base", "arguments": {"collection": "mark-3336"}}})
+                    return response, client_upstream
+        response, upstream = asyncio.run(run())
+        self.assertFalse(response.json()["result"].get("isError"))
+        self.assertEqual(response.json()["result"]["structuredContent"]["status"], "accepted")
+        self.assertEqual([c.args[0] for c in upstream.request.call_args_list], ["GET", "POST"])
+
     def test_protocol_initialize_and_tool_validation(self):
         async def run():
             client_upstream = Mock()
@@ -224,7 +242,7 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual({x["name"] for x in listing.json()["result"]["tools"]}, {"sync_knowledge_base", "get_sync_status"})
         self.assertTrue(malformed.json()["result"]["isError"])
         self.assertTrue(extra.json()["result"]["isError"])
-        upstream.request.assert_not_called()
+        self.assertFalse(any(c.args[0] == "POST" for c in upstream.request.call_args_list))
     def test_upstream_rejected_trigger_does_not_claim_acceptance(self):
         client = Mock(); client.request.return_value.json.side_effect = [{"sources": {}}, {"triggered": False, "error": "private"}]
         bridge = Bridge("http://oikb:8080", "secret", client)

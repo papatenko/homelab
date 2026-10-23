@@ -210,9 +210,9 @@ def create_app(bridge: Bridge, bearer_token: str) -> Starlette:
                       allowed_hosts=["localhost", "localhost:*", "127.0.0.1:*", "rag-sync-mcp:*", *([allowed_host] if allowed_host else [])],
                       allowed_origins=[]))
     @mcp.tool()
-    def sync_knowledge_base(collection: str, **extra: Any) -> dict[str, Any]:
-        """Synchronize one approved course knowledge base."""
-        return bridge.invoke("sync_knowledge_base", {"collection": collection, **extra})
+    def sync_knowledge_base(collection: str) -> dict[str, Any]:
+        """Synchronize one approved knowledge base."""
+        return bridge.invoke("sync_knowledge_base", {"collection": collection})
     @mcp.tool()
     def get_sync_status(collection: str) -> dict[str, Any]:
         """Get normalized sync status for one approved course knowledge base."""
