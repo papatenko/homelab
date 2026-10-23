@@ -98,6 +98,49 @@ services:
       retries: 5
       start_period: 15s
 
+  rag-sync-mcp:
+    image: ${RAG_SYNC_MCP_IMAGE:?set reviewed immutable bridge image digest in Portainer}
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=16m
+    environment:
+      OIKB_URL: http://oikb:8080
+      BRIDGE_TOKEN_FILE: /run/secrets/rag_sync_mcp_token
+      BRIDGE_STATE_FILE: /data/pending-job.json
+      OIKB_TOKEN_FILE: /run/secrets/oikb_api_key
+      MCP_ALLOWED_HOST: ${RAG_SYNC_MCP_ALLOWED_HOST:-}
+    volumes:
+      - rag-sync-mcp-state:/data
+    secrets:
+      - rag_sync_mcp_token
+      - oikb_api_key
+    networks:
+      - openwebui-internal
+    ports:
+      # Private NAS binding for the separate reverse-proxy host only. Firewall
+      # must permit only that host; oikb itself remains un-published.
+      - "${RAG_SYNC_MCP_BIND_ADDRESS:?set approved private bridge bind address}:${RAG_SYNC_MCP_PORT:-18080}:8000"
+    depends_on:
+      oikb:
+        condition: service_healthy
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
 networks:
   # This network is not Docker-internal because Open WebUI publishes one
   # explicitly private host binding. External exposure remains controlled by
@@ -106,8 +149,13 @@ networks:
     name: openwebui-internal
     driver: bridge
 
+volumes:
+  rag-sync-mcp-state:
+
 secrets:
   open_webui_rag_sync_api_key:
     file: ${OPEN_WEBUI_RAG_SYNC_API_KEY_FILE:?set a BWS/Portainer-managed secret file path}
   oikb_api_key:
     file: ${OIKB_API_KEY_FILE:?set a BWS/Portainer-managed secret file path}
+  rag_sync_mcp_token:
+    file: ${RAG_SYNC_MCP_TOKEN_FILE:?set a BWS/Portainer-managed secret file path}
