@@ -27,7 +27,7 @@ The embeddings service has no published port. It supplies local `nomic-embed-tex
 
 ## OpenCode Go VLM pilot
 
-The stack supports an OpenAI-compatible VLM with its key supplied only through the root-owned runtime file named by `OPENVIKING_VLM_SECRETS_FILE`. Portainer's Docker endpoint mounts it read-only at `/run/secrets/openviking-vlm.env`; the container entrypoint exports it before OpenViking expands `ov.conf`. It is not an `env_file`, because stack parsing happens on the Portainer host. Provision the endpoint file from Bitwarden Secrets Manager, with mode `0600`, containing only:
+The stack supports an OpenAI-compatible VLM with its key supplied only through the root-owned persistent runtime file named by `OPENVIKING_VLM_SECRETS_FILE`. Set it to `/mnt/misc/appdata/openviking/secrets/vlm.env` on the Docker endpoint. Portainer mounts it read-only at `/run/secrets/openviking-vlm.env`; the container entrypoint exports it before OpenViking expands `ov.conf`. It is not an `env_file`, because stack parsing happens on the Portainer host. Provision the endpoint file from Bitwarden Secrets Manager, with mode `0600`, containing only. Install `systemd/openviking-vlm-secret.service` on the Docker endpoint as an ordered prerequisite of Docker, so the compatibility path `/run/openviking/vlm.env` is restored on every host boot while older deployed stack revisions still reference it:
 
 ```text
 OPENVIKING_VLM_API_KEY=BWS_INJECTED_VALUE
