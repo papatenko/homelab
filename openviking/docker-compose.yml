@@ -28,7 +28,7 @@ services:
       # Contains only OpenViking configuration, OAuth state, models, and derived indexes.
       - "${OPENVIKING_DATA_DIR:?Set the OpenViking data path}:/app/.openviking"
       # Root-owned BWS-fed VLM key, mounted read-only from the Docker endpoint.
-      - "${OPENVIKING_VLM_SECRETS_FILE:-/mnt/misc/appdata/openviking/secrets/vlm.env}:/run/secrets/openviking-vlm.env:ro"
+      - "${OPENVIKING_VLM_SECRETS_FILE:-/run/openviking/vlm.env}:/run/secrets/openviking-vlm.env:ro"
       # Mount the authoritative source directories read-only.
       - "${OPENVIKING_WIKI_PATH:?Set the wiki source path}:/vault/wiki:ro"
       - "${OPENVIKING_MOC_PATH:?Set the MOC source path}:/vault/mocs:ro"
