@@ -1,0 +1,8 @@
+[Unit]
+Description=Remove unused Docker images older than seven days
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker image prune --all --filter until=168h --force
