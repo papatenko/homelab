@@ -8,7 +8,7 @@ Draft only. Do not deploy or expose publicly until the security, secret-delivery
 
 ## Configuration
 
-- `SYNC_USER1`: Anki `username:password` or a supported hash. Provide through the approved secret manager integration, never commit a value. Exact delivery into the running container is not yet validated.
+- `SYNC_USER1`: Anki `username:password` or a supported hash. Supply through the Portainer environment editor. Never commit or log a value.
 - `ANKI_BIND_ADDRESS` and `ANKI_PORT`: private host binding, reachable by the reverse proxy but restricted from unintended access.
 - `ANKI_DATA_DIR`: absolute persistent host directory, writable by UID/GID 10001. It must be distinct from client collections.
 
@@ -16,7 +16,7 @@ The container's service listens on HTTP port 8080. Terminate HTTPS at the revers
 
 ## Image updates
 
-The Dockerfile installs the current Anki Python package **when built**, not when a running container restarts. Portainer Git polling does not automatically rebuild it when upstream releases change. A documented, tested image rebuild and deployment workflow is required before production. Confirm client/server compatibility and retain a rollback image and backup when upgrading.
+Portainer's remote build can fail during BuildKit negotiation. As a temporary fallback the stack uses a host-local image tagged to the reviewed Dockerfile commit, `anki-sync:9dde3b1`, with `pull_policy: never`. Build that exact Dockerfile on the target Docker host before stack creation. This is not a registry-backed or automatically updated image. Git polling and container restarts do not update the Anki package. For updates, review the Dockerfile and upstream release, build a new commit-tagged image, update this reference in a PR, and retain a rollback image and backup. A registry-backed update workflow remains future work.
 
 ## Deployment and verification gates
 

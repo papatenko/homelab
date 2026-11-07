@@ -1,8 +1,7 @@
 services:
   anki-sync:
-    build:
-      context: .
-    image: anki-sync:local
+    image: anki-sync:9dde3b1
+    pull_policy: never
     restart: unless-stopped
     environment:
       SYNC_USER1: ${SYNC_USER1:?Configure via approved secret provisioning}
