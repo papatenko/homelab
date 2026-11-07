@@ -1,10 +1,13 @@
 services:
   anki-sync:
-    image: anki-sync:9dde3b1
-    pull_policy: never
+    image: chrislongros/anki-sync-server-enhanced:latest
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
     restart: unless-stopped
     environment:
       SYNC_USER1: ${SYNC_USER1:?Configure via approved secret provisioning}
+      PUID: "10001"
+      PGID: "10001"
     ports:
       - "${ANKI_BIND_ADDRESS:?Set private bind address}:${ANKI_PORT:?Set available host port}:8080"
     volumes:
