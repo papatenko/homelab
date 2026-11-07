@@ -87,8 +87,8 @@
 - Apps:
     - Anki Sync:
         icon: anki.png
-        href: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
-        siteMonitor: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+        href: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
+        siteMonitor: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
     - Vaultwarden:
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
