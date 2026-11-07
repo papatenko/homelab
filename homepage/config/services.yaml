@@ -85,6 +85,10 @@
         siteMonitor: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
 
 - Apps:
+    - Anki Sync:
+        icon: mdi-cards
+        href: https://apps.ankiweb.net/
+        description: Self-hosted sync server, use an Anki client
     - Vaultwarden:
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
