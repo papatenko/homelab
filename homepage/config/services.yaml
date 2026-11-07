@@ -86,10 +86,9 @@
 
 - Apps:
     - Anki Sync:
-        icon: mdi-cards
+        icon: anki.png
         href: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
         siteMonitor: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
-        description: Sync server health, study in an Anki client
     - Vaultwarden:
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
@@ -106,7 +105,7 @@
         icon: rustdesk
         ping: "{{HOMEPAGE_VAR_COOLIFY_IP}}"
     - LanguageTool:
-        icon: languagetool
+        icon: https://languagetool.org/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8010/v2/languages
 
@@ -116,19 +115,19 @@
         href: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
         siteMonitor: https://{{HOMEPAGE_VAR_PBS_IP}}:8007
     - NAS Backrest:
-        icon: mdi-backup-restore
+        icon: backrest.svg
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:9898
     - Raspberry Pi Backrest:
-        icon: mdi-backup-restore
+        icon: backrest.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:9898
     - Services Backrest:
-        icon: mdi-backup-restore
+        icon: backrest.svg
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9898
     - Hermes Backrest:
-        icon: mdi-backup-restore
+        icon: backrest.svg
         href: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
         siteMonitor: http://{{HOMEPAGE_VAR_HERMES_IP}}:9898
 
@@ -142,7 +141,7 @@
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:3600/health
     - Wallos:
-        icon: wallos
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282/images/icon/favicon.ico
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8282
 
@@ -155,28 +154,24 @@
         icon: n8n
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5678/healthz
-    - Whisper:
-        icon: si-openai
-        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9000/docs
-        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9000/docs
     - OpenViking:
-        icon: mdi-brain
+        icon: https://raw.githubusercontent.com/volcengine/OpenViking/main/docs/images/favicon.svg
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:1933
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:1933
     - OmniRoute:
-        icon: si-openai
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128/favicon.svg
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
     - Hister:
-        icon: mdi-magnify-scan
+        icon: http://{{HOMEPAGE_VAR_NAS_IP}}:4433/favicon.ico
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
     - OpenHands:
-        icon: si-openai
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas/favicon.svg
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
     - ActivityWatch:
-        icon: mdi-chart-timeline-variant
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5600/logo.png
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5600
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:5600
 

@@ -16,7 +16,7 @@ The container's service listens on HTTP port 8080. Terminate HTTPS at the revers
 
 ## Image updates
 
-Portainer's remote build can fail during BuildKit negotiation. As a temporary fallback the stack uses a host-local image tagged to the reviewed Dockerfile commit, `anki-sync:9dde3b1`, with `pull_policy: never`. Build that exact Dockerfile on the target Docker host before stack creation. This is not a registry-backed or automatically updated image. Git polling and container restarts do not update the Anki package. For updates, review the Dockerfile and upstream release, build a new commit-tagged image, update this reference in a PR, and retain a rollback image and backup. A registry-backed update workflow remains future work.
+Use the community-maintained `chrislongros/anki-sync-server-enhanced:latest` image, built from official Anki source. Its publisher builds a rolling image; Watchtower must be running on the target Docker host and allowed to update the container. A rolling tag alone does not perform updates. Verify the Watchtower policy and an actual later update cycle. Compatibility and publisher trust remain operational risks; retain a known-good image and consistent backup before upgrades. Existing data, credentials, and port bindings are unchanged. Image entrypoint starts as root for initialization and runs the sync server as its configured PUID/PGID, unlike the earlier non-root-only image. Disable or do not publish optional dashboard, metrics and TLS features unless separately approved.
 
 ## Deployment and verification gates
 
