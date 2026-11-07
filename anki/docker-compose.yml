@@ -1,0 +1,12 @@
+services:
+  anki-sync:
+    build:
+      context: .
+    image: anki-sync:local
+    restart: unless-stopped
+    environment:
+      SYNC_USER1: ${SYNC_USER1:?Configure via approved secret provisioning}
+    ports:
+      - "${ANKI_BIND_ADDRESS:?Set private bind address}:${ANKI_PORT:?Set available host port}:8080"
+    volumes:
+      - ${ANKI_DATA_DIR:?Set persistent data directory}:/data

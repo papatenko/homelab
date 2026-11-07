@@ -100,6 +100,11 @@ services:
                 siteMonitor: https://{{HOMEPAGE_VAR_NAS_IP}}:8081
 
         - Apps:
+            - Anki Sync:
+                icon: mdi-cards
+                href: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+                siteMonitor: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+                description: Sync server health, study in an Anki client
             - Vaultwarden:
                 icon: vaultwarden
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
@@ -298,6 +303,7 @@ services:
       HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
       HOMEPAGE_VAR_RASPI_IP: ${HOMEPAGE_VAR_RASPI_IP}
       HOMEPAGE_VAR_NAS_IP: ${HOMEPAGE_VAR_NAS_IP}
+      HOMEPAGE_VAR_ANKI_URL: ${HOMEPAGE_VAR_ANKI_URL:-}
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
       HOMEPAGE_VAR_HERMES_IP: ${HOMEPAGE_VAR_HERMES_IP}
       HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
