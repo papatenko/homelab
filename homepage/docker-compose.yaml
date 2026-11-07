@@ -102,8 +102,8 @@ services:
         - Apps:
             - Anki Sync:
                 icon: anki.png
-                href: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
-                siteMonitor: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+                href: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
+                siteMonitor: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
             - Vaultwarden:
                 icon: vaultwarden
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
@@ -298,13 +298,10 @@ services:
       HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
       HOMEPAGE_VAR_RASPI_IP: ${HOMEPAGE_VAR_RASPI_IP}
       HOMEPAGE_VAR_NAS_IP: ${HOMEPAGE_VAR_NAS_IP}
-      HOMEPAGE_VAR_ANKI_URL: ${HOMEPAGE_VAR_ANKI_URL:-}
       HOMEPAGE_VAR_COOLIFY_IP: ${HOMEPAGE_VAR_COOLIFY_IP}
       HOMEPAGE_VAR_HERMES_IP: ${HOMEPAGE_VAR_HERMES_IP}
       HOMEPAGE_VAR_PROXMOX_IP: ${HOMEPAGE_VAR_PROXMOX_IP}
       HOMEPAGE_VAR_PBS_IP: ${HOMEPAGE_VAR_PBS_IP}
-      HOMEPAGE_VAR_JELLYFIN_IP: ${HOMEPAGE_VAR_JELLYFIN_IP}
-      HOMEPAGE_VAR_OPENWEBUI_IP: ${HOMEPAGE_VAR_OPENWEBUI_IP}
     restart: unless-stopped
 
 volumes:
