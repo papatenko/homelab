@@ -87,8 +87,9 @@
 - Apps:
     - Anki Sync:
         icon: mdi-cards
-        href: https://apps.ankiweb.net/
-        description: Self-hosted sync server, use an Anki client
+        href: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+        siteMonitor: "{{HOMEPAGE_VAR_ANKI_URL}}/health"
+        description: Sync server health, study in an Anki client
     - Vaultwarden:
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445

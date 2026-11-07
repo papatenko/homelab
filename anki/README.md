@@ -26,4 +26,4 @@ The Dockerfile installs the current Anki Python package **when built**, not when
 4. Test sync of a disposable card and media across two clients and after a restart. Do not overwrite an existing collection during a full-sync prompt.
 5. Add a service-appropriate TCP monitor with the established notification route. A successful TCP probe does not prove synchronization works.
 
-Retain the persistent data and client exports during rollback. Do not use `down -v` or delete the data directory. The Homepage link opens the Anki website, not a hosted study interface.
+Retain the persistent data and client exports during rollback. Do not use `down -v` or delete the data directory. Set Homepage's `HOMEPAGE_VAR_ANKI_URL` to the deployed HTTPS origin without a trailing slash. The Homepage entry opens and monitors `/health`; it is not a hosted study interface. Confirm HTTPS reachability from Homepage and verify the card after deployment. Health indicates server availability, not successful synchronization.
