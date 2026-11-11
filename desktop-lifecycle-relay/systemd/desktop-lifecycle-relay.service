@@ -16,7 +16,7 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectHome=true
 ProtectSystem=strict
-ReadOnlyPaths=/root/.ssh/id_ed25519_services /root/.ssh/known_hosts
+ReadOnlyPaths=/etc/desktop-lifecycle-relay/id_ed25519_services /etc/desktop-lifecycle-relay/known_hosts
 ReadWritePaths=/run/desktop-lifecycle-relay
 
 [Install]
