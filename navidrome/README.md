@@ -14,7 +14,7 @@ Upstream: [Navidrome docs](https://www.navidrome.org/docs/installation/docker/) 
 
 | Host path | Container | Notes |
 |---|---|---|
-| `${MUSIC_DIR}` (default `/mnt/misc/music`) | navidrome `/music:ro` | Music library. Navidrome never writes here. Smart playlists (`*.nsp`) also live here. |
+| `${MUSIC_DIR}` (default `/mnt/misc/media/library/music`) | navidrome `/music:ro` | Music library. Navidrome never writes here. Smart playlists (`*.nsp`) also live here. |
 | `${DATA_DIR}/data` | navidrome `/data` | SQLite DB, cache. Back up. |
 | `${DATA_DIR}/explo/config` | explo `/opt/explo/config` | Explo `.env` written by its web UI, playlist cache. |
 | `${DATA_DIR}/aurral/{config,data}` | aurral | Aurral state. |

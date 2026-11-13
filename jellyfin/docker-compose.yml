@@ -1,0 +1,21 @@
+# Jellyfin (movies/TV, optional music). Reads the shared media tree that the
+# arr-stack *arr apps write to. Not deployed yet.
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: "${PUID}:${PGID}"
+
+    ports:
+      - "8096:8096/tcp"
+      - "7359:7359/udp"
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin:/config
+      - ${JELLYFIN_TRANSCODE_CACHE:-${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin-cache}:/cache
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+      - ${CUSTOM_FONTS:-/usr/share/fonts/truetype}:/usr/local/share/fonts/custom:ro
+    environment:
+      - JELLYFIN_PublishedServerUrl=${PUBLISHED_URL}
+      - TZ=${TZ}
+    restart: unless-stopped
+

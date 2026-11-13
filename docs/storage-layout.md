@@ -94,6 +94,6 @@ sudo rsync -a ~/homelab/openwebui/searxng/core-config/ /opt/stacks/openwebui/sea
 
 Use trailing slashes on the source directory when you want to copy the contents into the destination directory.
 
-## Media stack
+## Media (arr-stack, jellyfin, navidrome)
 
-The media stack intentionally keeps its existing path variables and is not part of this storage-layout refactor.
+These stacks intentionally keep their media path variables (`MEDIA_ROOT`, `MUSIC_DIR`) and is not part of this storage-layout refactor.
