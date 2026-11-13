@@ -8,14 +8,10 @@ volumes:
 services:
   wg-easy:
     environment:
-      - WG_HOST=${WG_HOST}
-      - WG_DEFAULT_DNS=${WG_DEFAULT_DNS}
-      - WG_DEFAULT_ADDRESS=${WG_DEFAULT_ADDRESS}
-      # Required: without it wg-easy v14 serves the admin UI with no login at all.
-      # Generate with: docker run --rm ghcr.io/wg-easy/wg-easy:14 wgpw 'YOUR_PASSWORD'
-      - PASSWORD_HASH=${PASSWORD_HASH:?Set PASSWORD_HASH (bcrypt from wgpw) before deploying}
-    # Pinned: v15 replaced the env-based config with a setup wizard and new schema.
-    image: ghcr.io/wg-easy/wg-easy:14
+      # v15 keeps settings, users and clients in /etc/wireguard/wg-easy.db (setup wizard / admin UI).
+      # The UI is LAN-only over plain HTTP, so session cookies must be allowed without TLS.
+      - INSECURE=${WG_INSECURE:-true}
+    image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wg-easy
     networks:
       wg:
