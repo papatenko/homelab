@@ -1,0 +1,87 @@
+# Navidrome music server plus its discovery companions (Explo, Aurral).
+# Only Navidrome is meant to be published through the reverse proxy; Explo and
+# Aurral are management UIs and must stay LAN/Tailnet-only.
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    user: "${PUID:-1000}:${PGID:-1000}"
+    restart: unless-stopped
+    ports:
+      - "${NAVIDROME_PORT:-4533}:4533"
+    environment:
+      TZ: ${TZ:-America/Chicago}
+      ND_LOGLEVEL: info
+      ND_SCANSCHEDULE: ${ND_SCANSCHEDULE:-1h}
+      ND_BASEURL: ""
+      ND_ENABLEINSIGHTSCOLLECTOR: "false"
+      ND_DEFAULTREPORTREALPATH: "false"
+      ND_ENABLESHARING: "false"
+      # Last.fm: artist bios, similar artists, scrobbling. Supplied by Portainer.
+      ND_LASTFM_ENABLED: ${ND_LASTFM_ENABLED:-false}
+      ND_LASTFM_APIKEY: ${ND_LASTFM_APIKEY:-}
+      ND_LASTFM_SECRET: ${ND_LASTFM_SECRET:-}
+      # ListenBrainz scrobbling is linked per user in the Navidrome UI.
+      ND_LISTENBRAINZ_ENABLED: "true"
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/appdata/navidrome}/data:/data
+      # Read-only: Navidrome never writes to the music library.
+      - ${MUSIC_DIR:-/mnt/misc/music}:/music:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:4533/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  # Weekly ListenBrainz-driven playlists built only from tracks already in the
+  # library. Downloads are disabled: every schedule passes --download-mode=skip
+  # and no downloader is configured.
+  explo:
+    image: ghcr.io/lumepart/explo:latest
+    container_name: explo
+    restart: unless-stopped
+    depends_on:
+      - navidrome
+    ports:
+      - "${EXPLO_PORT:-7288}:7288"
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: ${TZ:-America/Chicago}
+      WEB_UI: "true"
+      WEB_ENV_PATH: /opt/explo/config/.env
+      UI_USERNAME: ${EXPLO_UI_USERNAME:-}
+      UI_PASSWORD: ${EXPLO_UI_PASSWORD:-}
+      DISCOVERY_SERVICE: listenbrainz
+      LISTENBRAINZ_USER: ${LISTENBRAINZ_USER:-}
+      LISTENBRAINZ_USER_TOKEN: ${LISTENBRAINZ_USER_TOKEN:-}
+      EXPLO_SYSTEM: subsonic
+      SYSTEM_URL: http://navidrome:4533
+      SYSTEM_USERNAME: ${EXPLO_SYSTEM_USERNAME:-}
+      SYSTEM_PASSWORD: ${EXPLO_SYSTEM_PASSWORD:-}
+      WEEKLY_EXPLORATION_SCHEDULE: "15 00 * * 2"
+      WEEKLY_EXPLORATION_FLAGS: "--playlist=weekly-exploration --download-mode=skip"
+      WEEKLY_JAMS_SCHEDULE: "30 00 * * 1"
+      WEEKLY_JAMS_FLAGS: "--playlist=weekly-jams --download-mode=skip"
+      DAILY_JAMS_SCHEDULE: ""
+      EXECUTE_ON_START: "false"
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/appdata/navidrome}/explo/config:/opt/explo/config
+      # Unused while downloads are disabled; kept outside the music library.
+      - ${DATA_DIR:-/mnt/misc/appdata/navidrome}/explo/data:/data
+
+  # Artist discovery UI. Lidarr, downloaders and Flows are left unconfigured.
+  aurral:
+    image: ghcr.io/lklynet/aurral:latest
+    container_name: aurral
+    restart: unless-stopped
+    ports:
+      - "${AURRAL_PORT:-3001}:3001"
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: ${TZ:-America/Chicago}
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/appdata/navidrome}/aurral/config:/config
+      - ${DATA_DIR:-/mnt/misc/appdata/navidrome}/aurral/data:/data
