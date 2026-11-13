@@ -60,6 +60,8 @@ services:
       SYSTEM_URL: http://navidrome:4533
       SYSTEM_USERNAME: ${EXPLO_SYSTEM_USERNAME:-}
       SYSTEM_PASSWORD: ${EXPLO_SYSTEM_PASSWORD:-}
+      # Playlists belong to the explo user; public so the main user sees them.
+      PUBLIC_PLAYLIST: ${EXPLO_PUBLIC_PLAYLIST:-true}
       WEEKLY_EXPLORATION_SCHEDULE: "15 00 * * 2"
       WEEKLY_EXPLORATION_FLAGS: "--playlist=weekly-exploration --download-mode=skip"
       WEEKLY_JAMS_SCHEDULE: "30 00 * * 1"
