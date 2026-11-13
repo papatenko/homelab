@@ -1,5 +1,5 @@
 # Jellyfin (movies/TV, optional music). Reads the shared media tree that the
-# media-stack *arr apps write to. Not deployed yet.
+# arr-stack *arr apps write to. Not deployed yet.
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest

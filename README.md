@@ -27,8 +27,8 @@ runtime environment.
 
 ### Stacks
 
-- **media-stack/** — acquisition: Gluetun/qBittorrent + Prowlarr + Lidarr (+ Sonarr/Radarr/Bazarr/Jellyseerr), all profile-gated.
-- **jellyfin/** — Jellyfin media server (split from media-stack).
+- **arr-stack/** — acquisition: Gluetun/qBittorrent + Prowlarr + Lidarr (+ Sonarr/Radarr/Bazarr/Jellyseerr), all profile-gated.
+- **jellyfin/** — Jellyfin media server (split from the former media-stack).
 - **navidrome/** — Navidrome music server with Explo and Aurral discovery.
 - **openwebui/** — Open WebUI + SearXNG + Valkey + Tika + ChromaDB for AI chat with web search and RAG.
 - **whisper/** — Self-hosted OpenAI Whisper speech-to-text API using the small model by default.

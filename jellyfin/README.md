@@ -1,6 +1,6 @@
 # Jellyfin
 
-Media server for movies and TV, split out of `media-stack/` so players and downloaders deploy
+Media server for movies and TV, split out of the former `media-stack/` (now `arr-stack/`) so players and downloaders deploy
 independently. It mounts the shared media root (`MEDIA_ROOT`, default `/mnt/misc/media`) as `/data`.
 Libraries live in `/data/library/{movies,tv,music}`. Appdata is `${DATA_DIR}/appdata/jellyfin`
 (unchanged from the old media-stack, so an existing config carries over).

@@ -1,4 +1,4 @@
-# media-stack (acquisition)
+# arr-stack (acquisition)
 
 Downloader, indexers and *arr managers. Players are separate stacks: `navidrome/` (music) and
 `jellyfin/` (video). Each container is defined once, and nothing runs unless its profile is enabled.
