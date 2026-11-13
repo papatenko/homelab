@@ -1,3 +1,8 @@
+# Acquisition stack: downloader (behind VPN), indexers and *arr managers.
+# Players live in their own stacks (navidrome/, jellyfin/). Every service is
+# profile-gated; enable with COMPOSE_PROFILES (e.g. vpn,music).
+# All apps mount MEDIA_ROOT as /data so imports are hardlinks:
+#   /data/downloads/{music,movies,tv,incomplete}  /data/library/{music,movies,tv}
 services:
   # WireGuard client namespace for qBittorrent. qBittorrent has no independent
   # network and therefore cannot reach the internet when this tunnel is down.
@@ -44,25 +49,22 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/qbittorrent:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
-      - ${DOWNLOAD_PATH}:/downloads
     restart: unless-stopped
 
-  jellyfin:
-    image: jellyfin/jellyfin:latest
-    container_name: jellyfin
-    user: "${PUID}:${PGID}"
-
-    ports:
-      - "8096:8096/tcp"
-      - "7359:7359/udp"
-    volumes:
-      - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin:/config
-      - ${JELLYFIN_TRANSCODE_CACHE:-${DATA_DIR:-/mnt/misc/media}/appdata/jellyfin-cache}:/cache
-      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
-      - ${CUSTOM_FONTS:-/usr/share/fonts/truetype}:/usr/local/share/fonts/custom:ro
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
     environment:
-      - JELLYFIN_PublishedServerUrl=${PUBLISHED_URL}
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
+    volumes:
+      - ${DATA_DIR:-/mnt/misc/media}/appdata/lidarr:/config
+      - ${MEDIA_ROOT:-/mnt/misc/media}:/data
+    ports:
+      - "8686:8686"
+    profiles:
+      - music
     restart: unless-stopped
 
   sonarr:
@@ -75,9 +77,10 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/sonarr:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
-      - ${DOWNLOAD_PATH}:/downloads
     ports:
       - "8989:8989"
+    profiles:
+      - video
     restart: unless-stopped
 
   radarr:
@@ -90,9 +93,10 @@ services:
     volumes:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/radarr:/config
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
-      - ${DOWNLOAD_PATH}:/downloads
     ports:
       - "7878:7878"
+    profiles:
+      - video
     restart: unless-stopped
 
   prowlarr:
@@ -106,6 +110,9 @@ services:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/prowlarr:/config
     ports:
       - "9696:9696"
+    profiles:
+      - music
+      - video
     restart: unless-stopped
 
   bazarr:
@@ -120,6 +127,8 @@ services:
       - ${MEDIA_ROOT:-/mnt/misc/media}:/data
     ports:
       - "6767:6767"
+    profiles:
+      - video
     restart: unless-stopped
 
   jellyseerr:
@@ -132,6 +141,8 @@ services:
       - ${DATA_DIR:-/mnt/misc/media}/appdata/jellyseerr:/app/config
     ports:
       - "5055:5055"
+    profiles:
+      - video
     restart: unless-stopped
 
 networks:
