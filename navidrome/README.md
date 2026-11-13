@@ -33,7 +33,8 @@ variables only. Never commit them.
 1. Open Navidrome on the LAN and create the admin user **before** publishing it.
 2. In Navidrome, under Personal settings, link Last.fm and ListenBrainz scrobbling.
 3. Create a non-admin Navidrome user for Explo and set `EXPLO_SYSTEM_USERNAME/PASSWORD`.
-   Explo creates playlists for that user and marks them public so they show up for the main user.
+   It should be a regular (non-admin) user. Explo creates playlists as that user and marks them
+   public (`PUBLIC_PLAYLIST=true`) so they show up for the main user.
    (Alternatively, use the main user.)
 
 ## Playlist import (`tools/playlist-sync`)
