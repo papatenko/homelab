@@ -32,7 +32,7 @@
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
     - PatchMon:
-        icon: sh-patchmon
+        icon: patchmon.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
     - Proxmox:
@@ -61,6 +61,10 @@
         icon: jellyfin
         href: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
         siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+    - Navidrome:
+        icon: navidrome.svg
+        href: http://{{HOMEPAGE_VAR_NAS_IP}}:4533
+        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4533/ping
 
 - Media Stack:
     - Sonarr:
