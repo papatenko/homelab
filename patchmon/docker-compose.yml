@@ -7,7 +7,7 @@ services:
       PORT: "3000"
       TRUST_PROXY: "true"
       TRUSTED_PROXY_RANGES: ${TRUSTED_PROXY_RANGES:?set proxy network}
-      CORS_ORIGIN: ${CORS_ORIGIN:?set HTTPS origin}
+      CORS_ORIGIN: ${CORS_ORIGIN:?set browser origin, e.g. http://host:port}
       JWT_SECRET: ${JWT_SECRET:?required}
       SESSION_SECRET: ${SESSION_SECRET:?required}
       AI_ENCRYPTION_KEY: ${AI_ENCRYPTION_KEY:?required}
@@ -20,6 +20,8 @@ services:
       REDIS_PORT: "6379"
       REDIS_PASSWORD: ${REDIS_PASSWORD:?required}
       TZ: America/Chicago
+    ports:
+      - "${PATCHMON_BIND_ADDRESS:-127.0.0.1}:${PATCHMON_PORT:-3010}:3000"
     networks:
       - default
       - proxy
