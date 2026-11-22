@@ -35,10 +35,6 @@
         icon: semaphore.svg
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020/api/ping
-    - PatchMon:
-        icon: sh-patchmon
-        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
-        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
     - Proxmox:
         icon: proxmox
         href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
