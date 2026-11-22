@@ -31,8 +31,12 @@
         icon: uptime-kuma
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
+    - Semaphore:
+        icon: semaphore.svg
+        href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020
+        siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020/api/ping
     - PatchMon:
-        icon: patchmon.svg
+        icon: sh-patchmon
         href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
         siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3010
     - Proxmox:
