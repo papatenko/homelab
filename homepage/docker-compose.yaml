@@ -80,8 +80,19 @@ services:
                 icon: navidrome.svg
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:4533
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4533/ping
+            - Explo:
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:7288
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:7288
+            - Aurral:
+                icon: aurral.svg
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:3011
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:3011
 
         - Media Stack:
+            - Lidarr:
+                icon: lidarr.svg
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:8686
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8686
             - Sonarr:
                 icon: sonarr
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:8989
