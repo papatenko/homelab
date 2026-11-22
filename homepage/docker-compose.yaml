@@ -46,6 +46,10 @@ services:
                 icon: uptime-kuma
                 href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
                 siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3001
+            - Semaphore:
+                icon: semaphore.svg
+                href: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020
+                siteMonitor: http://{{HOMEPAGE_VAR_RASPI_IP}}:3020/api/ping
             - Proxmox:
                 icon: proxmox
                 href: https://{{HOMEPAGE_VAR_PROXMOX_IP}}:8006
@@ -72,6 +76,10 @@ services:
                 icon: jellyfin
                 href: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
                 siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:8096
+            - Navidrome:
+                icon: navidrome.svg
+                href: http://{{HOMEPAGE_VAR_NAS_IP}}:4533
+                siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4533/ping
 
         - Media Stack:
             - Sonarr:
