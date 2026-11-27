@@ -1,8 +1,9 @@
 services:
   anki-sync:
-    image: chrislongros/anki-sync-server-enhanced:latest
+    image: ${ANKI_IMAGE:-chrislongros/anki-sync-server-enhanced:latest}
+    pull_policy: ${ANKI_PULL_POLICY:-missing}
     labels:
-      com.centurylinklabs.watchtower.enable: "true"
+      com.centurylinklabs.watchtower.enable: ${ANKI_WATCHTOWER_ENABLE:-true}
     restart: unless-stopped
     environment:
       SYNC_USER1: ${SYNC_USER1:?Configure via approved secret provisioning}
