@@ -106,8 +106,8 @@
 - Apps:
     - Anki Sync:
         icon: anki.png
-        href: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
-        siteMonitor: "http://{{HOMEPAGE_VAR_NAS_IP}}:18881/health"
+        href: "http://{{HOMEPAGE_VAR_COOLIFY_IP}}:18881/health"
+        siteMonitor: "http://{{HOMEPAGE_VAR_COOLIFY_IP}}:18881/health"
     - Vaultwarden:
         icon: vaultwarden
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:9445
@@ -182,9 +182,9 @@
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
         siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
     - Hister:
-        icon: http://{{HOMEPAGE_VAR_NAS_IP}}:4433/favicon.ico
-        href: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
-        siteMonitor: http://{{HOMEPAGE_VAR_NAS_IP}}:4433
+        icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433/favicon.ico
+        href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433
+        siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433
     - OpenHands:
         icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas/favicon.svg
         href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:8011/canvas
