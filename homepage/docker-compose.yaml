@@ -196,7 +196,7 @@ services:
                 icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128/favicon.svg
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:20128
-            - Hister:
+            - Nogon:
                 icon: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433/favicon.ico
                 href: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433
                 siteMonitor: http://{{HOMEPAGE_VAR_COOLIFY_IP}}:4433
